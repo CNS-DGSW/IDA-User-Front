@@ -3,6 +3,10 @@ import { Button } from "../../Button"
 import { AsideContainer, ButtonFont, Line } from "./style"
 import { WriteAsideProps } from "./types"
 
+/**
+ * @todo
+ * 원서 저장 및 미리보기, 출력 로직 제작
+ */
 const Aside = ({
   currentPage,
   moveNextPage,
