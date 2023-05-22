@@ -11,6 +11,7 @@
     "postinstall": "husky install"
   },
   "dependencies": {
+    "@dgswcns/react-styled-theme": "^0.1.5",
     "@tanstack/react-query": "^4.26.1",
     "@types/node": "18.14.6",
     "@types/react": "18.0.28",

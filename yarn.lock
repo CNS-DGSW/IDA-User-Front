@@ -125,6 +125,31 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@dgswcns/design-token@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@dgswcns/design-token/-/design-token-1.0.4.tgz#dc9c1a4138d4782f5a2177da45b0776be6bd7369"
+  integrity sha512-zkER9hjdfNG7CEOVw3h7dSL7JUd2NedJKMWMZpP8bAZboj8veCJNkk4Why9JVgcdNOrSYaCqR874MjxNyvXe6w==
+  dependencies:
+    styled-components "5.3.8"
+
+"@dgswcns/react-styled-theme@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@dgswcns/react-styled-theme/-/react-styled-theme-0.1.5.tgz#80451af83937e3c787c9684c0663ff32728c5649"
+  integrity sha512-JsoxUKiYBMO4IToZkqvIk5Rx8VkLP5hIGzh5LFA1EJm5hVPaMt4rc5HrUZs4mkc+cQwoukWCMeikQMYm7NCosA==
+  dependencies:
+    "@dgswcns/design-token" "^1.0.4"
+    "@dgswcns/react-theming" "^0.0.4"
+    react "^18.2.0"
+    react-dom "^18.2.0"
+    styled-components "^5.3.8"
+
+"@dgswcns/react-theming@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@dgswcns/react-theming/-/react-theming-0.0.4.tgz#1802c2f1a7ebb0306a645254fd2eb76892b5b408"
+  integrity sha512-zbvBPXgFmzJzUA5FGX6UFQ9g23L5G58R9qftciAKeSP/1H7NnIWgoMFvx+cbFnLz4oUPwZinBcaVNd6nw6loIw==
+  dependencies:
+    react "^18.2.0"
+
 "@emotion/is-prop-valid@^1.1.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-1.2.0.tgz"
@@ -2411,7 +2436,7 @@ queue-microtask@^1.2.2:
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-dom@18.2.0:
+react-dom@18.2.0, react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -2424,7 +2449,7 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react@18.2.0:
+react@18.2.0, react@^18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
@@ -2710,7 +2735,7 @@ strip-json-comments@^3.1.0, strip-json-comments@^3.1.1:
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
-styled-components@^5.3.8:
+styled-components@5.3.8, styled-components@^5.3.8:
   version "5.3.8"
   resolved "https://registry.npmjs.org/styled-components/-/styled-components-5.3.8.tgz"
   integrity sha512-6jQrlvaJQ16uWVVO0rBfApaTPItkqaG32l3746enNZzpMDxMvzmHzj8rHUg39bvVtom0Y8o8ZzWuchEXKGjVsg==
