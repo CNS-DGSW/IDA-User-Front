@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react"
+import { useCallback, useState } from "react"
 
 const useAside = () => {
   const [currentPage, setCurrentPage] = useState<number>(1)
