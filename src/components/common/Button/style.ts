@@ -5,11 +5,11 @@ import styled, {
   ThemeProps,
 } from "styled-components"
 
-type SizeType = "xs" | "sm" | "md" | "lg"
-type ButtonColorType = "primary" | "second" | "third"
-
 import { ButtonProps } from "./types"
 import { ThemeType } from "@dgswcns/design-token"
+
+type SizeType = "xs" | "sm" | "md" | "lg"
+type ButtonColorType = "primary" | "second" | "third"
 
 const getSize: Record<SizeType, FlattenSimpleInterpolation> = {
   xs: css`
@@ -56,7 +56,10 @@ const getColor: Record<
 export const ButtonStyle = styled.button<ButtonProps>`
   ${({ size }) => size && getSize[size]}
   ${({ color }) => color && getColor[color]};
-  border: ${({ border, theme: { colors } }) =>
+  border: ${({
+    border,
+    theme: { colors },
+  }: ButtonProps & ThemeProps<ThemeType>) =>
     border ? `${border}px solid ${colors.blue400}` : "none"};
   border-radius: ${({ radius }) => (radius ? `${radius}px` : "0px")};
   box-shadow: ${({ shadow }) =>

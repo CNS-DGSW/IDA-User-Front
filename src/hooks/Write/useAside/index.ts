@@ -1,6 +1,12 @@
 import { useCallback, useState } from "react"
 
-const useAside = () => {
+interface useAsideReturn {
+  currentPage: number
+  moveNextPage: () => void
+  movePreviousPage: () => void
+}
+
+const useAside = (): useAsideReturn => {
   const [currentPage, setCurrentPage] = useState<number>(1)
   const moveNextPage = useCallback(() => setCurrentPage((prev) => prev + 1), [])
   const movePreviousPage = useCallback(
