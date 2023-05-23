@@ -1,6 +1,5 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const NavBarItem = styled.li`
-    color:black
-
+  color: black;
 `
