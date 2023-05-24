@@ -1,27 +1,28 @@
-import Image from "next/image"
-
 import NavbarItem from "./navbarItem/"
 import DGSW_LOGO from "@/assets/img/DGSW_LOGO.svg"
 import * as S from "./style"
+import { useNavBar } from "@/hooks/useNavBar"
 
 const NavBar = () => {
+  const { checkDisabledNavbar } = useNavBar()
+  const isDisabledNavbar = checkDisabledNavbar()
   return (
-    <S.NavbarLayout>
-      <S.NavbarList>
+    <S.NavbarLayout isDisabled={isDisabledNavbar}>
+      <S.NavbarList isDark={false}>
         <S.LeftBox>
           <NavbarItem href="/">
-            <Image src={DGSW_LOGO} alt="대구소프트웨어마이스터고 로고" />
+            <DGSW_LOGO alt="대구소프트웨어 마이스터고 로고" />
           </NavbarItem>
         </S.LeftBox>
 
         <S.RightBox>
           <NavbarItem href="/apply">원서접수</NavbarItem>
-          <NavbarItem href="/apply">공지사항</NavbarItem>
-          <NavbarItem href="/apply">FAQ</NavbarItem>
+          <NavbarItem href="/#">공지사항</NavbarItem>
+          <NavbarItem href="/#">FAQ</NavbarItem>
           <S.AuthBox>
-            <NavbarItem href="/signin">회원가입</NavbarItem>
-            <S.Dot />
-            <NavbarItem href="/signup">로그인</NavbarItem>
+            <NavbarItem href="/signup">회원가입</NavbarItem>
+            <S.Dot className="dot" />
+            <NavbarItem href="/signin">로그인</NavbarItem>
           </S.AuthBox>
         </S.RightBox>
       </S.NavbarList>
