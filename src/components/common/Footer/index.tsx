@@ -10,6 +10,7 @@ import {
   FooterLinkRow,
   FooterLinkBox,
   LinkImg,
+  TelLink,
 } from "./style"
 import DGSWLogoPNG from "@/assets/DGSWLogo.png"
 import CNSLogoPNG from "@/assets/CNSLogo.png"
@@ -34,10 +35,10 @@ const Footer = () => {
         </FooterParagraph>
         <FooterParagraphBox>
           <FooterParagraphInnerBox>
-            교무실 : 053-231-9226
+            교무실 : <TelLink href="tel:053-231-9226">053-231-9226</TelLink>
           </FooterParagraphInnerBox>
           <FooterParagraphInnerBox>
-            행정실 : 053-231-9215
+            행정실 : <TelLink href="tel:053-231-9215">053-231-9215</TelLink>
           </FooterParagraphInnerBox>
           <FooterParagraphInnerBox>FAX : 053-614-0709</FooterParagraphInnerBox>
         </FooterParagraphBox>

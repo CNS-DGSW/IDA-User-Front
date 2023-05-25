@@ -74,3 +74,8 @@ export const FooterLinkBox = styled.a`
   justify-content: center;
   align-items: center;
 `
+
+export const TelLink = styled.a`
+  color: black;
+  text-decoration: none;
+`
