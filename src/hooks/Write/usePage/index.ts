@@ -1,12 +1,9 @@
+import { PageContext } from "@/components/common/Write/PageProvider"
 import { useCallback, useState } from "react"
 
-interface useAsideReturn {
-  currentPage: number
-  moveNextPage: () => void
-  movePreviousPage: () => void
-}
+type usePageReturn = PageContext
 
-const useAside = (): useAsideReturn => {
+const usePage = (): usePageReturn => {
   const [currentPage, setCurrentPage] = useState<number>(1)
   const moveNextPage = useCallback(() => setCurrentPage((prev) => prev + 1), [])
   const movePreviousPage = useCallback(
@@ -16,4 +13,4 @@ const useAside = (): useAsideReturn => {
   return { currentPage, moveNextPage, movePreviousPage }
 }
 
-export default useAside
+export default usePage

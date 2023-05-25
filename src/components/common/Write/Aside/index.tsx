@@ -1,17 +1,15 @@
 import React from "react"
 import { Button } from "../../Button"
+import { usePageContext } from "../PageProvider"
 import { AsideContainer, ButtonFont, Line } from "./style"
-import { WriteAsideProps } from "./types"
 
 /**
  * @todo
  * 원서 저장 및 미리보기, 출력 로직 제작
  */
-const Aside = ({
-  currentPage,
-  moveNextPage,
-  movePreviousPage,
-}: WriteAsideProps) => {
+const Aside = () => {
+  const { currentPage, moveNextPage, movePreviousPage } = usePageContext()
+
   return (
     <AsideContainer>
       <Button radius={8}>
@@ -32,7 +30,7 @@ const Aside = ({
         border="1"
         clickEvent={moveNextPage}
       >
-        <ButtonFont>다음</ButtonFont>
+        <ButtonFont>{currentPage < 7 ? "다음" : "원서 최종 제출"}</ButtonFont>
       </Button>
       {currentPage > 1 && (
         <Button
