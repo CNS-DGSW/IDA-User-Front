@@ -1,7 +1,7 @@
 import Image from "next/image"
 import styled from "styled-components"
 
-export const FooterBox = styled.div`
+export const FooterLayout = styled.div`
   width: 100%;
   height: 284px;
   background: #f2f4f8;

@@ -1,7 +1,7 @@
 import React from "react"
 import {
   DGSWLogo,
-  FooterBox,
+  FooterLayout,
   FooterInnerBox,
   FooterParagraph,
   CNSLogo,
@@ -18,7 +18,7 @@ import InstaSVG from "@/assets/instagram.svg"
 
 const Footer = () => {
   return (
-    <FooterBox>
+    <FooterLayout>
       <FooterInnerBox>
         <a
           href="https://dgsw.dge.hs.kr/dgswh/main.do?sysId=dgswh"
@@ -62,7 +62,7 @@ const Footer = () => {
           </FooterLinkBox>
         </FooterLinkRow>
       </FooterInnerBox>
-    </FooterBox>
+    </FooterLayout>
   )
 }
 
