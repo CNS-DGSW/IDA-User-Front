@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const AsideContainer = styled.aside`
+export const AsideBox = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8,12 +8,12 @@ export const AsideContainer = styled.aside`
   gap: 14px;
 `
 
-export const Line = styled.div`
+export const LineBox = styled.div`
   height: 1px;
   background: #1485ee;
   margin: 28px 0;
 `
 
-export const ButtonFont = styled.div`
+export const ButtonFontBox = styled.div`
   font-size: 18px;
 `
