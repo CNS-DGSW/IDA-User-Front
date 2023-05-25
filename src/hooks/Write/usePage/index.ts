@@ -1,7 +1,7 @@
-import { PageContext } from "@/components/common/Write/PageProvider"
+import { PageContextType } from "@/components/common/Write/PageProvider"
 import { useCallback, useState } from "react"
 
-type usePageReturn = PageContext
+type usePageReturn = PageContextType
 
 const usePage = (): usePageReturn => {
   const [currentPage, setCurrentPage] = useState<number>(1)

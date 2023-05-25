@@ -1,6 +1,6 @@
 import React from "react"
 import { Button } from "../../Button"
-import { usePageContext } from "../PageProvider"
+import { usePageContext } from "@/components/common/Write/PageProvider"
 import { AsideContainer, ButtonFont, Line } from "./style"
 
 /**
