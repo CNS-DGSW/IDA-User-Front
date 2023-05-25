@@ -7,7 +7,7 @@ export interface PageContextType {
   movePreviousPage: () => void
 }
 
-const PageContext = createContext<PageContext>({
+const PageContext = createContext<PageContextType>({
   currentPage: 1,
   moveNextPage: () => {},
   movePreviousPage: () => {},
