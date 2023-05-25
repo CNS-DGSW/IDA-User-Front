@@ -24,6 +24,7 @@ const Footer = () => {
           href="https://dgsw.dge.hs.kr/dgswh/main.do?sysId=dgswh"
           target="_blank"
           style={{ width: "104px" }}
+          rel="noopener"
         >
           <DGSWLogo src={DGSWLogoPNG} alt="dgsw" />
         </a>
@@ -48,12 +49,14 @@ const Footer = () => {
           <FooterLinkBox
             href="https://www.youtube.com/@softwaremeister"
             target="_blank"
+            rel="noopener"
           >
             <LinkImg src={YoutubeSVG} alt="youtube" />
           </FooterLinkBox>
           <FooterLinkBox
             href="https://www.instagram.com/dgsw.it/"
             target="_blank"
+            rel="noopener"
           >
             <LinkImg src={InstaSVG} alt="instagram" />
           </FooterLinkBox>
