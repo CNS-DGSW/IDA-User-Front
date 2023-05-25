@@ -1,6 +1,5 @@
 import "@/styles/globals.css"
 import type { AppProps } from "next/app"
-
 import { CNSThemeProvider } from "@dgswcns/react-styled-theme"
 import { useCNSThemeing } from "@dgswcns/react-theming"
 

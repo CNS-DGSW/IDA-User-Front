@@ -124,7 +124,6 @@
     "@babel/helper-string-parser" "^7.19.4"
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
-
 "@cometjs/core@^2.1.0":
   version "2.3.2"
   resolved "https://registry.npmjs.org/@cometjs/core/-/core-2.3.2.tgz"
