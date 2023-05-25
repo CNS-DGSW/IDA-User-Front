@@ -1,7 +1,7 @@
 import usePage from "@/hooks/Write/usePage"
 import React, { createContext, PropsWithChildren, useContext } from "react"
 
-export type PageContext = {
+export interface PageContext {
   currentPage: number
   moveNextPage: () => void
   movePreviousPage: () => void
