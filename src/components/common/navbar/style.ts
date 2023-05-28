@@ -17,18 +17,20 @@ export const NavbarList = styled.ul<{ isDark: boolean }>`
   justify-content: space-between;
 
   svg {
-    fill: ${({ isDark }) => (isDark ? "#E7E9ED" : "#1E2F44")};
+    fill: ${({ isDark, theme: { colors } }) =>
+      isDark ? colors.gray100 : colors.gray800};
   }
 
-  ${({ isDark }) =>
+  ${({ isDark, theme: { colors } }) =>
     isDark &&
     css`
       a {
-        color: #e7e9ed;
+        color: ${colors.gray100};
       }
 
       .dot {
-        background-color: #e7e9ed;
+        background-color: ${isDark ? colors.gray100 : colors.gray800};
+  }
       }
     `}
 `
@@ -49,6 +51,5 @@ export const AuthBox = styled.div`
 export const Dot = styled.div`
   width: 4px;
   height: 4px;
-  background-color: #424344;
   border-radius: 50%;
 `

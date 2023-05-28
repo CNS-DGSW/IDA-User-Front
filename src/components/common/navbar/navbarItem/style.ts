@@ -6,12 +6,12 @@ export const NavBarItem = styled.li<{ isSelected: boolean }>`
   align-items: center;
   border-radius: 6px;
   height: 35px;
-  ${({ isSelected }) =>
+  ${({ isSelected, theme: { colors } }) =>
     isSelected &&
     css`
-      background-color: #1485ee;
+      background-color: ${colors.blue400};
       > a {
-        color: white;
+        color: ${colors.gray100};
       }
     `}
 `

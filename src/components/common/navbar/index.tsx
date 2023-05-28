@@ -8,7 +8,7 @@ const NavBar = () => {
   const isDisabledNavbar = checkDisabledNavbar()
   return (
     <S.NavbarLayout isDisabled={isDisabledNavbar}>
-      <S.NavbarList isDark={false}>
+      <S.NavbarList isDark={true}>
         <S.LeftBox>
           <NavbarItem href="/">
             <DGSW_LOGO alt="대구소프트웨어 마이스터고 로고" />
