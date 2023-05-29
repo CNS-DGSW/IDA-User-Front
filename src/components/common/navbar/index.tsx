@@ -4,11 +4,11 @@ import * as S from "./style"
 import { useNavBar } from "@/hooks/useNavBar"
 
 const NavBar = () => {
-  const { checkDisabledNavbar } = useNavBar()
+  const { checkDisabledNavbar, isDark } = useNavBar()
   const isDisabledNavbar = checkDisabledNavbar()
   return (
     <S.NavbarLayout isDisabled={isDisabledNavbar}>
-      <S.NavbarList isDark={true}>
+      <S.NavbarList isDark={isDark}>
         <S.LeftBox>
           <NavbarItem href="/">
             <DGSW_LOGO alt="대구소프트웨어 마이스터고 로고" />

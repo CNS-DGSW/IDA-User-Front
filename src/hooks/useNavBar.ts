@@ -1,7 +1,12 @@
 import { usePathname } from "next/navigation"
+import { useRecoilState } from "recoil"
+
+import { isDarkNavbarState } from "@/atom/navBarAtom"
 
 export const useNavBar = () => {
   const pathname = usePathname()
+  const [isDark, setIsDark] = useRecoilState(isDarkNavbarState);
+
   const checkDisabledNavbar = (): boolean => {
     const disabledPaths = ["/signin", "/signup"]
     const isDisabled = disabledPaths.includes(pathname)
@@ -13,6 +18,7 @@ export const useNavBar = () => {
     return isSelected
   }
   return {
+    isDark,
     checkDisabledNavbar,
     checkSelectedNavbarItem,
   }
