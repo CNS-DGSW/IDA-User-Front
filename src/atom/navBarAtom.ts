@@ -1,6 +1,6 @@
-import { atom } from "recoil";
+import { atom } from "recoil"
 
 export const isDarkNavbarState = atom({
-    key: 'isDarkNavbarState',
-    default: false,
-});
+  key: "isDarkNavbarState",
+  default: false,
+})
