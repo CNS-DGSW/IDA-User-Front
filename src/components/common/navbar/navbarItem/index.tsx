@@ -1,14 +1,13 @@
 import Link from "next/link"
-import React from "react"
+import type { PropsWithChildren } from "react"
 
 import * as S from "./style"
 import { useNavBar } from "@/hooks/useNavBar"
 
-interface NavbarItemProps {
-  children: React.ReactNode
-  href: string
-}
-const NavbarItem = ({ children, href }: NavbarItemProps) => {
+const NavbarItem = ({
+  children,
+  href,
+}: PropsWithChildren<{ href: string }>) => {
   const { checkSelectedNavbarItem } = useNavBar()
   const isSelected = checkSelectedNavbarItem(href)
 

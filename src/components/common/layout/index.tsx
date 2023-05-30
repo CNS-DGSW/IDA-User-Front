@@ -1,11 +1,8 @@
-import React from "react"
+import type { PropsWithChildren } from "react"
+
 import Navbar from "../navbar"
 
-interface LayoutProps {
-  children: React.ReactNode
-}
-
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
       <Navbar />
