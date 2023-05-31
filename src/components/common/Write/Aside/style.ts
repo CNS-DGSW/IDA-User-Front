@@ -7,7 +7,6 @@ export const AsideBox = styled.aside`
   max-width: 240px;
   gap: 14px;
 `
-
 export const LineBox = styled.div`
   height: 1px;
   background: #1485ee;

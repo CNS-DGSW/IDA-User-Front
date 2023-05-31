@@ -4,7 +4,6 @@ import styled, {
   FlattenSimpleInterpolation,
   ThemeProps,
 } from "styled-components"
-
 import { ButtonProps } from "./types"
 import { ThemeType } from "@dgswcns/design-token"
 

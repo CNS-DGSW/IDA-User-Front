@@ -1,6 +1,7 @@
 import React from "react"
 import { ButtonStyle } from "./style"
 import { ButtonProps } from "./types"
+
 export const Button = ({
   size = "md",
   color = "primary",

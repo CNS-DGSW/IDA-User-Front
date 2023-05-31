@@ -1,7 +1,7 @@
 import React from "react"
 import { Button } from "../../Button"
 import { usePageContext } from "@/components/common/Write/PageProvider"
-import { AsideBox, ButtonFontBox, LineBox } from "./style"
+import * as S from "./style"
 
 /**
  * @todo
@@ -11,28 +11,28 @@ const Aside = () => {
   const { currentPage, moveNextPage, movePreviousPage } = usePageContext()
 
   return (
-    <AsideBox>
+    <S.AsideBox>
       <Button radius={8}>
-        <ButtonFontBox>원서 저장</ButtonFontBox>
+        <S.ButtonFontBox>원서 저장</S.ButtonFontBox>
       </Button>
       <Button radius={8} color="second" border="1">
-        <ButtonFontBox>원서 미리보기</ButtonFontBox>
+        <S.ButtonFontBox>원서 미리보기</S.ButtonFontBox>
       </Button>
       {currentPage === 7 && (
         <Button radius={8} color="second" border="1">
-          <ButtonFontBox>원서 출력</ButtonFontBox>
+          <S.ButtonFontBox>원서 출력</S.ButtonFontBox>
         </Button>
       )}
-      <LineBox />
+      <S.LineBox />
       <Button
         radius={8}
         color={currentPage < 7 ? "second" : "third"}
         border="1"
         clickEvent={moveNextPage}
       >
-        <ButtonFontBox>
+        <S.ButtonFontBox>
           {currentPage < 7 ? "다음" : "원서 최종 제출"}
-        </ButtonFontBox>
+        </S.ButtonFontBox>
       </Button>
       {currentPage > 1 && (
         <Button
@@ -41,10 +41,10 @@ const Aside = () => {
           border="1"
           clickEvent={movePreviousPage}
         >
-          <ButtonFontBox>이전</ButtonFontBox>
+          <S.ButtonFontBox>이전</S.ButtonFontBox>
         </Button>
       )}
-    </AsideBox>
+    </S.AsideBox>
   )
 }
 
