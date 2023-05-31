@@ -44,13 +44,13 @@ const Footer = () => {
           >
             <S.LinkImg src={YoutubeSVG} alt="youtube" />
           </S.FooterLinkBox>
-          <s.FooterLinkBox
+          <S.FooterLinkBox
             href="https://www.instagram.com/dgsw.it/"
             target="_blank"
             rel="noreferrer"
           >
             <S.LinkImg src={InstaSVG} alt="instagram" />
-          </s.FooterLinkBox>
+          </S.FooterLinkBox>
         </S.FooterLinkRow>
       </S.FooterInnerBox>
     </S.FooterLayout>
