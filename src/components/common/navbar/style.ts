@@ -34,21 +34,21 @@ export const NavbarList = styled.ul<{ isDark: boolean }>`
       }
     `}
 `
-export const LeftBox = styled.div``
+export const NavbarLeftBox = styled.div``
 
-export const RightBox = styled.div`
+export const NavbarRightBox = styled.div`
   width: 350px;
   display: flex;
   justify-content: space-between;
 `
 
-export const AuthBox = styled.div`
+export const NavbarAuthBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `
 
-export const Dot = styled.div`
+export const NavbarDot = styled.div`
   width: 4px;
   height: 4px;
   border-radius: 50%;

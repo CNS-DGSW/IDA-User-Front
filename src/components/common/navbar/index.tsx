@@ -9,22 +9,22 @@ const NavBar = () => {
   return (
     <S.NavbarLayout isDisabled={isDisabledNavbar}>
       <S.NavbarList isDark={isDark}>
-        <S.LeftBox>
+        <S.NavbarLeftBox>
           <NavbarItem href="/">
             <DGSW_LOGO alt="대구소프트웨어 마이스터고 로고" />
           </NavbarItem>
-        </S.LeftBox>
+        </S.NavbarLeftBox>
 
-        <S.RightBox>
+        <S.NavbarRightBox>
           <NavbarItem href="/apply">원서접수</NavbarItem>
           <NavbarItem href="/#">공지사항</NavbarItem>
           <NavbarItem href="/#">FAQ</NavbarItem>
-          <S.AuthBox>
+          <S.NavbarAuthBox>
             <NavbarItem href="/signup">회원가입</NavbarItem>
-            <S.Dot className="dot" />
+            <S.NavbarDot className="dot" />
             <NavbarItem href="/signin">로그인</NavbarItem>
-          </S.AuthBox>
-        </S.RightBox>
+          </S.NavbarAuthBox>
+        </S.NavbarRightBox>
       </S.NavbarList>
     </S.NavbarLayout>
   )
