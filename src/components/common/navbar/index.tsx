@@ -21,7 +21,7 @@ const NavBar = () => {
           <NavbarItem href="/#">FAQ</NavbarItem>
           <S.AuthBox>
             <NavbarItem href="/signup">회원가입</NavbarItem>
-            <S.Dot className="dot" />
+            <S.NavbarDot/>
             <NavbarItem href="/signin">로그인</NavbarItem>
           </S.AuthBox>
         </S.RightBox>
