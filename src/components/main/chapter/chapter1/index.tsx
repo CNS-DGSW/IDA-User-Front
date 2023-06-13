@@ -1,5 +1,3 @@
-import useIntersectionObserver from "@/hooks/useIntersectionObserver"
-import { useEffect } from "react"
 import * as S from "./style"
 
 const Chapter1 = () => {

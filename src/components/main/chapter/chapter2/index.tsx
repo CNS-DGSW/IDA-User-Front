@@ -1,4 +1,3 @@
-import React, { forwardRef, useEffect, useRef } from "react"
 import { useSetRecoilState } from "recoil"
 
 import useIntersectionObserver from "@/hooks/useIntersectionObserver"

@@ -16,15 +16,14 @@ const useIntersectionObserver = ({
   const [target, setTarget] = useState<HTMLElement | null | undefined>(null)
 
   useEffect(() => {
-    if (!target) return
-
+    if (target == null) return
     const observer: IntersectionObserver = new IntersectionObserver(
       onIntersect,
       { root, rootMargin, threshold },
     )
     observer.observe(target)
 
-    return () => observer.unobserve(target)
+    return () => {observer.unobserve(target)}
   }, [onIntersect, root, rootMargin, target, threshold])
 
   return { setTarget }
