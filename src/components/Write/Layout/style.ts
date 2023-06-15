@@ -3,6 +3,8 @@ import styled from "styled-components"
 export const LayoutContainer = styled.div`
   width: 989px;
   margin: 0 auto;
+  min-height: 796px;
+  padding-bottom: 130px;
 `
 
 export const LayoutTitle = styled.div`
