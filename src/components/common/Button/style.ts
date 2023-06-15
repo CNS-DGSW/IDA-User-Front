@@ -55,6 +55,10 @@ const getColor: Record<
 export const ButtonStyle = styled.button<ButtonProps>`
   ${({ size }) => size && getSize[size]}
   ${({ color }) => color && getColor[color]};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border: ${({
     border,
     theme: { colors },
