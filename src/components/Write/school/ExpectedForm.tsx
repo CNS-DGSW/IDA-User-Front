@@ -1,5 +1,6 @@
 import Input from "@/components/common/Input"
 import InputWrapper from "@/components/common/InputWrapper"
+import Select from "@/components/common/Select"
 import React from "react"
 import { SchoolButton, Wrap } from "./style"
 
@@ -19,10 +20,10 @@ const ExpectedForm = () => {
       </Wrap>
       <Wrap justify="space-between">
         <InputWrapper title="지역명 ( 시도 )">
-          <input type="text" />
+          <Select list={[1, 2, 3, 4]} />
         </InputWrapper>
         <InputWrapper title="시군구">
-          <input type="text" />
+          <Select list={[1, 2, 3, 4]} />
         </InputWrapper>
         <InputWrapper title="학교 연락처">
           <Input type="text" width={208} />
