@@ -7,7 +7,7 @@ import * as S from "./style"
  * @todo
  * 원서 저장 및 미리보기, 출력 로직 제작
  */
-const Aside = () => {
+export const Aside = () => {
   const { currentPage, moveNextPage, movePreviousPage } = usePageContext()
 
   return (
@@ -47,5 +47,3 @@ const Aside = () => {
     </S.AsideBox>
   )
 }
-
-export default Aside
