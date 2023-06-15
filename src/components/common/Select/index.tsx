@@ -22,7 +22,7 @@ const Select = ({ list }: { list: any[] }) => {
       {isOpen && (
         <ListContainer>
           {list?.map((v) => (
-            <ListItem>{v}</ListItem>
+            <ListItem key={v}>{v}</ListItem>
           ))}
         </ListContainer>
       )}
