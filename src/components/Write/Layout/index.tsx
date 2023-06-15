@@ -1,10 +1,7 @@
 import PageProvider from "@/components/common/Write/PageProvider"
-import React, { PropsWithChildren } from "react"
+import React from "react"
 import { LayoutContainer, LayoutTitle, WriteContainer } from "./style"
-
-interface WriteLayoutProps extends PropsWithChildren {
-  title: string
-}
+import { WriteLayoutProps } from "./types"
 
 /**
  *
