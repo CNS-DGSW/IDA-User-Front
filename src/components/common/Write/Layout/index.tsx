@@ -1,21 +1,22 @@
 import Footer from "@/components/common/Footer"
 import PageProvider from "@/components/common/Write/PageProvider"
-import React from "react"
-import { LayoutContainer, LayoutTitle, WriteContainer } from "./style"
-import { WriteLayoutProps } from "./types"
+import React, { PropsWithChildren } from "react"
+import { LayoutContainer, WriteContainer } from "./style"
 
 /**
  *
- * @todo write nav 생성, 원서 접수 current 컴포넌트 check
+ * @todo write nav 생성
  */
-const WriteLayout = ({ children, title }: WriteLayoutProps) => {
+const WriteLayout = ({ children }: PropsWithChildren) => {
   return (
     <>
       <PageProvider>
         <LayoutContainer>
-          <LayoutTitle>{title}</LayoutTitle>
+          <PageProvider.LayoutTitle />
           <WriteContainer>
-            {children}
+            <PageProvider.WriteCurrentPage>
+              {children}
+            </PageProvider.WriteCurrentPage>
             <PageProvider.Aside />
           </WriteContainer>
         </LayoutContainer>
