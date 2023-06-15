@@ -7,7 +7,7 @@ export const LayoutContainer = styled.div`
   padding-bottom: 130px;
 `
 
-export const LayoutTitle = styled.div`
+export const LayoutTitleStyle = styled.div`
   font-weight: 600;
   font-size: 32px;
   line-height: 38px;

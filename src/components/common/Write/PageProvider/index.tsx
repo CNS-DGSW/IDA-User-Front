@@ -1,6 +1,8 @@
 import usePage from "@/hooks/Write/usePage"
 import React, { createContext, PropsWithChildren, useContext } from "react"
 import { Aside } from "../Aside"
+import { WriteCurrentPage } from "../currentPage"
+import { LayoutTitle } from "../Title"
 
 export interface PageContextType {
   currentPage: number
@@ -33,4 +35,8 @@ const PageProvider = ({ children }: PropsWithChildren<unknown>) => {
   )
 }
 
-export default Object.assign(PageProvider, { Aside })
+export default Object.assign(PageProvider, {
+  Aside,
+  WriteCurrentPage,
+  LayoutTitle,
+})
