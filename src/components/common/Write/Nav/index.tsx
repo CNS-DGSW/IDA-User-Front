@@ -18,7 +18,7 @@ export const WriteNav = () => {
   return (
     <S.WriteNavStyle>
       {NavKind.map((v, idx) => (
-        <S.Wrap colors={idx + 1 === currentPage}>
+        <S.Wrap colors={idx + 1 === currentPage} key={v}>
           {idx + 1 > 1 && <S.Line colors={idx + 1 <= currentPage} />}
           <S.Circle
             onClick={movePage}
