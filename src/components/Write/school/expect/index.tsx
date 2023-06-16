@@ -1,12 +1,22 @@
+import React from "react"
 import Input from "@/components/common/Input"
 import InputWrapper from "@/components/common/InputWrapper"
 import Select from "@/components/common/Select"
-import React from "react"
-import * as S from "./style"
+import * as S from "../style"
+import { localDetail, LocalKind } from "@/constants/Write/localKindConstant"
+import useChange from "@/hooks/useChange"
+import useLocal from "../hooks/useLocal"
+import Card from "@/components/common/Card"
 
 const ExpectedForm = () => {
+  const [schoolContact, changesShoolContact] = useChange()
+  const [teacherName, changeTeacherName] = useChange()
+  const [teacherContact, changeTeacherContact] = useChange()
+
+  const { changeDetailLocal, changeLocal, detailLocal, local } = useLocal()
+
   return (
-    <>
+    <Card>
       <S.Wrap justify="space-between">
         <InputWrapper title="출신 중학교명">
           <S.Wrap>
@@ -20,24 +30,28 @@ const ExpectedForm = () => {
       </S.Wrap>
       <S.Wrap justify="space-between">
         <InputWrapper title="지역명 ( 시도 )">
-          <Select list={[1, 2, 3, 4]} />
+          <Select list={LocalKind} value={local} changeEvent={changeLocal} />
         </InputWrapper>
         <InputWrapper title="시군구">
-          <Select list={[1, 2, 3, 4]} />
+          <Select
+            list={local ? localDetail[local] : ["지역명을 선택해주세요"]}
+            value={detailLocal}
+            changeEvent={changeDetailLocal}
+          />
         </InputWrapper>
         <InputWrapper title="학교 연락처">
-          <Input type="text" width={208} />
+          <Input type="text" width={208} changeEvent={changesShoolContact} />
         </InputWrapper>
       </S.Wrap>
       <S.Wrap justify="space-between">
         <InputWrapper title="담임 성명">
-          <Input type="text" />
+          <Input type="text" changeEvent={changeTeacherName} />
         </InputWrapper>
         <InputWrapper title="담임 연락처">
-          <Input type="text" />
+          <Input type="text" changeEvent={changeTeacherContact} />
         </InputWrapper>
       </S.Wrap>
-    </>
+    </Card>
   )
 }
 
