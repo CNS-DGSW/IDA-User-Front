@@ -9,9 +9,9 @@ import useLocal from "../hooks/useLocal"
 import Card from "@/components/common/Card"
 
 const ExpectedForm = () => {
-  const [schoolContact, changesShoolContact] = useChange()
-  const [teacherName, changeTeacherName] = useChange()
-  const [teacherContact, changeTeacherContact] = useChange()
+  const [, changesShoolContact] = useChange()
+  const [, changeTeacherName] = useChange()
+  const [, changeTeacherContact] = useChange()
 
   const { changeDetailLocal, changeLocal, detailLocal, local } = useLocal()
 

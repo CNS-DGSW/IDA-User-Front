@@ -1,11 +1,12 @@
-import styled, {
-  css,
+import styled, { css } from "styled-components"
+import type {
   FlattenInterpolation,
   FlattenSimpleInterpolation,
   ThemeProps,
 } from "styled-components"
-import { ButtonProps } from "./types"
-import { ThemeType } from "@dgswcns/design-token"
+import type { ThemeType } from "@dgswcns/design-token"
+
+import type { ButtonProps } from "./types"
 
 type SizeType = "xs" | "sm" | "md" | "lg"
 type ButtonColorType = "primary" | "second" | "third"

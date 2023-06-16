@@ -5,7 +5,7 @@ import useChange from "@/hooks/useChange"
 import React from "react"
 
 const Examination = () => {
-  const [pass, setPass] = useChange()
+  const [, setPass] = useChange()
 
   return (
     <Card>

@@ -1,5 +1,7 @@
 import Image from "next/image"
-import React, { MouseEventHandler, useRef, useState } from "react"
+import React, { useRef, useState } from "react"
+import type { MouseEventHandler } from "react"
+
 import { ListContainer, ListItem, SelectContainer } from "./style"
 import selectIcon from "../../../assets/selectIcon.png"
 import { useOutsideClick } from "@/hooks/useOutsideClick"
@@ -23,7 +25,7 @@ const Select = ({ list, width, changeEvent, value }: SelectProps) => {
 
   return (
     <SelectContainer onClick={revertIsOpen} ref={selectRef} width={width}>
-      {value || "선택"}
+      {value ?? "선택"}
       <Image
         src={selectIcon}
         alt="icon"

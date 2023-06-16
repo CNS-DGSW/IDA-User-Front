@@ -1,4 +1,4 @@
-import { PageContextType } from "@/components/common/Write/PageProvider"
+import type { PageContextType } from "@/components/common/Write/PageProvider"
 import { useCallback, useState } from "react"
 
 type usePageReturn = PageContextType

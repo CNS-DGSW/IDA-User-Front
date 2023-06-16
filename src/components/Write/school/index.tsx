@@ -1,10 +1,12 @@
+import type { MouseEventHandler } from "react"
+import React, { useState } from "react"
+
 import Card from "@/components/common/Card"
-import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
-import React, { MouseEventHandler, useState } from "react"
 import Examination from "./examination"
-import ExpectedForm from "./expect"
 import GraduateForm from "./graduate"
+import ExpectedForm from "./expect"
+import InputWrapper from "@/components/common/InputWrapper"
 
 const eduObject: Readonly<Record<EduUnion, React.JSX.Element>> = {
   졸업예정: <ExpectedForm />,

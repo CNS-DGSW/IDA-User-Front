@@ -1,10 +1,5 @@
-import React, {
-  Children,
-  PropsWithChildren,
-  ReactNode,
-  useEffect,
-  useState,
-} from "react"
+import React, { Children, useEffect, useState } from "react"
+import type { PropsWithChildren, ReactNode } from "react"
 import { usePageContext } from "../PageProvider"
 
 export const WriteCurrentPage = ({ children }: PropsWithChildren) => {

@@ -4,14 +4,13 @@ import InputWrapper from "@/components/common/InputWrapper"
 import Select from "@/components/common/Select"
 import { localDetail, LocalKind } from "@/constants/Write/localKindConstant"
 import useChange from "@/hooks/useChange"
-import React from "react"
 import useLocal from "../hooks/useLocal"
 import * as S from "../style"
 
 const GraduateForm = () => {
   const { changeDetailLocal, changeLocal, detailLocal, local } = useLocal()
-  const [schoolContact, changesShoolContact] = useChange()
-  const [graduate, changeGraduate] = useChange()
+  const [, changesShoolContact] = useChange()
+  const [, changeGraduate] = useChange()
 
   return (
     <>

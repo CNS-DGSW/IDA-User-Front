@@ -1,4 +1,5 @@
-import { ChangeEventHandler, useState } from "react"
+import { useState } from "react"
+import type { ChangeEventHandler } from "react"
 
 const useChange = (): [
   string | undefined,

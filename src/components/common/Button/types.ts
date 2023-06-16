@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react"
+import type { PropsWithChildren } from "react"
 
 type SizeType = "xs" | "sm" | "md" | "lg"
 type ButtonColorType = "primary" | "second" | "third"

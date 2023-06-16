@@ -1,5 +1,6 @@
-import { LocalUnion } from "@/constants/Write/localKindConstant"
-import { MouseEventHandler, useState } from "react"
+import type { LocalUnion } from "@/constants/Write/localKindConstant"
+import type { MouseEventHandler } from "react"
+import { useState } from "react"
 
 const useLocal = () => {
   const [local, setLocal] = useState<LocalUnion>()
