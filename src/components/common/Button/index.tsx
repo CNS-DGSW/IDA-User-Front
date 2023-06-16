@@ -1,6 +1,6 @@
 import React from "react"
 import { ButtonStyle } from "./style"
-import { ButtonProps } from "./types"
+import type { ButtonProps } from "./types"
 
 export const Button = ({
   size = "md",

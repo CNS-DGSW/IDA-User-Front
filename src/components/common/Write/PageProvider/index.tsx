@@ -1,5 +1,6 @@
 import usePage from "@/hooks/Write/usePage"
-import React, { createContext, PropsWithChildren, useContext } from "react"
+import React, { createContext, useContext } from "react"
+import type { PropsWithChildren } from "react"
 import { Aside } from "../Aside"
 import { WriteCurrentPage } from "../currentPage"
 import { LayoutTitle } from "../Title"

@@ -1,4 +1,6 @@
-import React, { MouseEventHandler, PropsWithChildren, useRef } from "react"
+import React, { useRef } from "react"
+import type { MouseEventHandler, PropsWithChildren } from "react"
+
 import { RadioContainer } from "./style"
 
 interface RadioProps extends PropsWithChildren {
