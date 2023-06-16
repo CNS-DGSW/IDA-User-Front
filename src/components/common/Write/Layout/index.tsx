@@ -12,6 +12,7 @@ const WriteLayout = ({ children }: PropsWithChildren) => {
     <>
       <PageProvider>
         <LayoutContainer>
+          <PageProvider.WriteNav />
           <PageProvider.LayoutTitle />
           <WriteContainer>
             <PageProvider.WriteCurrentPage>

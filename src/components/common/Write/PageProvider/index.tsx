@@ -1,19 +1,27 @@
 import usePage from "@/hooks/Write/usePage"
-import React, { createContext, PropsWithChildren, useContext } from "react"
+import React, {
+  createContext,
+  MouseEventHandler,
+  PropsWithChildren,
+  useContext,
+} from "react"
 import { Aside } from "../Aside"
 import { WriteCurrentPage } from "../currentPage"
 import { LayoutTitle } from "../Title"
+import { WriteNav } from "../Nav"
 
 export interface PageContextType {
   currentPage: number
   moveNextPage: () => void
   movePreviousPage: () => void
+  movePage: MouseEventHandler<HTMLDivElement>
 }
 
 const PageContext = createContext<PageContextType>({
   currentPage: 1,
   moveNextPage: () => {},
   movePreviousPage: () => {},
+  movePage: () => {},
 })
 
 export const usePageContext = () => {
@@ -39,4 +47,5 @@ export default Object.assign(PageProvider, {
   Aside,
   WriteCurrentPage,
   LayoutTitle,
+  WriteNav,
 })
