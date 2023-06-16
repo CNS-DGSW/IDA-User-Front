@@ -1,5 +1,6 @@
 import type { PageContextType } from "@/components/common/Write/PageProvider"
 import { useCallback, useState } from "react"
+import type { MouseEventHandler } from "react
 
 type usePageReturn = PageContextType
 
@@ -10,7 +11,10 @@ const usePage = (): usePageReturn => {
     () => setCurrentPage((prev) => prev - 1),
     [],
   )
-  return { currentPage, moveNextPage, movePreviousPage }
+  const movePage: MouseEventHandler<HTMLDivElement> = (e) => {
+    setCurrentPage(Number((e.target as HTMLDivElement).innerText))
+  }
+  return { currentPage, moveNextPage, movePreviousPage, movePage }
 }
 
 export default usePage
