@@ -1,13 +1,17 @@
-import Card from "@/components/common/Card"
-import InputWrapper from "@/components/common/InputWrapper"
-import Radio from "@/components/common/Radio"
-import React, { MouseEventHandler, useState } from "react"
-import ExpectedForm from "./ExpectedForm"
+import type { MouseEventHandler } from "react"
+import React, { useState } from "react"
 
-const eduObject: Record<EduUnion, React.JSX.Element> = {
+import Card from "@/components/common/Card"
+import Radio from "@/components/common/Radio"
+import Examination from "./examination"
+import GraduateForm from "./graduate"
+import ExpectedForm from "./expect"
+import InputWrapper from "@/components/common/InputWrapper"
+
+const eduObject: Readonly<Record<EduUnion, React.JSX.Element>> = {
   졸업예정: <ExpectedForm />,
-  졸업생: <div></div>,
-  고입검정: <div></div>,
+  졸업생: <GraduateForm />,
+  고입검정: <Examination />,
 }
 
 type EduUnion = "졸업예정" | "졸업생" | "고입검정"
@@ -34,7 +38,7 @@ const WriteSchool = () => {
           </Radio>
         </InputWrapper>
       </Card>
-      {eduStatus && <Card>{eduObject[eduStatus]}</Card>}
+      {eduStatus && <>{eduObject[eduStatus]}</>}
     </section>
   )
 }

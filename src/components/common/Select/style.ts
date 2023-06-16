@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
-export const SelectContainer = styled.div`
-  width: 208px;
+export const SelectContainer = styled.div<{ width?: number }>`
+  width: ${({ width }) => (width ? `${width}px` : "208px")};
   height: 48px;
   background: #ffffff;
   border: 1px solid #d8dae0;
@@ -26,10 +26,12 @@ export const ListContainer = styled.ul`
   position: absolute;
   top: 100%;
   left: 0;
+  max-height: 240px;
+  overflow-y: scroll;
 `
 
-export const ListItem = styled.li`
-  width: 208px;
+export const ListItem = styled.li<{ width?: number }>`
+  width: ${({ width }) => (width ? `${width}px` : "208px")};
   height: 48px;
   padding: 0 18px;
   background: #ffffff;

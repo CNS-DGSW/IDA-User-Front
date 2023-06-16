@@ -1,4 +1,4 @@
-import { WriteTitleType } from "@/components/common/Write/Title/types"
+import type { WriteTitleType } from "@/components/common/Write/Title/types"
 
 export const titleArray: WriteTitleType = [
   "지원자 정보를 입력해 주세요.",

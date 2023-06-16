@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { InputColor } from "."
+import type { InputColor } from "."
 
 export const CustomInput = styled.input<{ background: InputColor }>`
   border: 1px solid #d8dae0;

@@ -1,6 +1,7 @@
 import Footer from "@/components/common/Footer"
 import PageProvider from "@/components/common/Write/PageProvider"
-import React, { PropsWithChildren } from "react"
+import React from "react"
+import type { PropsWithChildren } from "react"
 import { LayoutContainer, WriteContainer } from "./style"
 
 /**

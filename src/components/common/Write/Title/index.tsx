@@ -1,7 +1,7 @@
 import React from "react"
 import { usePageContext } from "../PageProvider"
 import { LayoutTitleStyle } from "../Layout/style"
-import { titleArray } from "@/constans/Write/titleConstant"
+import { titleArray } from "@/constants/Write/titleConstant"
 
 export const LayoutTitle = () => {
   const { currentPage } = usePageContext()

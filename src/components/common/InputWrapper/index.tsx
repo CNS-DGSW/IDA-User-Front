@@ -1,4 +1,6 @@
-import React, { PropsWithChildren } from "react"
+import React from "react"
+import type { PropsWithChildren } from "react"
+
 import { InputLabel, WrapperStyle, Inputs } from "./style"
 
 interface InputWrapperProps extends PropsWithChildren {
