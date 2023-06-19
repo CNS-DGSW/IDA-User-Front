@@ -1,4 +1,5 @@
-import React, { ChangeEventHandler } from "react"
+import React from "react"
+import type { ChangeEventHandler } from "react"
 import type { CSSObject } from "styled-components"
 import { TextAreaStyle } from "./style"
 

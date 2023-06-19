@@ -63,29 +63,33 @@ const SpecialScreening = () => {
           지역우선전형
         </Radio>
       </InputWrapper>
-      {["마이스터인재전형", "지역우선전형"].includes(currentSpecial!!) && (
-        <Textarea
-          height={readonlyInputSizeObject[currentSpecial as ReadonlyInputUnion]}
-          readonly
-          value={readonlyInputObject[currentSpecial as ReadonlyInputUnion]}
-          style={{ marginTop: "34px" }}
-        />
-      )}
-      {[
-        "사회통합전형 (기회균등전형)",
-        "사회통합전형 (사회다양성 전형)",
-      ].includes(currentSpecial!!) && (
-        <Select
-          changeEvent={() => {}}
-          list={
-            SpecialSelectObject[
-              currentSpecial as Exclude<SpecialTypeUnion, ReadonlyInputUnion>
-            ]
-          }
-          width={650}
-          style={{ marginTop: "34px" }}
-        />
-      )}
+      {currentSpecial &&
+        ["마이스터인재전형", "지역우선전형"].includes(currentSpecial) && (
+          <Textarea
+            height={
+              readonlyInputSizeObject[currentSpecial as ReadonlyInputUnion]
+            }
+            readonly
+            value={readonlyInputObject[currentSpecial as ReadonlyInputUnion]}
+            style={{ marginTop: "34px" }}
+          />
+        )}
+      {currentSpecial &&
+        [
+          "사회통합전형 (기회균등전형)",
+          "사회통합전형 (사회다양성 전형)",
+        ].includes(currentSpecial) && (
+          <Select
+            changeEvent={() => {}}
+            list={
+              SpecialSelectObject[
+                currentSpecial as Exclude<SpecialTypeUnion, ReadonlyInputUnion>
+              ]
+            }
+            width={650}
+            style={{ marginTop: "34px" }}
+          />
+        )}
     </Card>
   )
 }
