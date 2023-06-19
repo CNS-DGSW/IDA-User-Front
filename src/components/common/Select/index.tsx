@@ -1,6 +1,7 @@
 import Image from "next/image"
 import React, { useRef, useState } from "react"
 import type { MouseEventHandler } from "react"
+import type { CSSObject } from "styled-components"
 
 import { ListContainer, ListItem, SelectContainer } from "./style"
 import selectIcon from "../../../assets/selectIcon.png"
@@ -11,9 +12,10 @@ export interface SelectProps {
   width?: number
   value?: string
   changeEvent: MouseEventHandler<HTMLLIElement>
+  style?: CSSObject
 }
 
-const Select = ({ list, width, changeEvent, value }: SelectProps) => {
+const Select = ({ list, width, changeEvent, value, style }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const revertIsOpen = () => setIsOpen((prev) => !prev)
   const selectRef = useRef<HTMLDivElement>(null)
@@ -24,7 +26,12 @@ const Select = ({ list, width, changeEvent, value }: SelectProps) => {
   })
 
   return (
-    <SelectContainer onClick={revertIsOpen} ref={selectRef} width={width}>
+    <SelectContainer
+      onClick={revertIsOpen}
+      ref={selectRef}
+      width={width}
+      style={style}
+    >
       {value ?? "선택"}
       <Image
         src={selectIcon}
