@@ -1,5 +1,6 @@
 import React from "react"
 import type { ChangeEventHandler } from "react"
+import type { CSSObject } from "styled-components"
 
 import { CustomInput } from "./style"
 
@@ -11,20 +12,26 @@ const Input = ({
   width,
   readonly,
   changeEvent,
+  value,
+  customStyle,
 }: {
   type: string
   color?: InputColor
   width?: number
   readonly?: boolean
   changeEvent?: ChangeEventHandler<HTMLInputElement>
+  value?: string
+  customStyle?: CSSObject
 }) => {
   return (
     <CustomInput
-      background={color}
+      back={color}
       type={type}
       width={width}
       readOnly={readonly}
       onChange={changeEvent}
+      style={customStyle}
+      value={value}
     />
   )
 }

@@ -1,6 +1,6 @@
 import type { PageContextType } from "@/components/common/Write/PageProvider"
 import { useCallback, useState } from "react"
-import type { MouseEventHandler } from "react
+import type { MouseEventHandler } from "react"
 
 type usePageReturn = PageContextType
 

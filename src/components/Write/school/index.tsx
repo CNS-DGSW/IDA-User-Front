@@ -1,5 +1,4 @@
-import type { MouseEventHandler } from "react"
-import React, { useState } from "react"
+import React from "react"
 
 import Card from "@/components/common/Card"
 import Radio from "@/components/common/Radio"
@@ -7,6 +6,7 @@ import Examination from "./examination"
 import GraduateForm from "./graduate"
 import ExpectedForm from "./expect"
 import InputWrapper from "@/components/common/InputWrapper"
+import useRadio from "@/hooks/useRadio"
 
 const eduObject: Readonly<Record<EduUnion, React.JSX.Element>> = {
   졸업예정: <ExpectedForm />,
@@ -17,11 +17,7 @@ const eduObject: Readonly<Record<EduUnion, React.JSX.Element>> = {
 type EduUnion = "졸업예정" | "졸업생" | "고입검정"
 
 const WriteSchool = () => {
-  const [eduStatus, setEduStatus] = useState<EduUnion>()
-
-  const changeRadio: MouseEventHandler<HTMLInputElement> = ({ target }) => {
-    setEduStatus((target as HTMLInputElement).value as EduUnion)
-  }
+  const [eduStatus, changeRadio] = useRadio<EduUnion>()
 
   return (
     <section>

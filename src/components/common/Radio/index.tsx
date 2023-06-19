@@ -7,14 +7,15 @@ interface RadioProps extends PropsWithChildren {
   name: string
   value: string
   onClick?: MouseEventHandler
+  width?: number
 }
 
-const Radio = ({ name, children, value, onClick }: RadioProps) => {
+const Radio = ({ name, children, value, onClick, width }: RadioProps) => {
   const inputRef = useRef<HTMLInputElement>(null)
   const rangeExpansion = () => inputRef.current?.click()
 
   return (
-    <RadioContainer onClick={rangeExpansion}>
+    <RadioContainer onClick={rangeExpansion} width={width}>
       {children}
       <input
         type="radio"

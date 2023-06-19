@@ -28,14 +28,26 @@ export const ListContainer = styled.ul`
   left: 0;
   max-height: 240px;
   overflow-y: scroll;
+  border-radius: 8px;
+  border: 1px solid #d8dae0;
 `
 
 export const ListItem = styled.li<{ width?: number }>`
   width: ${({ width }) => (width ? `${width}px` : "208px")};
-  height: 48px;
+  height: 26px;
   padding: 0 18px;
   background: #ffffff;
-  border: 1px solid #d8dae0;
   display: flex;
   align-items: center;
+
+  &:hover {
+    background-color: #1485ee;
+    color: white;
+  }
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #8b939c;
 `
