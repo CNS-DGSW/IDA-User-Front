@@ -18,7 +18,7 @@ const WriteDocument = () => {
         width={650}
       />
       <InputWrapper
-        title={`자기소개서 ( ${coverLetter?.length}/1500 )`}
+        title={`자기소개서 ( ${coverLetter!.length}/1500 )`}
         style={{ marginTop: "34px" }}
       >
         <Textarea
@@ -29,7 +29,7 @@ const WriteDocument = () => {
         />
       </InputWrapper>
       <InputWrapper
-        title={`학업계획서 ( ${studyPlan?.length}/1500 )`}
+        title={`학업계획서 ( ${studyPlan!.length}/1500 )`}
         style={{ marginTop: "34px" }}
       >
         <Textarea
