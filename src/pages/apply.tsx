@@ -1,4 +1,5 @@
 import WriteLayout from "@/components/common/Write/Layout"
+import WriteDocument from "@/components/Write/document"
 import WriteSchool from "@/components/Write/school"
 import WriteType from "@/components/Write/type"
 import React from "react"
@@ -12,7 +13,7 @@ const apply = () => {
       <WriteSchool />
       <WriteType />
       <div>6</div>
-      <div>7</div>
+      <WriteDocument />
     </WriteLayout>
   )
 }
