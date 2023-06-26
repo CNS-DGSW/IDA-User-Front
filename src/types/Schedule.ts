@@ -1,4 +1,4 @@
-export type ScheduleDateInfo = {
+export interface ScheduleDateInfo  {
   start: {
     year: number
     month: number

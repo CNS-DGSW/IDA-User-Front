@@ -1,6 +1,6 @@
-import { ScheduleInfo } from "@/types/Schedule"
+import type { ScheduleInfo } from "@/types/Schedule"
 
-export const schedules: ReadonlyArray<ScheduleInfo> = [
+export const schedules:readonly ScheduleInfo[] = [
   {
     nmae: "원서 접수",
     date: {

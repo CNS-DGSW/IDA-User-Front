@@ -1,8 +1,6 @@
-import React, { PropsWithChildren } from "react"
-
+import type { ScheduleInfo } from "@/types/Schedule"
 import * as S from "./style"
 import { useSchedule } from "@/hooks/useSchedule"
-import { ScheduleInfo } from "@/types/Schedule"
 
 interface DateCheckerProps {
   schedule: ScheduleInfo
@@ -12,7 +10,6 @@ const DateChecker = ({ schedule }: DateCheckerProps) => {
   console.log(schedule)
 
   const { day } = useSchedule(schedule.date)
-  console.log(day)
 
   return (
     <S.DateCheckerLayout>
