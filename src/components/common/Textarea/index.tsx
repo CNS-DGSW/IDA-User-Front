@@ -9,6 +9,7 @@ interface TextareaProps {
   changeEvent?: ChangeEventHandler<HTMLTextAreaElement>
   style?: CSSObject
   readonly?: boolean
+  max?: number
 }
 
 const Textarea = ({
@@ -17,6 +18,7 @@ const Textarea = ({
   readonly,
   style,
   value,
+  max,
 }: TextareaProps) => {
   return (
     <TextAreaStyle
@@ -25,6 +27,7 @@ const Textarea = ({
       style={style}
       height={height}
       onChange={changeEvent}
+      maxLength={max}
     />
   )
 }
