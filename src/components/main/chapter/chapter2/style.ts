@@ -11,9 +11,9 @@ export const Chapter2Layout = styled.div`
 `
 
 export const ScheduleSection = styled.section`
-  width:100vw;
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

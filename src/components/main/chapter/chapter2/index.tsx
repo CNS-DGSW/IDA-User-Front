@@ -16,7 +16,7 @@ const Chapter2 = () => {
   return (
     <S.Chapter2Layout ref={setTarget}>
       <S.ScheduleSection>
-        <DateChecker schedule={schedules[0]}/>
+        <DateChecker schedule={schedules[0]} />
 
         {/* {
           schedules.map((schedule)=> <DateChecker schedule={schedule}/>)
