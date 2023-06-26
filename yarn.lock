@@ -1094,20 +1094,27 @@
     react-dom "^18.2.0"
     styled-components "^5.3.9"
 
-"@dgswcns/design-token@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@dgswcns/design-token/-/design-token-1.0.4.tgz#dc9c1a4138d4782f5a2177da45b0776be6bd7369"
-  integrity sha512-zkER9hjdfNG7CEOVw3h7dSL7JUd2NedJKMWMZpP8bAZboj8veCJNkk4Why9JVgcdNOrSYaCqR874MjxNyvXe6w==
+"@dgswcns/design-token@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@dgswcns/design-token/-/design-token-1.0.6.tgz#58b6eb010a4385befff9261c5c3fcd3302c60c9e"
+  integrity sha512-z2esPwftzhRp9OOsaEBmnMTMyn5TPM6XMracSiB4M+t6gwil4wcm1uRnp/J4kHThDe5sko9Wx9M2EMdl2BkTww==
   dependencies:
     styled-components "5.3.8"
 
-"@dgswcns/react-styled-theme@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@dgswcns/react-styled-theme/-/react-styled-theme-0.1.5.tgz#80451af83937e3c787c9684c0663ff32728c5649"
-  integrity sha512-JsoxUKiYBMO4IToZkqvIk5Rx8VkLP5hIGzh5LFA1EJm5hVPaMt4rc5HrUZs4mkc+cQwoukWCMeikQMYm7NCosA==
+"@dgswcns/design-token@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@dgswcns/design-token/-/design-token-1.0.7.tgz#f56cffcdbd65553a42a03f44334c2a63eb4f1251"
+  integrity sha512-n/HK0riHURU44kSQa2jUmSHrV2S5KWm/guWNPNlSwdnHhw/70l+qa12t/rTfx1uv2GG0VPMllR3PQD7VMk2N1g==
   dependencies:
-    "@dgswcns/design-token" "^1.0.4"
-    "@dgswcns/react-theming" "^0.0.4"
+    styled-components "5.3.8"
+
+"@dgswcns/react-styled-theme@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@dgswcns/react-styled-theme/-/react-styled-theme-0.1.7.tgz#18c38d17b3ff0fd4188d552b30f909dc539f5f54"
+  integrity sha512-cqpQkb57AaQ2gOzrbqlXCcCkehMEMcwGXbGjbLZVqcbsJXFEhwWo57Mn4bpwjT+X2RR0Xo4cmHwbiluIuZd5dQ==
+  dependencies:
+    "@dgswcns/design-token" "^1.0.6"
+    "@dgswcns/react-theming" "^0.0.5"
     react "^18.2.0"
     react-dom "^18.2.0"
     styled-components "^5.3.8"
@@ -1116,6 +1123,13 @@
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@dgswcns/react-theming/-/react-theming-0.0.4.tgz#1802c2f1a7ebb0306a645254fd2eb76892b5b408"
   integrity sha512-zbvBPXgFmzJzUA5FGX6UFQ9g23L5G58R9qftciAKeSP/1H7NnIWgoMFvx+cbFnLz4oUPwZinBcaVNd6nw6loIw==
+  dependencies:
+    react "^18.2.0"
+
+"@dgswcns/react-theming@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@dgswcns/react-theming/-/react-theming-0.0.5.tgz#57aa789286d43c921a5ddace9c3a9027552a5249"
+  integrity sha512-u3oE2vTNYouIsXUMELDKBmKjVg5BReF9XOR0kaPJF6yVIzUz3DLSS6EBhUSsYAYAFLBYYKVUi3DriKExmoC2uw==
   dependencies:
     react "^18.2.0"
 

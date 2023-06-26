@@ -1,12 +1,13 @@
 import { useSetRecoilState } from "recoil"
 
+import { schedules } from "@/constants/schedule"
 import useIntersectionObserver from "@/hooks/useIntersectionObserver"
 import * as S from "./style"
 import { isDarkNavbarState } from "@/atom/navBarAtom"
+import DateChecker from "./dateChecker"
 
 const Chapter2 = () => {
   const setDarkNavbarState = useSetRecoilState(isDarkNavbarState)
-
   const onIntersect: IntersectionObserverCallback = ([{ isIntersecting }]) => {
     setDarkNavbarState(!isIntersecting)
   }
@@ -14,9 +15,13 @@ const Chapter2 = () => {
   const { setTarget } = useIntersectionObserver({ onIntersect })
   return (
     <S.Chapter2Layout ref={setTarget}>
-      <div>
-        <h1>asd</h1>
-      </div>
+      <S.ScheduleSection>
+        <DateChecker schedule={schedules[0]}/>
+
+        {/* {
+          schedules.map((schedule)=> <DateChecker schedule={schedule}/>)
+        } */}
+      </S.ScheduleSection>
     </S.Chapter2Layout>
   )
 }
