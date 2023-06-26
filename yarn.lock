@@ -1084,10 +1084,10 @@
   resolved "https://registry.yarnpkg.com/@cometjs/core/-/core-2.3.2.tgz#025fd3de742dab77d4befb1f0f3dcc961191dfa7"
   integrity sha512-Plhs4vJj0M/DigLnzjV9ZGKOVpHnaO1h9fu176R4xYXGeQkHlIZmbTBnxHqPoylFPLZoBHZm1HYbXES7NT/xMg==
 
-"@dgswcns/cns-funnel@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@dgswcns/cns-funnel/-/cns-funnel-0.0.10.tgz#805fa9cb69a727006a51341cb955ed926f73ebce"
-  integrity sha512-Vw2TATghoIy1lrTChy3Ot9f+ovs/rJWUO5SBGgbDlcXNNyuTPMcity5jiuwMg7pykLUc9aLv8TuY9IOoOuo6Fw==
+"@dgswcns/cns-funnel@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@dgswcns/cns-funnel/-/cns-funnel-0.0.13.tgz#76da183bd10e4bc02e28d536b2235788a78b703a"
+  integrity sha512-2KpQaLyS70SWfdQgMp35bETmOUBSHPXCy3Ofg2kZGB1IlzWtnIpMn1oNjmTVFTuETRxyRYrbNpuD7JM2siquIA==
   dependencies:
     react "^18.2.0"
     typescript "^5.1.3"
