@@ -1,4 +1,4 @@
-export interface ScheduleDateInfo  {
+export interface ScheduleDateInfo {
   start: {
     year: number
     month: number
