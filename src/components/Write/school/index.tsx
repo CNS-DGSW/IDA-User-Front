@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { useKeyFunnel } from "@dgswcns/cns-funnel"
 
 import Card from "@/components/common/Card"
 import Radio from "@/components/common/Radio"
@@ -8,16 +9,15 @@ import ExpectedForm from "./expect"
 import InputWrapper from "@/components/common/InputWrapper"
 import useRadio from "@/hooks/useRadio"
 
-const eduObject: Readonly<Record<EduUnion, React.JSX.Element>> = {
-  졸업예정: <ExpectedForm />,
-  졸업생: <GraduateForm />,
-  고입검정: <Examination />,
-}
-
 type EduUnion = "졸업예정" | "졸업생" | "고입검정"
 
 const WriteSchool = () => {
   const [eduStatus, changeRadio] = useRadio<EduUnion>()
+  const [EduFunnel, EduStep, setEdu] = useKeyFunnel<EduUnion>()
+
+  useEffect(() => {
+    setEdu(eduStatus)
+  }, [eduStatus])
 
   return (
     <section>
@@ -34,7 +34,18 @@ const WriteSchool = () => {
           </Radio>
         </InputWrapper>
       </Card>
-      {eduStatus && <>{eduObject[eduStatus]}</>}
+
+      <EduFunnel>
+        <EduStep name="졸업예정">
+          <ExpectedForm />
+        </EduStep>
+        <EduStep name="졸업생">
+          <GraduateForm />
+        </EduStep>
+        <EduStep name="고입검정">
+          <Examination />
+        </EduStep>
+      </EduFunnel>
     </section>
   )
 }
