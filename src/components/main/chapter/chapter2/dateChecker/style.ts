@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const DateCheckerLayout = styled.div`
-  width: 481px;
+  /* width: 481px; */
   height: 537px;
   word-break: keep-all;
   margin-top: 60px;
@@ -27,7 +27,8 @@ export const DateCheckerTime = styled.h3`
   letter-spacing: -1.84px;
 `
 export const DateCheckerDateBox = styled.div``
-export const DateCheckeStartDate = styled.h2`
+
+const DateCheckerDate = styled.h2`
   color: ${({ theme }) => theme.colors.gray900};
   text-align: center;
   font-size: 47px;
@@ -36,16 +37,12 @@ export const DateCheckeStartDate = styled.h2`
   line-height: 68px;
   letter-spacing: -1.88px;
 `
-export const DateCheckerEndDate = styled.h2`
-  color: ${({ theme }) => theme.colors.gray900};
-  text-align: center;
-  font-size: 47px;
-  font-family: Pretendard;
-  font-weight: 700;
-  line-height: 68px;
-  letter-spacing: -1.88px;
-`
+
+export const DateCheckeStartDate = styled(DateCheckerDate)``
+  
+export const DateCheckerEndDate = styled(DateCheckerDate)``
 export const DateCheckerDescription = styled.p`
+  width:481px;
   color: ${({ theme }) => theme.colors.gray800};
   text-align: center;
   font-size: 20px;

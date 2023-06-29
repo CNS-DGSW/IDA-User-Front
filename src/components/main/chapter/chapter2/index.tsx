@@ -1,7 +1,7 @@
 import { useSetRecoilState } from "recoil"
 
 import { schedules } from "@/constants/schedule"
-import useIntersectionObserver from "@/hooks/useIntersectionObserver"
+import useIntersectionObserver from "@/hooks/common/useIntersectionObserver"
 import * as S from "./style"
 import { isDarkNavbarState } from "@/atom/navBarAtom"
 import DateChecker from "./dateChecker"
@@ -17,10 +17,6 @@ const Chapter2 = () => {
     <S.Chapter2Layout ref={setTarget}>
       <S.ScheduleSection>
         <DateChecker schedule={schedules[0]} />
-
-        {/* {
-          schedules.map((schedule)=> <DateChecker schedule={schedule}/>)
-        } */}
       </S.ScheduleSection>
     </S.Chapter2Layout>
   )

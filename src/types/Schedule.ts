@@ -1,18 +1,15 @@
+interface ScheduleDateDetailInfo {
+    date:string,
+    time:string
+}
+
 export interface ScheduleDateInfo {
-  start: {
-    year: number
-    month: number
-    date: number
-  }
-  end: {
-    year: number
-    month: number
-    date: number
-  }
+  start: ScheduleDateDetailInfo
+  end: ScheduleDateDetailInfo
 }
 
 export interface ScheduleInfo {
-  nmae: "원서 접수" | "1차 발표" | "2차 전형" | "최종발표"
+  name: "원서 접수" | "1차 발표" | "2차 전형" | "최종발표"
   date: ScheduleDateInfo
   description: string
 }

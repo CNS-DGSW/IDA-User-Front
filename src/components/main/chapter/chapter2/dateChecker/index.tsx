@@ -7,17 +7,16 @@ interface DateCheckerProps {
 }
 
 const DateChecker = ({ schedule }: DateCheckerProps) => {
-  console.log(schedule)
 
-  const { day } = useSchedule(schedule.date)
+  const { dDays,time,startTimeFormatted,endTimeFormatted } = useSchedule(schedule)
 
   return (
     <S.DateCheckerLayout>
-      <S.DateCheckerDay>{`D-${day}`}</S.DateCheckerDay>
-      <S.DateCheckerTime>{"23:45:12"}</S.DateCheckerTime>
+      <S.DateCheckerDay>{`D-${dDays<=0?"DAY":dDays}`}</S.DateCheckerDay>
+      <S.DateCheckerTime>{`${time}`}</S.DateCheckerTime>
       <S.DateCheckerDateBox>
-        <S.DateCheckeStartDate>10월 9일 오전 9시부터</S.DateCheckeStartDate>
-        <S.DateCheckerEndDate>10월 27일 오후 다섯시까지</S.DateCheckerEndDate>
+        <S.DateCheckeStartDate>{startTimeFormatted}부터</S.DateCheckeStartDate>
+        <S.DateCheckerEndDate>{endTimeFormatted}까지</S.DateCheckerEndDate>
       </S.DateCheckerDateBox>
       <S.DateCheckerDescription>
         {
