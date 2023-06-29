@@ -1,6 +1,6 @@
 interface ScheduleDateDetailInfo {
-    date:string,
-    time:string
+  date: string
+  time: string
 }
 
 export interface ScheduleDateInfo {

@@ -39,10 +39,10 @@ const DateCheckerDate = styled.h2`
 `
 
 export const DateCheckeStartDate = styled(DateCheckerDate)``
-  
+
 export const DateCheckerEndDate = styled(DateCheckerDate)``
 export const DateCheckerDescription = styled.p`
-  width:481px;
+  width: 481px;
   color: ${({ theme }) => theme.colors.gray800};
   text-align: center;
   font-size: 20px;

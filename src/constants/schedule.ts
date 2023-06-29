@@ -1,17 +1,17 @@
 import type { ScheduleInfo } from "@/types/Schedule"
 
-const cureentYear = new Date().getFullYear();
+const cureentYear = new Date().getFullYear()
 export const schedules: readonly ScheduleInfo[] = [
   {
     name: "원서 접수",
     date: {
       start: {
-       date:`${cureentYear}-10-01`,
-       time:"12:00:00"
+        date: `${cureentYear}-10-01`,
+        time: "12:00:00",
       },
       end: {
-        date:`${cureentYear}-06-29`,
-        time:"15:00:00"
+        date: `${cureentYear}-06-29`,
+        time: "15:00:00",
       },
     },
     description:
@@ -21,12 +21,12 @@ export const schedules: readonly ScheduleInfo[] = [
     name: "1차 발표",
     date: {
       start: {
-       date:`${cureentYear}-12-01`,
-       time:"24:00:00"
+        date: `${cureentYear}-12-01`,
+        time: "24:00:00",
       },
       end: {
-       date:`${cureentYear}-12-01`,
-       time:"24:00:00"
+        date: `${cureentYear}-12-01`,
+        time: "24:00:00",
       },
     },
     description: "",
@@ -35,12 +35,12 @@ export const schedules: readonly ScheduleInfo[] = [
     name: "2차 전형",
     date: {
       start: {
-       date:`${cureentYear}-12-01`,
-       time:"24:00:00"
+        date: `${cureentYear}-12-01`,
+        time: "24:00:00",
       },
       end: {
-       date:`${cureentYear}-12-01`,
-       time:"24:00:00"
+        date: `${cureentYear}-12-01`,
+        time: "24:00:00",
       },
     },
     description: "",
@@ -49,12 +49,12 @@ export const schedules: readonly ScheduleInfo[] = [
     name: "최종발표",
     date: {
       start: {
-       date:`${cureentYear}-12-01`,
-       time:"24:00:00"
+        date: `${cureentYear}-12-01`,
+        time: "24:00:00",
       },
       end: {
-       date:`${cureentYear}-12-1`,
-       time:"24:00:00"
+        date: `${cureentYear}-12-1`,
+        time: "24:00:00",
       },
     },
     description: "",
