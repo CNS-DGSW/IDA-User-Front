@@ -16,6 +16,8 @@ module.exports = {
   rules: {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-confusing-void-expression": "off",
   },
   settings: {
     react: {
