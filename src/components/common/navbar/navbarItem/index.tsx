@@ -2,7 +2,7 @@ import Link from "next/link"
 import type { PropsWithChildren } from "react"
 
 import * as S from "./style"
-import { useNavBar } from "@/hooks/common/useNavBar"
+import { useNavBar } from "@/hooks/useNavBar"
 
 const NavbarItem = ({
   children,

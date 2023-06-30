@@ -19,9 +19,7 @@ const DateChecker = ({ schedule }: DateCheckerProps) => {
         <S.DateCheckerEndDate>{endTimeFormatted}까지</S.DateCheckerEndDate>
       </S.DateCheckerDateBox>
       <S.DateCheckerDescription>
-        {
-          "서류는 반드시 원서접수 마감시간 이내에 학교로 도착해야 합니다.마감시간 이후 제출된 서류는 인정되지 않습니다."
-        }
+        {schedule.description}
       </S.DateCheckerDescription>
     </S.DateCheckerLayout>
   )

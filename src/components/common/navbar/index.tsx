@@ -1,7 +1,7 @@
 import NavbarItem from "./navbarItem/"
 import DGSW_LOGO from "@/assets/img/DGSW_LOGO.svg"
 import * as S from "./style"
-import { useNavBar } from "@/hooks/common/useNavBar"
+import { useNavBar } from "@/hooks/useNavBar"
 
 const NavBar = () => {
   const { checkDisabledNavbar, isDark } = useNavBar()

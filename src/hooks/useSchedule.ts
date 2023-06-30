@@ -27,19 +27,6 @@ export const useSchedule = ({ name, date, date: { end } }: ScheduleInfo) => {
     setFomated({ startTimeFormatted, endTimeFormatted })
   }, [])
 
-  switch (name) {
-    case "원서 접수":
-      break
-    case "1차 발표":
-      break
-    case "2차 전형":
-      break
-    case "최종발표":
-      break
-    default:
-      break
-  }
-
   return {
     dDays,
     time,
