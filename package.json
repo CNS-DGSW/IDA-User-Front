@@ -11,6 +11,7 @@
     "postinstall": "husky install"
   },
   "dependencies": {
+    "@dgswcns/cns-funnel": "^0.0.13",
     "@dgswcns/common-ui": "^0.1.0",
     "@dgswcns/design-token": "^1.0.7",
     "@dgswcns/react-styled-theme": "^0.1.7",

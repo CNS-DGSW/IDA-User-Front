@@ -1084,6 +1084,14 @@
   resolved "https://registry.yarnpkg.com/@cometjs/core/-/core-2.3.2.tgz#025fd3de742dab77d4befb1f0f3dcc961191dfa7"
   integrity sha512-Plhs4vJj0M/DigLnzjV9ZGKOVpHnaO1h9fu176R4xYXGeQkHlIZmbTBnxHqPoylFPLZoBHZm1HYbXES7NT/xMg==
 
+"@dgswcns/cns-funnel@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@dgswcns/cns-funnel/-/cns-funnel-0.0.13.tgz#76da183bd10e4bc02e28d536b2235788a78b703a"
+  integrity sha512-2KpQaLyS70SWfdQgMp35bETmOUBSHPXCy3Ofg2kZGB1IlzWtnIpMn1oNjmTVFTuETRxyRYrbNpuD7JM2siquIA==
+  dependencies:
+    react "^18.2.0"
+    typescript "^5.1.3"
+
 "@dgswcns/common-ui@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@dgswcns/common-ui/-/common-ui-0.1.0.tgz#6c8042944cf60a686f24f76c296229532b5df5ae"
@@ -4800,6 +4808,11 @@ typescript@^5.0.4:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.0.4.tgz#b217fd20119bd61a94d4011274e0ab369058da3b"
   integrity sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==
+
+typescript@^5.1.3:
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.1.3.tgz#8d84219244a6b40b6fb2b33cc1c062f715b9e826"
+  integrity sha512-XH627E9vkeqhlZFQuL+UsyAXEnibT0kWR2FWONlr4sTjvxyJYnyefgrkyECLzM5NenmKzRAy2rR/OlYLA1HkZw==
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
