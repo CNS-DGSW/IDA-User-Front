@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
         ${reset};
     *{
         box-sizing: border-box;
+        font-family: "Pretendard";
     }
     a {
         color:#424344;
