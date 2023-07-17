@@ -2,7 +2,7 @@ import React from "react"
 import { ButtonStyle } from "./style"
 import type { ButtonProps } from "./types"
 
-export const Button = ({
+const Button = ({
   size = "md",
   color = "primary",
   clickEvent,
@@ -28,3 +28,5 @@ export const Button = ({
     </ButtonStyle>
   )
 }
+
+export default Button
