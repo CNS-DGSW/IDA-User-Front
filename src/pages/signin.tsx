@@ -1,11 +1,8 @@
-import Signin from "@/components/signin";
+import Signin from "@/components/signin"
 
 const signin = () => {
-
-    // 로그인
-    return(
-        <Signin/>
-    )
+  // 로그인
+  return <Signin />
 }
 
-export default signin;
+export default signin
