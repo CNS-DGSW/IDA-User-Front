@@ -14,6 +14,7 @@ const Input = ({
   changeEvent,
   value,
   customStyle,
+  placeholder
 }: {
   type: string
   color?: InputColor
@@ -22,6 +23,7 @@ const Input = ({
   changeEvent?: ChangeEventHandler<HTMLInputElement>
   value?: string
   customStyle?: CSSObject
+  placeholder: string
 }) => {
   return (
     <CustomInput
@@ -32,6 +34,7 @@ const Input = ({
       onChange={changeEvent}
       style={customStyle}
       value={value}
+      placeholder={placeholder}
     />
   )
 }
