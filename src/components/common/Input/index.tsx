@@ -14,7 +14,7 @@ const Input = ({
   changeEvent,
   value,
   customStyle,
-  placeholder
+  placeholder,
 }: {
   type: string
   color?: InputColor
