@@ -1,12 +1,20 @@
 import styled from "styled-components"
 
+interface ILayoutProps {
+  isHover: boolean
+}
+
 interface IIsImportant {
   isImportant: boolean
+  isHover: boolean
 }
 
 export const MainComponentLayout = styled.div`
   width: 100%;
   border-bottom: 1px solid #e7e9ed;
+  transition: 0.3s;
+  background-color: ${(props: ILayoutProps) =>
+    props.isHover ? `rgba(231,233,237,0.5)` : `white`};
 `
 export const SubComponentLayout = styled.div`
   padding: 3%;
@@ -29,11 +37,24 @@ export const ImportantCheckBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
   ${(props: IIsImportant) =>
     props.isImportant
-      ? `
+      ? props.isHover
+        ? `
+      color: white;
+      background-color: #1485ee;
+      border: 1px solid #1485ee;
+    `
+        : `
       color: #1485ee;
       border: 1px solid #1485ee;
+    `
+      : props.isHover
+      ? `
+      color: white;
+      background-color: #808488;
+      border: 1px solid #808488;
     `
       : `
       color: #808488;
