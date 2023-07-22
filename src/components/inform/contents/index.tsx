@@ -1,21 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import * as S from "./style"
 import type { IInformContentsProps } from "../type"
 
 const InformContents = (props: IInformContentsProps) => {
-  const [isHover, setIsHover] = useState<boolean>(false)
   return (
-    <S.MainComponentLayout
-      isHover={isHover}
-      onMouseOver={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
-    >
+    <S.MainComponentLayout>
       <S.SubComponentLayout>
         <S.ContentsRow>
-          <S.ImportantCheckBox
-            isImportant={props.isImportant}
-            isHover={isHover}
-          >
+          <S.ImportantCheckBox isImportant={props.isImportant}>
             {props.isImportant ? "주요공지" : "일반공지"}
           </S.ImportantCheckBox>
           <S.InformContentsTitleParagraph>
