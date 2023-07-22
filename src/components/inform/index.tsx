@@ -6,11 +6,61 @@ import type { IInformContentsProps } from "./type"
 
 const InformPage = () => {
   const [informData] = useState<IInformContentsProps[]>([
-    { title: "입학전형 관련 공지", date: "2023/10/01", isImportant: true },
-    { title: "입학전형 관련 공지2", date: "2023/10/01", isImportant: false },
-    { title: "입학전형 관련 공지3", date: "2023/10/01", isImportant: true },
-    { title: "입학전형 관련 공지4", date: "2023/10/01", isImportant: false },
-    { title: "입학전형 관련 공지5", date: "2023/10/01", isImportant: false },
+    {
+      title: "입학전형 관련 공지",
+      date: "2023/10/01",
+      isImportant: true,
+    },
+    {
+      title: "입학전형 관련 공지2",
+      date: "2023/10/01",
+      isImportant: false,
+    },
+    {
+      title: "입학전형 관련 공지3",
+      date: "2023/10/01",
+      isImportant: true,
+    },
+    {
+      title: "입학전형 관련 공지4",
+      date: "2023/10/01",
+      isImportant: false,
+    },
+    {
+      title: "입학전형 관련 공지5",
+      date: "2023/10/01",
+      isImportant: false,
+    },
+    {
+      title: "입학전형 관련 공지3",
+      date: "2023/10/01",
+      isImportant: true,
+    },
+    {
+      title: "입학전형 관련 공지4",
+      date: "2023/10/01",
+      isImportant: true,
+    },
+    {
+      title: "입학전형 관련 공지5",
+      date: "2023/10/01",
+      isImportant: true,
+    },
+    {
+      title: "입학전형 관련 공지3",
+      date: "2023/10/01",
+      isImportant: true,
+    },
+    {
+      title: "입학전형 관련 공지4",
+      date: "2023/10/01",
+      isImportant: false,
+    },
+    {
+      title: "입학전형 관련 공지5",
+      date: "2023/10/01",
+      isImportant: true,
+    },
   ])
   return (
     <S.MainComponentLayout>
