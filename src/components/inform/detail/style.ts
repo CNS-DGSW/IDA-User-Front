@@ -73,6 +73,7 @@ export const InformDetailDateContextParagraph = styled.p`
   font-size: 1rem;
   color: #808488;
 `
+
 export const InformDetailContextParagraph = styled.p`
   width: 100%;
   min-height: 70%;
