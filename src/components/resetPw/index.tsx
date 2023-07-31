@@ -1,9 +1,9 @@
-import { useState } from "react"
+// import { useState } from "react"
 import Input from "../common/Input"
 import * as S from "./style"
 
 const ResetPw = () => {
-  //const [isEmailAuth, SetIsEmailAuth] = useState(true)
+  // const [isEmailAuth, SetIsEmailAuth] = useState(true)
   const isEmailAuth = true
 
   return (
