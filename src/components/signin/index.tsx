@@ -7,8 +7,18 @@ const Signin = () => {
   return (
     <S.SigninLayout>
       <S.DGSWLOGO />
-      <Input placeholder="이메일을 입력하세요" type="text" width={390} customStyle={{"height":"56px", "margin-bottom":"18px"}}/>
-      <Input placeholder="비밀번호를 입력하세요" type="password" width={390} customStyle={{"height":"56px"}}/>
+      <Input
+        placeholder="이메일을 입력하세요"
+        type="text"
+        width={390}
+        customStyle={{ height: "56px", "margin-bottom": "18px" }}
+      />
+      <Input
+        placeholder="비밀번호를 입력하세요"
+        type="password"
+        width={390}
+        customStyle={{ height: "56px" }}
+      />
       <S.SubmitBtn>가입하기</S.SubmitBtn>
       <S.NavigateList>
         <S.NavigateLink href="/resetPw">비밀번호 찾기</S.NavigateLink>

@@ -16,7 +16,7 @@ export const DGSWLOGO = styled(DGSW)`
 `
 
 export const StyledInput = styled.input`
-    background-color: pink;
+  background-color: pink;
 `
 
 export const ValueInput = styled.input`
@@ -45,13 +45,13 @@ export const SubmitBtn = styled.button`
 
   border: none;
   border-radius: 14px;
-  background: #1485EE;
+  background: #1485ee;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  color: #FFF;
+  color: #fff;
   font-size: 20px;
   font-weight: 700;
 `

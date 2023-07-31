@@ -1,9 +1,7 @@
 import ResetPw from "@/components/resetPw"
 
 const resetPw = () => {
-    return(
-        <ResetPw/>
-    )
+  return <ResetPw />
 }
 
 export default resetPw
