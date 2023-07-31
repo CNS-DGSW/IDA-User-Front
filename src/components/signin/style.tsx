@@ -1,20 +1,27 @@
-import Image from "next/image"
 import Link from "next/link"
 import styled from "styled-components"
+import DGSW from "@/assets/DGSWBlue.svg"
 
 export const SigninLayout = styled.div`
+  margin-top: 18vh;
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 `
 
-export const ContentBox = styled.div``
+export const DGSWLOGO = styled(DGSW)`
+  margin-bottom: 80px;
+`
 
-export const LogoImg = styled(Image)`
-  /* width: 213px;
-    height: 48px; */
+export const StyledInput = styled.input`
+    background-color: pink;
 `
 
 export const ValueInput = styled.input`
+  margin-bottom: 18px;
+
   width: 24.3rem;
   height: 3.5rem;
 
@@ -31,10 +38,33 @@ export const ValueInput = styled.input`
 `
 
 export const SubmitBtn = styled.button`
+  margin-top: 28px;
+
   width: 390px;
   height: 56px;
+
+  border: none;
+  border-radius: 14px;
+  background: #1485EE;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 700;
 `
 
-export const NavigateRow = styled.div``
+export const NavigateList = styled.ul`
+  margin-top: 35px;
 
-export const NavigateBtn = styled(Link)``
+  display: flex;
+  justify-content: center;
+`
+
+export const NavigateLink = styled(Link)``
+
+export const NavigateItem = styled.li`
+  margin: 0 13px;
+`
