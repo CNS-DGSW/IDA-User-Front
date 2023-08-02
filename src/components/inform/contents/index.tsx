@@ -15,8 +15,8 @@ const InformContents = (props: IInformContentsProps) => {
     <S.MainComponentLayout onClick={InformDetailHyperLinkHandler}>
       <S.SubComponentLayout>
         <S.ContentsRow>
-          <S.ImportantCheckBox isImportant={props.isImportant}>
-            {props.isImportant ? "주요공지" : "일반공지"}
+          <S.ImportantCheckBox isImportant={props.important}>
+            {props.important ? "주요공지" : "일반공지"}
           </S.ImportantCheckBox>
           <S.InformContentsTitleParagraph>
             {props.title}

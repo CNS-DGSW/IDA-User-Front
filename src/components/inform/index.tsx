@@ -1,78 +1,29 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Footer from "../common/Footer"
 import * as S from "./style"
 import InformContents from "./contents"
 import type { IInformContentsProps } from "./type"
+import InformData from "./inform.dummy.json"
 
 const InformPage = () => {
-  const [informData] = useState<IInformContentsProps[]>([
-    {
-      title: "입학전형 관련 공지",
-      date: "2023/10/01",
-      isImportant: true,
-    },
-    {
-      title: "입학전형 관련 공지2",
-      date: "2023/10/01",
-      isImportant: false,
-    },
-    {
-      title: "입학전형 관련 공지3",
-      date: "2023/10/01",
-      isImportant: true,
-    },
-    {
-      title: "입학전형 관련 공지4",
-      date: "2023/10/01",
-      isImportant: false,
-    },
-    {
-      title: "입학전형 관련 공지5",
-      date: "2023/10/01",
-      isImportant: false,
-    },
-    {
-      title: "입학전형 관련 공지3",
-      date: "2023/10/01",
-      isImportant: true,
-    },
-    {
-      title: "입학전형 관련 공지4",
-      date: "2023/10/01",
-      isImportant: true,
-    },
-    {
-      title: "입학전형 관련 공지5",
-      date: "2023/10/01",
-      isImportant: true,
-    },
-    {
-      title: "입학전형 관련 공지3",
-      date: "2023/10/01",
-      isImportant: true,
-    },
-    {
-      title: "입학전형 관련 공지4",
-      date: "2023/10/01",
-      isImportant: false,
-    },
-    {
-      title: "입학전형 관련 공지5",
-      date: "2023/10/01",
-      isImportant: true,
-    },
-  ])
+  const [informData, setInformData] = useState<IInformContentsProps[]>([])
+  useEffect(() => {
+    const dummyData: IInformContentsProps[] = [...InformData.inform]
+    setInformData([...dummyData])
+  }, [])
   return (
     <S.MainComponentLayout>
       <S.InformContentsCol>
         <S.InformNotificationIconBox />
         <S.InformTitleParagraph>공지사항</S.InformTitleParagraph>
-        {informData.map((EachInformData, index) => (
+        {informData?.map((EachInformData, index) => (
           <InformContents
             key={index}
             title={EachInformData.title}
             date={EachInformData.date}
-            isImportant={EachInformData.isImportant}
+            important={EachInformData.important}
+            context={EachInformData.context}
+            idx={EachInformData.idx}
           />
         ))}
       </S.InformContentsCol>
