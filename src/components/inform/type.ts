@@ -1,5 +1,7 @@
 export interface IInformContentsProps {
   title: string
+  context: string
+  idx: number
   date: string
-  isImportant: boolean
+  important: boolean
 }
