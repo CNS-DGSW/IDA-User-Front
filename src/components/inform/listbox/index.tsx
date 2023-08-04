@@ -6,10 +6,7 @@ import { useRouter } from "next/router"
 const InformContents = (props: IInformContentsProps) => {
   const router = useRouter()
   const InformDetailHyperLinkHandler = () => {
-    router
-      .push("/inform/1")
-      .then((e) => console.log(e))
-      .catch((e) => console.log(e))
+    router.push(`/inform/1`)
   }
   return (
     <S.MainComponentLayout onClick={InformDetailHyperLinkHandler}>

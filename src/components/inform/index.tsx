@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Footer from "../common/Footer"
 import * as S from "./style"
-import InformContents from "./contents"
+import InformContents from "./listbox"
 import type { IInformContentsProps } from "./type"
 import InformData from "./inform.dummy.json"
 
