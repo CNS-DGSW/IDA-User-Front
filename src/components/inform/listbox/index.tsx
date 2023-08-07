@@ -3,11 +3,16 @@ import * as S from "./style"
 import type { IInformContentsProps } from "../type"
 import { useRouter } from "next/router"
 
-const InformContents = (props: IInformContentsProps) => {
+const InformContents = ({
+  idx,
+  important,
+  title,
+  date,
+}: IInformContentsProps) => {
   const router = useRouter()
   const InformDetailHyperLinkHandler = () => {
     router
-      .push(`/inform/${props.idx}`)
+      .push(`/inform/${idx}`)
       .then(() => {})
       .catch(() => {})
   }
@@ -15,17 +20,17 @@ const InformContents = (props: IInformContentsProps) => {
     <S.MainComponentLayout onClick={InformDetailHyperLinkHandler}>
       <S.SubComponentLayout>
         <S.ContentsRow>
-          <S.ImportantCheckBox isImportant={props.important}>
-            {props.important ? "주요공지" : "일반공지"}
+          <S.ImportantCheckBox isImportant={important}>
+            {important ? "주요공지" : "일반공지"}
           </S.ImportantCheckBox>
           <S.InformContentsTitleParagraph>
-            {props.title}
+            {title}
           </S.InformContentsTitleParagraph>
         </S.ContentsRow>
         <S.ContentsRow>
           <S.InformContentsDateIconBox />
           <S.InformContentsDateContextParagraph>
-            {props.date}
+            {date}
           </S.InformContentsDateContextParagraph>
         </S.ContentsRow>
       </S.SubComponentLayout>
