@@ -9,6 +9,7 @@ export const MainComponentLayout = styled.div`
   border-bottom: 1px solid #e7e9ed;
   transition: 0.3s;
 `
+
 export const SubComponentLayout = styled.div`
   padding: 3%;
   width: 94%;

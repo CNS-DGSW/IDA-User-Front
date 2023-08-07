@@ -2,20 +2,14 @@ import React, { useEffect, useState } from "react"
 import * as S from "./style"
 import type { IInformContentsProps } from "../type"
 import Footer from "@/components/common/Footer"
-import { useRouter } from "next/router"
 import InformData from "../inform.dummy.json"
+import Link from "next/link"
+
 const InformDetailPage = () => {
-  const router = useRouter()
   const [informData] = useState<IInformContentsProps>(InformData.inform[0])
 
   useEffect(() => {}, [])
 
-  const InformHyperLinkHandler = () => {
-    router
-      .push("/inform")
-      .then((e) => console.log(e))
-      .catch((e) => console.log(e))
-  }
   return (
     <S.MainComponentLayout>
       <S.InformDetailContentsCol>
@@ -41,9 +35,11 @@ const InformDetailPage = () => {
         <S.InformDetailContextParagraph>
           {informData.context}
         </S.InformDetailContextParagraph>
-        <S.InformDetailBackHyperlinkBox onClick={InformHyperLinkHandler}>
-          {"< 공지사항으로 돌아가기"}
-        </S.InformDetailBackHyperlinkBox>
+        <Link href="/inform">
+          <S.InformDetailBackHyperlinkBox>
+            {"< 공지사항으로 돌아가기"}
+          </S.InformDetailBackHyperlinkBox>
+        </Link>
       </S.InformDetailContentsCol>
       <Footer />
     </S.MainComponentLayout>
