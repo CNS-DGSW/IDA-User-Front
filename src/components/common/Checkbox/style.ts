@@ -4,7 +4,7 @@ export const CheckboxLayout = styled.div`
   display: inline-block;
   vertical-align: middle;
 `
-export const HiddenCheckBox = styled.input`
+export const HiddenCheckBox = styled.input.attrs({ type: "checkbox" })`
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;

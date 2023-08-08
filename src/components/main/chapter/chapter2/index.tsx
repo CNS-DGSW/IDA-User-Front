@@ -5,12 +5,19 @@ import useIntersectionObserver from "@/hooks/common/useIntersectionObserver"
 import * as S from "./style"
 import { isDarkNavbarState } from "@/atom/navBarAtom"
 import DateChecker from "./dateChecker"
+import { useEffect } from "react"
 
 const Chapter2 = () => {
   const setDarkNavbarState = useSetRecoilState(isDarkNavbarState)
   const onIntersect: IntersectionObserverCallback = ([{ isIntersecting }]) => {
     setDarkNavbarState(!isIntersecting)
   }
+
+  useEffect(() => {
+    return () => {
+      setDarkNavbarState(false)
+    }
+  }, [])
 
   const { setTarget } = useIntersectionObserver({ onIntersect })
   return (
