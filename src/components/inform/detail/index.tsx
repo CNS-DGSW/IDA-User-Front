@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import * as S from "./style"
 import type { IInformContentsProps } from "../type"
-import Footer from "@/components/common/Footer"
 import InformData from "../inform.dummy.json"
 import Link from "next/link"
 
 const InformDetailPage = () => {
   const [informData] = useState<IInformContentsProps>(InformData.inform[0])
-
-  useEffect(() => {}, [])
 
   return (
     <S.MainComponentLayout>
@@ -41,7 +38,6 @@ const InformDetailPage = () => {
           </S.InformDetailBackHyperlinkBox>
         </Link>
       </S.InformDetailContentsCol>
-      <Footer />
     </S.MainComponentLayout>
   )
 }
