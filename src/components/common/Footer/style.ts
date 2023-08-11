@@ -5,7 +5,6 @@ export const FooterLayout = styled.div`
   width: 100%;
   height: 284px;
   background: #f2f4f8;
-
   display: flex;
   justify-content: center;
   align-items: center;
