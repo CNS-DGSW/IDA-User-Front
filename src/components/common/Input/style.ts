@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import type { InputColor } from "."
 
-export const CustomInput = styled.input<{ back: InputColor }>`
-  border: 1px solid #d8dae0;
+export const CustomInput = styled.input<{ back: InputColor; isError: boolean }>`
+  border: 1px solid;
   background: ${({ back }) => (back === "gray" ? "#f2f3f5" : "white")};
 
   width: ${({ width }) => (width ? `${width}px` : "310px")};
@@ -10,4 +10,5 @@ export const CustomInput = styled.input<{ back: InputColor }>`
 
   border-radius: 8px;
   color: #8b939c;
+  border-color: ${({ isError }) => (isError ? "#e41616" : "#d8dae0")};
 `

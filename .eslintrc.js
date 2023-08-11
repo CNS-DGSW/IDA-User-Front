@@ -14,6 +14,7 @@ module.exports = {
 
   plugins: ["react", "@typescript-eslint"],
   rules: {
+    "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
