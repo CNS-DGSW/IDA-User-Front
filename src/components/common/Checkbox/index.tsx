@@ -1,4 +1,4 @@
-import { ChangeEvent, InputHTMLAttributes } from "react"
+import type { ChangeEvent, InputHTMLAttributes } from "react"
 import { forwardRef } from "react"
 import * as S from "./style"
 import { BsCheckLg } from "react-icons/bs"
