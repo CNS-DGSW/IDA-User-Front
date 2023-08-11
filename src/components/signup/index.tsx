@@ -144,9 +144,9 @@ const SignUp = () => {
                 onBlur={agreement.onBlur}
                 ref={agreement.ref}
                 checked={fullAgreement}
-                onChange={(event) => {
+                onChange={async (event) => {
                   handleChangeFullAgreement(event)
-                  agreement.onChange(event)
+                  await agreement.onChange(event)
                 }}
               />
             </S.AgreementCheckBoxLabel>
