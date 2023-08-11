@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import type { ChangeEvent } from "react"
 
 const useSignup = () => {
@@ -15,10 +15,14 @@ const useSignup = () => {
     },
     { title: "[필수] 바탕 개인정보 취급방침 동의", checked: false },
   ])
+  useEffect(() => {
+    isAllCheckd() ? setFullAgreement(true) : setFullAgreement(false)
+  }, [agreements])
 
   const handleCheckboxChange = ({
     target: { name },
   }: ChangeEvent<HTMLInputElement>) => {
+    console.log(name)
     setAgreements((prev) => {
       const newData = prev.map((agreement, index) => {
         const { title, checked } = agreement
@@ -31,17 +35,20 @@ const useSignup = () => {
   const handleChangeFullAgreement = ({
     target: { checked },
   }: ChangeEvent<HTMLInputElement>) => {
-    setFullAgreement(checked)
-    if (!fullAgreement) {
-      setAgreements((prev) =>
-        prev.map((item) => {
-          return { ...item, checked: true }
-        }),
-      )
-    } else {
+    if (isAllCheckd()) {
+      // 모두 끄기
+      setFullAgreement(true)
       setAgreements((prev) =>
         prev.map((item) => {
           return { ...item, checked: false }
+        }),
+      )
+    } else {
+      //
+      setFullAgreement(false)
+      setAgreements((prev) =>
+        prev.map((item) => {
+          return { ...item, checked: true }
         }),
       )
     }
