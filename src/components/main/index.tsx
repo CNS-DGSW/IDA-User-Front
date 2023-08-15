@@ -1,7 +1,7 @@
 import * as S from "./style"
 import Chapter1 from "./chapter/chapter1"
 import Chapter2 from "./chapter/chapter2"
-import Chatbot from "@/components/chatBot"
+import Chatbot from "@/components/ChatBot"
 import Footer from "@/components/common/Footer/index"
 
 const Main = () => {
