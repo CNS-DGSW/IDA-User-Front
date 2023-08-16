@@ -31,6 +31,9 @@ const getSize: Record<SizeType, FlattenSimpleInterpolation> = {
   `,
 }
 
+/**
+ * @todo design token 수정 후 theme 적용
+ */
 const getColor: Record<
   ButtonColorType,
   FlattenInterpolation<ThemeProps<ThemeType>>
@@ -41,9 +44,8 @@ const getColor: Record<
     color: ${({ theme: { colors } }: ThemeProps<ThemeType>) => colors.white};
   `,
   second: css`
-    background-color: ${({ theme: { colors } }: ThemeProps<ThemeType>) =>
-      colors.white};
-    color: ${({ theme: { colors } }: ThemeProps<ThemeType>) => colors.blue400};
+    background-color: #e8f4ff;
+    color: #1485ee;
   `,
   third: css`
     background-color: #1e2f44;
