@@ -26,13 +26,10 @@ export const SignUpInputBox = styled.div`
   position: relative;
 `
 
-export const SignUpErrorMessage = styled.p`
+export const SignUpErrorMessageLayout = styled.div`
   position: absolute;
-  color: #e41616;
   bottom: -30px;
   left: 20px;
-  font-family: Pretendard;
-  font-size: 13px;
 `
 
 export const SignUpEmailCertificationBox = styled.div`

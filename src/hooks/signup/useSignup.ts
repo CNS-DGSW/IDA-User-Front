@@ -15,14 +15,18 @@ const useSignup = () => {
     },
     { title: "[필수] 바탕 개인정보 취급방침 동의", checked: false },
   ])
+
+  const checkAllSelected = () => {
+    return agreements.every(({ checked }) => checked === true)
+  }
+
   useEffect(() => {
-    isAllCheckd() ? setFullAgreement(true) : setFullAgreement(false)
+    setFullAgreement(checkAllSelected())
   }, [agreements])
 
   const handleCheckboxChange = ({
     target: { name },
   }: ChangeEvent<HTMLInputElement>) => {
-    console.log(name)
     setAgreements((prev) => {
       const newData = prev.map((agreement, index) => {
         const { title, checked } = agreement
@@ -35,36 +39,21 @@ const useSignup = () => {
   const handleChangeFullAgreement = ({
     target: { checked },
   }: ChangeEvent<HTMLInputElement>) => {
-    if (isAllCheckd()) {
-      // 모두 끄기
-      setFullAgreement(true)
-      setAgreements((prev) =>
-        prev.map((item) => {
-          return { ...item, checked: false }
-        }),
-      )
-    } else {
-      //
-      setFullAgreement(false)
-      setAgreements((prev) =>
-        prev.map((item) => {
-          return { ...item, checked: true }
-        }),
-      )
-    }
-  }
-
-  const isAllCheckd = () => {
-    return (
-      agreements[0].checked && agreements[1].checked && agreements[2].checked
+    const checkState = checkAllSelected()
+    setFullAgreement(checkState)
+    setAgreements((prev) =>
+      prev.map((item) => {
+        return { ...item, checked: !checkState }
+      }),
     )
   }
+
   return {
     fullAgreement,
     agreements,
     handleCheckboxChange,
     handleChangeFullAgreement,
-    isAllCheckd,
+    checkAllSelected,
   }
 }
 

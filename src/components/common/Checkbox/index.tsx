@@ -12,19 +12,21 @@ interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ checked, onChange, name, ...checkBoxProps }, ref) => {
     return (
-      <S.CheckboxLayout>
-        <S.HiddenCheckBox
-          checked={checked}
-          ref={ref}
-          type="checkbox"
-          onChange={onChange}
-          name={name}
-          {...checkBoxProps}
-        />
-        <S.StyledCheckbox checked={checked}>
-          <BsCheckLg style={{ color: "white" }} />
-        </S.StyledCheckbox>
-      </S.CheckboxLayout>
+      <label>
+        <S.CheckboxLayout>
+          <S.HiddenCheckBox
+            checked={checked}
+            ref={ref}
+            type="checkbox"
+            onChange={onChange}
+            name={name}
+            {...checkBoxProps}
+          />
+          <S.StyledCheckbox checked={checked}>
+            <BsCheckLg style={{ color: "white" }} />
+          </S.StyledCheckbox>
+        </S.CheckboxLayout>
+      </label>
     )
   },
 )

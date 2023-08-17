@@ -8,7 +8,7 @@ const Layout = ({ children }: PropsWithChildren) => {
     <>
       <Navbar />
       <main>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
