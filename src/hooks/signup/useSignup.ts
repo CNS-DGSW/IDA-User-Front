@@ -17,7 +17,7 @@ const useSignup = () => {
   ])
 
   const checkAllSelected = () => {
-    return agreements.every(({ checked }) => checked === true)
+    return agreements.every(({ checked }) => checked)
   }
 
   useEffect(() => {
