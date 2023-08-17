@@ -1,16 +1,35 @@
 import styled, { css, keyframes } from "styled-components"
 
-export const NavbarLayout = styled.nav<{ isDisabled: boolean }>`
+export const NavbarLayout = styled.nav<{
+  isDisabled: boolean
+  isDark: boolean
+  isFiexd: boolean
+}>`
+  display: ${({ isDisabled }) => (isDisabled ? "none" : "flex")};
   width: 100vw;
   height: 60px;
-  position: fixed;
+  top: 0;
+  margin-bottom: 20px;
   z-index: 1;
   font-size: 14px;
   font-weight: 600;
   background-color: transparent;
-  display: ${({ isDisabled }) => (isDisabled ? "none" : "flex")};
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid ${({ theme: { colors } }) => colors.gray400};
+
+  ${({ isDark, theme: { colors } }) =>
+    !isDark &&
+    css`
+      background-color: ${colors.white};
+    `}
+
+  ${({ isFiexd }) =>
+    isFiexd &&
+    css`
+      position: fixed;
+      border-bottom: none;
+    `}
 `
 
 const fadein = keyframes`
@@ -41,11 +60,9 @@ export const NavbarList = styled.ul<{ isDark: boolean }>`
         transition: 1s;
         color: ${colors.gray100};
       }
-
       ${NavbarDot} {
-       transition: 1s;
-       background-color: ${colors.gray100};
-  }
+        transition: 1s;
+        background-color: ${colors.gray100};
       }
     `}
 `
