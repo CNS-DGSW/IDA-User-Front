@@ -9,11 +9,12 @@ import Link from "next/link"
 import { validation } from "@/constants/validation"
 import type { SignUpFormData } from "./type"
 import ErrorMessage from "../common/ErrorMessage"
+import { agreementInfo } from "@/constants/agreement"
 
 const SignUp = () => {
   const {
     agreements,
-    checkAllSelected,
+    checkAllChecked,
     fullAgreement,
     handleChangeFullAgreement,
     handleCheckboxChange,
@@ -141,27 +142,27 @@ const SignUp = () => {
               ref={agreement.ref}
               checked={fullAgreement}
               onChange={async (event) => {
-                handleChangeFullAgreement(event)
+                handleChangeFullAgreement()
                 await agreement.onChange(event)
               }}
             />
             <S.AgreementCheckBoxLabel>전체 약관 동의</S.AgreementCheckBoxLabel>
             <S.SignUpErrorMessageLayout>
               <ErrorMessage>
-                {!checkAllSelected() && errors.agreement?.message}
+                {!checkAllChecked() && errors.agreement?.message}
               </ErrorMessage>
             </S.SignUpErrorMessageLayout>
           </S.FullAgreement>
 
           <S.AgreementsContainer>
-            {agreements.map(({ checked, title }, index) => (
+            {agreements.map(({ checked, id }, index) => (
               <S.AgreementBox key={index}>
                 <Checkbox
                   name={`${index}`}
                   checked={checked}
                   onChange={handleCheckboxChange}
                 />
-                {title}
+                {agreementInfo[id]}
               </S.AgreementBox>
             ))}
           </S.AgreementsContainer>

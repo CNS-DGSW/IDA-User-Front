@@ -1,45 +1,48 @@
+import type { AgreementKeys } from "@/types/Agreement"
 import { useEffect, useState } from "react"
 import type { ChangeEvent } from "react"
 
 const useSignup = () => {
   const [fullAgreement, setFullAgreement] = useState(false)
 
-  const [agreements, setAgreements] = useState([
+  const [agreements, setAgreements] = useState<
+    Array<{ id: AgreementKeys; checked: boolean }>
+  >([
     {
-      title: "[필수] 개인정보 처리 및 개인정보활영 동의",
+      id: "privacy",
       checked: false,
     },
     {
-      title: "[필수] 입학원서 접수 사이트 이용약관 동의",
+      id: "termUse",
       checked: false,
     },
-    { title: "[필수] 바탕 개인정보 취급방침 동의", checked: false },
+    {
+      id: "policy",
+      checked: false,
+    },
   ])
 
-  const checkAllSelected = () => {
+  const checkAllChecked = () => {
     return agreements.every(({ checked }) => checked)
   }
 
   useEffect(() => {
-    setFullAgreement(checkAllSelected())
+    setFullAgreement(checkAllChecked())
   }, [agreements])
 
   const handleCheckboxChange = ({
     target: { name },
   }: ChangeEvent<HTMLInputElement>) => {
-    setAgreements((prev) => {
-      const newData = prev.map((agreement, index) => {
-        const { title, checked } = agreement
-        return Number(name) === index ? { title, checked: !checked } : agreement
-      })
-      return newData
-    })
+    setAgreements((prev) =>
+      prev.map((agreement, index) => {
+        const { id, checked } = agreement
+        return Number(name) === index ? { id, checked: !checked } : agreement
+      }),
+    )
   }
 
-  const handleChangeFullAgreement = ({
-    target: { checked },
-  }: ChangeEvent<HTMLInputElement>) => {
-    const checkState = checkAllSelected()
+  const handleChangeFullAgreement = () => {
+    const checkState = checkAllChecked()
     setFullAgreement(checkState)
     setAgreements((prev) =>
       prev.map((item) => {
@@ -53,7 +56,7 @@ const useSignup = () => {
     agreements,
     handleCheckboxChange,
     handleChangeFullAgreement,
-    checkAllSelected,
+    checkAllChecked,
   }
 }
 
