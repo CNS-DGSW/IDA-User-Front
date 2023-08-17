@@ -25,8 +25,8 @@ export const ScheduleImageBox = styled.div<{ isSelected: boolean }>`
   justify-content: center;
   border-radius: 50%;
   svg {
-    transition: 1s;
-    fill: ${({ isSelected, theme: { colors } }) => isSelected && colors.white};
+    fill: ${({ isSelected, theme: { colors } }) =>
+      isSelected ? colors.white : colors.gray600};
   }
   border: 3px solid ${({ theme }) => theme.colors.gray500};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);

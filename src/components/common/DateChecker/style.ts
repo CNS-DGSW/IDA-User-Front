@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const DateCheckerLayout = styled.div`
-  /* width: 481px; */
+  width: 600px;
   height: 537px;
   word-break: keep-all;
   margin-top: 60px;
