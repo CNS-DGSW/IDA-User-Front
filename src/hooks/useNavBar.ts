@@ -17,6 +17,9 @@ export const useNavBar = () => {
     const isDisabled = disabledPaths.includes(pathname)
     return isDisabled
   }
+  const checkFiexdNavbar = (): boolean => {
+    return pathname === "/"
+  }
 
   const checkSelectedNavbarItem = (navBarItemHref: string): boolean => {
     const isSelected = navBarItemHref !== "/" && navBarItemHref === pathname
@@ -26,5 +29,6 @@ export const useNavBar = () => {
     isDark,
     checkDisabledNavbar,
     checkSelectedNavbarItem,
+    checkFiexdNavbar,
   }
 }
