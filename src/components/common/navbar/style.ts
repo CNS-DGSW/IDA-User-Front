@@ -11,6 +11,7 @@ export const NavbarLayout = styled.nav<{ isDisabled: boolean }>`
   display: ${({ isDisabled }) => (isDisabled ? "none" : "flex")};
   justify-content: center;
   align-items: center;
+  top: 0px;
 `
 
 const fadein = keyframes`
@@ -29,6 +30,8 @@ export const NavbarList = styled.ul<{ isDark: boolean }>`
   animation-name: ${fadein};
   transition: 1s;
   svg {
+    width: 102px;
+    flex-shrink: 0;
     transition: 1s;
     fill: ${({ isDark, theme: { colors } }) =>
       isDark ? colors.gray100 : colors.gray800};

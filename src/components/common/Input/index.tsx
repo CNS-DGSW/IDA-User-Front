@@ -14,6 +14,7 @@ interface TextInputProps
   readonly?: boolean
   changeEvent?: ChangeEventHandler<HTMLInputElement>
   value?: string
+  placeholder?: string
   customStyle?: CSSObject
   isError?: boolean
 }
