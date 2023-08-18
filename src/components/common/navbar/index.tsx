@@ -4,10 +4,15 @@ import * as S from "./style"
 import { useNavBar } from "@/hooks/useNavBar"
 
 const NavBar = () => {
-  const { checkDisabledNavbar, isDark } = useNavBar()
+  const { checkDisabledNavbar, checkFiexdNavbar, isDark } = useNavBar()
   const isDisabledNavbar = checkDisabledNavbar()
+  const isFiexd = checkFiexdNavbar()
   return (
-    <S.NavbarLayout isDisabled={isDisabledNavbar}>
+    <S.NavbarLayout
+      isDark={isDark}
+      isDisabled={isDisabledNavbar}
+      isFiexd={isFiexd}
+    >
       <S.NavbarList isDark={isDark}>
         <S.NavbarLeftBox>
           <NavbarItem href="/">

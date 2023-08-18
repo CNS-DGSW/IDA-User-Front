@@ -1,8 +1,9 @@
-import type { PropsWithChildren } from "react"
+import type { CSSProperties, ButtonHTMLAttributes } from "react"
 
 type SizeType = "xs" | "sm" | "md" | "lg"
 type ButtonColorType = "primary" | "second" | "third"
-export type ButtonProps = PropsWithChildren<{
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: SizeType
   color?: ButtonColorType
   clickEvent?: React.MouseEventHandler<HTMLButtonElement>
@@ -11,4 +12,5 @@ export type ButtonProps = PropsWithChildren<{
   radius?: number | "circle"
   disable?: boolean
   shadow?: boolean
-}>
+  style?: CSSProperties
+}
