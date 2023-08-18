@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
-export const CheckboxLayout = styled.div`
-  display: inline-block;
+export const CheckboxLayout = styled.label`
   vertical-align: middle;
 `
 export const HiddenCheckBox = styled.input`
