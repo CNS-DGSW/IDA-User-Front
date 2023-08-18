@@ -60,6 +60,7 @@ export const selectImage = styled(Image)<{ rotation: number }>`
   height: 2.6%;
   margin-left: auto;
   transform: rotate(${(props) => props.rotation || 0}deg);
+  transition: transform 0.3s ease;
 `
 
 export const answerContent = styled.div`

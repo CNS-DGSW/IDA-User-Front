@@ -6,9 +6,9 @@ import dummyFAQdata from "../../components/FAQ/dummyData/index"
 
 const FAQ = () => {
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null)
-  const [imageRotations, setImageRotations] = useState<{
-    [key: number]: number
-  }>({})
+  const [imageRotations, setImageRotations] = useState<Record<number, number>>(
+    {},
+  )
 
   const toggleFAQ = (id: number) => {
     if (activeFAQ === id) {
