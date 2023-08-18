@@ -19,6 +19,7 @@
     "@tanstack/react-query": "^4.26.1",
     "eslint": "^8.0.1",
     "eslint-config-next": "13.2.3",
+    "faker": "^6.6.6",
     "next": "13.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",

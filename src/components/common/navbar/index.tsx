@@ -18,7 +18,7 @@ const NavBar = () => {
         <S.NavbarRightBox>
           <NavbarItem href="/apply">원서접수</NavbarItem>
           <NavbarItem href="/#">공지사항</NavbarItem>
-          <NavbarItem href="/#">FAQ</NavbarItem>
+          <NavbarItem href="/FAQ">FAQ</NavbarItem>
           <S.NavbarAuthBox>
             <NavbarItem href="/signup">회원가입</NavbarItem>
             <S.NavbarDot />
