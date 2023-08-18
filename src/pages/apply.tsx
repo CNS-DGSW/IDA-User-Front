@@ -2,12 +2,11 @@ import WriteLayout from "@/components/common/Write/Layout"
 import WriteDocument from "@/components/Write/document"
 import WriteSchool from "@/components/Write/school"
 import WriteType from "@/components/Write/type"
-import React from "react"
-
+import WritePersonal from "@/components/Write/personal"
 const apply = () => {
   return (
     <WriteLayout>
-      <div>1</div>
+      <WritePersonal />
       <div>2</div>
       <div>3</div>
       <WriteSchool />
