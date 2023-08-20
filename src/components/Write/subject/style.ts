@@ -23,8 +23,8 @@ export const ThStyle = styled.th<ThProps & Omit<SizeImplElement, "height">>`
   vertical-align: middle;
 
   background: ${({ background }) => `#${background ?? "fff"}`};
-  color: ${({ color }) => `#${color}`};
-  width: ${({ width }) => `${width}px`};
+  color: ${({ color }) => `#${color ?? "000"}`};
+  width: ${({ width }) => `${width!}px`};
   border: 1px solid #d8dae0;
 `
 
