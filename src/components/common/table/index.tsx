@@ -6,7 +6,8 @@ import {
   TableBodyStyle,
   TdStyle,
 } from "@/components/Write/subject/style"
-import React, { createContext, PropsWithChildren } from "react"
+import type { PropsWithChildren } from "react"
+import React, { createContext } from "react"
 import type {
   TableNameType,
   TableProps,
