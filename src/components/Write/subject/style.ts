@@ -1,6 +1,7 @@
-import { ThProps } from "@/components/common/table/type"
-import { SizeImplElement } from "@/types/size"
-import styled, { CSSObject } from "styled-components"
+import type { ThProps } from "@/components/common/table/type"
+import type { SizeImplElement } from "@/types/size"
+import styled from "styled-components"
+import type { CSSObject } from "styled-components"
 
 export const TableStyle = styled.table`
   border-collapse: collapse;
