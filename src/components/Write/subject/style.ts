@@ -31,15 +31,15 @@ export const ThStyle = styled.th<ThProps & Omit<SizeImplElement, "height">>`
 export const TdStyle = styled.th<ThProps & Omit<SizeImplElement, "height">>`
   vertical-align: middle;
 
-  background: ${({ background }) => `#${background}`};
-  color: ${({ color }) => `#${color}`};
-  width: ${({ width }) => `${width}px`};
+  background: ${({ background }) => `#${background!}`};
+  color: ${({ color }) => `#${color!}`};
+  width: ${({ width }) => `${width!}px`};
   border: 1px solid #d8dae0;
 `
 
 export const TrStyle = styled.tr<Omit<SizeImplElement, "width">>`
   display: table;
-  height: ${({ height }) => `${height}`};
+  height: ${({ height }) => `${height!}`};
 `
 
 export const TableCustomInputStyle: CSSObject = {
