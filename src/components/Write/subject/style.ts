@@ -22,7 +22,7 @@ export const TableBodyStyle = styled.tbody``
 export const ThStyle = styled.th<ThProps & Omit<SizeImplElement, "height">>`
   vertical-align: middle;
 
-  background: ${({ background }) => `#${background}`};
+  background: ${({ background }) => `#${background || "fff"}`};
   color: ${({ color }) => `#${color}`};
   width: ${({ width }) => `${width}px`};
   border: 1px solid #d8dae0;
