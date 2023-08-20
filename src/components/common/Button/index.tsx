@@ -12,6 +12,8 @@ const Button = ({
   disable,
   shadow,
   children,
+  style,
+  ...buttonProps
 }: ButtonProps) => {
   return (
     <ButtonStyle
@@ -23,6 +25,8 @@ const Button = ({
       radius={radius}
       shadow={shadow}
       disable={disable}
+      style={style}
+      {...buttonProps}
     >
       {children}
     </ButtonStyle>

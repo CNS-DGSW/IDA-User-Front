@@ -1,0 +1,46 @@
+{
+  "inform": [
+    {
+      "title": "입학전형 관련 공지1",
+      "context": "안녕하십니까 공지입니다. **공지** !",
+      "idx": 0,
+      "date": "2023-11-11",
+      "important": true
+    },
+    {
+      "title": "입학전형 관련 공지2",
+      "context": "안녕하십니까 공지입니다. **공지** !",
+      "idx": 1,
+      "date": "2023-11-12",
+      "important": true
+    },
+    {
+      "title": "입학전형 관련 공지3",
+      "context": "안녕하십니까 공지입니다. **공지** !",
+      "idx": 2,
+      "date": "2023-11-12",
+      "important": true
+    },
+    {
+      "title": "입학전형 관련 공지4",
+      "context": "안녕하십니까 공지입니다. **공지** !",
+      "idx": 3,
+      "date": "2023-11-11",
+      "important": false
+    },
+    {
+      "title": "입학전형 관련 공지5",
+      "context": "안녕하십니까 공지입니다. **공지** !",
+      "idx": 4,
+      "date": "2023-11-11",
+      "important": false
+    },
+    {
+      "title": "입학전형 관련 공지6",
+      "context": "안녕하십니까 공지입니다. **공지** !",
+      "idx": 5,
+      "date": "2023-11-12",
+      "important": false
+    }
+  ]
+}
