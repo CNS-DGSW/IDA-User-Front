@@ -1,5 +1,5 @@
 import React from "react"
-import { Button } from "../../Button"
+import Button from "../../Button"
 import { usePageContext } from "@/components/common/Write/PageProvider"
 import * as S from "./style"
 

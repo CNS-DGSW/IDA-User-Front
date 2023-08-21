@@ -1,11 +1,8 @@
-import React from "react"
 import Card from "@/components/common/Card"
 import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
 import Input from "@/components/common/Input"
-import CustomDatePicker from "@/components/common/DatePicker"
-import * as S from "./style"
-
+import DateInput from "@/components/common/DateInput"
 const WritePersonal = () => {
   return (
     <section>
@@ -24,11 +21,8 @@ const WritePersonal = () => {
           </InputWrapper>
         </InputWrapper>
         <InputWrapper style={{ marginTop: 54 }}>
-          <InputWrapper title="생년월일" style={{ position: "relative" }}>
-            <Input disabled type="text"></Input>
-            <S.CalanderImgBox>
-              <CustomDatePicker />
-            </S.CalanderImgBox>
+          <InputWrapper title="생년월일">
+            <DateInput />
           </InputWrapper>
           <InputWrapper title="휴대폰">
             <Input disabled type="text"></Input>
