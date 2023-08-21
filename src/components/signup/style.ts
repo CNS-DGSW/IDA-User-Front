@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import DGSW_LOGO from "@/assets/img/DGSW_LOGO.svg"
 
-export const SignUpLayout = styled.div`
+export const ChangePasswordLayout = styled.div`
   display: flex;
   position: relative;
   align-items: center;
