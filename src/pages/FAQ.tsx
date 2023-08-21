@@ -1,7 +1,7 @@
 import FAQpage from "../components/FAQ/index"
 
-const apply = () => {
+const FAQ = () => {
   return <FAQpage />
 }
 
-export default apply
+export default FAQ

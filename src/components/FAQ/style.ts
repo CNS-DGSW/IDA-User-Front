@@ -1,20 +1,20 @@
 import styled from "styled-components"
 import Image from "next/image"
 
-const questionTextColor = "#1E2F44"
-const answerTextColor = "#808488"
+const FAQquestionTextColor = "#1E2F44"
+const FAQanswerTextColor = "#808488"
 
-export const titleContainer = styled.div`
+export const FAQtitleContainer = styled.div`
   background: #fff;
 `
-export const titleImage = styled(Image)`
+export const FAQtitleImage = styled(Image)`
   width: 13%;
   height: 13%;
   margin-top: 4%;
   margin-left: 15.4%;
 `
-export const titleText = styled.div`
-  color: ${questionTextColor};
+export const FAQtitleText = styled.div`
+  color: ${FAQquestionTextColor};
   font-family: Pretendard;
   font-size: 175%;
   font-weight: 700;
@@ -22,12 +22,12 @@ export const titleText = styled.div`
   margin-top: -5%;
 `
 
-export const mainContentContainer = styled.div`
+export const FAQmainContentContainer = styled.div`
   margin-top: 4%;
   margin-bottom: 8%;
 `
 
-export const mainContent = styled.div`
+export const FAQmainContent = styled.div`
   display: block;
   border-bottom: 1px solid #e7e9ed;
   align-items: center;
@@ -36,49 +36,49 @@ export const mainContent = styled.div`
   margin-left: 20%;
   margin-top: 2%;
 `
-export const questionContent = styled.div`
+export const FAQquestionContent = styled.div`
   display: flex;
 `
 
-export const questionContentSymbol = styled.h5`
-  color: ${questionTextColor};
+export const FAQquestionContentSymbol = styled.h5`
+  color: ${FAQquestionTextColor};
   font-family: Pretendard;
   font-size: 120%;
   font-weight: 600;
   margin-right: 2%;
 `
 
-export const questionContentText = styled.h5`
+export const FAQquestionContentText = styled.h5`
   color: #000;
   font-family: Pretendard;
   font-size: 100%;
   font-weight: 600;
 `
 
-export const selectImage = styled(Image)<{ rotation: number }>`
+export const FAQselectImage = styled(Image)<{ rotation: boolean }>`
   width: 2.6%;
   height: 2.6%;
   margin-left: auto;
-  transform: rotate(${(props) => props.rotation || 0}deg);
+  ${({ rotation }) => rotation && "transform: rotate(180deg)"};
   transition: transform 0.3s ease;
 `
 
-export const answerContent = styled.div`
+export const FAQanswerContent = styled.div`
   display: flex;
   padding-top: 2%;
   padding-bottom: 1%;
 `
 
-export const answerContentSymbol = styled.h5`
+export const FAQanswerContentSymbol = styled.h5`
   font-family: Pretendard;
   font-size: 90%;
   font-weight: 500;
-  color: ${answerTextColor};
+  color: ${FAQanswerTextColor};
   margin-left: 5%;
   margin-right: 2%;
 `
-export const answerContentText = styled.h5`
-  color: ${answerTextColor};
+export const FAQanswerContentText = styled.h5`
+  color: ${FAQanswerTextColor};
   font-family: Pretendard;
   font-size: 90%;
   font-weight: 500;
