@@ -2,12 +2,12 @@
 import Input from "../common/Input"
 import * as S from "./style"
 
-const ResetPw = () => {
+const ChangePassword = () => {
   // const [isEmailAuth, SetIsEmailAuth] = useState(true)
   const isEmailAuth = true
 
   return (
-    <S.ResetPwLayout>
+    <S.ChangePasswordLayout>
       <S.ContentBox>
         <S.DGSWLOGO />
         <S.EmailRow>
@@ -42,8 +42,8 @@ const ResetPw = () => {
         <S.SubmitBtn>비밀번호 재설정 완료</S.SubmitBtn>
         <S.LoginLink href="/signin">로그인하기</S.LoginLink>
       </S.ContentBox>
-    </S.ResetPwLayout>
+    </S.ChangePasswordLayout>
   )
 }
 
-export default ResetPw
+export default ChangePassword

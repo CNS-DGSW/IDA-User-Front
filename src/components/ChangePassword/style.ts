@@ -3,7 +3,7 @@ import DGSW from "@/assets/DGSWBlue.svg"
 import Link from "next/link"
 import SuccessedEmailAuth from "@/assets/SuccessedEmailAuthIcon.svg"
 
-export const ResetPwLayout = styled.div``
+export const ChangePasswordLayout = styled.div``
 
 export const ContentBox = styled.div`
   margin: auto;
