@@ -24,22 +24,22 @@ export const ThStyle = styled.th<ThProps & Omit<SizeImplElement, "height">>`
 
   background: ${({ background }) => `#${background ?? "fff"}`};
   color: ${({ color }) => `#${color ?? "000"}`};
-  width: ${({ width }) => `${width!}px`};
+  width: ${({ width }) => `${width ?? "108"}px`};
   border: 1px solid #d8dae0;
 `
 
 export const TdStyle = styled.th<ThProps & Omit<SizeImplElement, "height">>`
   vertical-align: middle;
 
-  background: ${({ background }) => `#${background!}`};
-  color: ${({ color }) => `#${color!}`};
+  background: ${({ background }) => `#${background ?? "fff"}`};
+  color: ${({ color }) => `#${color ?? "000"}`};
   width: ${({ width }) => `${width!}px`};
   border: 1px solid #d8dae0;
 `
 
 export const TrStyle = styled.tr<Omit<SizeImplElement, "width">>`
   display: table;
-  height: ${({ height }) => `${height!}`};
+  height: ${({ height }) => `${height ?? "54"}`};
 `
 
 export const TableCustomInputStyle: CSSObject = {
