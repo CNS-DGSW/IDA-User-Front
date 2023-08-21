@@ -3,7 +3,7 @@ import Card from "@/components/common/Card"
 import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
 import Input from "@/components/common/Input"
-import CalanderSVG from "@/assets/calander.svg"
+import CustomDatePicker from "@/components/common/DatePicker"
 import * as S from "./style"
 
 const WritePersonal = () => {
@@ -27,7 +27,7 @@ const WritePersonal = () => {
           <InputWrapper title="생년월일" style={{ position: "relative" }}>
             <Input disabled type="text"></Input>
             <S.CalanderImgBox>
-              <CalanderSVG />
+              <CustomDatePicker />
             </S.CalanderImgBox>
           </InputWrapper>
           <InputWrapper title="휴대폰">
