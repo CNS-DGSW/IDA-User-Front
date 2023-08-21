@@ -24,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.4",
     "react-icons": "^4.10.1",
+    "react-multi-date-picker": "^4.1.2",
     "recoil": "^0.7.7",
     "styled-components": "^5.3.8",
     "typescript": "*"
