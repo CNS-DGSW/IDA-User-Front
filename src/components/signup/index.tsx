@@ -1,7 +1,7 @@
 import useSignup from "@/hooks/signup/useSignup"
 import * as S from "./style"
 import Input from "../common/Input"
-import { Button } from "../common/Button"
+import Button from "../common/Button"
 import { useForm, Controller } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"
 import Checkbox from "../common/Checkbox"
