@@ -3,6 +3,7 @@ import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
 import Input from "@/components/common/Input"
 import DateInput from "@/components/common/DateInput"
+
 const WritePersonal = () => {
   return (
     <section>
