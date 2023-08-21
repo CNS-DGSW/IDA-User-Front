@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import * as S from "./style"
 import FAQicon from "../../assets/FAQicon.png"
 import selectIcon from "../../assets/selectIcon.png"
-import dummyFAQdata from "../../components/FAQ/dummyData/index"
+import dummyFAQdata from "../../constants/dummyData/index"
 
 const FAQ = () => {
   const [activeImageRotations, setActiveImageRotations] = useState<number[]>([])
