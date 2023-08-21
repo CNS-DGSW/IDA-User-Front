@@ -1,7 +1,7 @@
 import FAQpage from "../components/FAQ/index"
 
-const FAQ = () => {
+const faq = () => {
   return <FAQpage />
 }
 
-export default FAQ
+export default faq
