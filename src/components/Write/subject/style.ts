@@ -33,7 +33,7 @@ export const TdStyle = styled.th<ThProps & Omit<SizeImplElement, "height">>`
 
   background: ${({ background }) => `#${background ?? "fff"}`};
   color: ${({ color }) => `#${color ?? "000"}`};
-  width: ${({ width }) => `${width!}px`};
+  width: ${({ width }) => `${width ?? "108"}px`};
   border: 1px solid #d8dae0;
 `
 
