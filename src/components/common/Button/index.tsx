@@ -2,7 +2,7 @@ import React from "react"
 import { ButtonStyle } from "./style"
 import type { ButtonProps } from "./types"
 
-export const Button = ({
+const Button = ({
   size = "md",
   color = "primary",
   clickEvent,
@@ -12,6 +12,8 @@ export const Button = ({
   disable,
   shadow,
   children,
+  style,
+  ...buttonProps
 }: ButtonProps) => {
   return (
     <ButtonStyle
@@ -23,8 +25,12 @@ export const Button = ({
       radius={radius}
       shadow={shadow}
       disable={disable}
+      style={style}
+      {...buttonProps}
     >
       {children}
     </ButtonStyle>
   )
 }
+
+export default Button

@@ -1,16 +1,24 @@
 import { usePathname } from "next/navigation"
-import { useRecoilValue } from "recoil"
+import { useRecoilState } from "recoil"
 
 import { isDarkNavbarState } from "@/atom/navBarAtom"
+import { useEffect } from "react"
 
 export const useNavBar = () => {
   const pathname = usePathname()
-  const isDark = useRecoilValue(isDarkNavbarState)
+  const [isDark, setIsDark] = useRecoilState(isDarkNavbarState)
+
+  useEffect(() => {
+    setIsDark(false)
+  }, [])
 
   const checkDisabledNavbar = (): boolean => {
     const disabledPaths = ["/signin", "/signup"]
     const isDisabled = disabledPaths.includes(pathname)
     return isDisabled
+  }
+  const checkFiexdNavbar = (): boolean => {
+    return pathname === "/"
   }
 
   const checkSelectedNavbarItem = (navBarItemHref: string): boolean => {
@@ -21,5 +29,6 @@ export const useNavBar = () => {
     isDark,
     checkDisabledNavbar,
     checkSelectedNavbarItem,
+    checkFiexdNavbar,
   }
 }
