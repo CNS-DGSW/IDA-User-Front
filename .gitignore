@@ -4,9 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-.eslintcache
-package-lock.json
-yarn.lock
 
 # testing
 /coverage
@@ -37,4 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.eslintcache
+package-lock.json
 
