@@ -8,7 +8,7 @@ import {
 } from "@/components/Write/subject/style"
 import type { PropsWithChildren } from "react"
 import React, { createContext } from "react"
-import { CSSObject } from "styled-components"
+import type { CSSObject } from "styled-components"
 import type {
   TableNameType,
   TableProps,

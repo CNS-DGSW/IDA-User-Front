@@ -1,7 +1,7 @@
 import Input from "@/components/common/Input"
 import { Table } from "@/components/common/table"
 import React from "react"
-import { CSSObject } from "styled-components"
+import type { CSSObject } from "styled-components"
 
 const UnrecognizedTdStyle: CSSObject = {
   width: "107px",

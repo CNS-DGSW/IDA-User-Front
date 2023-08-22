@@ -17,7 +17,7 @@ const SubjectTable = () => {
           <Table.Tr height="162">
             <Table.Th width="74">과목</Table.Th>
             {schoolYear.map((year) => (
-              <Table.Th width="168" notBorder>
+              <Table.Th width="168" notBorder key={year}>
                 <Table.Tr>
                   <Table.Th width="168">{year}</Table.Th>
                 </Table.Tr>
@@ -64,12 +64,12 @@ const SubjectTable = () => {
         </Table.Header>
         <Table.Body>
           {subjectNames.map((subjectName, subjectNameIndex, arr) => (
-            <Table.Tr height="60">
+            <Table.Tr height="60" key={subjectNameIndex}>
               <Table.Td width="74">{subjectName}</Table.Td>
               {Array(6)
                 .fill(0)
                 .map((_, idx) => (
-                  <Table.Td width="84">
+                  <Table.Td width="84" key={idx}>
                     <Select
                       width={73}
                       list={grade}
@@ -92,8 +92,8 @@ const SubjectTable = () => {
               <Table.Td width="70"></Table.Td>
             </Table.Tr>
           ))}
-          {otherSubject.map((subject, index) => (
-            <Table.Tr height="60">
+          {otherSubject.map((_, index) => (
+            <Table.Tr height="60" key={index}>
               <Table.Td width="74">
                 <Input
                   type="text"
