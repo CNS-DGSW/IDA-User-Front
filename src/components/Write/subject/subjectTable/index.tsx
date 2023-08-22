@@ -109,7 +109,7 @@ const SubjectTable = () => {
               {Array(6)
                 .fill(0)
                 .map((_, idx) => (
-                  <Table.Td width="84">
+                  <Table.Td width="84" key={idx}>
                     <Select
                       width={73}
                       list={grade}
