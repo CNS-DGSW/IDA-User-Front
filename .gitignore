@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 .eslintcache
+package-lock.json
+yarn.lock
 
 # testing
 /coverage
