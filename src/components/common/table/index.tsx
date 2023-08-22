@@ -8,6 +8,7 @@ import {
 } from "@/components/Write/subject/style"
 import type { PropsWithChildren } from "react"
 import React, { createContext } from "react"
+import { CSSObject } from "styled-components"
 import type {
   TableNameType,
   TableProps,
@@ -27,16 +28,22 @@ export const TableContextComponent = <T extends TableNameType>({
   return <Provider.Provider value={context}>{children}</Provider.Provider>
 }
 
-const TableComponent = ({ children }: PropsWithChildren) => {
-  return <TableStyle>{children}</TableStyle>
+const TableComponent = ({
+  children,
+  customStyle,
+}: PropsWithChildren<{ customStyle?: CSSObject }>) => {
+  return <TableStyle style={customStyle}>{children}</TableStyle>
 }
 
 const Header = ({ children }: PropsWithChildren) => {
   return <TableHeaderStyle>{children}</TableHeaderStyle>
 }
 
-const Body = ({ children }: PropsWithChildren) => {
-  return <TableBodyStyle>{children}</TableBodyStyle>
+const Body = ({
+  children,
+  style,
+}: PropsWithChildren<{ style?: CSSObject }>) => {
+  return <TableBodyStyle style={style}>{children}</TableBodyStyle>
 }
 
 const Th = ({
@@ -45,9 +52,20 @@ const Th = ({
   color = "fff",
   style,
   width = "108",
+  rowspan,
+  colspan,
+  notBorder,
 }: ThProps) => {
   return (
-    <ThStyle background={background} color={color} style={style} width={width}>
+    <ThStyle
+      background={background}
+      color={color}
+      style={style}
+      width={width}
+      rowSpan={rowspan}
+      colSpan={colspan}
+      notBorder={notBorder}
+    >
       {children}
     </ThStyle>
   )
@@ -59,9 +77,20 @@ const Td = ({
   color = "000",
   style,
   width = "108",
+  rowspan,
+  colspan,
+  notBorder,
 }: ThProps) => {
   return (
-    <TdStyle background={background} color={color} style={style} width={width}>
+    <TdStyle
+      background={background}
+      color={color}
+      style={style}
+      width={width}
+      rowSpan={rowspan}
+      colSpan={colspan}
+      notBorder={notBorder}
+    >
       {children}
     </TdStyle>
   )

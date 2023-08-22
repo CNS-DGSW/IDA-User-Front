@@ -1,6 +1,6 @@
 import type { WriteSubjectTableType } from "@/components/Write/subject/type"
 import type { SizeImplElement } from "@/types/size"
-import type { PropsWithChildren } from "react"
+import type { PropsWithChildren, TableHTMLAttributes } from "react"
 import type { CSSObject } from "styled-components"
 
 /**
@@ -27,5 +27,8 @@ export interface ThProps
       background: string
       color: string
       style: CSSObject
+      rowspan: number
+      colspan: number
+      notBorder: boolean
     }>,
     Omit<SizeImplElement, "height"> {}

@@ -1,3 +1,3 @@
 export interface WriteSubjectTableType {
-  "subject-table": ""
+  "subject-table": { sum: number }
 }

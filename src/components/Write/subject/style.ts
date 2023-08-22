@@ -25,16 +25,18 @@ export const ThStyle = styled.th<ThProps & Omit<SizeImplElement, "height">>`
   background: ${({ background }) => `#${background ?? "fff"}`};
   color: ${({ color }) => `#${color ?? "000"}`};
   width: ${({ width }) => `${width ?? "108"}px`};
-  border: 1px solid #d8dae0;
+  ${({ notBorder }) => !notBorder && `border: 1px solid #d8dae0`};
 `
 
-export const TdStyle = styled.th<ThProps & Omit<SizeImplElement, "height">>`
+export const TdStyle = styled.td<ThProps & Omit<SizeImplElement, "height">>`
   vertical-align: middle;
-
   background: ${({ background }) => `#${background ?? "fff"}`};
   color: ${({ color }) => `#${color ?? "000"}`};
   width: ${({ width }) => `${width ?? "108"}px`};
-  border: 1px solid #d8dae0;
+  ${({ notBorder }) => !notBorder && `border: 1px solid #d8dae0`};
+  text-align: center;
+
+  word-wrap: break-word;
 `
 
 export const TrStyle = styled.tr<Omit<SizeImplElement, "width">>`
@@ -50,3 +52,20 @@ export const TableCustomInputStyle: CSSObject = {
   color: "black",
   fontSize: "16px",
 }
+
+export const SubjectDescription = styled.ul`
+  width: 650px;
+  height: 161px;
+  border-radius: 8px;
+  background: #fff;
+  margin-bottom: 34px;
+  padding: 14px 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: #8b939c;
+
+  list-style-type: disc;
+`

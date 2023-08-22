@@ -9,7 +9,7 @@ const VolunteerTable = () => {
     useVolunteer()
 
   return (
-    <Table>
+    <Table customStyle={{ marginBottom: "34px" }}>
       <Table.Header>
         <Table.Tr height="54">
           <Table.Th>학년</Table.Th>
