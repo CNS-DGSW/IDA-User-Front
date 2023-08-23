@@ -7,11 +7,12 @@ import { localDetail, LocalKind } from "@/constants/Write/localKindConstant"
 import useChange from "@/hooks/useChange"
 import useLocal from "../hooks/useLocal"
 import Card from "@/components/common/Card"
+import usePhone from "@/hooks/usePhone"
 
 const ExpectedForm = () => {
-  const [, changesShoolContact] = useChange()
+  const [schoolState, chagneSchoolState] = usePhone()
   const [, changeTeacherName] = useChange()
-  const [, changeTeacherContact] = useChange()
+  const [teacherState, changeTeacherContact] = usePhone()
 
   const { changeDetailLocal, changeLocal, detailLocal, local } = useLocal()
 
@@ -40,7 +41,13 @@ const ExpectedForm = () => {
           />
         </InputWrapper>
         <InputWrapper title="학교 연락처">
-          <Input type="text" width={208} changeEvent={changesShoolContact} />
+          <Input
+            type="text"
+            width={208}
+            onChange={chagneSchoolState}
+            placeholder="- 없이 입력해주세요"
+            value={schoolState}
+          />
         </InputWrapper>
       </S.Wrap>
       <S.Wrap justify="space-between">
@@ -48,7 +55,12 @@ const ExpectedForm = () => {
           <Input type="text" changeEvent={changeTeacherName} />
         </InputWrapper>
         <InputWrapper title="담임 연락처">
-          <Input type="text" changeEvent={changeTeacherContact} />
+          <Input
+            type="text"
+            onChange={changeTeacherContact}
+            placeholder="- 없이 입력해주세요"
+            value={teacherState}
+          />
         </InputWrapper>
       </S.Wrap>
     </Card>
