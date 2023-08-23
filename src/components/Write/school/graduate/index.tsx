@@ -4,12 +4,13 @@ import InputWrapper from "@/components/common/InputWrapper"
 import Select from "@/components/common/Select"
 import { localDetail, LocalKind } from "@/constants/Write/localKindConstant"
 import useChange from "@/hooks/useChange"
+import usePhone from "@/hooks/usePhone"
 import useLocal from "../hooks/useLocal"
 import * as S from "../style"
 
 const GraduateForm = () => {
   const { changeDetailLocal, changeLocal, detailLocal, local } = useLocal()
-  const [, changesShoolContact] = useChange()
+  const [schoolContact, changeSchoolContact] = usePhone()
   const [, changeGraduate] = useChange()
 
   return (
@@ -38,13 +39,19 @@ const GraduateForm = () => {
             />
           </InputWrapper>
           <InputWrapper title="학교 연락처">
-            <Input type="text" width={208} changeEvent={changesShoolContact} />
+            <Input
+              type="text"
+              width={208}
+              changeEvent={changeSchoolContact}
+              value={schoolContact}
+              placeholder="- 없이 입력해주세요"
+            />
           </InputWrapper>
         </S.Wrap>
       </Card>
       <Card>
         <InputWrapper title="졸업년도">
-          <Input type="text" width={650} changeEvent={changeGraduate} />
+          <Input type="number" width={650} changeEvent={changeGraduate} />
         </InputWrapper>
       </Card>
     </>

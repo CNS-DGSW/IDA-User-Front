@@ -25,6 +25,11 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         outline: none;
         padding-left: 10px;
+    };
+    input::-webkit-inner-spin-button {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
     }
 `
 
