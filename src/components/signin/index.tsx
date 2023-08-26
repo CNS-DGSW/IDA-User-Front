@@ -1,20 +1,22 @@
-import { Controller, SubmitHandler, useForm } from "react-hook-form"
+import type {SubmitHandler} from "react-hook-form"
+import {Controller,useForm} from"react-hook-form"
 import Input from "../common/Input"
 import * as S from "./style"
 import type { SignInFormData } from "./type"
 import { validation } from "@/constants/validation"
 import ErrorMessage from "../common/ErrorMessage"
+import { isError } from "@tanstack/react-query"
 
 const Signin = () => {
   // const [email,setEmail] = useState("이메일을 입력하세요")
 
-  const { 
-    control, 
+  const {
+    control,
     handleSubmit,
-    formState:{errors}
+    formState: { errors },
   } = useForm<SignInFormData>()
 
-  const onsubmit: SubmitHandler<SignInFormData> = (data) =>{
+  const onsubmit: SubmitHandler<SignInFormData> = (data) => {
     console.log(data)
   }
 
@@ -26,50 +28,59 @@ const Signin = () => {
           control={control}
           rules={{
             required: "필수 항목입니다.",
-            pattern:{
+            pattern: {
               value: validation.email,
-              message : "이메일 형식이 올바르지 않습니다."
-            }
+              message: "이메일 형식이 올바르지 않습니다.",
+            },
           }}
           name="email"
-          render={({field})=>(
+          render={({ field }) => (
             <Input
               placeholder="이메일을 입력하세요"
               type="text"
               width={390}
-              customStyle={{ height: "56px", marginBottom: "18px", paddingLeft: "28px" }}
+              customStyle={{
+                height: "56px",
+                marginBottom: "18px",
+                paddingLeft: "28px",
+              }}
               isError={!!errors.email}
               {...field}
             />
           )}
         />
-        {
-          errors.email &&
+        {errors.email && (
           <S.SigninErrorMessageLayout>
             <ErrorMessage>{errors.email?.message}</ErrorMessage>
           </S.SigninErrorMessageLayout>
-        }
+        )}
+        
         <Controller
           control={control}
           rules={{
             required: "필수 항목입니다.",
           }}
           name="password"
-          render={({field})=>(
+          render={({ field }) => (
             <Input
               placeholder="비밀번호를 입력하세요"
               type="password"
               width={390}
-              customStyle={{ height: "56px", marginBottom: "18px", paddingLeft: "28px" }}
+              customStyle={{
+                height: "56px",
+                marginBottom: "18px",
+                paddingLeft: "28px",
+              }}
+              isError={!!errors.password}
+              {...field}
             />
           )}
         />
-        {
-          errors.password &&
+        {errors.password && (
           <S.SigninErrorMessageLayout>
             <ErrorMessage>{errors.password?.message}</ErrorMessage>
           </S.SigninErrorMessageLayout>
-        }
+        )}
         <S.SubmitBtn type="submit">가입하기</S.SubmitBtn>
         <S.NavigateList>
           <S.NavigateLink href="/changepassword">비밀번호 찾기</S.NavigateLink>
