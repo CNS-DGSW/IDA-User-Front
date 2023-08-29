@@ -10,7 +10,7 @@ const Examination = () => {
   return (
     <Card>
       <InputWrapper title="합격년도">
-        <Input type="text" width={650} changeEvent={setPass} />
+        <Input type="number" width={650} changeEvent={setPass} />
       </InputWrapper>
     </Card>
   )
