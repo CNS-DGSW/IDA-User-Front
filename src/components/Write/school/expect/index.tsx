@@ -10,9 +10,9 @@ import Card from "@/components/common/Card"
 import usePhone from "@/hooks/usePhone"
 
 const ExpectedForm = () => {
-  const [schoolState, chagneSchoolState] = usePhone()
+  const [schoolNumber, chagneSchoolNumber] = usePhone()
   const [, changeTeacherName] = useChange()
-  const [teacherState, changeTeacherContact] = usePhone()
+  const [teacherNumber, changeTeacherContact] = usePhone()
 
   const { changeDetailLocal, changeLocal, detailLocal, local } = useLocal()
 
@@ -44,9 +44,9 @@ const ExpectedForm = () => {
           <Input
             type="text"
             width={208}
-            onChange={chagneSchoolState}
+            onChange={chagneSchoolNumber}
             placeholder="- 없이 입력해주세요"
-            value={schoolState}
+            value={schoolNumber}
           />
         </InputWrapper>
       </S.Wrap>
@@ -59,7 +59,7 @@ const ExpectedForm = () => {
             type="text"
             onChange={changeTeacherContact}
             placeholder="- 없이 입력해주세요"
-            value={teacherState}
+            value={teacherNumber}
           />
         </InputWrapper>
       </S.Wrap>

@@ -42,7 +42,7 @@ const GraduateForm = () => {
             <Input
               type="text"
               width={208}
-              changeEvent={changeSchoolContact}
+              onChange={changeSchoolContact}
               value={schoolContact}
               placeholder="- 없이 입력해주세요"
             />
@@ -51,7 +51,7 @@ const GraduateForm = () => {
       </Card>
       <Card>
         <InputWrapper title="졸업년도">
-          <Input type="number" width={650} changeEvent={changeGraduate} />
+          <Input type="number" width={650} onChange={changeGraduate} />
         </InputWrapper>
       </Card>
     </>
