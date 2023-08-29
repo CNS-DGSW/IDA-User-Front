@@ -67,7 +67,7 @@ export const EmailAuthBtn = styled.button`
 export const ChangePasswordErrorMEssageLayout = styled.div`
   margin-top: 12px;
   margin-left: 26px;
-  margin-bottom: -2px;  
+  margin-bottom: -2px;
 
   width: 390px;
 `

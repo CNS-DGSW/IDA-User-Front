@@ -1,6 +1,6 @@
 // import { useState } from "react"
 import { Controller, useForm } from "react-hook-form"
-import type {SubmitHandler} from "react-hook-form"
+import type { SubmitHandler } from "react-hook-form"
 import Input from "../common/Input"
 import * as S from "./style"
 import type { ChangePasswordFormData } from "./type"
@@ -17,14 +17,14 @@ const ChangePassword = () => {
 
   const {
     control,
-    formState: {errors},
+    formState: { errors },
     handleSubmit,
     getValues,
   } = useForm<ChangePasswordFormData>()
 
   const onsubmit: SubmitHandler<ChangePasswordFormData> = (data) => {
     console.log(data)
-  } 
+  }
 
   return (
     <S.ChangePasswordForm onSubmit={handleSubmit(onsubmit)}>
@@ -39,23 +39,23 @@ const ChangePassword = () => {
                 required: "필수 항목입니다.",
                 pattern: {
                   value: validation.email,
-                  message: "이메일 형식이 올바르지 않습니다."
-                }
+                  message: "이메일 형식이 올바르지 않습니다.",
+                },
               }}
-              render={
-                ({field}) => (
-                  <Input
-                    type="text"
-                    placeholder="이메일을 입력하세요"
-                    width={292}
-                    customStyle={{ height: "56px", paddingLeft: "28px" }}
-                    isError={!!errors.email}
-                    {...field}
-                  />
-                )
-              }
+              render={({ field }) => (
+                <Input
+                  type="text"
+                  placeholder="이메일을 입력하세요"
+                  width={292}
+                  customStyle={{ height: "56px", paddingLeft: "28px" }}
+                  isError={!!errors.email}
+                  {...field}
+                />
+              )}
             />
-            <S.EmailAuthBtn onClick={EmailAuthChange} type="button">인증</S.EmailAuthBtn>
+            <S.EmailAuthBtn onClick={EmailAuthChange} type="button">
+              인증
+            </S.EmailAuthBtn>
           </S.EmailRow>
           <S.ChangePasswordErrorMEssageLayout>
             <ErrorMessage>{errors.email?.message}</ErrorMessage>
@@ -75,15 +75,19 @@ const ChangePassword = () => {
               pattern: {
                 value: validation.password,
                 message: "8~16자 영문,숫자,특수문자를 사용하세요.",
-              }
+              },
             }}
             name="password"
-            render= {({field}) => (
+            render={({ field }) => (
               <Input
                 type="password"
                 placeholder="비밀번호를 입력하세요"
                 width={390}
-                customStyle={{ height: "56px", "margin-top": "18px", paddingLeft: "28px" }}
+                customStyle={{
+                  height: "56px",
+                  "margin-top": "18px",
+                  paddingLeft: "28px",
+                }}
                 isError={!!errors.password}
                 {...field}
               />
@@ -96,15 +100,21 @@ const ChangePassword = () => {
             control={control}
             rules={{
               required: "필수 항목입니다.",
-              validate: ((value) => value === getValues("password") || "비밀번호가 일치하지 않습니다.")
+              validate: (value) =>
+                value === getValues("password") ||
+                "비밀번호가 일치하지 않습니다.",
             }}
             name="passwordRepeat"
-            render={({field})=>(
+            render={({ field }) => (
               <Input
                 type="password"
                 placeholder="비밀번호를 다시 입력하세요"
                 width={390}
-                customStyle={{ height: "56px", "margin-top": "18px", paddingLeft: "28px" }}
+                customStyle={{
+                  height: "56px",
+                  "margin-top": "18px",
+                  paddingLeft: "28px",
+                }}
                 isError={!!errors.passwordRepeat}
                 {...field}
               />
