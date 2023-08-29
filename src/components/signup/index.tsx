@@ -10,7 +10,7 @@ import { validation } from "@/constants/validation"
 import type { SignUpFormData } from "./type"
 import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
-D
+
 const SignUp = () => {
   const {
     agreements,
