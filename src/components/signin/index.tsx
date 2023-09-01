@@ -15,12 +15,12 @@ const Signin = () => {
     formState: { errors },
   } = useForm<SignInFormData>()
 
-  const onsubmit: SubmitHandler<SignInFormData> = (data) => {
+  const onSubmit: SubmitHandler<SignInFormData> = (data) => {
     console.log(data)
   }
 
   return (
-    <S.SigninForm onSubmit={handleSubmit(onsubmit)}>
+    <S.SigninForm onSubmit={handleSubmit(onSubmit)}>
       <S.SigninLayout>
         <S.DGSWLOGO />
         <Controller
