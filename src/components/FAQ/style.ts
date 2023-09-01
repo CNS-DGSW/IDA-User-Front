@@ -10,7 +10,7 @@ export const FAQtitleContainer = styled.div`
 export const FAQtitleImage = styled(Image)`
   width: 13%;
   height: 13%;
-  margin-top: 4%;
+  margin-top: -1%;
   margin-left: 15.4%;
 `
 export const FAQtitleText = styled.div`
@@ -25,6 +25,8 @@ export const FAQtitleText = styled.div`
 export const FAQmainContentContainer = styled.div`
   margin-top: 4%;
   margin-bottom: 8%;
+  width: 100%;
+  height: 100%;
 `
 
 export const FAQmainContent = styled.div`
@@ -32,9 +34,10 @@ export const FAQmainContent = styled.div`
   border-bottom: 1px solid #e7e9ed;
   align-items: center;
   width: 61%;
-  padding-bottom: 1%;
   margin-left: 20%;
-  margin-top: 2%;
+  width: 100%;
+  height: 100%;
+  margin-top: 1.5%;
 `
 export const FAQquestionContent = styled.div`
   display: flex;
@@ -65,8 +68,8 @@ export const FAQselectImage = styled(Image)<{ rotation: boolean }>`
 
 export const FAQanswerContent = styled.div`
   display: flex;
-  padding-top: 2%;
-  padding-bottom: 1%;
+  padding-top: 0.5%;
+  padding-bottom: 1.5%;
 `
 
 export const FAQanswerContentSymbol = styled.h5`
