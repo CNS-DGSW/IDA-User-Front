@@ -143,7 +143,9 @@ const SignUp = () => {
               checked={fullAgreement}
               onChange={async (event) => {
                 handleChangeFullAgreement()
+                console.log(getValues("agreement"))
                 await agreement.onChange(event)
+                console.log(getValues("agreement"))
               }}
             />
             <S.AgreementCheckBoxLabel>전체 약관 동의</S.AgreementCheckBoxLabel>
