@@ -3,6 +3,8 @@ import DGSW from "@/assets/DGSWBlue.svg"
 import Link from "next/link"
 import SuccessedEmailAuth from "@/assets/SuccessedEmailAuthIcon.svg"
 
+export const ChangePasswordForm = styled.form``
+
 export const ChangePasswordLayout = styled.div``
 
 export const ContentBox = styled.div`
@@ -45,7 +47,7 @@ export const EmailRow = styled.div`
   justify-content: space-between;
 `
 
-export const AuthBtn = styled.button`
+export const EmailAuthBtn = styled.button`
   width: 86px;
   height: 56px;
 
@@ -60,6 +62,14 @@ export const AuthBtn = styled.button`
   color: #fff;
   font-size: 18px;
   font-weight: 500;
+`
+
+export const ChangePasswordErrorMEssageLayout = styled.div`
+  margin-top: 12px;
+  margin-left: 26px;
+  margin-bottom: -2px;
+
+  width: 390px;
 `
 
 export const SubmitBtn = styled.button`
