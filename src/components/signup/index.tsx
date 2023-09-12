@@ -50,23 +50,49 @@ const SignUp = () => {
               rules={{
                 required: "필수 항목입니다.",
                 pattern: {
-                  value: validation.email,
-                  message: "이메일 형식이 올바르지 않습니다.",
+                  value: validation.contact,
+                  message: "전화번호 형식이 올바르지 않습니다.",
                 },
               }}
-              name="email"
+              name="contact"
               render={({ field }) => (
                 <Input
                   type="text"
-                  placeholder="이메일을 입력하세요"
+                  placeholder="전화번호를 입력하세요"
                   width={294}
-                  isError={!!errors.email}
+                  isError={!!errors.contact}
                   {...field}
                 />
               )}
             />
             <S.SignUpErrorMessageLayout>
-              <ErrorMessage>{errors.email?.message}</ErrorMessage>
+              <ErrorMessage>{errors.contact?.message}</ErrorMessage>
+            </S.SignUpErrorMessageLayout>
+          </S.SignUpInputBox>
+          <Button type="button" radius={14} size="sm">
+            인증
+          </Button>
+        </S.SignUpEmailCertificationBox>
+        <S.SignUpEmailCertificationBox>
+          <S.SignUpInputBox>
+            <Controller
+              control={control}
+              rules={{
+                required: "필수 항목입니다.",
+              }}
+              name="contactCheck"
+              render={({ field }) => (
+                <Input
+                  type="text"
+                  placeholder="인증번호를 입력하세요"
+                  width={294}
+                  isError={!!errors.contactCheck}
+                  {...field}
+                />
+              )}
+            />
+            <S.SignUpErrorMessageLayout>
+              <ErrorMessage>{errors.contactCheck?.message}</ErrorMessage>
             </S.SignUpErrorMessageLayout>
           </S.SignUpInputBox>
           <Button type="button" radius={14} size="sm">
