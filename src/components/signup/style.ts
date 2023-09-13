@@ -28,8 +28,8 @@ export const SignUpInputBox = styled.div`
 
 export const SignUpErrorMessageLayout = styled.div`
   position: absolute;
-  bottom: -30px;
-  left: 20px;
+  bottom: -20px;
+  left: 10px;
 `
 
 export const SignUpEmailCertificationBox = styled.div`
@@ -48,8 +48,8 @@ export const SignUpPasswordBox = styled.div`
 
 export const SignUpTypograpy = styled.p`
   position: absolute;
-  bottom: -30px;
-  left: 20px;
+  bottom: -20px;
+  left: 10px;
 
   color: ${({ theme: { colors } }) => colors.gray500};
   font-size: 13px;
