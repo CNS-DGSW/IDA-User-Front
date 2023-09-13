@@ -10,6 +10,7 @@ import { validation } from "@/constants/validation"
 import type { SignUpFormData } from "./type"
 import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
+import { useState } from "react"
 
 const SignUp = () => {
   const {
@@ -28,12 +29,33 @@ const SignUp = () => {
     formState: { errors },
   } = useForm<SignUpFormData>()
 
+  const [contactAuth, setContactAuth] = useState<boolean>(false)
+  const [isCheckContact, setIsCheckContact] = useState<boolean>(false)
+
   const agreement = register("agreement", {
     required: "약관을 동의하여 주세요.",
   })
 
   const onsubmit: SubmitHandler<SignUpFormData> = (data) => {
     console.log(data)
+  }
+
+  const contactOnSubmit = (): boolean => {
+    const contact = getValues("contact")
+    console.log(contact, validation.contact.test(contact))
+    if (validation.contact.test(contact)) {
+      setContactAuth(true)
+    }
+    return false
+  }
+
+  const checkContactOnSubmit = (): boolean => {
+    const contactCheck = getValues("contactCheck")
+    console.log(contactCheck)
+    if (contactCheck) {
+      setIsCheckContact(true)
+    }
+    return false
   }
 
   return (
@@ -69,8 +91,14 @@ const SignUp = () => {
               <ErrorMessage>{errors.contact?.message}</ErrorMessage>
             </S.SignUpErrorMessageLayout>
           </S.SignUpInputBox>
-          <Button type="button" radius={14} size="sm">
-            인증
+          <Button
+            type="button"
+            radius={14}
+            size="sm"
+            onClick={contactOnSubmit}
+            disabled={contactAuth}
+          >
+            {contactAuth ? "3:00" : "인증"}
           </Button>
         </S.SignUpEmailCertificationBox>
         <S.SignUpEmailCertificationBox>
@@ -95,7 +123,13 @@ const SignUp = () => {
               <ErrorMessage>{errors.contactCheck?.message}</ErrorMessage>
             </S.SignUpErrorMessageLayout>
           </S.SignUpInputBox>
-          <Button type="button" radius={14} size="sm">
+          <Button
+            type="button"
+            radius={14}
+            size="sm"
+            onClick={checkContactOnSubmit}
+            disabled={isCheckContact}
+          >
             인증
           </Button>
         </S.SignUpEmailCertificationBox>
