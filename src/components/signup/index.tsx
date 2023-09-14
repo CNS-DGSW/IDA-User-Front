@@ -13,6 +13,16 @@ import { agreementInfo } from "@/constants/agreement"
 import { useState } from "react"
 
 const SignUp = () => {
+  const [timer, setTimer] = useState<number>(180)
+
+  const timerHandler = () => {
+    setInterval(() => {
+      if (timer >= 0) {
+        setTimer((prev) => prev - 1)
+      }
+    }, 1000)
+  }
+
   const {
     agreements,
     checkAllChecked,
@@ -40,22 +50,20 @@ const SignUp = () => {
     console.log(data)
   }
 
-  const contactOnSubmit = (): boolean => {
+  const contactOnSubmit = () => {
     const contact = getValues("contact")
     console.log(contact, validation.contact.test(contact))
     if (validation.contact.test(contact)) {
+      timerHandler()
       setContactAuth(true)
     }
-    return false
   }
 
-  const checkContactOnSubmit = (): boolean => {
+  const checkContactOnSubmit = () => {
     const contactCheck = getValues("contactCheck")
-    console.log(contactCheck)
     if (contactCheck) {
       setIsCheckContact(true)
     }
-    return false
   }
 
   return (
@@ -98,7 +106,15 @@ const SignUp = () => {
             onClick={contactOnSubmit}
             disabled={contactAuth}
           >
-            {contactAuth ? "3:00" : "인증"}
+            {contactAuth
+              ? timer < 0
+                ? "ㅇㄹㅇ"
+                : `${Math.floor(timer / 60)}:${
+                    String(timer % 60).length < 2
+                      ? `0${timer % 60}`
+                      : timer % 60
+                  }`
+              : "인증"}
           </Button>
         </S.SignUpEmailCertificationBox>
         <S.SignUpEmailCertificationBox>
