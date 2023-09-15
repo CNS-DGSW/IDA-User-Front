@@ -12,8 +12,10 @@ import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
 import { useState } from "react"
 
+const TimerSeconds: number = 180
+
 const SignUp = () => {
-  const [timer, setTimer] = useState<number>(180)
+  const [timer, setTimer] = useState<number>(TimerSeconds)
 
   const timerHandler = () => {
     setInterval(() => {
@@ -54,8 +56,12 @@ const SignUp = () => {
     const contact = getValues("contact")
     console.log(contact, validation.contact.test(contact))
     if (validation.contact.test(contact)) {
+      setTimer(TimerSeconds)
       timerHandler()
       setContactAuth(true)
+      setTimeout(() => {
+        setContactAuth(false)
+      }, TimerSeconds * 1000 + 500)
     }
   }
 
@@ -104,16 +110,16 @@ const SignUp = () => {
             radius={14}
             size="sm"
             onClick={contactOnSubmit}
-            disabled={contactAuth}
+            disabled={isCheckContact || contactAuth}
           >
-            {contactAuth
-              ? timer < 0
-                ? "ㅇㄹㅇ"
-                : `${Math.floor(timer / 60)}:${
-                    String(timer % 60).length < 2
-                      ? `0${timer % 60}`
-                      : timer % 60
-                  }`
+            {isCheckContact
+              ? "인증 완료"
+              : contactAuth
+              ? `${Math.floor(timer / 60)}:${
+                  String(timer % 60).length < 2 ? `0${timer % 60}` : timer % 60
+                }`
+              : timer < 0
+              ? "다시 인증"
               : "인증"}
           </Button>
         </S.SignUpEmailCertificationBox>
