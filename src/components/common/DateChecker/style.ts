@@ -50,4 +50,5 @@ export const DateCheckerDescription = styled.p`
   font-weight: 500;
   line-height: 32px;
   letter-spacing: -0.8px;
+  margin: 1rem auto;
 `
