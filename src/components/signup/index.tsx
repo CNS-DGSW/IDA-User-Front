@@ -12,10 +12,13 @@ import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
 import { useState } from "react"
 
-const TimerSeconds: number = 180
+const TimerSeconds: number = 10
 
 const SignUp = () => {
   const [timer, setTimer] = useState<number>(TimerSeconds)
+  const [contactAuth, setContactAuth] = useState<boolean>(false)
+  const [isCheckContact, setIsCheckContact] = useState<boolean>(false)
+  const [reContactCheck, setReContactCheck] = useState<boolean>(false)
 
   const timerHandler = () => {
     setInterval(() => {
@@ -41,9 +44,6 @@ const SignUp = () => {
     formState: { errors },
   } = useForm<SignUpFormData>()
 
-  const [contactAuth, setContactAuth] = useState<boolean>(false)
-  const [isCheckContact, setIsCheckContact] = useState<boolean>(false)
-
   const agreement = register("agreement", {
     required: "약관을 동의하여 주세요.",
   })
@@ -54,14 +54,18 @@ const SignUp = () => {
 
   const contactOnSubmit = () => {
     const contact = getValues("contact")
-    if (validation.contact.test(contact)) {
-      setTimer(TimerSeconds)
-      timerHandler()
-      setContactAuth(true)
-      setTimeout(() => {
-        setContactAuth(false)
-      }, TimerSeconds * 1000 + 500)
+    if (!reContactCheck) {
+      if (validation.contact.test(contact)) {
+        setReContactCheck(true)
+        setTimer(TimerSeconds)
+        timerHandler()
+        setContactAuth(true)
+        setTimeout(() => {
+          setContactAuth(false)
+        }, TimerSeconds * 1000 + 500)
+      }
     }
+    setReContactCheck(false)
   }
 
   const checkContactOnSubmit = () => {
@@ -118,8 +122,6 @@ const SignUp = () => {
               ? `${Math.floor(timer / 60)}:${
                   String(timer % 60).length < 2 ? `0${timer % 60}` : timer % 60
                 }`
-              : timer < 0
-              ? "다시 인증"
               : "인증"}
           </Button>
         </S.SignUpEmailCertificationBox>
