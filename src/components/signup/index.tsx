@@ -54,7 +54,6 @@ const SignUp = () => {
 
   const contactOnSubmit = () => {
     const contact = getValues("contact")
-    console.log(contact, validation.contact.test(contact))
     if (validation.contact.test(contact)) {
       setTimer(TimerSeconds)
       timerHandler()
