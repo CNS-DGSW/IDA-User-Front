@@ -24,10 +24,10 @@ const DateChecker = ({ schedule }: DateCheckerProps) => {
       <S.DateCheckerDateBox>
         <S.DateCheckeStartDate>{startTimeFormatted}부터</S.DateCheckeStartDate>
         <S.DateCheckerEndDate>{endTimeFormatted}까지</S.DateCheckerEndDate>
+        <S.DateCheckerDescription>
+          {schedule.description}
+        </S.DateCheckerDescription>
       </S.DateCheckerDateBox>
-      <S.DateCheckerDescription>
-        {schedule.description}
-      </S.DateCheckerDescription>
     </S.DateCheckerLayout>
   )
 }
