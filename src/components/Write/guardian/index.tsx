@@ -5,8 +5,15 @@ import Select from "@/components/common/Select"
 import { GuardianRelation } from "@/constants/Write/guardianRelationConstant"
 import CustomDatePicker from "@/components/common/DatePicker"
 import * as S from "./style"
+import { useState } from "react"
 
 const WriteGuardian = () => {
+    const [relationChangeValue,setRelationChangeValue] = useState<string>(null)
+    
+    const relationChangeHandler = (e:any) => {
+        setRelationChangeValue(e.target.innerText)
+    }
+
   return (
     <section>
       <Card>
@@ -15,7 +22,12 @@ const WriteGuardian = () => {
             <Input type="text" width={310} />
           </InputWrapper>
           <InputWrapper title="지원자와의 관계">
-            <Select list={GuardianRelation} width={310} changeEvent={()=>{}}/>
+            <Select
+              list={GuardianRelation}
+              width={310}
+              changeEvent={(e)=>relationChangeHandler(e)}
+              value={relationChangeValue}
+            />
           </InputWrapper>
         </InputWrapper>
         <InputWrapper style={{ marginTop: 54 }}>
