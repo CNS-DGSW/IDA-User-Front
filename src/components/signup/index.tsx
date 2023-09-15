@@ -12,7 +12,7 @@ import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
 import { useState } from "react"
 
-const TimerSeconds: number = 10
+const TimerSeconds: number = 180
 
 const SignUp = () => {
   const [timer, setTimer] = useState<number>(TimerSeconds)
