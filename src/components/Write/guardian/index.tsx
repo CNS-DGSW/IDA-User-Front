@@ -1,7 +1,6 @@
 import Card from "@/components/common/Card"
 import InputWrapper from "@/components/common/InputWrapper"
 import Input from "@/components/common/Input"
-import React, { ChangeEvent, useState } from "react"
 import Select from "@/components/common/Select"
 import { GuardianRelation } from "@/constants/Write/guardianRelationConstant"
 import CustomDatePicker from "@/components/common/DatePicker"
@@ -16,7 +15,7 @@ const WriteGuardian = () => {
             <Input type="text" width={310} />
           </InputWrapper>
           <InputWrapper title="지원자와의 관계">
-            <Select list={GuardianRelation} width={310} />
+            <Select list={GuardianRelation} width={310} changeEvent={()=>{}}/>
           </InputWrapper>
         </InputWrapper>
         <InputWrapper style={{ marginTop: 54 }}>
