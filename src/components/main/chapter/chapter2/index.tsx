@@ -15,12 +15,14 @@ const Chapter2 = () => {
   const { setTarget } = useIntersectionObserver({ onIntersect })
   return (
     <S.Chapter2Layout ref={setTarget}>
-      <S.ScheduleSection>
-        {schedules.map((schedule) => {
-          return <DateChecker key={schedule.title} schedule={schedule} />
-        })}
+      <S.ScheduleSectionRow>
+        <S.ScheduleSection>
+          {schedules.map((schedule) => {
+            return <DateChecker key={schedule.title} schedule={schedule} />
+          })}
+        </S.ScheduleSection>
         <ScheduleNavigator />
-      </S.ScheduleSection>
+      </S.ScheduleSectionRow>
     </S.Chapter2Layout>
   )
 }
