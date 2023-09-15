@@ -94,6 +94,7 @@ const SignUp = () => {
               render={({ field }) => (
                 <Input
                   type="text"
+                  readOnly={contactAuth || isCheckContact}
                   placeholder="전화번호를 입력하세요"
                   width={294}
                   isError={!!errors.contact}
@@ -135,6 +136,7 @@ const SignUp = () => {
                 <Input
                   type="text"
                   placeholder="인증번호를 입력하세요"
+                  readOnly={isCheckContact}
                   width={294}
                   isError={!!errors.contactCheck}
                   {...field}
