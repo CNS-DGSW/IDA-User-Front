@@ -4,4 +4,4 @@ const faq = () => {
   return <FAQpage />
 }
 
-export default faq;
+export default faq
