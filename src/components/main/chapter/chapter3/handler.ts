@@ -1,6 +1,6 @@
-import HomeIcon from "../../../../../public/asset/Icon/Home.svg"
-import Notification from "../../../../../public/asset/Icon/Notification.svg"
-import MessageIcon from "../../../../../public/asset/Icon/Home.svg"
+import HomeIcon from "@/assets/img/Icon/Home.svg"
+import Notification from "@/assets/img/Icon/Notification.svg"
+import MessageIcon from "@/assets/img/Icon/Message.svg"
 
 interface IhandlerInfo {
   image: string
