@@ -6,6 +6,7 @@ import ContentsTitle from "./contentsTitle"
 import ContentsContext from "./contentsContext"
 import LinkSection from "./linkSection"
 import Gragh from "./gragh"
+import Contact from "./contact"
 
 const Chapter3 = () => {
   return (
@@ -78,6 +79,7 @@ const Chapter3 = () => {
           </S.ContentsSection3WrapRow>
         </S.ContentsWrapSection>
       </S.Chapter3Layout>
+      <Contact />
     </>
   )
 }
