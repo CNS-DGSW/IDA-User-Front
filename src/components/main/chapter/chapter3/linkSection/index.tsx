@@ -4,6 +4,7 @@ import * as S from "./style"
 const LinkSection = () => {
   return (
     <S.MainLayout>
+      <S.BackgroundImage />
       <div>
         <S.ContextContentsBox>
           <p>대소고로 온나온나 온나...</p>
