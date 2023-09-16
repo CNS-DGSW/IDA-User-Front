@@ -15,10 +15,11 @@ const Chapter3 = () => {
       </div>
       <S.ContentsLayoutCol className="layout">
         <S.HandlerWrapRow>
-          {handlerInfo.map((e) => (
+          {handlerInfo.map((information, i) => (
             <HandlerBox
-              context={e.context}
-              backgroundColor={e.backgroundColor}
+              key={i}
+              context={information.context}
+              backgroundColor={information.backgroundColor}
             />
           ))}
         </S.HandlerWrapRow>
