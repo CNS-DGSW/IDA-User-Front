@@ -16,3 +16,24 @@ export const HandlerWrapRow = styled.div`
   display: flex;
   justify-content: space-between;
 `
+
+export const ContentsTitleParagragh = styled.p`
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #1485ee;
+  margin: 32px 0;
+`
+
+export const ContentsWrapSection = styled.section`
+  width: 100%;
+  height: 416px;
+  border-radius: 24px;
+  background-color: #f8fafd;
+  margin: 60px 0;
+  display: flex;
+`
+
+export const ContentsWhiteSpaceBox = styled.div`
+  width: 100%;
+  height: 180px;
+`
