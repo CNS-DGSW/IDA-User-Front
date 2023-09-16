@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const IconImageBox = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   border-radius: 24px;
   background-color: #f8fafd;
 `
