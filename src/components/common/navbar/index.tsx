@@ -4,10 +4,15 @@ import * as S from "./style"
 import { useNavBar } from "@/hooks/useNavBar"
 
 const NavBar = () => {
-  const { checkDisabledNavbar, isDark } = useNavBar()
+  const { checkDisabledNavbar, checkFiexdNavbar, isDark } = useNavBar()
   const isDisabledNavbar = checkDisabledNavbar()
+  const isFiexd = checkFiexdNavbar()
   return (
-    <S.NavbarLayout isDisabled={isDisabledNavbar}>
+    <S.NavbarLayout
+      isDark={isDark}
+      isDisabled={isDisabledNavbar}
+      isFiexd={isFiexd}
+    >
       <S.NavbarList isDark={isDark}>
         <S.NavbarLeftBox>
           <NavbarItem href="/">
@@ -17,8 +22,8 @@ const NavBar = () => {
 
         <S.NavbarRightBox>
           <NavbarItem href="/apply">원서접수</NavbarItem>
-          <NavbarItem href="/#">공지사항</NavbarItem>
-          <NavbarItem href="/#">FAQ</NavbarItem>
+          <NavbarItem href="/inform">공지사항</NavbarItem>
+          <NavbarItem href="/faq">FAQ</NavbarItem>
           <S.NavbarAuthBox>
             <NavbarItem href="/signup">회원가입</NavbarItem>
             <S.NavbarDot />
