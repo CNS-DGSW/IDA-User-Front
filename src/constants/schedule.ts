@@ -26,7 +26,6 @@ export const schedules: readonly ScheduleInfo[] = [
       },
       end: {
         date: `${cureentYear}-10-01`,
-
         time: "24:00:00",
       },
     },
