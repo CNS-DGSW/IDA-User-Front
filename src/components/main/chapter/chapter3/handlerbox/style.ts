@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import Image from "next/image"
 
 export const HandlerLayout = styled.div`
   width: 278px;
@@ -29,5 +28,3 @@ export const IconImage = styled.div`
   box-shadow: 8.05px 24.15px 89.45px -11.63px rgba(22, 52, 80, 0.1);
   margin: 0 auto;
 `
-
-//${({ src }: { src: string }) => src}
