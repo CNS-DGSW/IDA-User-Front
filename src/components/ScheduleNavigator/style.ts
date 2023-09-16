@@ -4,6 +4,9 @@ export const ScheduleNavigatorLayout = styled.div`
   display: flex;
   flex-direction: column;
   gap: 42px;
+  position: absolute;
+  z-index: 1;
+  margin-left: 70rem;
 `
 
 export const ScheduleItemBox = styled.div<{ isSelected?: boolean }>`
@@ -14,7 +17,6 @@ export const ScheduleItemBox = styled.div<{ isSelected?: boolean }>`
   flex-direction: column;
   cursor: pointer;
   justify-content: space-between;
-  margin-left: 260px;
   color: ${({ theme }) => theme.colors.gray500};
 `
 export const ScheduleImageBox = styled.div<{ isSelected: boolean }>`
