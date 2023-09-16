@@ -1,7 +1,8 @@
 import React from "react"
 import HandlerBox from "./handlerbox"
 import * as S from "./style"
-import handlerInfo from "./handler"
+import Inform from "./inform"
+import ContentsTitle from "./contentsTitle"
 
 const Chapter3 = () => {
   return (
@@ -15,7 +16,7 @@ const Chapter3 = () => {
       </div>
       <S.ContentsLayoutCol className="layout">
         <S.HandlerWrapRow>
-          {handlerInfo.map((information, i) => (
+          {Inform.handlerInfo.map((information, i) => (
             <HandlerBox
               key={i}
               context={information.context}
@@ -24,6 +25,13 @@ const Chapter3 = () => {
           ))}
         </S.HandlerWrapRow>
       </S.ContentsLayoutCol>
+      {Inform.ContentsTitleInfo.map((information, i) => (
+        <ContentsTitle
+          key={i}
+          title={information.title}
+          context={information.context}
+        />
+      ))}
     </S.Chapter3Layout>
   )
 }
