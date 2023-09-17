@@ -21,6 +21,7 @@ module.exports = {
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/no-confusing-void-expression": "off",
     "no-unneeded-ternary": "off",
+    "@typescript-eslint/consistent-type-imports": "error",
   },
   settings: {
     react: {
