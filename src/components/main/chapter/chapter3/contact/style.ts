@@ -7,6 +7,8 @@ export const MainLayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  scroll-snap-align: start;
 `
 
 export const SubLayout = styled.div`

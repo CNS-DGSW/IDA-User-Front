@@ -7,9 +7,12 @@ export const ContentsLayoutCol = styled.div`
 `
 
 export const Chapter3Layout = styled.div`
+  padding-top: 200px;
   min-height: 300vh;
   width: 1000px;
   margin: 0 auto;
+
+  scroll-snap-align: start;
 `
 export const HandlerWrapRow = styled.div`
   width: 100%;

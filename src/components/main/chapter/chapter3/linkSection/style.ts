@@ -7,8 +7,9 @@ export const MainLayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 200px;
   position: relative;
+
+  scroll-snap-align: start;
 `
 
 export const BackgroundImage = styled.div`
