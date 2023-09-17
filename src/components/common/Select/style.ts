@@ -1,16 +1,16 @@
 import styled from "styled-components"
 
-export const SelectContainer = styled.div<{ width?: number }>`
+export const SelectContainer = styled.div<{ width?: number; colors?: string }>`
   width: ${({ width }) => (width ? `${width}px` : "208px")};
   height: 48px;
   background: #ffffff;
-  border: 1px solid #d8dae0;
+  border: 1px solid ${({ colors }) => (colors ? `#${colors}` : "#d8dae0")};
   border-radius: 8px;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
 
-  color: #8b939c;
+  color: ${({ colors }) => (colors ? `#${colors}` : "#8b939c")};
 
   display: flex;
   align-items: center;
@@ -22,14 +22,15 @@ export const SelectContainer = styled.div<{ width?: number }>`
   position: relative;
 `
 
-export const ListContainer = styled.ul`
+export const ListContainer = styled.ul<{ direction?: boolean }>`
   position: absolute;
-  top: 100%;
+  ${({ direction }) => (direction ? `top: 100%` : `bottom: 100%`)};
   left: 0;
   max-height: 240px;
   overflow-y: scroll;
   border-radius: 8px;
   border: 1px solid #d8dae0;
+  z-index: 100;
 `
 
 export const ListItem = styled.li<{ width?: number }>`
