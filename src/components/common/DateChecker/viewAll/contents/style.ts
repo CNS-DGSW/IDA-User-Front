@@ -4,7 +4,8 @@ export const IconImageBox = styled.div`
   width: 110px;
   height: 110px;
   border-radius: 24px;
-  background-color: #f8fafd;
+  overflow: hidden;
+  object-fit: cover;
 `
 
 export const TitleParagragh = styled.p`

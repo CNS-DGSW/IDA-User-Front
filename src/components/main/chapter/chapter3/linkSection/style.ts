@@ -3,12 +3,11 @@ import Link from "next/link"
 export const MainLayout = styled.div`
   width: 100%;
   height: 560px;
-  background-color: rgba(9, 20, 49, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-
+  background-color: rgba(9, 20, 49, 0.5);
   scroll-snap-align: start;
 `
 
@@ -16,7 +15,6 @@ export const BackgroundImage = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: green;
   z-index: -1;
 `
 
