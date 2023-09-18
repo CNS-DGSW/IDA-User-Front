@@ -13,9 +13,21 @@ export interface SelectProps {
   value?: string
   changeEvent: MouseEventHandler<HTMLLIElement>
   style?: CSSObject
+  placeholder?: string
+  colors?: string
+  direction?: boolean
 }
 
-const Select = ({ list, width, changeEvent, value, style }: SelectProps) => {
+const Select = ({
+  list,
+  width,
+  changeEvent,
+  value,
+  style,
+  placeholder,
+  colors,
+  direction = true,
+}: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const revertIsOpen = () => setIsOpen((prev) => !prev)
   const selectRef = useRef<HTMLDivElement>(null)
@@ -31,8 +43,9 @@ const Select = ({ list, width, changeEvent, value, style }: SelectProps) => {
       ref={selectRef}
       width={width}
       style={style}
+      colors={colors}
     >
-      {value ?? "선택"}
+      {value ?? placeholder ?? "선택"}
       <Image
         src={selectIcon}
         alt="icon"
@@ -43,7 +56,7 @@ const Select = ({ list, width, changeEvent, value, style }: SelectProps) => {
         }}
       />
       {isOpen && (
-        <ListContainer>
+        <ListContainer direction={direction}>
           {list?.map((v) => (
             <ListItem width={width} key={v} onClick={changeEvent}>
               {v}
