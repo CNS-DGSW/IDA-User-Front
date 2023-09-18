@@ -21,6 +21,7 @@ export const ContextParagragh = styled.p`
 `
 
 export const IconImage = styled.div`
+  overflow: hidden;
   width: 135px;
   height: 135px;
   border-radius: 40px;

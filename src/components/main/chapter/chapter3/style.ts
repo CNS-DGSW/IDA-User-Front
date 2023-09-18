@@ -49,11 +49,17 @@ export const ContentsSection1TitleParagragh = styled.p`
   line-height: 40px;
   letter-spacing: -1px;
 `
+export const ContentsSection1ImageFilterBox = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(16, 135, 220, 0.1);
+`
 
 export const ContentsSection1ImageBox = styled.div`
   height: 100%;
   width: 394px;
-  background-color: #ddd;
+  position: relative;
 `
 
 export const ContentsSection1ContextWrapCol = styled.div`
@@ -83,7 +89,6 @@ export const ContentsSection1DownloadButton = styled.button`
 export const ContentsSection1DownloadIconBox = styled.div`
   width: 1rem;
   height: 1rem;
-  background-color: #1485ee;
   margin-left: 0.5rem;
 `
 export const ContentsSection3WrapRow = styled.div`

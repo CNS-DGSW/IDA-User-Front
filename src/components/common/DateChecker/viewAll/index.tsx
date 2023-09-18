@@ -1,6 +1,10 @@
 import Contents from "./contents"
 import * as S from "./style"
 import type { IContents } from "./type"
+import Interview from "@/assets/img/Icon/schedule/Interview.svg"
+import MessageIcon from "@/assets/img/Icon/schedule/MessageIcon.svg"
+import Notification from "@/assets/img/Icon/schedule/Notification.svg"
+import Register from "@/assets/img/Icon/schedule/Register.svg"
 
 const ContentsValue: IContents[] = [
   {
@@ -9,7 +13,7 @@ const ContentsValue: IContents[] = [
       startDate: "2023.03.27 (목) 03:00",
       endDate: "2023.03.29 (토) 17:00",
     },
-    image: "",
+    image: <Register />,
   },
   {
     title: "1차 합격자 발표",
@@ -17,7 +21,7 @@ const ContentsValue: IContents[] = [
       startDate: "2023.03.27 (목) 03:00",
       endDate: "2023.03.29 (토) 17:00",
     },
-    image: "",
+    image: <Notification />,
   },
   {
     title: "창의협업 및 면접",
@@ -25,7 +29,7 @@ const ContentsValue: IContents[] = [
       startDate: "2023.03.27 (목) 03:00",
       endDate: "2023.03.29 (토) 17:00",
     },
-    image: "",
+    image: <MessageIcon />,
   },
   {
     title: "최종 결과 발표",
@@ -33,7 +37,7 @@ const ContentsValue: IContents[] = [
       startDate: "2023.03.27 (목) 03:00",
       endDate: "2023.03.29 (토) 17:00",
     },
-    image: "",
+    image: <Interview />,
   },
 ]
 

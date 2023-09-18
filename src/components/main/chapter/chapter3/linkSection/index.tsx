@@ -1,10 +1,13 @@
 import React from "react"
 import * as S from "./style"
+import MainBackground from "@/assets/mainBackground.svg"
 
 const LinkSection = () => {
   return (
     <S.MainLayout>
-      <S.BackgroundImage />
+      <S.BackgroundImage>
+        <MainBackground />
+      </S.BackgroundImage>
       <div>
         <S.ContextContentsBox>
           <p>대소고로 온나온나 온나...</p>

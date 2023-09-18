@@ -5,7 +5,7 @@ import type { IContents } from "../type"
 const Contents = ({ title, date, image }: IContents) => {
   return (
     <S.ContentsLayout>
-      <S.IconImageBox />
+      <S.IconImageBox>{image}</S.IconImageBox>
       <S.TitleParagragh>{title}</S.TitleParagragh>
       <S.ContextParagragh>{date.startDate} ~</S.ContextParagragh>
       <S.ContextParagragh>{date.endDate}</S.ContextParagragh>

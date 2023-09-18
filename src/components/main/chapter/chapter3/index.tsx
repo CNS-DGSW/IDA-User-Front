@@ -7,6 +7,8 @@ import ContentsContext from "./contentsContext"
 import LinkSection from "./linkSection"
 import Gragh from "./gragh"
 import Contact from "./contact"
+import MainFileImage from "@/assets/img/mainFileImage.svg"
+import DownloadIcon from "@/assets/img/Icon/downloadIcon.svg"
 
 const Chapter3 = () => {
   return (
@@ -18,6 +20,7 @@ const Chapter3 = () => {
             {Inform.handlerInfo.map((information, i) => (
               <HandlerBox
                 key={i}
+                index={i}
                 context={information.context}
                 backgroundColor={information.backgroundColor}
               />
@@ -30,7 +33,10 @@ const Chapter3 = () => {
           context={Inform.ContentsTitleInfo[0].context}
         />
         <S.ContentsWrapSection>
-          <S.ContentsSection1ImageBox />
+          <S.ContentsSection1ImageBox>
+            <S.ContentsSection1ImageFilterBox />
+            <MainFileImage />
+          </S.ContentsSection1ImageBox>
           <S.ContentsSection1ContextWrapCol>
             <S.ContentsSection1TitleParagragh>
               모집요강 파일,
@@ -43,7 +49,9 @@ const Chapter3 = () => {
             </S.ContentsSection1ContextParagragh>
             <S.ContentsSection1DownloadButton>
               <p>다운로드</p>
-              <S.ContentsSection1DownloadIconBox />
+              <S.ContentsSection1DownloadIconBox>
+                <DownloadIcon />
+              </S.ContentsSection1DownloadIconBox>
             </S.ContentsSection1DownloadButton>
           </S.ContentsSection1ContextWrapCol>
         </S.ContentsWrapSection>
