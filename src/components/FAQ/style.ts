@@ -36,6 +36,7 @@ export const FAQmainContent = styled.div`
   margin-left: 20%;
   width: 61%;
   height: 100%;
+  cursor: pointer;
 `
 export const FAQquestionContent = styled.div`
   display: flex;

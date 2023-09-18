@@ -4,7 +4,7 @@ import FAQicon from "../../assets/FAQicon.png"
 import selectIcon from "../../assets/selectIcon.png"
 import dummyFAQdata from "../../constants/dummyData/index"
 
-const FAQ = () => {
+const faq = () => {
   const [activeImageRotations, setActiveImageRotations] = useState<number[]>([])
 
   const toggleFAQ = (id: number) => {
@@ -50,4 +50,4 @@ const FAQ = () => {
   )
 }
 
-export default FAQ
+export default faq
