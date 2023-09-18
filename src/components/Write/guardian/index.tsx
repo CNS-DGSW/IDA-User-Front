@@ -1,7 +1,7 @@
 import Card from "@/components/common/Card"
 import InputWrapper from "@/components/common/InputWrapper"
 import Input from "@/components/common/Input"
-import React, { ChangeEvent, useState } from "react"
+import React from "react"
 import Select from "@/components/common/Select"
 import { GuardianRelation } from "@/constants/Write/guardianRelationConstant"
 import CustomDatePicker from "@/components/common/DatePicker"
