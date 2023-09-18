@@ -8,11 +8,11 @@ import * as S from "./style"
 import { useState } from "react"
 
 const WriteGuardian = () => {
-    const [relationChangeValue,setRelationChangeValue] = useState<string>(null)
-    
-    const relationChangeHandler = (e:any) => {
-        setRelationChangeValue(e.target.innerText)
-    }
+  const [relationChangeValue, setRelationChangeValue] = useState<string>(null)
+
+  const relationChangeHandler = (e: any) => {
+    setRelationChangeValue(e.target.innerText)
+  }
 
   return (
     <section>
@@ -25,7 +25,7 @@ const WriteGuardian = () => {
             <Select
               list={GuardianRelation}
               width={310}
-              changeEvent={(e)=>relationChangeHandler(e)}
+              changeEvent={(e) => relationChangeHandler(e)}
               value={relationChangeValue}
             />
           </InputWrapper>
