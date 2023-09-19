@@ -84,7 +84,6 @@ const SignUp = () => {
 
         <S.SignUpEmailCertificationBox>
           <S.SignUpInputBox>
-            <S.SignUpInputParagragh>82+</S.SignUpInputParagragh>
             <Controller
               control={control}
               rules={{
@@ -102,7 +101,6 @@ const SignUp = () => {
                   placeholder="전화번호를 입력하세요"
                   width={294}
                   isError={!!errors.contact}
-                  style={{ paddingLeft: "40px" }}
                   {...field}
                 />
               )}
