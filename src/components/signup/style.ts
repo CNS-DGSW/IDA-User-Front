@@ -22,8 +22,17 @@ export const SignUpDGSWLogo = styled(DGSW_LOGO)`
   margin-bottom: 20px;
 `
 
+export const SignUpInputParagragh = styled.p`
+  padding-left: 0.75rem;
+  font-size: 0.8rem;
+  position: absolute;
+  color: ${({ theme: { colors } }) => colors.gray700};
+`
+
 export const SignUpInputBox = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
 `
 
 export const SignUpErrorMessageLayout = styled.div`

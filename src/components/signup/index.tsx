@@ -84,6 +84,7 @@ const SignUp = () => {
 
         <S.SignUpEmailCertificationBox>
           <S.SignUpInputBox>
+            <S.SignUpInputParagragh>82+</S.SignUpInputParagragh>
             <Controller
               control={control}
               rules={{
@@ -101,6 +102,7 @@ const SignUp = () => {
                   placeholder="전화번호를 입력하세요"
                   width={294}
                   isError={!!errors.contact}
+                  style={{ paddingLeft: "40px" }}
                   {...field}
                 />
               )}
@@ -122,7 +124,7 @@ const SignUp = () => {
               ? `${Math.floor(timer / 60)}:${
                   String(timer % 60).length < 2 ? `0${timer % 60}` : timer % 60
                 }`
-              : "인증"}
+              : "인증 요청"}
           </Button>
         </S.SignUpEmailCertificationBox>
         <S.SignUpEmailCertificationBox>
