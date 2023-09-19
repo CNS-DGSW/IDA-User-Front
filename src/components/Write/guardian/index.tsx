@@ -8,7 +8,9 @@ import * as S from "./style"
 import { useState } from "react"
 
 const WriteGuardian = () => {
-  const [relationChangeValue, setRelationChangeValue] = useState<string>(null)
+  const [relationChangeValue, setRelationChangeValue] = useState<
+    string | undefined
+  >(undefined)
 
   const relationChangeHandler = (e: any) => {
     setRelationChangeValue(e.target.innerText)
