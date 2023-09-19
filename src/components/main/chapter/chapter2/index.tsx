@@ -3,7 +3,7 @@ import { useSetRecoilState } from "recoil"
 import { schedules } from "@/constants/schedule"
 import useIntersectionObserver from "@/hooks/common/useIntersectionObserver"
 import * as S from "./style"
-import DateChecker from "./dateChecker/index"
+import DateChecker from "./dateChecker"
 import { isDarkNavbarState } from "@/atom/navBarAtom"
 import { useEffect } from "react"
 
