@@ -25,7 +25,7 @@ const WriteGuardian = () => {
             <Select
               list={GuardianRelation}
               width={310}
-              changeEvent={(e)=>relationChangeHandler(e)}
+              changeEvent={(e) => relationChangeHandler(e)}
               value={relationChangeValue}
             />
           </InputWrapper>
