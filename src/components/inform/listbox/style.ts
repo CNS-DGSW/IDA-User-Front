@@ -20,6 +20,7 @@ export const SubComponentLayout = styled.div`
 
 export const ContentsRow = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
 `
 
@@ -51,9 +52,8 @@ export const InformContentsTitleParagraph = styled.p`
 `
 
 export const InformContentsDateIconBox = styled.div`
-  width: 1rem;
-  height: 1rem;
-  background-color: gray;
+  width: 18px;
+  height: 18px;
   margin-right: 0.5rem;
 `
 export const InformContentsDateContextParagraph = styled.p`

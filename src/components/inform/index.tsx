@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import * as S from "./style"
 import InformContents from "./listbox"
 import type { IInformContentsProps } from "./type"
+import InformIcon from "@/assets/img/Icon/informIcon.svg"
 import InformData from "./inform.dummy.json"
 
 const InformPage = () => {
@@ -13,7 +14,9 @@ const InformPage = () => {
   return (
     <S.MainComponentLayout>
       <S.InformContentsCol>
-        <S.InformNotificationIconBox />
+        <S.InformNotificationIconBox>
+          <InformIcon />
+        </S.InformNotificationIconBox>
         <S.InformTitleParagraph>공지사항</S.InformTitleParagraph>
         {informData?.map((EachInformData, index) => (
           <InformContents

@@ -25,7 +25,8 @@ export const InformDetailNotificationIconBox = styled.div`
   width: 2.75rem;
   height: 2.75rem;
   margin-bottom: 1.5rem;
-  background-color: skyblue;
+  border-radius: 12px;
+  overflow: hidden;
 `
 
 export const InformDetailTitleRow = styled.div`
@@ -37,6 +38,7 @@ export const InformDetailTitleRow = styled.div`
 
 export const InformDetailSubTitleRow = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
 `
 
@@ -65,10 +67,10 @@ export const ImportantCheckBox = styled.div`
 export const InformDetailDateIconBox = styled.div`
   width: 1rem;
   height: 1rem;
-  background-color: gray;
   margin-right: 0.5rem;
 `
 export const InformDetailDateContextParagraph = styled.p`
+  margin-top: 0.4rem;
   font-size: 1rem;
   color: #808488;
 `
