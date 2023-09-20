@@ -5,6 +5,7 @@ import * as S from "./style"
 import type { SignInFormData } from "./type"
 import { validation } from "@/constants/validation"
 import ErrorMessage from "../common/ErrorMessage"
+import Link from "next/link"
 
 const Signin = () => {
   // const [email,setEmail] = useState("이메일을 입력하세요")
@@ -22,7 +23,9 @@ const Signin = () => {
   return (
     <S.SigninForm onSubmit={handleSubmit(onSubmit)}>
       <S.SigninLayout>
-        <S.DGSWLOGO />
+        <Link href="/">
+          <S.DGSWLOGO />
+        </Link>
         <Controller
           control={control}
           rules={{
