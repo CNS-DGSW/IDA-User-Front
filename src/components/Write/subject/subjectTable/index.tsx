@@ -99,7 +99,6 @@ const SubjectTable = () => {
                       }}
                       onClick={() => {
                         ActiveSubjectHandler({ year, semester: 2 })
-                        console.log(activeSubject)
                       }}
                       radius={6}
                     >
@@ -124,7 +123,7 @@ const SubjectTable = () => {
                       width={73}
                       list={grade}
                       changeEvent={() => {}}
-                      value="-"
+                      value={activeSubject[idx] ? "-" : "A"}
                       style={{
                         padding: "0 8px",
                         margin: "0 auto",
@@ -164,7 +163,7 @@ const SubjectTable = () => {
                       width={73}
                       list={grade}
                       changeEvent={() => {}}
-                      value="-"
+                      value={activeSubject[idx] ? "-" : "A"}
                       style={{
                         padding: "0 8px",
                         margin: "0 auto",
