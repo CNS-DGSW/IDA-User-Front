@@ -28,27 +28,27 @@ const SubjectTable = () => {
     setState: setActiveSubject,
   })
 
-  const ChangeActiveSubject = () => {}
+  // const ChangeActiveSubject = () => {}
 
   const ActiveSubjectHandler = ({ year, semester }: IActiveSubjectHandler) => {
     switch (year) {
       case "1학년":
         if (semester === 1)
-          ChangeArray({ changeIndex: 0, changeValue: !!!activeSubject[0] })
+          ChangeArray({ changeIndex: 0, changeValue: !activeSubject[0] })
         else if (semester === 2)
-          ChangeArray({ changeIndex: 1, changeValue: !!!activeSubject[1] })
+          ChangeArray({ changeIndex: 1, changeValue: !activeSubject[1] })
         break
       case "2학년":
         if (semester === 1)
-          ChangeArray({ changeIndex: 2, changeValue: !!!activeSubject[2] })
+          ChangeArray({ changeIndex: 2, changeValue: !activeSubject[2] })
         else if (semester === 2)
-          ChangeArray({ changeIndex: 3, changeValue: !!!activeSubject[3] })
+          ChangeArray({ changeIndex: 3, changeValue: !activeSubject[3] })
         break
       case "3학년":
         if (semester === 1)
-          ChangeArray({ changeIndex: 4, changeValue: !!!activeSubject[4] })
+          ChangeArray({ changeIndex: 4, changeValue: !activeSubject[4] })
         else if (semester === 2)
-          ChangeArray({ changeIndex: 5, changeValue: !!!activeSubject[5] })
+          ChangeArray({ changeIndex: 5, changeValue: !activeSubject[5] })
         break
     }
   }
@@ -83,7 +83,7 @@ const SubjectTable = () => {
                       }}
                       radius={6}
                       onClick={() =>
-                        ActiveSubjectHandler({ year: year, semester: 1 })
+                        ActiveSubjectHandler({ year, semester: 1 })
                       }
                     >
                       자유학기제
@@ -98,7 +98,7 @@ const SubjectTable = () => {
                         margin: "0 auto",
                       }}
                       onClick={() => {
-                        ActiveSubjectHandler({ year: year, semester: 2 })
+                        ActiveSubjectHandler({ year, semester: 2 })
                         console.log(activeSubject)
                       }}
                       radius={6}

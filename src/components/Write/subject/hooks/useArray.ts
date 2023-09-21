@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react"
+import type { Dispatch, SetStateAction } from "react"
 
 interface IuseArray {
   state: any[]
@@ -11,7 +11,7 @@ interface IChangeState {
 
 const useArray = ({ state, setState }: IuseArray) => {
   const ChangeState = ({ changeValue, changeIndex }: IChangeState) => {
-    let copyArr = [...state]
+    const copyArr = [...state]
     copyArr[changeIndex] = changeValue
     setState([...copyArr])
   }
