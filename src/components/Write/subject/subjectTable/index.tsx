@@ -5,10 +5,53 @@ import { Table } from "@/components/common/table"
 import { grade, schoolYear, subjectNames } from "@/constants/Write/subject"
 import React, { useState } from "react"
 import { ButtonWrapper } from "./style"
+import { useArray } from "../hooks/useArray"
+
+interface IActiveSubjectHandler {
+  year: string
+  semester: number
+}
 
 const SubjectTable = () => {
   const [otherSubject, setOtherSubject] = useState<string[]>([])
   const addOtherSubject = () => setOtherSubject((prev) => [...prev, ""])
+  const [activeSubject, setActiveSubject] = useState<boolean[]>([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ])
+  const ChangeArray = useArray({
+    state: activeSubject,
+    setState: setActiveSubject,
+  })
+
+  const ChangeActiveSubject = () => {}
+
+  const ActiveSubjectHandler = ({ year, semester }: IActiveSubjectHandler) => {
+    switch (year) {
+      case "1학년":
+        if (semester === 1)
+          ChangeArray({ changeIndex: 0, changeValue: !!!activeSubject[0] })
+        else if (semester === 2)
+          ChangeArray({ changeIndex: 1, changeValue: !!!activeSubject[1] })
+        break
+      case "2학년":
+        if (semester === 1)
+          ChangeArray({ changeIndex: 2, changeValue: !!!activeSubject[2] })
+        else if (semester === 2)
+          ChangeArray({ changeIndex: 3, changeValue: !!!activeSubject[3] })
+        break
+      case "3학년":
+        if (semester === 1)
+          ChangeArray({ changeIndex: 4, changeValue: !!!activeSubject[4] })
+        else if (semester === 2)
+          ChangeArray({ changeIndex: 5, changeValue: !!!activeSubject[5] })
+        break
+    }
+  }
 
   return (
     <>
@@ -39,6 +82,9 @@ const SubjectTable = () => {
                         margin: "0 auto",
                       }}
                       radius={6}
+                      onClick={() =>
+                        ActiveSubjectHandler({ year: year, semester: 1 })
+                      }
                     >
                       자유학기제
                     </Button>
@@ -50,6 +96,10 @@ const SubjectTable = () => {
                         width: "73px",
                         height: "38px",
                         margin: "0 auto",
+                      }}
+                      onClick={() => {
+                        ActiveSubjectHandler({ year: year, semester: 2 })
+                        console.log(activeSubject)
                       }}
                       radius={6}
                     >
