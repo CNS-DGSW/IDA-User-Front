@@ -1,6 +1,7 @@
 import React from "react"
 import * as S from "./style"
 import type { IInformContentsProps } from "../type"
+import InformDateIcon from "@/assets/img/Icon/informDateIcon.svg"
 import Link from "next/link"
 
 const InformContents = ({
@@ -22,7 +23,9 @@ const InformContents = ({
             </S.InformContentsTitleParagraph>
           </S.ContentsRow>
           <S.ContentsRow>
-            <S.InformContentsDateIconBox />
+            <S.InformContentsDateIconBox>
+              <InformDateIcon />
+            </S.InformContentsDateIconBox>
             <S.InformContentsDateContextParagraph>
               {date}
             </S.InformContentsDateContextParagraph>

@@ -23,5 +23,6 @@ export const InformNotificationIconBox = styled.div`
   width: 2.75rem;
   height: 2.75rem;
   margin-bottom: 1.5rem;
-  background-color: skyblue;
+  border-radius: 12px;
+  overflow: hidden;
 `

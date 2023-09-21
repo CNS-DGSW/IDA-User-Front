@@ -1,5 +1,5 @@
-import Chapter1 from "./Chapter/Chapter1"
-import Chapter2 from "./Chapter/Chapter2"
+import Chapter1 from "./chapter/chapter1"
+import Chapter2 from "./chapter/chapter2"
 import * as S from "./style"
 
 const Main = () => {

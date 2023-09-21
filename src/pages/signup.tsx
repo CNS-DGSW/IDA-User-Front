@@ -1,5 +1,5 @@
 import React from "react"
-import SignUp from "@/components/Signup"
+import SignUp from "@/components/signup"
 
 const signup = () => {
   return <SignUp />
