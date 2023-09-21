@@ -3,6 +3,7 @@ import useIntersectionObserver from "@/hooks/common/useIntersectionObserver"
 import { isDarkNavbarState } from "@/atom/navBarAtom"
 import DateChecker from "../../../common/DateChecker"
 import ScheduleNavigator from "@/components/ScheduleNavigator"
+import { useEffect } from "react"
 import { useRecoilValue, useSetRecoilState } from "recoil"
 import { currentScheduleState } from "@/atom/scheduleAtom"
 import * as S from "./style"
@@ -14,6 +15,12 @@ const Chapter2 = () => {
   const onIntersect: IntersectionObserverCallback = ([{ isIntersecting }]) => {
     setDarkNavbarState(!isIntersecting)
   }
+
+  useEffect(() => {
+    return () => {
+      setDarkNavbarState(false)
+    }
+  }, [])
 
   const { setTarget } = useIntersectionObserver({ onIntersect })
   return (

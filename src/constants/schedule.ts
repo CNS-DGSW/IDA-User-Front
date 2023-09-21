@@ -10,8 +10,8 @@ export const schedules: readonly ScheduleInfo[] = [
         time: "12:00:00",
       },
       end: {
-        date: `${cureentYear}-06-29`,
-        time: "15:00:00",
+        date: `${cureentYear}-11-11`,
+        time: "16:00:00",
       },
     },
     description:
