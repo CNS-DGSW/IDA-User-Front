@@ -8,6 +8,9 @@ interface IChangeState {
   changeValue: any
   changeIndex: number
 }
+interface IAddState {
+  addValue: any
+}
 
 const useArray = ({ state, setState }: IuseArray) => {
   const ChangeState = ({ changeValue, changeIndex }: IChangeState) => {
@@ -15,7 +18,12 @@ const useArray = ({ state, setState }: IuseArray) => {
     copyArr[changeIndex] = changeValue
     setState([...copyArr])
   }
-  return ChangeState
+  const AddState = ({ addValue }: IAddState) => {
+    const copyArr = [...state]
+    copyArr.push(addValue)
+    setState([...copyArr])
+  }
+  return { ChangeState, AddState }
 }
 
 export { useArray }
