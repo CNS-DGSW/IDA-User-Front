@@ -5,9 +5,13 @@ import InformDateIcon from "@/assets/img/Icon/informDateIcon.svg"
 import InformIcon from "@/assets/img/Icon/informIcon.svg"
 import InformData from "../inform.dummy.json"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 const InformDetailPage = () => {
-  const [informData] = useState<IInformContentsProps>(InformData.inform[0])
+  const router = useRouter()
+  const [informData] = useState<IInformContentsProps>(
+    InformData.inform[Number(router.query.id)],
+  )
 
   return (
     <S.MainComponentLayout>
