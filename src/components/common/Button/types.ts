@@ -1,7 +1,7 @@
 import type { CSSProperties, ButtonHTMLAttributes } from "react"
 
 type SizeType = "xs" | "sm" | "md" | "lg"
-type ButtonColorType = "primary" | "second" | "third"
+type ButtonColorType = "primary" | "second" | "third" | "unable"
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: SizeType

@@ -9,7 +9,7 @@ import type { ThemeType } from "@dgswcns/design-token"
 import type { ButtonProps } from "./types"
 
 type SizeType = "xs" | "sm" | "md" | "lg"
-type ButtonColorType = "primary" | "second" | "third"
+type ButtonColorType = "primary" | "second" | "third" | "unable"
 
 const getSize: Record<SizeType, FlattenSimpleInterpolation> = {
   xs: css`
@@ -52,6 +52,10 @@ const getColor: Record<
     color: ${({ theme: { colors } }: ThemeProps<ThemeType>) => colors.gray400};
     border: ${({ theme: { colors } }: ThemeProps<ThemeType>) =>
       `1px solid ${colors.gray400} !important`};
+  `,
+  unable: css`
+    background-color: #f2f3f5;
+    color: #8b939c;
   `,
 }
 
