@@ -10,8 +10,24 @@ import { validation } from "@/constants/validation"
 import type { SignUpFormData } from "./type"
 import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
+import { useState } from "react"
+
+const TimerSeconds: number = 180
 
 const SignUp = () => {
+  const [timer, setTimer] = useState<number>(TimerSeconds)
+  const [contactAuth, setContactAuth] = useState<boolean>(false)
+  const [isCheckContact, setIsCheckContact] = useState<boolean>(false)
+  const [reContactCheck, setReContactCheck] = useState<boolean>(false)
+
+  const timerHandler = () => {
+    setInterval(() => {
+      if (timer >= 0) {
+        setTimer((prev) => prev - 1)
+      }
+    }, 1000)
+  }
+
   const {
     agreements,
     checkAllChecked,
@@ -36,6 +52,29 @@ const SignUp = () => {
     console.log(data)
   }
 
+  const contactOnSubmit = () => {
+    const contact = getValues("contact")
+    if (!reContactCheck) {
+      if (validation.contact.test(contact)) {
+        setReContactCheck(true)
+        setTimer(TimerSeconds)
+        timerHandler()
+        setContactAuth(true)
+        setTimeout(() => {
+          setContactAuth(false)
+        }, TimerSeconds * 1000 + 500)
+      }
+    }
+    setReContactCheck(false)
+  }
+
+  const checkContactOnSubmit = () => {
+    const contactCheck = getValues("contactCheck")
+    if (contactCheck) {
+      setIsCheckContact(true)
+    }
+  }
+
   return (
     <S.SignUpForm onSubmit={handleSubmit(onsubmit)}>
       <S.SignUpLayout>
@@ -50,26 +89,72 @@ const SignUp = () => {
               rules={{
                 required: "필수 항목입니다.",
                 pattern: {
-                  value: validation.email,
-                  message: "이메일 형식이 올바르지 않습니다.",
+                  value: validation.contact,
+                  message: "전화번호 형식이 올바르지 않습니다.",
                 },
               }}
-              name="email"
+              name="contact"
               render={({ field }) => (
                 <Input
                   type="text"
-                  placeholder="이메일을 입력하세요"
+                  readOnly={contactAuth || isCheckContact}
+                  placeholder="전화번호를 입력하세요"
                   width={294}
-                  isError={!!errors.email}
+                  isError={!!errors.contact}
                   {...field}
                 />
               )}
             />
             <S.SignUpErrorMessageLayout>
-              <ErrorMessage>{errors.email?.message}</ErrorMessage>
+              <ErrorMessage>{errors.contact?.message}</ErrorMessage>
             </S.SignUpErrorMessageLayout>
           </S.SignUpInputBox>
-          <Button type="button" radius={14} size="sm">
+          <Button
+            type="button"
+            radius={14}
+            size="sm"
+            onClick={contactOnSubmit}
+            disabled={isCheckContact || contactAuth}
+          >
+            {isCheckContact
+              ? "인증 완료"
+              : contactAuth
+              ? `${Math.floor(timer / 60)}:${
+                  String(timer % 60).length < 2 ? `0${timer % 60}` : timer % 60
+                }`
+              : "인증 요청"}
+          </Button>
+        </S.SignUpEmailCertificationBox>
+        <S.SignUpEmailCertificationBox>
+          <S.SignUpInputBox>
+            <Controller
+              control={control}
+              rules={{
+                required: "필수 항목입니다.",
+              }}
+              name="contactCheck"
+              render={({ field }) => (
+                <Input
+                  type="text"
+                  placeholder="인증번호를 입력하세요"
+                  readOnly={isCheckContact}
+                  width={294}
+                  isError={!!errors.contactCheck}
+                  {...field}
+                />
+              )}
+            />
+            <S.SignUpErrorMessageLayout>
+              <ErrorMessage>{errors.contactCheck?.message}</ErrorMessage>
+            </S.SignUpErrorMessageLayout>
+          </S.SignUpInputBox>
+          <Button
+            type="button"
+            radius={14}
+            size="sm"
+            onClick={checkContactOnSubmit}
+            disabled={isCheckContact}
+          >
             인증
           </Button>
         </S.SignUpEmailCertificationBox>

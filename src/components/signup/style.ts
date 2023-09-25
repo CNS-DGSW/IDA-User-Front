@@ -22,14 +22,23 @@ export const SignUpDGSWLogo = styled(DGSW_LOGO)`
   margin-bottom: 20px;
 `
 
+export const SignUpInputParagragh = styled.p`
+  padding-left: 0.75rem;
+  font-size: 0.8rem;
+  position: absolute;
+  color: ${({ theme: { colors } }) => colors.gray700};
+`
+
 export const SignUpInputBox = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
 `
 
 export const SignUpErrorMessageLayout = styled.div`
   position: absolute;
-  bottom: -30px;
-  left: 20px;
+  bottom: -20px;
+  left: 10px;
 `
 
 export const SignUpEmailCertificationBox = styled.div`
@@ -48,8 +57,8 @@ export const SignUpPasswordBox = styled.div`
 
 export const SignUpTypograpy = styled.p`
   position: absolute;
-  bottom: -30px;
-  left: 20px;
+  bottom: -20px;
+  left: 10px;
 
   color: ${({ theme: { colors } }) => colors.gray500};
   font-size: 13px;

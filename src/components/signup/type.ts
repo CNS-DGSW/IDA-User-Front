@@ -1,5 +1,6 @@
 export interface SignUpFormData {
-  email: string
+  contact: string
+  contactCheck: string
   password: string
   confirmPassword: string
   agreement: boolean
