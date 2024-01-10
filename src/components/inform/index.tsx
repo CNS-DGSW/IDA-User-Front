@@ -4,6 +4,7 @@ import InformContents from "./listbox"
 import type { IInformContentsProps } from "./type"
 import InformIcon from "@/assets/img/Icon/informIcon.svg"
 import InformData from "./inform.dummy.json"
+import Footer from "../common/Footer"
 
 const InformPage = () => {
   const [informData, setInformData] = useState<IInformContentsProps[]>([])
@@ -29,6 +30,7 @@ const InformPage = () => {
           />
         ))}
       </S.InformContentsCol>
+      <Footer />
     </S.MainComponentLayout>
   )
 }

@@ -3,15 +3,13 @@ import DGSW_LOGO from "@/assets/img/DGSW_LOGO.svg"
 import NavBarContentsBtn from "@/assets/NavBarContentsBtn.svg"
 import * as S from "./style"
 import { useNavBar } from "@/hooks/useNavBar"
-import { useEffect, useState } from "react"
-import { useRouter } from "next/router"
+import { useState } from "react"
 
 const NavBar = () => {
   const { checkDisabledNavbar, checkFiexdNavbar, isDark } = useNavBar()
   const [isActive, setIsActive] = useState<boolean>(false)
   const isDisabledNavbar = checkDisabledNavbar()
   const isFiexd = checkFiexdNavbar()
-  const router = useRouter()
 
   return (
     <S.NavbarLayout
