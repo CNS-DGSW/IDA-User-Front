@@ -10,8 +10,9 @@ export const NavBarItem = styled.li<{ isSelected: boolean }>`
     isSelected &&
     css`
       background-color: ${colors.blue400};
-      > a {
-        color: ${colors.gray100};
-      }
+      color: ${colors.gray100};
     `}
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `
