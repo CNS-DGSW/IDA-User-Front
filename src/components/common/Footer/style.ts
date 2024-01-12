@@ -9,6 +9,7 @@ export const FooterLayout = styled.div`
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 500px) {
+    height: 320px;
     font-size: 10px;
   }
 `
@@ -44,6 +45,7 @@ export const FooterParagraph = styled.p`
   @media screen and (max-width: 500px) {
     margin-bottom: 12px;
     word-break: keep-all;
+    line-height: 200%;
   }
 `
 
