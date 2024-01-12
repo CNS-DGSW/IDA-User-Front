@@ -5,6 +5,21 @@ import * as S from "./style"
 import { useNavBar } from "@/hooks/useNavBar"
 import { useState } from "react"
 
+const navBarContent = [
+  {
+    href: "/apply",
+    content: "원서접수",
+  },
+  {
+    href: "/inform",
+    content: "공지사항",
+  },
+  {
+    href: "/faq",
+    content: "FAQ",
+  },
+]
+
 const NavBar = () => {
   const { checkDisabledNavbar, checkFiexdNavbar, isDark } = useNavBar()
   const [isActive, setIsActive] = useState<boolean>(false)
@@ -28,15 +43,11 @@ const NavBar = () => {
         </S.NavbarLeftBox>
 
         <S.NavbarRightBox isActive={isActive} isDark={isDark}>
-          <S.NavContents>
-            <NavbarItem href="/apply">원서접수</NavbarItem>
-          </S.NavContents>
-          <S.NavContents>
-            <NavbarItem href="/inform">공지사항</NavbarItem>
-          </S.NavContents>
-          <S.NavContents>
-            <NavbarItem href="/faq">FAQ</NavbarItem>
-          </S.NavContents>
+          {navBarContent.map((item) => (
+            <S.NavContents key={item.content}>
+              <NavbarItem href={item.href}>{item.content}</NavbarItem>
+            </S.NavContents>
+          ))}
           <S.NavbarAuthBox>
             <S.NavContents>
               <NavbarItem href="/signup">회원가입</NavbarItem>

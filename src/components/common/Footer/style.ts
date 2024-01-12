@@ -2,7 +2,7 @@ import Image from "next/image"
 import styled from "styled-components"
 
 export const FooterLayout = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 284px;
   background: #f2f4f8;
   display: flex;

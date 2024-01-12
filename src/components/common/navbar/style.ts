@@ -56,7 +56,7 @@ export const NavbarList = styled.ul<{ isDark: boolean }>`
       isDark ? colors.gray100 : colors.gray800};
   }
   @media screen and (max-width: 500px) {
-    width: 100%;
+    width: 100vw;
     display: block;
   }
 
@@ -93,9 +93,9 @@ export const NavbarRightBox = styled.div<{
   z-index: 10;
   justify-content: space-between;
   @media screen and (max-width: 500px) {
-    padding-top: ${({ isActive }) => (isActive ? "5px" : "0px")};
+    padding-top: ${({ isActive }) => (isActive ? "0.3175rem" : "0rem")};
     position: absolute;
-    height: ${({ isActive }) => (isActive ? "220px" : "0px")};
+    height: ${({ isActive }) => (isActive ? "13.75rem" : "0rem")};
     display: flex;
     flex-direction: column;
     justify-content: none;
