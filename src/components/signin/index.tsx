@@ -53,9 +53,9 @@ const Signin = () => {
               type="text"
               width={390}
               customStyle={{
-                height: "56px",
-                marginBottom: "18px",
-                paddingLeft: "28px",
+                height: "3.5rem",
+                marginBottom: "1.125rem",
+                paddingLeft: "1.75rem",
               }}
               isError={!!errors.email}
               {...field}
@@ -80,9 +80,9 @@ const Signin = () => {
               type="password"
               width={390}
               customStyle={{
-                height: "56px",
-                marginBottom: "18px",
-                paddingLeft: "28px",
+                height: "3.5rem",
+                marginBottom: "1.125rem",
+                paddingLeft: "1.75rem",
               }}
               isError={!!errors.password}
               {...field}

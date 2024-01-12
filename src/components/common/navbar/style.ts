@@ -7,7 +7,7 @@ export const NavbarLayout = styled.nav<{
 }>`
   display: ${({ isDisabled }) => (isDisabled ? "none" : "flex")};
   width: 100vw;
-  height: 60px;
+  min-height: 60px;
   top: 0;
   margin-bottom: 20px;
   z-index: 1;
@@ -55,6 +55,10 @@ export const NavbarList = styled.ul<{ isDark: boolean }>`
     fill: ${({ isDark, theme: { colors } }) =>
       isDark ? colors.gray100 : colors.gray800};
   }
+  @media screen and (max-width: 500px) {
+    width: 100vw;
+    display: block;
+  }
 
   ${({ isDark, theme: { colors } }) =>
     isDark &&
@@ -69,18 +73,51 @@ export const NavbarList = styled.ul<{ isDark: boolean }>`
       }
     `}
 `
-export const NavbarLeftBox = styled.div``
+export const NavbarLeftBox = styled.div`
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid ${({ theme: { colors } }) => colors.gray400};
+  }
+`
 
-export const NavbarRightBox = styled.div`
+export const NavbarRightBox = styled.div<{
+  isActive: boolean
+  isDark: boolean
+}>`
   width: 350px;
   display: flex;
+  z-index: 10;
   justify-content: space-between;
+  @media screen and (max-width: 500px) {
+    padding-top: ${({ isActive }) => (isActive ? "0.3175rem" : "0rem")};
+    position: absolute;
+    height: ${({ isActive }) => (isActive ? "13.75rem" : "0rem")};
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    overflow: hidden;
+    width: 100%;
+    ${({ isDark, theme: { colors } }) =>
+      !isDark &&
+      css`
+        background-color: ${colors.white};
+      `}
+
+    border-bottom: 1px solid ${({ theme: { colors } }) => colors.gray400};
+  }
 `
 
 export const NavbarAuthBox = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  @media screen and (max-width: 500px) {
+    display: block;
+  }
 `
 
 export const NavbarDot = styled.div`
@@ -88,4 +125,29 @@ export const NavbarDot = styled.div`
   height: 4px;
   border-radius: 50%;
   background-color: ${({ theme: { colors } }) => colors.gray800};
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`
+
+export const NavContents = styled.div`
+  @media screen and (max-width: 500px) {
+    text-align: center;
+    width: 98%;
+    margin: 0px auto;
+    margin-bottom: 5px;
+    border: 1px solid #e7e9ed;
+    border-radius: 8px;
+  }
+`
+
+export const ContentsButton = styled.div`
+  display: none;
+  position: absolute;
+  right: 0;
+  width: 20px;
+  margin-right: 1rem;
+  @media screen and (max-width: 500px) {
+    display: inline-block;
+  }
 `

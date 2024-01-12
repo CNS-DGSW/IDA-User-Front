@@ -12,9 +12,9 @@ const NavbarItem = ({
   const isSelected = checkSelectedNavbarItem(href)
 
   return (
-    <S.NavBarItem isSelected={isSelected}>
-      <Link href={href}>{children}</Link>
-    </S.NavBarItem>
+    <Link href={href}>
+      <S.NavBarItem isSelected={isSelected}>{children}</S.NavBarItem>
+    </Link>
   )
 }
 
