@@ -5,6 +5,9 @@ export const LayoutContainer = styled.div`
   margin: 0 auto;
   min-height: 796px;
   padding-bottom: 130px;
+  @media screen and (max-width: 500px) {
+    width: 100vw;
+  }
 `
 
 export const LayoutTitleStyle = styled.div`
@@ -30,5 +33,6 @@ export const WriteContainer = styled.div`
 
   @media screen and (max-width: 500px) {
     flex-direction: column;
+    width: 100vw;
   }
 `
