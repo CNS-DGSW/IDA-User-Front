@@ -1,3 +1,4 @@
+import Image from "next/image"
 import styled, { css, keyframes } from "styled-components"
 
 export const NavbarLayout = styled.nav<{
@@ -141,13 +142,15 @@ export const NavContents = styled.div`
   }
 `
 
-export const ContentsButton = styled.div`
+export const ContentsButton = styled(Image)`
   display: none;
   position: absolute;
   right: 0;
+  margin-right: 1.25rem;
+  z-index: 10;
   width: 20px;
-  margin-right: 1rem;
   @media screen and (max-width: 500px) {
     display: inline-block;
+    max-width: 20px;
   }
 `
