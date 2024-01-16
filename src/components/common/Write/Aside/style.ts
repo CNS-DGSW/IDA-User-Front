@@ -6,6 +6,10 @@ export const AsideBox = styled.aside`
   justify-content: flex-start;
   max-width: 240px;
   gap: 14px;
+
+  @media screen and (max-width: 500px) {
+    margin: 24px auto;
+  }
 `
 export const LineBox = styled.div`
   height: 1px;
