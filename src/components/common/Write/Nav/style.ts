@@ -8,6 +8,9 @@ export const WriteNavStyle = styled.div`
   align-items: center;
 
   position: relative;
+  @media screen and (max-width: 500px) {
+    margin: 1.5rem 2.5rem;
+  }
 `
 
 export const Circle = styled.div<{ colors: boolean; background: boolean }>`

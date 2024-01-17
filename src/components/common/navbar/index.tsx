@@ -34,9 +34,11 @@ const NavBar = () => {
     >
       <S.NavbarList isDark={isDark}>
         <S.NavbarLeftBox>
-          <S.ContentsButton onClick={() => setIsActive((prev) => !prev)}>
-            <NavBarContentsBtn alt="메뉴 이미지" />
-          </S.ContentsButton>
+          <S.ContentsButton
+            as={NavBarContentsBtn}
+            alt="이미지 에러"
+            onClick={() => setIsActive((prev) => !prev)}
+          />
           <NavbarItem href="/">
             <DGSW_LOGO alt="대구소프트웨어 마이스터고 로고" />
           </NavbarItem>
