@@ -5,7 +5,6 @@ import Input from "../common/Input"
 import * as S from "./style"
 import type { ChangePasswordFormData } from "./type"
 import { validation } from "@/constants/validation"
-import { useState } from "react"
 import ErrorMessage from "../common/ErrorMessage"
 import Button from "../common/Button"
 
