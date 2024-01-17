@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "react"
 
-import Navbar from "../navbar"
+import Navbar from "../Navbar"
 // TDOO
 // import Footer from "../Footer"
 

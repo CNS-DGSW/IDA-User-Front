@@ -1,4 +1,4 @@
-import CalanderSVG from "@/assets/calander.svg"
+import CalanderSVG from "@/assets/img/Icon/calander.svg"
 import DatePicker from "react-multi-date-picker"
 import * as S from "./style"
 

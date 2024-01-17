@@ -1,10 +1,6 @@
-interface FAQdata {
-  id: number
-  question: string
-  answer: string
-}
+import { type FAQListType } from "@/types/FAQ/faq.type"
 
-const dummyFAQdata: FAQdata[] = [
+const dummyFAQdata: FAQListType[] = [
   {
     id: 1,
     question: "기숙사 입소는 필수인가요?",
@@ -54,7 +50,7 @@ const dummyFAQdata: FAQdata[] = [
     answer: "정보 없음",
   },
   {
-    id: 20,
+    id: 10,
     question: "다른 학교와 이중지원 할 수 있나요?",
     answer: "아니요, 이중지원은 불가능합니다.",
   },

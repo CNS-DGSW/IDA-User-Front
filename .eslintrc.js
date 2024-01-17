@@ -22,6 +22,7 @@ module.exports = {
     "@typescript-eslint/no-confusing-void-expression": "off",
     "no-unneeded-ternary": "off",
     "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/triple-slash-reference": "off",
   },
   settings: {
     react: {

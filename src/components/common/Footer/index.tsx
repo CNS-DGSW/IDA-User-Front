@@ -1,9 +1,9 @@
 import React from "react"
 import * as S from "./style"
-import DGSWLogoPNG from "@/assets/DGSWLogo.png"
-import CNSLogoPNG from "@/assets/CNSLogo.png"
-import YoutubeSVG from "@/assets/youtube.svg"
-import InstaSVG from "@/assets/instagram.svg"
+import DGSWLogoSVG from "@/assets/img/Logo/dgswLogo.svg"
+import CNSLogoPNG from "@/assets/img/Logo/cnsLogo.png"
+import YoutubeSVG from "@/assets/img/Icon/youtube.svg"
+import InstaSVG from "@/assets/img/Icon/instagram.svg"
 
 const Footer = () => {
   return (
@@ -15,7 +15,7 @@ const Footer = () => {
           style={{ width: "104px" }}
           rel="noreferrer"
         >
-          <S.DGSWLogo src={DGSWLogoPNG} alt="dgsw" />
+          <S.DGSWLogo as={DGSWLogoSVG} alt="dgsw" />
         </a>
         <S.FooterParagraph>
           원서접수처 주소 : 대구광역시 달성군 구지면 창리로 11길 93

@@ -1,53 +1,20 @@
-import React, { useState } from "react"
+import React from "react"
 import * as S from "./style"
-import FAQicon from "../../assets/FAQicon.png"
-import selectIcon from "../../assets/selectIcon.png"
-import dummyFAQdata from "../../constants/dummyData/index"
+import FAQicon from "@/assets/Img/Icon/FAQicon.svg"
+import FAQList from "./faqList"
+import Footer from "../common/Footer"
 
-const faq = () => {
-  const [activeImageRotations, setActiveImageRotations] = useState<number[]>([])
-
-  const toggleFAQ = (id: number) => {
-    if (activeImageRotations.includes(id)) {
-      setActiveImageRotations([])
-    } else {
-      setActiveImageRotations([id])
-    }
-  }
-
+const FAQ = () => {
   return (
     <>
       <S.FAQtitleContainer>
-        <S.FAQtitleImage src={FAQicon} alt="Error" />
+        <S.FAQtitleImage as={FAQicon} alt="Image loading error." />
         <S.FAQtitleText>자주 묻는 질문</S.FAQtitleText>
       </S.FAQtitleContainer>
-      <S.FAQmainContentContainer>
-        {dummyFAQdata.map((FAQ) => (
-          <div key={FAQ.id}>
-            <S.FAQmainContent>
-              <S.FAQquestionContent onClick={() => toggleFAQ(FAQ.id)}>
-                <S.FAQquestionContentSymbol>Q.</S.FAQquestionContentSymbol>
-                <S.FAQquestionContentText>
-                  {FAQ.question}
-                </S.FAQquestionContentText>
-                <S.FAQselectImage
-                  src={selectIcon}
-                  alt="Error"
-                  rotation={activeImageRotations.includes(FAQ.id)}
-                />
-              </S.FAQquestionContent>
-              {activeImageRotations.includes(FAQ.id) && (
-                <S.FAQanswerContent>
-                  <S.FAQanswerContentSymbol>A.</S.FAQanswerContentSymbol>
-                  <S.FAQanswerContentText>{FAQ.answer}</S.FAQanswerContentText>
-                </S.FAQanswerContent>
-              )}
-            </S.FAQmainContent>
-          </div>
-        ))}
-      </S.FAQmainContentContainer>
+      <FAQList />
+      <Footer />
     </>
   )
 }
 
-export default faq
+export default FAQ
