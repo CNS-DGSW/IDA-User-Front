@@ -10,7 +10,9 @@ import ErrorMessage from "../common/ErrorMessage"
 import Button from "../common/Button"
 
 const ChangePassword = () => {
-  const [isEmailAuth, SetIsEmailAuth] = useState(false)
+  // 'SetIsEmailAuth' is assigned a value but never used  @typescript-eslint/no-unused-vars 에러나서 막아둡니다
+  // const [isEmailAuth, SetIsEmailAuth] = useState(false)
+  const isEmailAuth = false
 
   // const EmailAuthChange = () => {
   //   SetIsEmailAuth(!isEmailAuth)

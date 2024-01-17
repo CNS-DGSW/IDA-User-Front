@@ -1,4 +1,3 @@
-import Footer from "@/components/common/Footer"
 import PageProvider from "@/components/common/Write/PageProvider"
 import React from "react"
 import type { PropsWithChildren } from "react"
