@@ -11,4 +11,8 @@ export const CustomInput = styled.input<{ back: InputColor; isError: boolean }>`
   border-radius: 8px;
   color: #8b939c;
   border-color: ${({ isError }) => (isError ? "#e41616" : "#d8dae0")};
+
+  @media screen and (max-width: 500px) {
+    width: 310px;
+  }
 `

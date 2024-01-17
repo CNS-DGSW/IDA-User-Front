@@ -20,6 +20,10 @@ export const SelectContainer = styled.div<{ width?: number; colors?: string }>`
   cursor: pointer;
 
   position: relative;
+
+  @media screen and (max-width: 500px) {
+    margin-bottom: -100%;
+  }
 `
 
 export const ListContainer = styled.ul<{ direction?: boolean }>`

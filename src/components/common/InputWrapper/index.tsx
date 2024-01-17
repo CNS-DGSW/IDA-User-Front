@@ -7,12 +7,18 @@ import type { CSSObject } from "styled-components"
 interface InputWrapperProps extends PropsWithChildren {
   title?: string
   style?: CSSObject
+  className?: string
 }
 
-const InputWrapper = ({ title, children, style }: InputWrapperProps) => {
+const InputWrapper = ({
+  title,
+  children,
+  style,
+  className,
+}: InputWrapperProps) => {
   return (
     <WrapperStyle style={style}>
-      {title && <InputLabel>{title}</InputLabel>}
+      {title && <InputLabel className={className}>{title}</InputLabel>}
       <Inputs>{children}</Inputs>
     </WrapperStyle>
   )

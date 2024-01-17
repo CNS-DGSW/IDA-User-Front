@@ -15,12 +15,14 @@ const WritePersonal = () => {
             <Input disabled type="text" width={310}></Input>
           </InputWrapper>
           <InputWrapper title="성별" style={{ width: "310px" }}>
-            <Radio name="eduStatus" value="gender" width={149}>
-              남자
-            </Radio>
-            <Radio name="eduStatus" value="gender" width={149}>
-              여자
-            </Radio>
+            <S.RadioWrapper>
+              <Radio name="eduStatus" value="gender" width={149}>
+                남자
+              </Radio>
+              <Radio name="eduStatus" value="gender" width={149}>
+                여자
+              </Radio>
+            </S.RadioWrapper>
           </InputWrapper>
         </InputWrapper>
         <InputWrapper style={{ marginTop: 54 }}>

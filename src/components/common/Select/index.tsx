@@ -1,10 +1,10 @@
-import Image from "next/image"
 import React, { useRef, useState } from "react"
 import type { MouseEventHandler } from "react"
 import type { CSSObject } from "styled-components"
 import { ListContainer, ListItem, SelectContainer } from "./style"
-import selectIcon from "../../../assets/img/Icon/selectIcon.svg"
 import { useOutsideClick } from "@/hooks/useOutsideClick"
+import SelectIcon from "../../../assets/img/Icon/selectIcon.png"
+import Image from "next/image"
 
 export interface SelectProps {
   list: string[]
@@ -46,12 +46,14 @@ const Select = ({
     >
       {value ?? placeholder ?? "선택"}
       <Image
-        src={selectIcon}
-        alt="icon"
+        src={SelectIcon}
+        alt="Image loading error."
         style={{
           transform: !isOpen ? "rotate(0deg)" : "rotate(180deg)",
           transition: "0.2s",
           userSelect: "none",
+          width: "2rem",
+          height: "auto",
         }}
       />
       {isOpen && (
