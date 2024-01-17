@@ -3,7 +3,7 @@ import DGSW_LOGO from "@/assets/img/DGSW_LOGO.svg"
 import NavBarContentsBtn from "@/assets/NavBarContentsBtn.svg"
 import * as S from "./style"
 import { useNavBar } from "@/hooks/useNavBar"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const navBarContent = [
   {
@@ -19,6 +19,7 @@ const navBarContent = [
     content: "FAQ",
   },
 ]
+
 
 const NavBar = () => {
   const { checkDisabledNavbar, checkFiexdNavbar, isDark } = useNavBar()

@@ -1,20 +1,35 @@
 import Link from "next/link"
 import styled from "styled-components"
 import DGSW from "@/assets/DGSWBlue.svg"
+// import DGSWPHONE from "@/assets/DGSWBluePhone.svg"
 
 export const SigninForm = styled.form``
 
 export const SigninLayout = styled.div`
-  margin-top: 18vh;
+  margin-top: calc(18vh - 60px);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 600px) {
+    margin-top: 11.9vw;
+    margin-bottom: 18vw;
+
+    width: 100vw;
+  }
 `
 
 export const DGSWLOGO = styled(DGSW)`
   margin-bottom: 80px;
+  width: 213px;
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 11.9vw;
+
+    width: 36.3vw;
+  }
 `
 
 export const SigninErrorMessageLayout = styled.div`
@@ -65,6 +80,11 @@ export const SubmitBtn = styled.button`
   font-family: Pretendard;
   font-size: 20px;
   font-weight: 700;
+
+  @media screen and (max-width:600px) {
+    width: 83vw;
+    font-size: 4.1vw;
+  }
 `
 
 export const NavigateList = styled.ul`
@@ -72,6 +92,7 @@ export const NavigateList = styled.ul`
 
   display: flex;
   justify-content: center;
+  align-items: center;
 
   color: #424344;
   font-family: Pretendard;
@@ -80,7 +101,11 @@ export const NavigateList = styled.ul`
   letter-spacing: -0.64px;
 `
 
-export const NavigateLink = styled(Link)``
+export const NavigateLink = styled(Link)`
+  @media screen and (max-width:600px) {
+    font-size: 3.3vw;
+  }
+`
 
 export const NavigateItem = styled.li`
   margin: 0 13px;

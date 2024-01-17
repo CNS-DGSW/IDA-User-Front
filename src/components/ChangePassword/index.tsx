@@ -7,13 +7,14 @@ import type { ChangePasswordFormData } from "./type"
 import { validation } from "@/constants/validation"
 import { useState } from "react"
 import ErrorMessage from "../common/ErrorMessage"
+import Button from "../common/Button"
 
 const ChangePassword = () => {
-  const [isEmailAuth, SetIsEmailAuth] = useState(true)
+  const [isEmailAuth, SetIsEmailAuth] = useState(false)
 
-  const EmailAuthChange = () => {
-    SetIsEmailAuth(!isEmailAuth)
-  }
+  // const EmailAuthChange = () => {
+  //   SetIsEmailAuth(!isEmailAuth)
+  // }
 
   const {
     control,
@@ -46,20 +47,25 @@ const ChangePassword = () => {
                 <Input
                   type="text"
                   placeholder="이메일을 입력하세요"
-                  width={292}
-                  customStyle={{ height: "56px", paddingLeft: "28px" }}
+                  width={294}
+                  // customStyle={{ height: "56px", paddingLeft: "28px" }}
                   isError={!!errors.email}
                   {...field}
                 />
               )}
             />
-            <S.EmailAuthBtn onClick={EmailAuthChange} type="button">
+            <Button type="button" radius={14} size="sm">
               인증
-            </S.EmailAuthBtn>
+            </Button>
           </S.EmailRow>
-          <S.ChangePasswordErrorMEssageLayout>
-            <ErrorMessage>{errors.email?.message}</ErrorMessage>
-          </S.ChangePasswordErrorMEssageLayout>
+          {
+            errors.email ?
+            <S.ChangePasswordErrorMessageLayout>
+              <ErrorMessage>{errors.email?.message}</ErrorMessage>
+            </S.ChangePasswordErrorMessageLayout>
+            :
+            <S.MarginBtweenInput/>
+          }
           {isEmailAuth && (
             <S.SuccessedEmailRow>
               <S.SuccessedEmailAuthIcon />
@@ -84,18 +90,23 @@ const ChangePassword = () => {
                 placeholder="비밀번호를 입력하세요"
                 width={390}
                 customStyle={{
-                  height: "56px",
-                  "margin-top": "18px",
-                  paddingLeft: "28px",
+                  // height: "56px",
+                  // "margin-top": "18px",
+                  // paddingLeft: "28px",
                 }}
                 isError={!!errors.password}
                 {...field}
               />
             )}
           />
-          <S.ChangePasswordErrorMEssageLayout>
-            <ErrorMessage>{errors.password?.message}</ErrorMessage>
-          </S.ChangePasswordErrorMEssageLayout>
+          {
+            errors.password ?
+            <S.ChangePasswordErrorMessageLayout>
+              <ErrorMessage>{errors.password?.message}</ErrorMessage>
+            </S.ChangePasswordErrorMessageLayout>
+            :
+            <S.MarginBtweenInput/>
+          }
           <Controller
             control={control}
             rules={{
@@ -111,19 +122,26 @@ const ChangePassword = () => {
                 placeholder="비밀번호를 다시 입력하세요"
                 width={390}
                 customStyle={{
-                  height: "56px",
-                  "margin-top": "18px",
-                  paddingLeft: "28px",
+                  // height: "56px",
+                  // "margin-top": "18px",
+                  // paddingLeft: "28px",
                 }}
                 isError={!!errors.passwordRepeat}
                 {...field}
               />
             )}
           />
-          <S.ChangePasswordErrorMEssageLayout>
-            <ErrorMessage>{errors.passwordRepeat?.message}</ErrorMessage>
-          </S.ChangePasswordErrorMEssageLayout>
-          <S.SubmitBtn type="submit">비밀번호 재설정 완료</S.SubmitBtn>
+          {
+            errors.passwordRepeat ?
+            <S.ChangePasswordErrorMessageLayout>
+              <ErrorMessage>{errors.passwordRepeat?.message}</ErrorMessage>
+            </S.ChangePasswordErrorMessageLayout>
+            :
+            <S.MarginBtweenInput/>
+          }
+          <Button type="submit" size="lg" style={{ width: "390px" }} radius={14}>
+            비밀번호 재설정 완료
+          </Button>
           <S.LoginLink href="/signin">로그인하기</S.LoginLink>
         </S.ContentBox>
       </S.ChangePasswordLayout>

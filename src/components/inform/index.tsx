@@ -30,7 +30,6 @@ const InformPage = () => {
           />
         ))}
       </S.InformContentsCol>
-      <Footer />
     </S.MainComponentLayout>
   )
 }

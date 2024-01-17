@@ -25,4 +25,9 @@ export const StyledCheckbox = styled.div<{ checked: boolean }>`
   border: 2px solid #dadce2;
   background: ${({ checked, theme: { colors } }) =>
     checked ? colors.blue400 : colors.gray100};
+
+  @media screen and (max-width: 600px) {
+    width: 4.1vw;
+    height: 4.1vw;
+  }
 `

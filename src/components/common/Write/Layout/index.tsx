@@ -23,7 +23,6 @@ const WriteLayout = ({ children }: PropsWithChildren) => {
           </WriteContainer>
         </LayoutContainer>
       </PageProvider>
-      <Footer />
     </>
   )
 }

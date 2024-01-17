@@ -5,26 +5,76 @@ import SuccessedEmailAuth from "@/assets/SuccessedEmailAuthIcon.svg"
 
 export const ChangePasswordForm = styled.form``
 
-export const ChangePasswordLayout = styled.div``
+export const ChangePasswordLayout = styled.div`
+  input {
+    padding-left: 1.4vw;
+    border-radius: 0.7vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 11.9vw auto 0 auto; 
+    padding-bottom: 16vw;
+
+    width: 83vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    input {
+      padding-left: 5.8vw;
+      border-radius: 3.8vw;
+    }
+  }
+`
 
 export const ContentBox = styled.div`
   margin: auto;
-  padding-top: 18vh;
+  padding-top: 5.8vw;
 
   width: 390px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  > button {
+    margin-top: 0.5vw;
+    font-size: 1vw;
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 0;
+    
+    width: 83vw;
+
+    > button{
+      width: 83vw !important;
+      font-size: 4.1vw;
+    }
+  }
 `
 
-export const DGSWLOGO = styled(DGSW)``
+export const DGSWLOGO = styled(DGSW)`
+  width: 213px;
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 11.9vw;
+
+    width: 36.3vw;
+  }
+`
 
 export const SuccessedEmailRow = styled.div`
-  margin: 12px 0 -2px 25px;
+  margin: 0.5vw 0 0.7vw 1.2vw;
 
   width: 100%;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 600px) {
+    margin: 2.5vw 0 3.3vw 3.6vw ;
+  }
 `
 
 export const SuccessedEmailAuthParagraph = styled.p`
@@ -45,50 +95,32 @@ export const EmailRow = styled.div`
 
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 600px) {
+    margin: 0;
+  }
 `
 
-export const EmailAuthBtn = styled.button`
-  width: 86px;
-  height: 56px;
-
-  border: none;
-  border-radius: 14px;
-  background: #1485ee;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-`
-
-export const ChangePasswordErrorMEssageLayout = styled.div`
-  margin-top: 12px;
-  margin-left: 26px;
-  margin-bottom: -2px;
-
-  width: 390px;
-`
-
-export const SubmitBtn = styled.button`
-  margin-top: 28px;
+export const ChangePasswordErrorMessageLayout = styled.div`
+  margin-top: 0.6vw;
+  margin-left: 1.4vw;
+  margin-bottom: 0.8vw;
 
   width: 100%;
-  height: 56px;
 
-  border: none;
-  border-radius: 14px;
-  background: #1485ee;
+  @media screen and (max-width: 600px) {
+    margin-top: 2.5vw;
+    margin-left: 4.1vw;
+    margin-bottom: 3.3vw;
+  }
+`
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const MarginBtweenInput = styled.div`
+  margin-top: 0.9vw;
 
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
+  @media screen and (max-width: 600px) {
+    margin-top: 3.6vw;
+  }
 `
 
 export const LoginLink = styled(Link)`
@@ -98,4 +130,8 @@ export const LoginLink = styled(Link)`
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.64px;
+
+  @media screen and (max-width: 600px) {
+    margin-top: 7.2vw;
+  }
 `
