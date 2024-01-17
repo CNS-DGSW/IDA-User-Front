@@ -1,11 +1,11 @@
-import NavbarItem from "./navbarItem/"
-import DGSW_LOGO from "@/assets/img/DGSW_LOGO.svg"
-import NavBarContentsBtn from "@/assets/NavBarContentsBtn.svg"
 import * as S from "./style"
+import NavbarItem from "./NavbarItem"
+import DGSWLogo from "@/assets/img/Logo/dgswLogo.svg"
+import NavBarContentsBtn from "@/assets/img/Icon/navBarContentsBtn.svg"
 import { useNavBar } from "@/hooks/useNavBar"
 import { useState } from "react"
 
-const navBarContent = [
+const NavBarContent = [
   {
     href: "/apply",
     content: "원서접수",
@@ -38,12 +38,12 @@ const NavBar = () => {
             <NavBarContentsBtn alt="메뉴 이미지" />
           </S.ContentsButton>
           <NavbarItem href="/">
-            <DGSW_LOGO alt="대구소프트웨어 마이스터고 로고" />
+            <DGSWLogo alt="대구소프트웨어 마이스터고 로고" />
           </NavbarItem>
         </S.NavbarLeftBox>
 
         <S.NavbarRightBox isActive={isActive} isDark={isDark}>
-          {navBarContent.map((item) => (
+          {NavBarContent.map((item) => (
             <S.NavContents key={item.content}>
               <NavbarItem href={item.href}>{item.content}</NavbarItem>
             </S.NavContents>
