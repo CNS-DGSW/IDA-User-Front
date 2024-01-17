@@ -7,6 +7,7 @@ import { localDetail, LocalKind } from "@/constants/Write/localKindConstant"
 import useChange from "@/hooks/useChange"
 import useLocal from "../hooks/useLocal"
 import Card from "@/components/common/Card"
+import useWriteNav from "@/hooks/Write/useWriteNav"
 
 const ExpectedForm = () => {
   const [, changesShoolContact] = useChange()
@@ -15,20 +16,34 @@ const ExpectedForm = () => {
 
   const { changeDetailLocal, changeLocal, detailLocal, local } = useLocal()
 
+  const { width } = useWriteNav()
+
   return (
     <Card>
-      <S.Wrap justify="space-between">
+      <S.Wrap justify="space-between" column>
         <InputWrapper title="출신 중학교명">
           <S.Wrap>
-            <Input type="text" readonly width={224} color="gray" />
+            <Input
+              type="text"
+              readonly
+              width={width > 500 ? 224 : 180}
+              style={width <= 500 ? { fontSize: "14px" } : {}}
+              color="gray"
+            />
             <S.SchoolButton>학교 검색</S.SchoolButton>
           </S.Wrap>
         </InputWrapper>
         <InputWrapper title="NEIS 학교 번호">
-          <Input type="text" readonly color="gray" />
+          <Input
+            type="text"
+            readonly
+            color="gray"
+            width={width <= 500 ? 260 : undefined}
+          />
         </InputWrapper>
       </S.Wrap>
-      <S.Wrap justify="space-between">
+
+      <S.Wrap justify="space-between" column>
         <InputWrapper title="지역명 ( 시도 )">
           <Select list={LocalKind} value={local} changeEvent={changeLocal} />
         </InputWrapper>
@@ -40,15 +55,27 @@ const ExpectedForm = () => {
           />
         </InputWrapper>
         <InputWrapper title="학교 연락처">
-          <Input type="text" width={208} changeEvent={changesShoolContact} />
+          <Input
+            type="text"
+            width={width <= 500 ? 260 : 208}
+            changeEvent={changesShoolContact}
+          />
         </InputWrapper>
       </S.Wrap>
-      <S.Wrap justify="space-between">
+      <S.Wrap justify="space-between" column>
         <InputWrapper title="담임 성명">
-          <Input type="text" changeEvent={changeTeacherName} />
+          <Input
+            type="text"
+            changeEvent={changeTeacherName}
+            width={width <= 500 ? 260 : undefined}
+          />
         </InputWrapper>
         <InputWrapper title="담임 연락처">
-          <Input type="text" changeEvent={changeTeacherContact} />
+          <Input
+            type="text"
+            changeEvent={changeTeacherContact}
+            width={width <= 500 ? 260 : undefined}
+          />
         </InputWrapper>
       </S.Wrap>
     </Card>
