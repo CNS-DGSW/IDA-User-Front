@@ -15,14 +15,16 @@ const NavKind = [
 
 export const WriteNav = () => {
   const { currentPage, movePage } = usePageContext()
-  const { checkWidth } = useWriteNav()
+  const { width, checkWidth } = useWriteNav()
   return (
     <S.WriteNavStyle>
       {NavKind.map((v, idx) => (
         <>
           {checkWidth(currentPage === idx + 1) && (
             <S.Wrap colors={idx + 1 === currentPage} key={v}>
-              {idx + 1 > 1 && <S.Line colors={idx + 1 <= currentPage} />}
+              {width > 500 && idx + 1 > 1 && (
+                <S.Line colors={idx + 1 <= currentPage} />
+              )}
               <S.Circle
                 onClick={movePage}
                 colors={idx + 1 <= currentPage}
