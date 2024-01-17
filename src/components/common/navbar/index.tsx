@@ -36,7 +36,7 @@ const NavBar = () => {
         <S.NavbarLeftBox>
           <S.ContentsButton
             as={NavBarContentsBtn}
-            alt="이건 아니잖아"
+            alt="이미지 애러"
             onClick={() => setIsActive((prev) => !prev)}
           />
           <NavbarItem href="/">
