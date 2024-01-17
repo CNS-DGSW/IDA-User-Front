@@ -21,7 +21,7 @@ const getSize: Record<SizeType, FlattenSimpleInterpolation> = {
     width: 78px;
     height: 48px;
 
-    @media screen and (max-width:600px) {
+    @media screen and (max-width: 600px) {
       width: 18.3vw;
     }
   `,
@@ -48,7 +48,8 @@ const getColor: Record<
   FlattenInterpolation<ThemeProps<ThemeType>>
 > = {
   primary: css`
-    background-color: ${({ theme: { colors } }: ThemeProps<ThemeType>) => colors.blue400};
+    background-color: ${({ theme: { colors } }: ThemeProps<ThemeType>) =>
+      colors.blue400};
     color: ${({ theme: { colors } }: ThemeProps<ThemeType>) => colors.white};
   `,
   second: css`

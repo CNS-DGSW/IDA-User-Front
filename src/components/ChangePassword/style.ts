@@ -12,7 +12,7 @@ export const ChangePasswordLayout = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    margin: 11.9vw auto 0 auto; 
+    margin: 11.9vw auto 0 auto;
     padding-bottom: 16vw;
 
     width: 83vw;
@@ -45,10 +45,10 @@ export const ContentBox = styled.div`
 
   @media screen and (max-width: 600px) {
     padding: 0;
-    
+
     width: 83vw;
 
-    > button{
+    > button {
       width: 83vw !important;
       font-size: 4.1vw;
     }
@@ -73,7 +73,7 @@ export const SuccessedEmailRow = styled.div`
   align-items: center;
 
   @media screen and (max-width: 600px) {
-    margin: 2.5vw 0 3.3vw 3.6vw ;
+    margin: 2.5vw 0 3.3vw 3.6vw;
   }
 `
 

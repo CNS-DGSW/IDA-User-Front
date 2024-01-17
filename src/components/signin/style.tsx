@@ -81,7 +81,7 @@ export const SubmitBtn = styled.button`
   font-size: 20px;
   font-weight: 700;
 
-  @media screen and (max-width:600px) {
+  @media screen and (max-width: 600px) {
     width: 83vw;
     font-size: 4.1vw;
   }
@@ -102,7 +102,7 @@ export const NavigateList = styled.ul`
 `
 
 export const NavigateLink = styled(Link)`
-  @media screen and (max-width:600px) {
+  @media screen and (max-width: 600px) {
     font-size: 3.3vw;
   }
 `

@@ -20,7 +20,6 @@ const navBarContent = [
   },
 ]
 
-
 const NavBar = () => {
   const { checkDisabledNavbar, checkFiexdNavbar, isDark } = useNavBar()
   const [isActive, setIsActive] = useState<boolean>(false)

@@ -65,14 +65,13 @@ const SignUp = () => {
                 />
               )}
             />
-            {
-              errors.email ?
+            {errors.email ? (
               <S.SignUpErrorMessageLayout>
                 <ErrorMessage>{errors.email?.message}</ErrorMessage>
               </S.SignUpErrorMessageLayout>
-              :
-              <S.MarginBtweenInput/>
-            }
+            ) : (
+              <S.MarginBtweenInput />
+            )}
           </S.SignUpInputBox>
           <Button type="button" radius={14} size="sm">
             인증
@@ -133,14 +132,13 @@ const SignUp = () => {
                 />
               )}
             />
-            {
-              errors.confirmPassword ? 
+            {errors.confirmPassword ? (
               <S.SignUpErrorMessageLayout>
                 <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
               </S.SignUpErrorMessageLayout>
-              :
-              <S.MarginBtweenInput/>
-            }
+            ) : (
+              <S.MarginBtweenInput />
+            )}
           </S.SignUpInputBox>
         </S.SignUpPasswordBox>
 

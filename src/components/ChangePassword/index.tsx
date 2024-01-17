@@ -58,14 +58,13 @@ const ChangePassword = () => {
               인증
             </Button>
           </S.EmailRow>
-          {
-            errors.email ?
+          {errors.email ? (
             <S.ChangePasswordErrorMessageLayout>
               <ErrorMessage>{errors.email?.message}</ErrorMessage>
             </S.ChangePasswordErrorMessageLayout>
-            :
-            <S.MarginBtweenInput/>
-          }
+          ) : (
+            <S.MarginBtweenInput />
+          )}
           {isEmailAuth && (
             <S.SuccessedEmailRow>
               <S.SuccessedEmailAuthIcon />
@@ -89,24 +88,25 @@ const ChangePassword = () => {
                 type="password"
                 placeholder="비밀번호를 입력하세요"
                 width={390}
-                customStyle={{
-                  // height: "56px",
-                  // "margin-top": "18px",
-                  // paddingLeft: "28px",
-                }}
+                customStyle={
+                  {
+                    // height: "56px",
+                    // "margin-top": "18px",
+                    // paddingLeft: "28px",
+                  }
+                }
                 isError={!!errors.password}
                 {...field}
               />
             )}
           />
-          {
-            errors.password ?
+          {errors.password ? (
             <S.ChangePasswordErrorMessageLayout>
               <ErrorMessage>{errors.password?.message}</ErrorMessage>
             </S.ChangePasswordErrorMessageLayout>
-            :
-            <S.MarginBtweenInput/>
-          }
+          ) : (
+            <S.MarginBtweenInput />
+          )}
           <Controller
             control={control}
             rules={{
@@ -121,25 +121,31 @@ const ChangePassword = () => {
                 type="password"
                 placeholder="비밀번호를 다시 입력하세요"
                 width={390}
-                customStyle={{
-                  // height: "56px",
-                  // "margin-top": "18px",
-                  // paddingLeft: "28px",
-                }}
+                customStyle={
+                  {
+                    // height: "56px",
+                    // "margin-top": "18px",
+                    // paddingLeft: "28px",
+                  }
+                }
                 isError={!!errors.passwordRepeat}
                 {...field}
               />
             )}
           />
-          {
-            errors.passwordRepeat ?
+          {errors.passwordRepeat ? (
             <S.ChangePasswordErrorMessageLayout>
               <ErrorMessage>{errors.passwordRepeat?.message}</ErrorMessage>
             </S.ChangePasswordErrorMessageLayout>
-            :
-            <S.MarginBtweenInput/>
-          }
-          <Button type="submit" size="lg" style={{ width: "390px" }} radius={14}>
+          ) : (
+            <S.MarginBtweenInput />
+          )}
+          <Button
+            type="submit"
+            size="lg"
+            style={{ width: "390px" }}
+            radius={14}
+          >
             비밀번호 재설정 완료
           </Button>
           <S.LoginLink href="/signin">로그인하기</S.LoginLink>
