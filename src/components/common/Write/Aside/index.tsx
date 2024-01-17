@@ -4,7 +4,7 @@ import { usePageContext } from "@/components/common/Write/PageProvider"
 import * as S from "./style"
 import useWriteNav from "@/hooks/Write/useWriteNav"
 
-const ModileButtonStyle: CSSProperties = {
+const MobileButtonStyle: CSSProperties = {
   paddingTop: "0.875rem",
   paddingBottom: "0.875rem",
   fontSize: "1rem",
@@ -20,7 +20,7 @@ export const Aside = () => {
 
   return (
     <S.AsideBox>
-      <Button radius={8} style={width <= 500 ? ModileButtonStyle : undefined}>
+      <Button radius={8} style={width <= 500 ? MobileButtonStyle : undefined}>
         <S.ButtonFontBox>원서 저장</S.ButtonFontBox>
       </Button>
       <Button
@@ -29,7 +29,7 @@ export const Aside = () => {
         style={
           width <= 500
             ? {
-                ...ModileButtonStyle,
+                ...MobileButtonStyle,
                 backgroundColor: "#F8FAFD",
                 color: "#8B939C",
               }
@@ -45,7 +45,7 @@ export const Aside = () => {
           style={
             width <= 500
               ? {
-                  ...ModileButtonStyle,
+                  ...MobileButtonStyle,
                   backgroundColor: "#F8FAFD",
                   color: "#8B939C",
                 }
@@ -60,7 +60,7 @@ export const Aside = () => {
         radius={8}
         color={currentPage < 7 ? "second" : "third"}
         clickEvent={moveNextPage}
-        style={width <= 500 ? ModileButtonStyle : undefined}
+        style={width <= 500 ? MobileButtonStyle : undefined}
       >
         <S.ButtonFontBox>
           {currentPage < 7 ? "다음" : "원서 최종 제출"}
@@ -74,7 +74,7 @@ export const Aside = () => {
           style={
             width <= 500
               ? {
-                  ...ModileButtonStyle,
+                  ...MobileButtonStyle,
                   backgroundColor: "#F8FAFD",
                   color: "#8B939C",
                 }
