@@ -11,6 +11,11 @@ export const CardContainer = styled.article`
     margin: auto;
   }
 
+  @media screen and (max-width: 500px) {
+    width: 20rem;
+    margin: auto;
+  }
+
   & + & {
     margin-top: 54px;
   }

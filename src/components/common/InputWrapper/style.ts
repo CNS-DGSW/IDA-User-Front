@@ -24,6 +24,7 @@ export const InputLabel = styled.label`
       margin-top: -1rem;
       margin-left: 1.6%;
     }
+   
   }
 `
 
@@ -34,5 +35,5 @@ export const Inputs = styled.div`
   @media screen and (max-width: 500px) {
     flex-direction: column;
     margin-bottom: 1rem;
-  }
+}
 `

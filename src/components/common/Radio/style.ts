@@ -15,5 +15,6 @@ export const RadioContainer = styled.div<{ width?: number }>`
   font-size: 14px;
   word-break: keep-all;
   color: #8b939c;
+
   margin-left: 1rem;
 `
