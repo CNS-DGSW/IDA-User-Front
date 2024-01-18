@@ -43,21 +43,19 @@ const WriteGuardian = () => {
             <Input type="tel" width={310} />
           </InputWrapper>
         </InputWrapper>
-        <InputWrapper>
-          <InputWrapper
-            title="주소"
-            className="Address_individual_styles"
-            style={{ marginTop: 54 }}
-          >
-            <Input type="text" width={650} />
-          </InputWrapper>
-          <InputWrapper
-            title="상세주소"
-            className="DetailedAddress_individual_styles"
-            style={{ marginTop: 34 }}
-          >
-            <Input type="text" width={650} />
-          </InputWrapper>
+        <InputWrapper
+          title="주소"
+          className="Address_individual_styles"
+          style={{ marginTop: 54 }}
+        >
+          <Input type="text" width={650} />
+        </InputWrapper>
+        <InputWrapper
+          title="상세주소"
+          className="DetailedAddress_individual_styles"
+          style={{ marginTop: 34 }}
+        >
+          <Input type="text" width={650} />
         </InputWrapper>
       </Card>
     </section>
