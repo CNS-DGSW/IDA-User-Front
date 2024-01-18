@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import * as S from "./style"
 import ExitIcon from "@/assets/img/Icon/ExitModal.svg"
-import Input from "@/components/common/Input"
+import ExitIconMoblie from "@/assets/img/Icon/ExitModalMoblie.svg"
 import useScSearchModal from "@/hooks/Write/useScSearchModal"
+import useWriteNav from "@/hooks/Write/useWriteNav"
 
 const dummy = [
   {
@@ -54,22 +55,28 @@ const SchoolList = (ScList: IScList[]) => {
 
 const SchoolSearchModal = () => {
   const [noSchool, setNoSchool] = useState<boolean>(false)
+  const { width } = useWriteNav()
   const { searchName, setSearchName, searchModal, cloasModal } =
     useScSearchModal()
   return (
     <S.ModalLayout>
       <S.SubLayout>
-        <S.ExitIcon as={ExitIcon} alt="img error" onClick={cloasModal} />
+        <S.ExitIcon
+          as={width > 500 ? ExitIcon : ExitIconMoblie}
+          alt="img error"
+          onClick={cloasModal}
+        />
         <S.Title>학교명 검색</S.Title>
         <S.Card>
           <S.ContentTitle>학교 검색</S.ContentTitle>
           <S.InputWrap>
-            <Input
+            <S.Input
               type="text"
-              style={{ fontSize: "1.125rem" }}
               value={searchName}
+              fontSize={width <= 500 ? "0.75rem" : undefined}
+              padding="0.625rem 0.875rem"
+              width={width <= 500 ? "70%" : "80%"}
               onChange={(event) => setSearchName(event.target.value)}
-              width={400}
               placeholder="학교 이름을 입력해주세요."
             />
             <S.Button onClick={searchModal}>학교검색</S.Button>
@@ -87,11 +94,12 @@ const SchoolSearchModal = () => {
           <div>
             {noSchool ? (
               <S.InputWrap>
-                <Input
+                <S.Input
                   type="text"
-                  style={{ fontSize: "1.125rem" }}
-                  width={400}
                   placeholder="학교 이름을 입력해주세요."
+                  fontSize={width <= 500 ? "0.75rem" : undefined}
+                  padding="0.625rem 0.875rem"
+                  width={width <= 500 ? "70%" : "80%"}
                 />
                 <S.Button>입력완료</S.Button>
               </S.InputWrap>

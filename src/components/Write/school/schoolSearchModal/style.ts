@@ -24,6 +24,12 @@ export const SubLayout = styled.div`
   border-radius: 0.625rem;
   position: relative;
   padding: 2rem;
+  @media screen and (max-width: 500px) {
+    width: 20rem;
+    max-width: 20rem;
+    height: 24rem;
+    max-height: 24rem;
+  }
 `
 
 export const ExitIcon = styled(Image)`
@@ -37,6 +43,12 @@ export const Title = styled.p`
   font-weight: 600;
   color: #1e2f44;
   margin: 1.75rem 0;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.875rem;
+    margin: 0;
+    margin-bottom: 1.25rem;
+  }
 `
 
 export const Card = styled.div`
@@ -47,6 +59,13 @@ export const Card = styled.div`
   border-radius: 0.5rem;
   &:first-of-type {
     margin-bottom: 1.125rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 1rem;
+    &:first-of-type {
+      margin-bottom: 0.25rem;
+    }
   }
 `
 
@@ -63,12 +82,22 @@ export const Button = styled.button`
   color: #fff;
   background-color: #1485ee;
   border-radius: 0.5rem;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.75rem;
+    padding: 0.625rem;
+  }
 `
 
 export const ContentTitle = styled.p`
   font-size: 1.375rem;
   color: #424344;
   margin-bottom: 1.125rem;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
 `
 
 export const List = styled.div`
@@ -82,6 +111,12 @@ export const List = styled.div`
   border: 1px solid #d8dae0;
   border-radius: 0.5rem;
   margin-bottom: 1.125rem;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.75rem;
+    height: 6rem;
+    max-height: 6rem;
+  }
 `
 
 export const ListValue = styled.div`
@@ -99,16 +134,28 @@ export const ListValue = styled.div`
 export const ScName = styled.p`
   font-size: 1.125rem;
   color: #424344;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.75rem;
+  }
 `
 export const ScAddress = styled.p`
   margin-top: 0.1rem;
   font-size: 0.875rem;
   color: #8b939c;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.65rem;
+  }
 `
 export const ScNEIS = styled.p`
   margin-top: 0.5rem;
   font-size: 0.875rem;
   color: #424344;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.65rem;
+  }
 `
 
 export const NoSchool = styled.p`
@@ -118,6 +165,10 @@ export const NoSchool = styled.p`
   height: 100%;
   font-size: 1.125rem;
   color: #424344;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.75rem;
+  }
 `
 
 export const RealNoSchool = styled.p`
@@ -129,5 +180,30 @@ export const RealNoSchool = styled.p`
   align-items: center;
   &:hover {
     color: #8b939c;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.75rem;
+    height: 2rem;
+  }
+`
+
+export const Input = styled.input<{
+  fontSize?: string
+  color?: string
+  placeholderCl?: string
+  borderCl?: string
+  padding?: string
+  width?: string
+}>`
+  width: ${({ width }) => (width ? width : "100%")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "1.125rem")};
+  color: ${({ color }) => (color ? color : "#424344")};
+  border: 1px solid ${({ borderCl }) => (borderCl ? borderCl : "#D8DAE0")};
+  border-radius: 0.5rem;
+  padding: ${({ padding }) => (padding ? padding : "0.875rem 1rem")};
+  &::placeholder {
+    color: ${({ placeholderCl }) =>
+      placeholderCl ? placeholderCl : "#D8DAE0"};
   }
 `
