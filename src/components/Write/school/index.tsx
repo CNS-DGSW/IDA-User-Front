@@ -8,6 +8,7 @@ import GraduateForm from "./graduate"
 import ExpectedForm from "./expect"
 import InputWrapper from "@/components/common/InputWrapper"
 import useRadio from "@/hooks/useRadio"
+import SchoolSearchModal from "./schoolSearchModal"
 
 type EduUnion = "졸업예정" | "졸업생" | "고입검정"
 
@@ -20,33 +21,36 @@ const WriteSchool = () => {
   }, [eduStatus])
 
   return (
-    <section>
-      <Card>
-        <InputWrapper title="졸업구분">
-          <Radio name="eduStatus" value="졸업예정" onClick={changeRadio}>
-            졸업예정
-          </Radio>
-          <Radio name="eduStatus" value="졸업생" onClick={changeRadio}>
-            졸업생
-          </Radio>
-          <Radio name="eduStatus" value="고입검정" onClick={changeRadio}>
-            고입검정
-          </Radio>
-        </InputWrapper>
-      </Card>
+    <>
+      <SchoolSearchModal />
+      <section>
+        <Card>
+          <InputWrapper title="졸업구분">
+            <Radio name="eduStatus" value="졸업예정" onClick={changeRadio}>
+              졸업예정
+            </Radio>
+            <Radio name="eduStatus" value="졸업생" onClick={changeRadio}>
+              졸업생
+            </Radio>
+            <Radio name="eduStatus" value="고입검정" onClick={changeRadio}>
+              고입검정
+            </Radio>
+          </InputWrapper>
+        </Card>
 
-      <EduFunnel>
-        <EduStep name="졸업예정">
-          <ExpectedForm />
-        </EduStep>
-        <EduStep name="졸업생">
-          <GraduateForm />
-        </EduStep>
-        <EduStep name="고입검정">
-          <Examination />
-        </EduStep>
-      </EduFunnel>
-    </section>
+        <EduFunnel>
+          <EduStep name="졸업예정">
+            <ExpectedForm />
+          </EduStep>
+          <EduStep name="졸업생">
+            <GraduateForm />
+          </EduStep>
+          <EduStep name="고입검정">
+            <Examination />
+          </EduStep>
+        </EduFunnel>
+      </section>
+    </>
   )
 }
 
