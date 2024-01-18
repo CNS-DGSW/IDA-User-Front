@@ -17,12 +17,12 @@ export const InputLabel = styled.label`
   @media screen and (max-width: 500px) {
     &.Address_individual_styles {
       margin-top: -3rem;
-      margin-left: 1.6rem;
+      margin-left: 1.6%;
     }
 
     &.DetailedAddress_individual_styles {
       margin-top: -1rem;
-      margin-left: 1.6rem;
+      margin-left: 1.6%;
     }
   }
 `
