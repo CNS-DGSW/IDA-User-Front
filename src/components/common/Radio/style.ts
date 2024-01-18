@@ -17,4 +17,11 @@ export const RadioContainer = styled.div<{ width?: number }>`
   color: #8b939c;
 
   margin-left: 1rem;
+
+  @media screen and (max-width: 500px) {
+    width: ${({ width }) => (width ? `${width}px` : "100%")};
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
 `

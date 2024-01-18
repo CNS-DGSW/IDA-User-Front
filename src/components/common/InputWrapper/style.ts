@@ -3,6 +3,9 @@ import styled from "styled-components"
 export const WrapperStyle = styled.div`
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `
 
 export const InputLabel = styled.label`
@@ -15,6 +18,8 @@ export const InputLabel = styled.label`
   margin-bottom: 14px;
 
   @media screen and (max-width: 500px) {
+    font-size: 1rem;
+
     &.Address_individual_styles {
       margin-top: -3rem;
       margin-left: 1.6rem;
@@ -24,7 +29,6 @@ export const InputLabel = styled.label`
       margin-top: -1rem;
       margin-left: 1.6rem;
     }
-   
   }
 `
 
@@ -34,6 +38,6 @@ export const Inputs = styled.div`
   align-items: center;
   @media screen and (max-width: 500px) {
     flex-direction: column;
-    margin-bottom: 1rem;
-}
+    // margin-bottom: 1rem;
+  }
 `
