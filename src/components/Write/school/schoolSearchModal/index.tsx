@@ -41,8 +41,8 @@ interface IScList {
 const SchoolList = (ScList: IScList[]) => {
   return (
     <>
-      {ScList.map((item) => (
-        <S.ListValue>
+      {ScList.map((item, idx) => (
+        <S.ListValue key={idx}>
           <S.ScName>{item.name}</S.ScName>
           <S.ScAddress>{item.address}</S.ScAddress>
           <S.ScNEIS>NEIS 학교 번호 : {item.NEIS}</S.ScNEIS>

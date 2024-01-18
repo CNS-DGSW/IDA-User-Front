@@ -9,12 +9,15 @@ import ExpectedForm from "./expect"
 import InputWrapper from "@/components/common/InputWrapper"
 import useRadio from "@/hooks/useRadio"
 import SchoolSearchModal from "./schoolSearchModal"
+import { scSearchModalAtom } from "@/atom/modalAtom"
+import { useRecoilValue } from "recoil"
 
 type EduUnion = "졸업예정" | "졸업생" | "고입검정"
 
 const WriteSchool = () => {
   const [eduStatus, changeRadio] = useRadio<EduUnion>()
   const [EduFunnel, EduStep, setEdu] = useKeyFunnel<EduUnion>()
+  const scSearchModal = useRecoilValue(scSearchModalAtom)
 
   useEffect(() => {
     setEdu(eduStatus)
@@ -22,7 +25,7 @@ const WriteSchool = () => {
 
   return (
     <>
-      <SchoolSearchModal />
+      {scSearchModal && <SchoolSearchModal />}
       <section>
         <Card>
           <InputWrapper title="졸업구분">

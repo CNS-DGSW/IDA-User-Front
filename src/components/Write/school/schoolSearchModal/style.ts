@@ -11,6 +11,7 @@ export const ModalLayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 `
 
 export const SubLayout = styled.div`
