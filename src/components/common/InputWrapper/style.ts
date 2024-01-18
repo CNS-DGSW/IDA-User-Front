@@ -12,10 +12,18 @@ export const InputLabel = styled.label`
 
   color: #424344;
   margin-bottom: 14px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+  }
 `
 
 export const Inputs = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
 `
