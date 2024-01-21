@@ -84,8 +84,8 @@ export const Button = styled.button`
   border-radius: 0.5rem;
 
   @media screen and (max-width: 500px) {
-    font-size: 0.75rem;
-    padding: 0.625rem;
+    font-size: 0.6rem;
+    padding: 0.775rem 0.625rem;
   }
 `
 
@@ -140,7 +140,7 @@ export const ScName = styled.p`
   }
 `
 export const ScAddress = styled.p`
-  margin-top: 0.1rem;
+  margin-top: 0.25rem;
   font-size: 0.875rem;
   color: #8b939c;
 
@@ -178,6 +178,7 @@ export const RealNoSchool = styled.p`
   height: 3rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
   &:hover {
     color: #8b939c;
   }

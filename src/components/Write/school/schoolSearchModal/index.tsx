@@ -9,34 +9,34 @@ const dummy = [
   {
     name: "대구소프트웨어마이스터고등학교",
     address: "대구광역시 달성군 구지면 창리로 11길 53",
-    NEIS: "123456789",
+    NEIScode: "123456789",
   },
   {
     name: "대구소프트웨어마이스터고등학교",
     address: "대구광역시 달성군 구지면 창리로 11길 53",
-    NEIS: "123456789",
+    NEIScode: "123456789",
   },
   {
     name: "대구소프트웨어마이스터고등학교",
     address: "대구광역시 달성군 구지면 창리로 11길 53",
-    NEIS: "123456789",
+    NEIScode: "123456789",
   },
   {
     name: "대구소프트웨어마이스터고등학교",
     address: "대구광역시 달성군 구지면 창리로 11길 53",
-    NEIS: "123456789",
+    NEIScode: "123456789",
   },
   {
     name: "대구소프트웨어마이스터고등학교",
     address: "대구광역시 달성군 구지면 창리로 11길 53",
-    NEIS: "123456789",
+    NEIScode: "123456789",
   },
 ]
 
 interface IScList {
   name: string
   address: string
-  NEIS: string
+  NEIScode: string
 }
 
 const SchoolList = (ScList: IScList[]) => {
@@ -46,7 +46,7 @@ const SchoolList = (ScList: IScList[]) => {
         <S.ListValue key={idx}>
           <S.ScName>{item.name}</S.ScName>
           <S.ScAddress>{item.address}</S.ScAddress>
-          <S.ScNEIS>NEIS 학교 번호 : {item.NEIS}</S.ScNEIS>
+          <S.ScNEIS>NEIS 학교 번호 : {item.NEIScode}</S.ScNEIS>
         </S.ListValue>
       ))}
     </>
