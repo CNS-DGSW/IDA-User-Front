@@ -2,7 +2,6 @@ import Card from "@/components/common/Card"
 import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
 import Select from "@/components/common/Select"
-import Textarea from "@/components/common/Textarea"
 import { SpecialSelectObject } from "@/constants/Write/specialConstant"
 import useRadio from "@/hooks/useRadio"
 import * as S from "../style"
@@ -20,10 +19,10 @@ const readonlyInputObject: Record<ReadonlyInputUnion, string> = {
   지역우선전형:
     "대구광역시 달성군 소재 중학교 졸업예정자, 중학교 졸업자 또는 중학교 졸업자와 동등한 학력 인정자로서 원서 접수일 현재 전 가족이 대구광역시 달성군에 주민등록이 되어있고 실제 거주하는 자",
 }
-const readonlyInputSizeObject: Record<ReadonlyInputUnion, number> = {
-  마이스터인재전형: 48,
-  지역우선전형: 66,
-}
+// const readonlyInputSizeObject: Record<ReadonlyInputUnion, number> = {
+//   마이스터인재전형: 48,
+//   지역우선전형: 66,
+// }
 
 const SpecialScreening = () => {
   const [currentSpecial, changeCurrentSpecial] = useRadio<SpecialTypeUnion>()

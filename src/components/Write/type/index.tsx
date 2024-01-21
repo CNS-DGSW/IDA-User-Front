@@ -1,5 +1,4 @@
 import Card from "@/components/common/Card"
-import Input from "@/components/common/Input"
 import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
 import useRadio from "@/hooks/useRadio"
@@ -8,13 +7,11 @@ import SpecialScreening from "./specialScreening"
 import SpecialAdmission from "./specialAdmission"
 import type { CurrentTypeUnion } from "./type"
 import { useKeyFunnel } from "@dgswcns/cns-funnel"
-import useWriteNav from "@/hooks/Write/useWriteNav"
 import * as S from "./style"
 
 const WriteType = () => {
   const [currentType, changeCurrentType] = useRadio<CurrentTypeUnion>()
   const [TypeFunnel, TypeStep, setType] = useKeyFunnel<CurrentTypeUnion>()
-  const { width } = useWriteNav()
 
   useEffect(() => {
     setType(currentType)
