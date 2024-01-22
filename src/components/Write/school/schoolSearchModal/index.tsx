@@ -74,7 +74,7 @@ const SchoolSearchModal = () => {
               type="text"
               value={searchName}
               fontSize={width <= 500 ? "0.75rem" : undefined}
-              padding="0.625rem 0.875rem"
+              padding="0.625rem 0.5rem"
               width={width <= 500 ? "70%" : "80%"}
               onChange={(event) => setSearchName(event.target.value)}
               placeholder="학교 이름을 입력해주세요."
@@ -98,7 +98,7 @@ const SchoolSearchModal = () => {
                   type="text"
                   placeholder="학교 이름을 입력해주세요."
                   fontSize={width <= 500 ? "0.75rem" : undefined}
-                  padding="0.625rem 0.875rem"
+                  padding="0.625rem 0.5rem"
                   width={width <= 500 ? "70%" : "80%"}
                 />
                 <S.Button>입력완료</S.Button>
