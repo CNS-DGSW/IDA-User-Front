@@ -8,6 +8,7 @@ import useChange from "@/hooks/useChange"
 import useLocal from "../hooks/useLocal"
 import Card from "@/components/common/Card"
 import useWriteNav from "@/hooks/Write/useWriteNav"
+import useScSearchModal from "@/hooks/Write/useScSearchModal"
 
 const ExpectedForm = () => {
   const [, changesShoolContact] = useChange()
@@ -15,6 +16,7 @@ const ExpectedForm = () => {
   const [, changeTeacherContact] = useChange()
 
   const { changeDetailLocal, changeLocal, detailLocal, local } = useLocal()
+  const { openModal } = useScSearchModal()
 
   const { width } = useWriteNav()
 
@@ -30,7 +32,7 @@ const ExpectedForm = () => {
               style={width <= 500 ? { fontSize: "14px" } : {}}
               color="gray"
             />
-            <S.SchoolButton>학교 검색</S.SchoolButton>
+            <S.SchoolButton onClick={openModal}>학교 검색</S.SchoolButton>
           </S.Wrap>
         </InputWrapper>
         <InputWrapper title="NEIS 학교 번호">
