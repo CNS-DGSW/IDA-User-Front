@@ -16,4 +16,9 @@ export const RadioContainer = styled.div<{ width?: number }>`
   word-break: keep-all;
 
   color: #8b939c;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
 `

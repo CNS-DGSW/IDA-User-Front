@@ -2,6 +2,7 @@ import styled, { css } from "styled-components"
 
 export const Wrap = styled.div<{
   justify?: "space-between" | "center" | "space-around"
+  column?: boolean
 }>`
   display: flex;
   ${({ justify }) =>
@@ -12,6 +13,13 @@ export const Wrap = styled.div<{
 
   &+& {
     margin-top: 54px;
+  }
+
+  @media screen and (max-width: 500px) {
+    ${({ column }) => column && `flex-direction: column;`}
+    & > div:not(:first-child) {
+      margin-top: 2.25rem;
+    }
   }
 `
 

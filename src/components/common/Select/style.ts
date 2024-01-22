@@ -20,6 +20,9 @@ export const SelectContainer = styled.div<{ width?: number; colors?: string }>`
   cursor: pointer;
 
   position: relative;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `
 
 export const ListContainer = styled.ul<{ direction?: boolean }>`
@@ -31,6 +34,10 @@ export const ListContainer = styled.ul<{ direction?: boolean }>`
   border-radius: 8px;
   border: 1px solid #d8dae0;
   z-index: 100;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `
 
 export const ListItem = styled.li<{ width?: number }>`
@@ -51,4 +58,8 @@ export const ListItem = styled.li<{ width?: number }>`
   line-height: 17px;
 
   color: #8b939c;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `
