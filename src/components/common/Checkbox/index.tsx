@@ -7,10 +7,12 @@ interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   checked: boolean
   onChange?: (evnet: ChangeEvent<HTMLInputElement>) => void
   name?: string
+  width?: string
+  height?: string
 }
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ checked, onChange, name, ...checkBoxProps }, ref) => {
+  ({ checked, onChange, name, width, height, ...checkBoxProps }, ref) => {
     return (
       <label>
         <S.CheckboxLayout>
@@ -22,7 +24,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             name={name}
             {...checkBoxProps}
           />
-          <S.StyledCheckbox checked={checked}>
+          <S.StyledCheckbox checked={checked} width={width} height={height}>
             <BsCheckLg style={{ color: "white" }} />
           </S.StyledCheckbox>
         </S.CheckboxLayout>
