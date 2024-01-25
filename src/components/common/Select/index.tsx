@@ -1,4 +1,3 @@
-import Image from "next/image"
 import React, { useRef, useState } from "react"
 import type { MouseEventHandler } from "react"
 import type { CSSObject } from "styled-components"
