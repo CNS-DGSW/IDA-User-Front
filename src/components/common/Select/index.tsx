@@ -2,7 +2,7 @@ import Image from "next/image"
 import React, { useRef, useState } from "react"
 import type { MouseEventHandler } from "react"
 import type { CSSObject } from "styled-components"
-import { ListContainer, ListItem, SelectContainer } from "./style"
+import { ListContainer, ListItem, SelectContainer, SelectIcon } from "./style"
 import selectIcon from "../../../assets/img/Icon/selectIcon.svg"
 import { useOutsideClick } from "@/hooks/useOutsideClick"
 
@@ -15,6 +15,7 @@ export interface SelectProps {
   placeholder?: string
   colors?: string
   direction?: boolean
+  listFontSize?: string
 }
 
 const Select = ({
@@ -26,6 +27,7 @@ const Select = ({
   placeholder,
   colors,
   direction = true,
+  listFontSize,
 }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const revertIsOpen = () => setIsOpen((prev) => !prev)
@@ -45,7 +47,14 @@ const Select = ({
       colors={colors}
     >
       {value ?? placeholder ?? "선택"}
-      <Image
+      <SelectIcon
+        as={selectIcon}
+        alt="icon error"
+        isOpen={isOpen}
+        width={12}
+        height={12}
+      />
+      {/* <Image
         src={selectIcon}
         alt="icon"
         style={{
@@ -53,11 +62,16 @@ const Select = ({
           transition: "0.2s",
           userSelect: "none",
         }}
-      />
+      /> */}
       {isOpen && (
         <ListContainer direction={direction}>
           {list?.map((v) => (
-            <ListItem width={width} key={v} onClick={changeEvent}>
+            <ListItem
+              width={width}
+              key={v}
+              onClick={changeEvent}
+              style={{ fontSize: listFontSize }}
+            >
               {v}
             </ListItem>
           ))}

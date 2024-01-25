@@ -1,3 +1,4 @@
+import Image from "next/image"
 import styled from "styled-components"
 
 export const SelectContainer = styled.div<{ width?: number; colors?: string }>`
@@ -64,4 +65,10 @@ export const ListItem = styled.li<{ width?: number }>`
     height: auto;
     padding: 0.3125rem 1.125rem;
   }
+`
+
+export const SelectIcon = styled(Image)<{ isOpen: boolean }>`
+  transform: ${({ isOpen }) => (!isOpen ? "rotate(0deg)" : "rotate(180deg)")};
+  transition: 0.2s;
+  userselect: none;
 `
