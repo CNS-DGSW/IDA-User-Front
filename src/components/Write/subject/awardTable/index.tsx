@@ -2,14 +2,27 @@ import Checkbox from "@/components/common/Checkbox"
 import Input from "@/components/common/Input"
 import { Table } from "@/components/common/table"
 import React from "react"
+import { TableCustomModlieInputStyle } from "../style"
+import useAwardTableStyle from "../hooks/useAwardTableStyle"
 
 const AwardTable = () => {
+  const {
+    setTableTitleWidth,
+    setTableCheckBoxSize,
+    setTableCheckBoxTableWidth,
+    setExplaneWidth,
+    explaneFontSize,
+    contextFontSize,
+    setExampleInput,
+  } = useAwardTableStyle()
   return (
     <Table>
       <Table.Header>
         <Table.Tr height="31">
-          <Table.Th rowspan={2}>학년</Table.Th>
-          <Table.Th rowspan={2} width="186">
+          <Table.Th rowspan={2} width={setTableTitleWidth(23.5)}>
+            학년
+          </Table.Th>
+          <Table.Th rowspan={2} width={setExplaneWidth(96)}>
             설명
           </Table.Th>
           <Table.Th width="118" colspan={2}>
@@ -23,7 +36,7 @@ const AwardTable = () => {
                 width="59"
                 background="F9F9F9"
                 color="000"
-                style={{ fontSize: "12px", fontStyle: "normal" }}
+                style={contextFontSize()}
                 notBorder
               >
                 1학기
@@ -32,7 +45,7 @@ const AwardTable = () => {
                 width="59"
                 background="F9F9F9"
                 color="000"
-                style={{ fontSize: "12px", fontStyle: "normal" }}
+                style={contextFontSize()}
                 notBorder
               >
                 2학기
@@ -50,7 +63,7 @@ const AwardTable = () => {
                 width="59"
                 background="F9F9F9"
                 color="000"
-                style={{ fontSize: "12px", fontStyle: "normal" }}
+                style={contextFontSize()}
                 notBorder
               >
                 1학기
@@ -59,7 +72,7 @@ const AwardTable = () => {
                 width="59"
                 background="F9F9F9"
                 color="000"
-                style={{ fontSize: "12px", fontStyle: "normal" }}
+                style={contextFontSize()}
                 notBorder
               >
                 2학기
@@ -77,7 +90,7 @@ const AwardTable = () => {
                 width="59"
                 background="F9F9F9"
                 color="000"
-                style={{ fontSize: "12px", fontStyle: "normal" }}
+                style={contextFontSize()}
                 notBorder
               >
                 1학기
@@ -86,7 +99,7 @@ const AwardTable = () => {
                 width="59"
                 background="F9F9F9"
                 color="000"
-                style={{ fontSize: "12px", fontStyle: "normal" }}
+                style={contextFontSize()}
                 notBorder
               >
                 2학기
@@ -97,47 +110,78 @@ const AwardTable = () => {
       </Table.Header>
       <Table.Body>
         <Table.Tr>
-          <Table.Td background="F9F9F9">리더쉽</Table.Td>
-          <Table.Td
-            width="186"
-            color="8B939C"
-            style={{ fontSize: "12px", padding: "0 18px" }}
-          >
+          <Table.Td background="F9F9F9" width={setTableTitleWidth(50)}>
+            리더쉽
+          </Table.Td>
+          <Table.Td width="186" color="8B939C" style={explaneFontSize()}>
             최소 한 학기 이상 학생회 임원 ( 전교 학생회장, 전교
             학생부회장,학급반장 )
           </Table.Td>
-          <Table.Td width="59">
-            <Checkbox checked={false} name="leader" />
+          <Table.Td width={setTableCheckBoxTableWidth(40)}>
+            <Checkbox
+              checked={false}
+              name="leader"
+              width={setTableCheckBoxSize()}
+              height={setTableCheckBoxSize()}
+            />
           </Table.Td>
-          <Table.Td width="59">
-            <Checkbox checked={false} name="leader" />
+          <Table.Td width={setTableCheckBoxTableWidth(40)}>
+            <Checkbox
+              checked={false}
+              name="leader"
+              width={setTableCheckBoxSize()}
+              height={setTableCheckBoxSize()}
+            />
           </Table.Td>
-          <Table.Td width="59">
-            <Checkbox checked={false} name="leader" />
+          <Table.Td width={setTableCheckBoxTableWidth(40)}>
+            <Checkbox
+              checked={false}
+              name="leader"
+              width={setTableCheckBoxSize()}
+              height={setTableCheckBoxSize()}
+            />
           </Table.Td>
-          <Table.Td width="59">
-            <Checkbox checked={false} name="leader" />
+          <Table.Td width={setTableCheckBoxTableWidth(40)}>
+            <Checkbox
+              checked={false}
+              name="leader"
+              width={setTableCheckBoxSize()}
+              height={setTableCheckBoxSize()}
+            />
           </Table.Td>
-          <Table.Td width="59">
-            <Checkbox checked={false} name="leader" />
+          <Table.Td width={setTableCheckBoxTableWidth(40)}>
+            <Checkbox
+              checked={false}
+              name="leader"
+              width={setTableCheckBoxSize()}
+              height={setTableCheckBoxSize()}
+            />
           </Table.Td>
-          <Table.Td width="59">
-            <Checkbox checked={false} name="leader" />
+          <Table.Td width={setTableCheckBoxTableWidth(40)}>
+            <Checkbox
+              checked={false}
+              name="leader"
+              width={setTableCheckBoxSize()}
+              height={setTableCheckBoxSize()}
+            />
           </Table.Td>
         </Table.Tr>
         <Table.Tr>
-          <Table.Td background="F9F9F9">리더쉽</Table.Td>
+          <Table.Td background="F9F9F9" width={setTableTitleWidth(24.5)}>
+            모범상
+          </Table.Td>
           <Table.Td
-            width="186"
+            width={setExplaneWidth(95)}
             color="8B939C"
-            style={{ fontSize: "12px", padding: "0 18px" }}
+            style={explaneFontSize()}
           >
             재학 중 교내 모범상을 수상 ( 모범, 선행, 효행, 공로, 노력 등 )
           </Table.Td>
           <Table.Td width="354" colspan={6}>
             <Input
               type="text"
-              style={{ margin: "0 auto", height: "36px", textAlign: "center" }}
+              style={setExampleInput()}
+              customStyle={TableCustomModlieInputStyle}
             />
           </Table.Td>
         </Table.Tr>

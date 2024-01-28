@@ -45,6 +45,7 @@ export const TdStyle = styled.td<ThProps & Omit<SizeImplElement, "height">>`
   @media screen and (max-width: 500px) {
     font-size: 0.5rem;
     width: ${({ width }) => `${width ?? "108"}px`};
+    ${({ width }) => width && `max-width: ${width}`};
   }
 `
 
@@ -64,6 +65,16 @@ export const TableCustomInputStyle: CSSObject = {
   fontWeight: 700,
   color: "black",
   fontSize: "16px",
+}
+
+export const TableCustomModlieInputStyle: CSSObject = {
+  height: "20px",
+  margin: "0 auto",
+  textAlign: "center",
+  fontWeight: 700,
+  color: "black",
+  fontSize: "16px",
+  width: "50px",
 }
 
 export const SubjectDescription = styled.ul`
