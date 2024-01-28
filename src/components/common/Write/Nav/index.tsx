@@ -1,7 +1,7 @@
 import React from "react"
 import { usePageContext } from "../PageProvider"
 import * as S from "./style"
-import useWriteNav from "@/hooks/useGetBrWidth"
+import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 const NavKind = [
   "지원자 정보",
@@ -15,14 +15,14 @@ const NavKind = [
 
 export const WriteNav = () => {
   const { currentPage, movePage } = usePageContext()
-  const { width, checkWidth } = useWriteNav()
+  const { browserWidth, checkWidth } = useGetBrWidth()
   return (
     <S.WriteNavStyle>
       {NavKind.map((v, idx) => (
         <>
           {checkWidth(currentPage === idx + 1) && (
             <S.Wrap colors={idx + 1 === currentPage} key={v}>
-              {width > 500 && idx + 1 > 1 && (
+              {browserWidth > 500 && idx + 1 > 1 && (
                 <S.Line colors={idx + 1 <= currentPage} />
               )}
               <S.Circle

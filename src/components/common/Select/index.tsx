@@ -9,7 +9,7 @@ import {
 } from "./style"
 // import selectIcon from "../../../assets/img/Icon/selectIcon.svg"
 import { useOutsideClick } from "@/hooks/useOutsideClick"
-import useWriteNav from "@/hooks/useGetBrWidth"
+import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 export interface SelectProps {
   list: string[]
@@ -39,7 +39,7 @@ const Select = ({
   const [isOpen, setIsOpen] = useState(false)
   const revertIsOpen = () => setIsOpen((prev) => !prev)
   const selectRef = useRef<HTMLDivElement>(null)
-  const { browserWidth } = useWriteNav()
+  const { browserWidth } = useGetBrWidth()
 
   useOutsideClick({
     container: selectRef.current,
