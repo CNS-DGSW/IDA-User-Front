@@ -1,7 +1,7 @@
 import React from "react"
 import { usePageContext } from "../PageProvider"
 import * as S from "./style"
-import useWriteNav from "@/hooks/Write/useWriteNav"
+import useWriteNav from "@/hooks/useGetBrWidth"
 
 const NavKind = [
   "지원자 정보",

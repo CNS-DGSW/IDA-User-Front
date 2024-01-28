@@ -9,7 +9,7 @@ import {
 } from "./style"
 // import selectIcon from "../../../assets/img/Icon/selectIcon.svg"
 import { useOutsideClick } from "@/hooks/useOutsideClick"
-import useWriteNav from "@/hooks/Write/useWriteNav"
+import useWriteNav from "@/hooks/useGetBrWidth"
 
 export interface SelectProps {
   list: string[]
