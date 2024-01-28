@@ -29,11 +29,6 @@ export const FooterInnerBox = styled.div`
 export const DGSWLogo = styled(Image)`
   width: 104px;
   margin-bottom: 27px;
-
-  @media screen and (max-width: 500px) {
-    width: 80px;
-    height: 25px;
-  }
 `
 
 export const FooterParagraph = styled.p`
