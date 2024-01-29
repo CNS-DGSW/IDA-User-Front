@@ -7,7 +7,15 @@ import InformData from "../inform.dummy.json"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
+const AttachFileTitleList = [
+  "2024 신입생 원서접수 방법 안내.pdf",
+  "아무튼 이름이 엄청 긴 무언가를 안내하는 첨부파일이라는 것입니다.pdf",
+  "3번 게시글",
+]
+
 const InformDetailPage = () => {
+  const [isAttachFile, setIsAttachFile] = useState<boolean>(true)
+
   const router = useRouter()
   const [informData] = useState<IInformContentsProps>(
     InformData.inform[Number(router.query.id)],
@@ -22,11 +30,11 @@ const InformDetailPage = () => {
         <S.InformDetailTitleRow>
           <S.InformDetailSubTitleRow>
             <S.InformDetailTitleParagraph>
-              {informData.title}
+              {informData?.title}
             </S.InformDetailTitleParagraph>
             <div>
-              <S.ImportantCheckBox isImportant={informData.important}>
-                {informData.important ? "주요공지" : "일반공지"}
+              <S.ImportantCheckBox isImportant={informData?.important}>
+                {informData?.important ? "주요공지" : "일반공지"}
               </S.ImportantCheckBox>
             </div>
           </S.InformDetailSubTitleRow>
@@ -35,13 +43,31 @@ const InformDetailPage = () => {
               <InformDateIcon />
             </S.InformDetailDateIconBox>
             <S.InformDetailDateContextParagraph>
-              {informData.date}
+              {informData?.date}
             </S.InformDetailDateContextParagraph>
           </S.InformDetailSubTitleRow>
         </S.InformDetailTitleRow>
         <S.InformDetailContextParagraph>
-          {informData.context}
+          {informData?.context}
         </S.InformDetailContextParagraph>
+
+        {isAttachFile && (
+          <S.AttachedfileLayout>
+            <S.AttachedfileBoxWrapper>
+              <S.AttachedfileTitle>첨부 파일</S.AttachedfileTitle>
+              {AttachFileTitleList.map((title, idx) => (
+                <S.AttachedfileBox key={title}>
+                  <S.AttachedfileLeftSideBox>
+                    <S.FolderIcon />
+                    <S.AttachedfileBoxText>{title}</S.AttachedfileBoxText>
+                  </S.AttachedfileLeftSideBox>
+                  <S.CancleIcon />
+                </S.AttachedfileBox>
+              ))}
+            </S.AttachedfileBoxWrapper>
+          </S.AttachedfileLayout>
+        )}
+
         <Link href="/inform">
           <S.InformDetailBackHyperlinkBox>
             {"< 공지사항으로 돌아가기"}
