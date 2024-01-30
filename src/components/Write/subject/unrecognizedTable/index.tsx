@@ -22,6 +22,11 @@ const UnrecognizedTdMoblieStyle: CSSObject = {
 const UnrecognizedTable = () => {
   const { browserWidth } = useGetBrWidth()
 
+  const setStyle = (): CSSObject => {
+    if (browserWidth > 500) return UnrecognizedTdStyle
+    else return UnrecognizedTdMoblieStyle
+  }
+
   return (
     <Table customStyle={{ marginBottom: "34px" }}>
       <Table.Header>
@@ -39,130 +44,46 @@ const UnrecognizedTable = () => {
         <Table.Tr>
           <Table.Td>1학년</Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
         </Table.Tr>
         <Table.Tr>
           <Table.Td>2학년</Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
         </Table.Tr>
         <Table.Tr>
           <Table.Td>3학년</Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
           <Table.Td width="135">
-            <Input
-              type="text"
-              customStyle={
-                browserWidth > 500
-                  ? UnrecognizedTdStyle
-                  : UnrecognizedTdMoblieStyle
-              }
-            />
+            <Input type="text" customStyle={setStyle()} />
           </Table.Td>
         </Table.Tr>
       </Table.Body>
