@@ -3,7 +3,7 @@ import * as S from "./style"
 import ExitIcon from "@/assets/img/Icon/ExitModal.svg"
 import ExitIconMoblie from "@/assets/img/Icon/ExitModalMoblie.svg"
 import useScSearchModal from "@/hooks/Write/useScSearchModal"
-import useWriteNav from "@/hooks/Write/useWriteNav"
+import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 const dummy = [
   {
@@ -55,14 +55,14 @@ const SchoolList = (ScList: IScList[]) => {
 
 const SchoolSearchModal = () => {
   const [noSchool, setNoSchool] = useState<boolean>(false)
-  const { width } = useWriteNav()
+  const { browserWidth } = useGetBrWidth()
   const { searchName, setSearchName, searchModal, cloasModal } =
     useScSearchModal()
   return (
     <S.ModalLayout>
       <S.SubLayout>
         <S.ExitIcon
-          as={width > 500 ? ExitIcon : ExitIconMoblie}
+          as={browserWidth > 500 ? ExitIcon : ExitIconMoblie}
           alt="img error"
           onClick={cloasModal}
         />
@@ -73,9 +73,9 @@ const SchoolSearchModal = () => {
             <S.Input
               type="text"
               value={searchName}
-              fontSize={width <= 500 ? "0.75rem" : undefined}
+              fontSize={browserWidth <= 500 ? "0.75rem" : undefined}
               padding="0.625rem 0.5rem"
-              width={width <= 500 ? "70%" : "80%"}
+              width={browserWidth <= 500 ? "70%" : "80%"}
               onChange={(event) => setSearchName(event.target.value)}
               placeholder="학교 이름을 입력해주세요."
             />
@@ -97,9 +97,9 @@ const SchoolSearchModal = () => {
                 <S.Input
                   type="text"
                   placeholder="학교 이름을 입력해주세요."
-                  fontSize={width <= 500 ? "0.75rem" : undefined}
+                  fontSize={browserWidth <= 500 ? "0.75rem" : undefined}
                   padding="0.625rem 0.5rem"
-                  width={width <= 500 ? "70%" : "80%"}
+                  width={browserWidth <= 500 ? "70%" : "80%"}
                 />
                 <S.Button>입력완료</S.Button>
               </S.InputWrap>
