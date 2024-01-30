@@ -13,7 +13,7 @@ export const SignUpLayout = styled.div`
     font-weight: 700;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin: calc(11.9vw - 20px) auto 16vw auto;
 
     justify-content: start;
@@ -35,7 +35,7 @@ export const SignUpForm = styled.form`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     height: auto;
   }
 `
@@ -45,7 +45,7 @@ export const SignUpDGSWLogo = styled(DGSW_LOGO)`
   width: 213px;
   margin-bottom: 4.1vw;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin-bottom: 12.2vw;
 
     width: 36.3vw;
@@ -58,7 +58,7 @@ export const SignUpInputBox = styled.div`
     border-radius: 0.7vw;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     input {
       padding-left: 5.8vw;
       border-radius: 3.8vw;
@@ -71,7 +71,7 @@ export const SignUpErrorMessageLayout = styled.div`
   margin-left: 1.4vw;
   margin-bottom: 0.8vw;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     position: static;
 
     margin-top: 2.5vw;
@@ -83,7 +83,7 @@ export const SignUpErrorMessageLayout = styled.div`
 export const MarginBtweenInput = styled.div`
   margin-top: 0.9vw;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin-top: 3.6vw;
   }
 `
@@ -95,7 +95,7 @@ export const SignUpEmailCertificationBox = styled.div`
 `
 
 export const SignUpPasswordBox = styled.div`
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     height: auto;
 
     justify-content: start;
@@ -112,7 +112,7 @@ export const SignUpTypograpy = styled.p`
   font-family: Pretendard;
   font-weight: 500;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     position: static;
 
     margin-top: 2.5vw;
@@ -125,7 +125,7 @@ export const AgreementLayout = styled.div`
   margin-bottom: 1.5vw;
   width: 100%;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin-bottom: 5.8vw;
 
     width: 100%;
@@ -145,7 +145,7 @@ export const FullAgreement = styled.div`
   background: #f8fafd;
   padding-left: 18px;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     width: 83vw;
   }
 `
@@ -157,7 +157,7 @@ export const AgreementsContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin-top: 0;
 
     font-size: 3.3vw;
@@ -176,7 +176,7 @@ export const AgreementCheckBoxLabel = styled.label`
   color: ${({ theme: { colors } }) => colors.gray800};
   margin-left: 14px;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     font-size: 3.3vw;
   }
 `
@@ -186,7 +186,7 @@ export const LoginLink = styled(Link)`
 
   color: #424344;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin-top: 7.2vw;
 
     font-size: 3.3vw;

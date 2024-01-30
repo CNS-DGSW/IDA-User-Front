@@ -11,7 +11,7 @@ export const ChangePasswordLayout = styled.div`
     border-radius: 0.7vw;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin: 11.9vw auto 0 auto;
     padding-bottom: 16vw;
 
@@ -43,7 +43,7 @@ export const ContentBox = styled.div`
     font-weight: 700;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     padding: 0;
 
     width: 83vw;
@@ -58,7 +58,7 @@ export const ContentBox = styled.div`
 export const DGSWLOGO = styled(DGSW)`
   width: 213px;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin-bottom: 11.9vw;
 
     width: 36.3vw;
@@ -72,7 +72,7 @@ export const SuccessedEmailRow = styled.div`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin: 2.5vw 0 3.3vw 3.6vw;
   }
 `
@@ -96,7 +96,7 @@ export const EmailRow = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin: 0;
   }
 `
@@ -108,7 +108,7 @@ export const ChangePasswordErrorMessageLayout = styled.div`
 
   width: 100%;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin-top: 2.5vw;
     margin-left: 4.1vw;
     margin-bottom: 3.3vw;
@@ -118,7 +118,7 @@ export const ChangePasswordErrorMessageLayout = styled.div`
 export const MarginBtweenInput = styled.div`
   margin-top: 0.9vw;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin-top: 3.6vw;
   }
 `
@@ -131,7 +131,7 @@ export const LoginLink = styled(Link)`
   font-weight: 500;
   letter-spacing: -0.64px;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin-top: 7.2vw;
   }
 `

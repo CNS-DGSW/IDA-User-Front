@@ -13,7 +13,7 @@ export const SigninLayout = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin-top: 11.9vw;
     margin-bottom: 18vw;
 
@@ -25,7 +25,7 @@ export const DGSWLOGO = styled(DGSW)`
   margin-bottom: 80px;
   width: 213px;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     margin-bottom: 11.9vw;
 
     width: 36.3vw;
@@ -81,7 +81,7 @@ export const SubmitBtn = styled.button`
   font-size: 20px;
   font-weight: 700;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     width: 83vw;
     font-size: 4.1vw;
   }
@@ -102,7 +102,7 @@ export const NavigateList = styled.ul`
 `
 
 export const NavigateLink = styled(Link)`
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     font-size: 3.3vw;
   }
 `

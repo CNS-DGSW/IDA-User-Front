@@ -16,7 +16,7 @@ export const CustomInput = styled.input<{
   color: #8b939c;
   border-color: ${({ isError }) => (isError ? "#e41616" : "#d8dae0")};
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     width: ${({ width }) => (width === 294 ? `62.2vw` : "83vw")};
     padding: 0 5.8vw;
     border-radius: 3.8vw;
