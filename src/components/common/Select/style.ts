@@ -62,7 +62,7 @@ export const ListItem = styled.li<{ width?: number }>`
   @media screen and (max-width: 500px) {
     width: 100%;
     height: auto;
-    padding: 0.3125rem 1.125rem;
+    padding: 0.3125rem 0.5rem;
   }
 `
 

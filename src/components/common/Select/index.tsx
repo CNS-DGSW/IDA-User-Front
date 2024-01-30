@@ -76,7 +76,7 @@ const Select = ({
               width={width}
               key={v}
               onClick={changeEvent}
-              style={{ fontSize: listFontSize }}
+              style={{ fontSize: "10px" }}
             >
               {v}
             </ListItem>

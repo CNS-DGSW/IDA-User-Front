@@ -47,6 +47,7 @@ const useAwardTableStyle = () => {
         textAlign: "center",
         width: "50px",
         fontSize: "10px",
+        padding: "0",
       }
   }
 

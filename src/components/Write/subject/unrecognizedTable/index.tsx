@@ -17,6 +17,7 @@ const UnrecognizedTdMoblieStyle: CSSObject = {
   fontSize: "10px",
   margin: "0 auto",
   textAlign: "center",
+  padding: "0",
 }
 
 const UnrecognizedTable = () => {

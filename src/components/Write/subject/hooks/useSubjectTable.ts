@@ -58,7 +58,7 @@ const useSubjectTable = () => {
 
   const setScoreListStyle = () => {
     if (browserWidth > 500) return "14px"
-    else return "10px"
+    else return "6px"
   }
 
   const setNewSubject = (): CSSProperties => {

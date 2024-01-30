@@ -2,7 +2,6 @@ import Checkbox from "@/components/common/Checkbox"
 import Input from "@/components/common/Input"
 import { Table } from "@/components/common/table"
 import React from "react"
-import { TableCustomModlieInputStyle } from "../style"
 import useAwardTableStyle from "../hooks/useAwardTableStyle"
 
 const AwardTable = () => {
@@ -178,11 +177,7 @@ const AwardTable = () => {
             재학 중 교내 모범상을 수상 ( 모범, 선행, 효행, 공로, 노력 등 )
           </Table.Td>
           <Table.Td width="354" colspan={6}>
-            <Input
-              type="text"
-              style={setExampleInput()}
-              customStyle={TableCustomModlieInputStyle}
-            />
+            <Input type="text" style={setExampleInput()} />
           </Table.Td>
         </Table.Tr>
       </Table.Body>

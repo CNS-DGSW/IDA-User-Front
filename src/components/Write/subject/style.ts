@@ -67,14 +67,15 @@ export const TableCustomInputStyle: CSSObject = {
   fontSize: "16px",
 }
 
-export const TableCustomModlieInputStyle: CSSObject = {
+export const TableCustomMoblieInputStyle: CSSObject = {
   height: "20px",
   margin: "0 auto",
   textAlign: "center",
   fontWeight: 700,
   color: "black",
-  fontSize: "16px",
+  fontSize: "12px",
   width: "50px",
+  padding: 0,
 }
 
 export const SubjectDescription = styled.ul`
