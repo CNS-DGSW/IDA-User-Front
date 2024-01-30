@@ -55,7 +55,6 @@ const Signin = () => {
               customStyle={{
                 height: "3.5rem",
                 marginBottom: "1.125rem",
-                paddingLeft: "1.75rem",
               }}
               isError={!!errors.email}
               {...field}
@@ -82,7 +81,6 @@ const Signin = () => {
               customStyle={{
                 height: "3.5rem",
                 marginBottom: "1.125rem",
-                paddingLeft: "1.75rem",
               }}
               isError={!!errors.password}
               {...field}
@@ -94,7 +92,7 @@ const Signin = () => {
             <ErrorMessage>{errors.password?.message}</ErrorMessage>
           </S.SigninErrorMessageLayout>
         )}
-        <S.SubmitBtn type="submit">가입하기</S.SubmitBtn>
+        <S.SubmitBtn type="submit">로그인하기</S.SubmitBtn>
         <S.NavigateList>
           <S.NavigateLink href="/changepassword">비밀번호 찾기</S.NavigateLink>
           <S.NavigateItem>|</S.NavigateItem>
