@@ -10,7 +10,7 @@ export const MainComponentLayout = styled.div`
 
   @media screen and (max-width: 500px) {
     margin-top: 15.2vw;
-    
+
     position: relative;
   }
 `
@@ -105,7 +105,7 @@ export const ImportantCheckBox = styled.div`
 
     font-size: 2.3vw;
   }
-  `
+`
 
 export const InformDetailDateIconBox = styled.div`
   width: 1rem;
@@ -139,7 +139,7 @@ export const InformDetailContextParagraph = styled.p`
 
   @media screen and (max-width: 500px) {
     margin-bottom: 5.5vw;
-    
+
     font-size: 3.6vw;
   }
 `
@@ -163,7 +163,7 @@ export const AttachedfileLayout = styled.div`
 
   @media screen and (max-width: 500px) {
     padding: 0;
-    
+
     width: 100vw;
 
     position: absolute;
