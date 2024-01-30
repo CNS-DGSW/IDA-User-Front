@@ -4,7 +4,7 @@ import React from "react"
 import useVolunteer from "../hooks/useVolunteer"
 import { TableCustomInputStyle, TableCustomMoblieInputStyle } from "../style"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
-import { CSSObject } from "styled-components"
+import type { CSSObject } from "styled-components"
 
 const VolunteerTable = () => {
   const { changeGrade1, changeGrade2, changeGrade3, grade1, grade2, grade3 } =
