@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import cancleIcon from "@/assets/img/Icon/cancleIcon.svg"
 import folderIcon from "@/assets/img/Icon/folderIcon.svg"
 
 interface IIsImportant {
@@ -8,6 +7,12 @@ interface IIsImportant {
 export const MainComponentLayout = styled.div`
   width: 100%;
   min-height: 70vh;
+
+  @media screen and (max-width: 500px) {
+    margin-top: 15.2vw;
+    
+    position: relative;
+  }
 `
 
 export const InformDetailContentsCol = styled.div`
@@ -16,12 +21,21 @@ export const InformDetailContentsCol = styled.div`
   padding: 6rem 0rem;
   min-height: 70%;
   // overflow-y: auto;
+
+  @media screen and (max-width: 500px) {
+    padding: 0;
+    width: 83%;
+  }
 `
 
 export const InformDetailTitleParagraph = styled.p`
   font-size: 1.9rem;
   font-weight: bold;
   color: #1e2f44;
+
+  @media screen and (max-width: 500) {
+    font-size: 6.6vw;
+  }
 `
 export const InformDetailNotificationIconBox = styled.div`
   width: 2.75rem;
@@ -29,6 +43,10 @@ export const InformDetailNotificationIconBox = styled.div`
   margin-bottom: 1.5rem;
   border-radius: 12px;
   overflow: hidden;
+
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 `
 
 export const InformDetailTitleRow = styled.div`
@@ -36,12 +54,22 @@ export const InformDetailTitleRow = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2.5rem;
+
+  @media screen and (max-width: 500px) {
+    margin-bottom: 5.5vw;
+
+    display: block;
+  }
 `
 
 export const InformDetailSubTitleRow = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 500px) {
+    display: block;
+  }
 `
 
 export const ImportantCheckBox = styled.div`
@@ -64,20 +92,43 @@ export const ImportantCheckBox = styled.div`
       color: #808488;
       border: 1px solid #808488;
     `}
-`
+
+  @media screen and (max-width: 500px) {
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    top: -8.3vw;
+
+    width: 14.4vw;
+    height: 5.5vw;
+
+    font-size: 2.3vw;
+  }
+  `
 
 export const InformDetailDateIconBox = styled.div`
   width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
+
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 `
 export const InformDetailDateContextParagraph = styled.p`
   margin-top: 0.4rem;
   font-size: 1rem;
   color: #808488;
+
+  @media screen and (max-width: 500px) {
+    font-size: 3.3vw;
+  }
 `
 
 export const InformDetailContextParagraph = styled.p`
+  margin-bottom: 2vw;
+
   width: 100%;
   min-height: 70%;
   white-space: pre-wrap;
@@ -85,6 +136,12 @@ export const InformDetailContextParagraph = styled.p`
   font-weight: 500;
   line-height: 1.75rem;
   color: #424344;
+
+  @media screen and (max-width: 500px) {
+    margin-bottom: 5.5vw;
+    
+    font-size: 3.6vw;
+  }
 `
 
 export const InformDetailBackHyperlinkBox = styled.p`
@@ -101,7 +158,17 @@ export const InformDetailBackHyperlinkBox = styled.p`
 
 export const AttachedfileLayout = styled.div`
   padding: 1vw 0 1.5vw 0;
+  border-top: 1px solid #e7e9ed;
   border-bottom: 1px solid #e7e9ed;
+
+  @media screen and (max-width: 500px) {
+    padding: 0;
+    
+    width: 100vw;
+
+    position: absolute;
+    left: 0;
+  }
 `
 
 export const AttachedfileTitle = styled.div`
@@ -160,10 +227,4 @@ export const FolderIcon = styled(folderIcon)`
 
   width: 0.8vw;
   height: 0.8vw;
-`
-
-export const CancleIcon = styled(cancleIcon)`
-  width: 1vw;
-  height: 1vw;
-  cursor: pointer;
 `

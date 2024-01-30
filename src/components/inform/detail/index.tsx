@@ -21,6 +21,15 @@ const InformDetailPage = () => {
     InformData.inform[Number(router.query.id)],
   )
 
+  if(informData === undefined){
+    return(
+      <>
+        데이터를 가져오는 중입니다
+        새로고침 했을 때 데이터 못 가져오는 에러 해결 요망
+      </>
+    )
+  }
+
   return (
     <S.MainComponentLayout>
       <S.InformDetailContentsCol>
@@ -61,7 +70,6 @@ const InformDetailPage = () => {
                     <S.FolderIcon />
                     <S.AttachedfileBoxText>{title}</S.AttachedfileBoxText>
                   </S.AttachedfileLeftSideBox>
-                  <S.CancleIcon />
                 </S.AttachedfileBox>
               ))}
             </S.AttachedfileBoxWrapper>
