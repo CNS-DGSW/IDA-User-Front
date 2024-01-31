@@ -165,7 +165,7 @@ export const AttachedfileLayout = styled.article`
   border-top: 1px solid #e7e9ed;
   border-bottom: 1px solid #e7e9ed;
 
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 500px) {
     padding: 5.2vw 0 6.9vw 0;
   }
 `
@@ -178,7 +178,7 @@ export const AttachedfileTitle = styled.div`
   font-size: 0.7vw;
   font-weight: 500;
 
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 500px) {
     margin-bottom: 3vw;
 
     font-size: 2.7vw;
@@ -193,7 +193,7 @@ export const AttachedfileBoxWrapper = styled.div`
   > :not(:last-child :first-child) {
     margin-bottom: 0.2vw;
 
-    @media screen and (max-width: 500px){
+    @media screen and (max-width: 500px) {
       margin-bottom: 2.7vw;
     }
   }
@@ -217,7 +217,7 @@ export const AttachedfileBox = styled.div`
   font-size: 0.7vw;
   font-weight: 500;
 
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 500px) {
     padding: 0 4.1vw;
 
     height: 9.7vw;
@@ -235,7 +235,7 @@ export const AttachedfileBoxText = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
 
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 500px) {
     max-width: 69vw;
   }
 `
@@ -251,7 +251,7 @@ export const FolderIcon = styled(folderIcon)`
   width: 0.8vw;
   height: 0.8vw;
 
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 500px) {
     margin-right: 2.2vw;
 
     width: 3.3vw;

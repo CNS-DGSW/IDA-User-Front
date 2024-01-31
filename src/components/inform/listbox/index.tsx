@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import * as S from "./style"
 import type { IInformContentsProps } from "../type"
 import InformDateIcon from "@/assets/img/Icon/informDateIcon.svg"
