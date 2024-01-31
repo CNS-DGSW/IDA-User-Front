@@ -10,6 +10,9 @@ export const MainComponentLayout = styled.div`
 
   @media screen and (max-width: 500px) {
     margin-top: 15.2vw;
+    padding-bottom: 19.4vw;
+
+    min-height: 0;
 
     position: relative;
   }
@@ -116,6 +119,7 @@ export const InformDetailDateIconBox = styled.div`
     display: none;
   }
 `
+
 export const InformDetailDateContextParagraph = styled.p`
   margin-top: 0.4rem;
   font-size: 1rem;
@@ -156,18 +160,13 @@ export const InformDetailBackHyperlinkBox = styled.p`
   }
 `
 
-export const AttachedfileLayout = styled.div`
+export const AttachedfileLayout = styled.article`
   padding: 1vw 0 1.5vw 0;
   border-top: 1px solid #e7e9ed;
   border-bottom: 1px solid #e7e9ed;
 
-  @media screen and (max-width: 500px) {
-    padding: 0;
-
-    width: 100vw;
-
-    position: absolute;
-    left: 0;
+  @media screen and (max-width: 500px){
+    padding: 5.2vw 0 6.9vw 0;
   }
 `
 
@@ -178,6 +177,12 @@ export const AttachedfileTitle = styled.div`
   font-family: Pretendard;
   font-size: 0.7vw;
   font-weight: 500;
+
+  @media screen and (max-width: 500px){
+    margin-bottom: 3vw;
+
+    font-size: 2.7vw;
+  }
 `
 
 export const AttachedfileBoxWrapper = styled.div`
@@ -187,6 +192,10 @@ export const AttachedfileBoxWrapper = styled.div`
 
   > :not(:last-child :first-child) {
     margin-bottom: 0.2vw;
+
+    @media screen and (max-width: 500px){
+      margin-bottom: 2.7vw;
+    }
   }
 `
 
@@ -207,6 +216,16 @@ export const AttachedfileBox = styled.div`
   font-family: Pretendard;
   font-size: 0.7vw;
   font-weight: 500;
+
+  @media screen and (max-width: 500px){
+    padding: 0 4.1vw;
+
+    height: 9.7vw;
+
+    border-radius: 2.7vw;
+
+    font-size: 2.7vw;
+  }
 `
 
 export const AttachedfileBoxText = styled.div`
@@ -215,6 +234,10 @@ export const AttachedfileBoxText = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  @media screen and (max-width: 500px){
+    max-width: 69vw;
+  }
 `
 
 export const AttachedfileLeftSideBox = styled.div`
@@ -227,4 +250,11 @@ export const FolderIcon = styled(folderIcon)`
 
   width: 0.8vw;
   height: 0.8vw;
+
+  @media screen and (max-width: 500px){
+    margin-right: 2.2vw;
+
+    width: 3.3vw;
+    height: 3.3vw;
+  }
 `

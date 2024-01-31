@@ -24,13 +24,13 @@ const InformDetailPage = () => {
   if (informData === undefined) {
     return (
       <>
-        데이터를 가져오는 중입니다 새로고침 했을 때 데이터 못 가져오는 에러 해결
-        요망
+        데이터를 가져오는 중입니다 새로고침 했을 때 데이터 못 가져오는 데 서버 연결하고 로직 짜면서 해결하겠습니다
       </>
     )
   }
 
   return (
+    <form>
     <S.MainComponentLayout>
       <S.InformDetailContentsCol>
         <S.InformDetailNotificationIconBox>
@@ -83,6 +83,9 @@ const InformDetailPage = () => {
         </Link>
       </S.InformDetailContentsCol>
     </S.MainComponentLayout>
+    
+      
+    </form>
   )
 }
 

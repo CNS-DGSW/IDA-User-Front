@@ -6,7 +6,7 @@ export const MainComponentLayout = styled.div`
 
   @media screen and (max-width: 500px) {
     margin-top: 6.9vw;
-    margin-bottom: 18.8vw;
+    padding-bottom: 18.8vw;
   }
 `
 
