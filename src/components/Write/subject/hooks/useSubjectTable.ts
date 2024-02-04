@@ -17,7 +17,7 @@ const useSubjectTable = () => {
         width: "1.625rem",
         height: "1.25rem",
         margin: "0 auto",
-        fontSize: "0.25rem",
+        fontSize: "0.3125rem",
       }
   }
 

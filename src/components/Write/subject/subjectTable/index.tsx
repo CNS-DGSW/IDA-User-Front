@@ -6,6 +6,7 @@ import { grade, schoolYear, subjectNames } from "@/constants/Write/subject"
 import React, { useState } from "react"
 import { ButtonWrapper, DeleteBtn } from "./style"
 import useSubjectTable from "../hooks/useSubjectTable"
+import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 const SubjectTable = () => {
   const [otherSubject, setOtherSubject] = useState<string[]>([])
@@ -19,6 +20,7 @@ const SubjectTable = () => {
     setNewSubject,
     setNewSubjectInputWrapSize,
   } = useSubjectTable()
+  const { browserWidth } = useGetBrWidth()
 
   return (
     <>
@@ -46,7 +48,7 @@ const SubjectTable = () => {
                       style={setFreeSemesterStyle()}
                       radius={6}
                     >
-                      자유학기제
+                      자유{browserWidth <= 500 && <br />}학기제
                     </Button>
                   </Table.Th>
                   <Table.Th width="84" background="fff">
@@ -55,7 +57,7 @@ const SubjectTable = () => {
                       style={setFreeSemesterStyle()}
                       radius={6}
                     >
-                      자유학기제
+                      자유{browserWidth <= 500 && <br />}학기제
                     </Button>
                   </Table.Th>
                 </Table.Tr>
