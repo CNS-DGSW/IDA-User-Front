@@ -26,6 +26,10 @@ export const ThStyle = styled.th<ThProps & Omit<SizeImplElement, "height">>`
   color: ${({ color }) => `#${color ?? "000"}`};
   width: ${({ width }) => `${width ?? "108"}px`};
   ${({ notBorder }) => !notBorder && `border: 1px solid #d8dae0`};
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.5rem;
+  }
 `
 
 export const TdStyle = styled.td<ThProps & Omit<SizeImplElement, "height">>`
@@ -37,11 +41,21 @@ export const TdStyle = styled.td<ThProps & Omit<SizeImplElement, "height">>`
   text-align: center;
 
   word-wrap: break-word;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.5rem;
+    width: ${({ width }) => `${width ?? "108"}px`};
+    ${({ width }) => width && `max-width: ${width}`};
+  }
 `
 
 export const TrStyle = styled.tr<Omit<SizeImplElement, "width">>`
   display: table;
   height: ${({ height }) => `${height ?? "54"}`};
+
+  @media screen and (max-width: 500px) {
+    height: 1.5rem;
+  }
 `
 
 export const TableCustomInputStyle: CSSObject = {
@@ -51,6 +65,17 @@ export const TableCustomInputStyle: CSSObject = {
   fontWeight: 700,
   color: "black",
   fontSize: "16px",
+}
+
+export const TableCustomMoblieInputStyle: CSSObject = {
+  height: "20px",
+  margin: "0 auto",
+  textAlign: "center",
+  fontWeight: 700,
+  color: "black",
+  fontSize: "12px",
+  width: "50px",
+  padding: 0,
 }
 
 export const SubjectDescription = styled.ul`
@@ -68,4 +93,10 @@ export const SubjectDescription = styled.ul`
   color: #8b939c;
 
   list-style-type: disc;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.5rem;
+    width: 100%;
+    height: 7.5rem;
+  }
 `

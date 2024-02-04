@@ -2,7 +2,7 @@ import React, { type CSSProperties } from "react"
 import Button from "../../Button"
 import { usePageContext } from "@/components/common/Write/PageProvider"
 import * as S from "./style"
-import useWriteNav from "@/hooks/Write/useWriteNav"
+import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 const MobileButtonStyle: CSSProperties = {
   paddingTop: "0.875rem",
@@ -16,18 +16,21 @@ const MobileButtonStyle: CSSProperties = {
  */
 export const Aside = () => {
   const { currentPage, moveNextPage, movePreviousPage } = usePageContext()
-  const { width } = useWriteNav()
+  const { browserWidth } = useGetBrWidth()
 
   return (
     <S.AsideBox>
-      <Button radius={8} style={width <= 500 ? MobileButtonStyle : undefined}>
+      <Button
+        radius={8}
+        style={browserWidth <= 500 ? MobileButtonStyle : undefined}
+      >
         <S.ButtonFontBox>원서 저장</S.ButtonFontBox>
       </Button>
       <Button
         radius={8}
         color="second"
         style={
-          width <= 500
+          browserWidth <= 500
             ? {
                 ...MobileButtonStyle,
                 backgroundColor: "#F8FAFD",
@@ -43,7 +46,7 @@ export const Aside = () => {
           radius={8}
           color="second"
           style={
-            width <= 500
+            browserWidth <= 500
               ? {
                   ...MobileButtonStyle,
                   backgroundColor: "#F8FAFD",
@@ -60,7 +63,7 @@ export const Aside = () => {
         radius={8}
         color={currentPage < 7 ? "second" : "third"}
         clickEvent={moveNextPage}
-        style={width <= 500 ? MobileButtonStyle : undefined}
+        style={browserWidth <= 500 ? MobileButtonStyle : undefined}
       >
         <S.ButtonFontBox>
           {currentPage < 7 ? "다음" : "원서 최종 제출"}
@@ -72,7 +75,7 @@ export const Aside = () => {
           color="second"
           clickEvent={movePreviousPage}
           style={
-            width <= 500
+            browserWidth <= 500
               ? {
                   ...MobileButtonStyle,
                   backgroundColor: "#F8FAFD",

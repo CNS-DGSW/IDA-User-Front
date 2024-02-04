@@ -1,6 +1,6 @@
 import Link from "next/link"
 import styled from "styled-components"
-import DGSW from "@/assets/DGSWBlue.svg"
+import DGSW from "@/assets/img/Logo/dgswLogo.svg"
 // import DGSWPHONE from "@/assets/DGSWBluePhone.svg"
 
 export const SigninForm = styled.form``

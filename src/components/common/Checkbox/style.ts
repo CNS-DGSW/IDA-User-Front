@@ -15,19 +15,23 @@ export const HiddenCheckBox = styled.input`
   width: 1px;
 `
 
-export const StyledCheckbox = styled.div<{ checked: boolean }>`
+export const StyledCheckbox = styled.div<{
+  checked: boolean
+  width?: string
+  height?: string
+}>`
   display: inline-block;
   transition: all 150ms;
   border-radius: 2px;
-  width: 20px;
-  height: 20px;
+  width: ${({ width }) => (width ? width : "20px")};
+  height: ${({ height }) => (height ? height : "20px")};
   flex-shrink: 0;
   border: 2px solid #dadce2;
   background: ${({ checked, theme: { colors } }) =>
     checked ? colors.blue400 : colors.gray100};
 
   @media screen and (max-width: 500px) {
-    width: 4.1vw;
-    height: 4.1vw;
+    width: ${({ width }) => (width ? width : "4.1vw")};
+    height: ${({ height }) => (height ? height : "4.1vw")};
   }
 `
