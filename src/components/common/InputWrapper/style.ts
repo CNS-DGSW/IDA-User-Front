@@ -15,6 +15,8 @@ export const InputLabel = styled.label`
 
   @media screen and (max-width: 500px) {
     font-size: 1rem;
+
+    margin-bottom: 6px;
   }
 `
 

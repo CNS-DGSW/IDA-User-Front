@@ -1,4 +1,3 @@
-import CalanderSVG from "@/assets/img/Icon/calander.svg"
 import DatePicker from "react-multi-date-picker"
 import * as S from "./style"
 
@@ -14,7 +13,7 @@ const CustomDatePicker = ({ value, onChange }: CustomDatePickerProps) => {
       render={(value, openCalendar) => {
         return (
           <S.DatePickerIconBox onClick={openCalendar}>
-            <CalanderSVG />
+            <S.CalanderSVGIcon />
           </S.DatePickerIconBox>
         )
       }}

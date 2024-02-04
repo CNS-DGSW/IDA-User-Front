@@ -4,9 +4,12 @@ import FileUploader from "@/components/common/FileUploader"
 import { useState } from "react"
 import type { ChangeEvent } from "react"
 import Image from "next/image"
+import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 const WriteIdPhoto = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
+
+  const {browserWidth} = useGetBrWidth()
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
@@ -19,12 +22,13 @@ const WriteIdPhoto = () => {
   return (
     <Card>
       <S.WriteIdPhotoLayout>
-        <S.WriteIdPhotoPreivewBox>
+        <S.WriteIdPhotoPreivewBox
+        >
           {selectedImage ? (
             <Image
               src={selectedImage}
-              width={288}
-              height={384}
+              width={browserWidth <= 500 ? 191 : 288}
+              height={browserWidth <= 500 ? 262 : 384}
               alt="증명사진"
             />
           ) : (
@@ -33,7 +37,7 @@ const WriteIdPhoto = () => {
         </S.WriteIdPhotoPreivewBox>
         <FileUploader onChange={handleChange} />
         <S.WriteIdPhotoNote>
-          * 2MB 이내의 png, jpg, jpeg, gif 사진을 등록해 주세요.
+          * 2MB 이내의 png, jpg, jpeg, gif<br/> 사진을 등록해 주세요.
         </S.WriteIdPhotoNote>
       </S.WriteIdPhotoLayout>
     </Card>
