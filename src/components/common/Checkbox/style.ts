@@ -31,7 +31,7 @@ export const StyledCheckbox = styled.div<{
     checked ? colors.blue400 : colors.gray100};
 
   @media screen and (max-width: 500px) {
-    width: 4.1vw;
-    height: 4.1vw;
+    width: ${({ width }) => (width ? width : "4.1vw")};
+    height: ${({ height }) => (height ? height : "4.1vw")};
   }
 `
