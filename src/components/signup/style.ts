@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import DGSW_LOGO from "@/assets/img/DGSW_LOGO.svg"
+import dgswLogo from "@/assets/img/Logo/dgswLogo.svg"
 import Link from "next/link"
 
 export const SignUpLayout = styled.div`
@@ -40,7 +40,7 @@ export const SignUpForm = styled.form`
   }
 `
 
-export const SignUpDGSWLogo = styled(DGSW_LOGO)`
+export const SignUpDGSWLogo = styled(dgswLogo)`
   fill: ${({ theme: { colors } }) => colors.blue400};
   width: 213px;
   margin-bottom: 4.1vw;
