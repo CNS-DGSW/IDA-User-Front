@@ -7,6 +7,8 @@ export const LayoutContainer = styled.div`
   padding-bottom: 130px;
   @media screen and (max-width: 500px) {
     width: 100vw;
+
+    padding-bottom: 0px;
   }
 `
 
