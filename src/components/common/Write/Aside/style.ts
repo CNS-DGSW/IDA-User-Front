@@ -8,7 +8,7 @@ export const AsideBox = styled.aside`
   gap: 14px;
 
   @media screen and (max-width: 500px) {
-    margin: 40px auto;
+    margin: 2.5rem auto;
 
     max-width: none;
   }

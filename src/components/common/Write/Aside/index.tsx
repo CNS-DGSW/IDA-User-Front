@@ -8,7 +8,7 @@ const MobileButtonStyle: CSSProperties = {
   paddingTop: "0.875rem",
   paddingBottom: "0.875rem",
   fontSize: "1rem",
-  width:"20rem"
+  width: "20rem",
 }
 
 /**
