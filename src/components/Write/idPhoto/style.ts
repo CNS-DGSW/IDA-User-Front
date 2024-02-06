@@ -21,8 +21,8 @@ export const WriteIdPhotoPreivewBox = styled.div`
   border: 1px solid ${({ theme: { colors } }) => colors.gray500};
 
   @media screen and (max-width: 500px){
-    width: 191px;
-    height: 262px;
+    width: 11.9rem;
+    height: 16.3rem;
 
     font-size: 3.8vw;
   }
@@ -46,6 +46,6 @@ export const WriteIdPhotoNote = styled.p`
     font-size: 3.8vw;
     font-weight: 600;
     width: auto;
-    line-height: 30px;
+    line-height: 1.8rem;
   }
 `
