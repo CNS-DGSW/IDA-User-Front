@@ -2,12 +2,14 @@ import Image from "next/image"
 import styled from "styled-components"
 
 export const FooterLayout = styled.div`
+  bottom: 0;
+  display: flex;
   width: 100vw;
   height: 284px;
   background: #f2f4f8;
-  display: flex;
   justify-content: center;
   align-items: center;
+
   @media screen and (max-width: 500px) {
     height: 320px;
     font-size: 10px;
@@ -38,7 +40,6 @@ export const DGSWLogo = styled(Image)`
 
 export const FooterParagraph = styled.p`
   margin-bottom: 8px;
-
   display: flex;
   align-items: center;
   font-weight: 600;

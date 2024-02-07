@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import DGSW_LOGO from "@/assets/img/DGSW_LOGO.svg"
+import DGSWBlueLogo from "@/assets/img/Icon/dgswBlue.svg"
 
 export const SignUpLayout = styled.div`
   display: flex;
@@ -9,14 +9,14 @@ export const SignUpLayout = styled.div`
   flex-direction: column;
   width: 390px;
   height: 700px;
-  position: absolute;
-  top: 50%;
+  margin-top: 52vh;
+  margin-bottom: -20vh;
   left: 50%;
   transform: translate(-50%, -50%);
 `
 export const SignUpForm = styled.form``
 
-export const SignUpDGSWLogo = styled(DGSW_LOGO)`
+export const SignUpDGSWLogo = styled(DGSWBlueLogo)`
   fill: ${({ theme: { colors } }) => colors.blue400};
   width: 213px;
   margin-bottom: 20px;

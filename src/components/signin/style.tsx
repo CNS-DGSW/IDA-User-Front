@@ -1,19 +1,18 @@
-import Link from "next/link"
 import styled from "styled-components"
-import DGSW from "@/assets/DGSWBlue.svg"
-
-export const SigninForm = styled.form``
+import Link from "next/link"
+import DGSWBlueLogo from "@/assets/img/Icon/dgswBlue.svg"
 
 export const SigninLayout = styled.div`
-  margin-top: 18vh;
-
   display: flex;
+  margin-top: 30vh;
+  margin-bottom: 30vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `
+export const SigninForm = styled.form``
 
-export const DGSWLOGO = styled(DGSW)`
+export const DGSWLOGO = styled(DGSWBlueLogo)`
   margin-bottom: 80px;
 `
 
