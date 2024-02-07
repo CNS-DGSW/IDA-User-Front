@@ -7,7 +7,8 @@ import { localDetail, LocalKind } from "@/constants/Write/localKindConstant"
 import useChange from "@/hooks/useChange"
 import useLocal from "../hooks/useLocal"
 import Card from "@/components/common/Card"
-import useWriteNav from "@/hooks/Write/useWriteNav"
+import useScSearchModal from "@/hooks/Write/useScSearchModal"
+import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 const ExpectedForm = () => {
   const [, changesShoolContact] = useChange()
@@ -15,8 +16,9 @@ const ExpectedForm = () => {
   const [, changeTeacherContact] = useChange()
 
   const { changeDetailLocal, changeLocal, detailLocal, local } = useLocal()
+  const { openModal } = useScSearchModal()
 
-  const { width } = useWriteNav()
+  const { browserWidth } = useGetBrWidth()
 
   return (
     <Card>
@@ -26,11 +28,11 @@ const ExpectedForm = () => {
             <Input
               type="text"
               readonly
-              width={width > 500 ? 224 : 180}
-              style={width <= 500 ? { fontSize: "14px" } : {}}
+              width={browserWidth > 500 ? 224 : 180}
+              style={browserWidth <= 500 ? { fontSize: "14px" } : {}}
               color="gray"
             />
-            <S.SchoolButton>학교 검색</S.SchoolButton>
+            <S.SchoolButton onClick={openModal}>학교 검색</S.SchoolButton>
           </S.Wrap>
         </InputWrapper>
         <InputWrapper title="NEIS 학교 번호">
@@ -38,7 +40,7 @@ const ExpectedForm = () => {
             type="text"
             readonly
             color="gray"
-            width={width <= 500 ? 260 : undefined}
+            width={browserWidth <= 500 ? 260 : undefined}
           />
         </InputWrapper>
       </S.Wrap>
@@ -57,7 +59,7 @@ const ExpectedForm = () => {
         <InputWrapper title="학교 연락처">
           <Input
             type="text"
-            width={width <= 500 ? 260 : 208}
+            width={browserWidth <= 500 ? 260 : 208}
             changeEvent={changesShoolContact}
           />
         </InputWrapper>
@@ -67,14 +69,14 @@ const ExpectedForm = () => {
           <Input
             type="text"
             changeEvent={changeTeacherName}
-            width={width <= 500 ? 260 : undefined}
+            width={browserWidth <= 500 ? 260 : undefined}
           />
         </InputWrapper>
         <InputWrapper title="담임 연락처">
           <Input
             type="text"
             changeEvent={changeTeacherContact}
-            width={width <= 500 ? 260 : undefined}
+            width={browserWidth <= 500 ? 260 : undefined}
           />
         </InputWrapper>
       </S.Wrap>

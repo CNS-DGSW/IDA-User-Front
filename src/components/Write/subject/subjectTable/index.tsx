@@ -4,11 +4,23 @@ import Select from "@/components/common/Select"
 import { Table } from "@/components/common/table"
 import { grade, schoolYear, subjectNames } from "@/constants/Write/subject"
 import React, { useState } from "react"
-import { ButtonWrapper } from "./style"
+import { ButtonWrapper, DeleteBtn } from "./style"
+import useSubjectTable from "../hooks/useSubjectTable"
+import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 const SubjectTable = () => {
   const [otherSubject, setOtherSubject] = useState<string[]>([])
   const addOtherSubject = () => setOtherSubject((prev) => [...prev, ""])
+  const {
+    setFreeSemesterStyle,
+    setSelectStyle,
+    setNewSubjectBtnStyle,
+    setScoreChangeStyle,
+    setScoreListStyle,
+    setNewSubject,
+    setNewSubjectInputWrapSize,
+  } = useSubjectTable()
+  const { browserWidth } = useGetBrWidth()
 
   return (
     <>
@@ -33,27 +45,19 @@ const SubjectTable = () => {
                   <Table.Th width="84" background="fff">
                     <Button
                       color="primary"
-                      style={{
-                        width: "73px",
-                        height: "38px",
-                        margin: "0 auto",
-                      }}
+                      style={setFreeSemesterStyle()}
                       radius={6}
                     >
-                      자유학기제
+                      자유{browserWidth <= 500 && <br />}학기제
                     </Button>
                   </Table.Th>
                   <Table.Th width="84" background="fff">
                     <Button
                       color="primary"
-                      style={{
-                        width: "73px",
-                        height: "38px",
-                        margin: "0 auto",
-                      }}
+                      style={setFreeSemesterStyle()}
                       radius={6}
                     >
-                      자유학기제
+                      자유{browserWidth <= 500 && <br />}학기제
                     </Button>
                   </Table.Th>
                 </Table.Tr>
@@ -72,14 +76,11 @@ const SubjectTable = () => {
                   <Table.Td width="84" key={idx}>
                     <Select
                       width={73}
+                      moblieIconSize="10"
                       list={grade}
                       changeEvent={() => {}}
                       value="-"
-                      style={{
-                        padding: "0 8px",
-                        margin: "0 auto",
-                        fontSize: "12px",
-                      }}
+                      style={setSelectStyle()}
                       key={idx}
                       direction={
                         arr.length + otherSubject.length - subjectNameIndex > 2
@@ -89,22 +90,15 @@ const SubjectTable = () => {
                     />
                   </Table.Td>
                 ))}
-              <Table.Td width="70"></Table.Td>
+              <Table.Td width="70">
+                <div style={{ width: "6px" }}></div>
+              </Table.Td>
             </Table.Tr>
           ))}
           {otherSubject.map((_, index) => (
             <Table.Tr height="60" key={index}>
-              <Table.Td width="74">
-                <Input
-                  type="text"
-                  width={56}
-                  style={{
-                    padding: "2px",
-                    height: "30px",
-                    margin: "0 auto",
-                    textAlign: "center",
-                  }}
-                />
+              <Table.Td width={setNewSubjectInputWrapSize()}>
+                <Input type="text" style={setNewSubject()} />
               </Table.Td>
               {Array(6)
                 .fill(0)
@@ -113,19 +107,18 @@ const SubjectTable = () => {
                     <Select
                       width={73}
                       list={grade}
+                      moblieIconSize="10"
                       changeEvent={() => {}}
                       value="-"
-                      style={{
-                        padding: "0 8px",
-                        margin: "0 auto",
-                        fontSize: "12px",
-                      }}
+                      style={setSelectStyle()}
                       key={idx}
                       direction={otherSubject.length - index > 2 ? true : false}
                     />
                   </Table.Td>
                 ))}
-              <Table.Td width="70"></Table.Td>
+              <Table.Td width="70">
+                <DeleteBtn>삭제</DeleteBtn>
+              </Table.Td>
             </Table.Tr>
           ))}
         </Table.Body>
@@ -142,12 +135,14 @@ const SubjectTable = () => {
           changeEvent={() => {}}
           placeholder="A로 전체 바꾸기"
           colors="1485EE"
+          moblieIconSize="20"
+          listFontSize={setScoreListStyle()}
           width={143}
-          style={{ fontSize: "14px", padding: "0 12px 0 16px", height: "40px" }}
+          style={setScoreChangeStyle()}
         />
         <Button
           radius={8}
-          style={{ width: "109px", height: "40px" }}
+          style={setNewSubjectBtnStyle()}
           onClick={addOtherSubject}
         >
           과목추가

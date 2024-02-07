@@ -1,4 +1,3 @@
-import Footer from "@/components/common/Footer"
 import PageProvider from "@/components/common/Write/PageProvider"
 import React, { useEffect, useState } from "react"
 import type { PropsWithChildren } from "react"
@@ -30,7 +29,6 @@ const WriteLayout = ({ children }: PropsWithChildren) => {
           </WriteContainer>
         </LayoutContainer>
       </PageProvider>
-      <Footer />
     </>
   )
 }

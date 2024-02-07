@@ -1,5 +1,4 @@
 import Card from "@/components/common/Card"
-import Input from "@/components/common/Input"
 import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
 import useRadio from "@/hooks/useRadio"
@@ -8,6 +7,7 @@ import SpecialScreening from "./specialScreening"
 import SpecialAdmission from "./specialAdmission"
 import type { CurrentTypeUnion } from "./type"
 import { useKeyFunnel } from "@dgswcns/cns-funnel"
+import * as S from "./style"
 
 const WriteType = () => {
   const [currentType, changeCurrentType] = useRadio<CurrentTypeUnion>()
@@ -34,13 +34,14 @@ const WriteType = () => {
 
         <TypeFunnel>
           <TypeStep name="일반전형">
-            <Input
+            {/* <Input
               type="text"
               readonly
               value="일반 전형에 응시한 지원자가 선택합니다."
               width={650}
               customStyle={{ marginTop: "34px" }}
-            />
+            /> */}
+            <S.Form>일반 전형에 응시한 지원자가 선택합니다.</S.Form>
           </TypeStep>
         </TypeFunnel>
       </Card>

@@ -1,5 +1,5 @@
 import * as S from "./style"
-import NavbarItem from "./NavbarItem"
+import NavbarItem from "./navbarItem"
 import DGSWLogo from "@/assets/img/Logo/dgswLogo.svg"
 import NavBarContentsBtn from "@/assets/img/Icon/navBarContentsBtn.svg"
 import { useNavBar } from "@/hooks/useNavBar"

@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
         ${reset};
     *{
         box-sizing: border-box;
+        font-family: pretendard;        
     }
     a {
         color:#424344;
@@ -13,7 +14,8 @@ const GlobalStyle = createGlobalStyle`
     body{
         padding: 0;
         margin: 0;
-        font-family: 'Noto Sans KR', sans-serif;    
+        font-family: pretendard;
+        //font-family: 'Noto Sans KR', sans-serif;    
     };
     button{
         display: flex;

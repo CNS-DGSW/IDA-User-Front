@@ -62,5 +62,15 @@ export const ListItem = styled.li<{ width?: number }>`
 
   @media screen and (max-width: 500px) {
     width: 100%;
+    height: auto;
+    padding: 0.3125rem 0.5rem;
   }
+`
+
+export const SelectIconWrap = styled.div<{ isOpen: boolean }>`
+  transform: ${({ isOpen }) => (!isOpen ? "rotate(180deg)" : "rotate(0deg)")};
+  transition: 0.2s;
+  userselect: none;
+  display: flex;
+  align-items: center;
 `
