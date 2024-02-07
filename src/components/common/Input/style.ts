@@ -9,7 +9,7 @@ export const CustomInput = styled.input<{
   border: 1px solid;
   background: ${({ back }) => (back === "gray" ? "#f2f3f5" : "white")};
 
-  width: ${({ width }) => (width ? `${width}px` : "310px")};
+  width: ${({ width }) => (width ? `${width}px !important` : "310px")};
   height: 48px;
 
   border-radius: 8px;
@@ -19,6 +19,5 @@ export const CustomInput = styled.input<{
   @media screen and (max-width: 500px) {
     width: ${({ width }) => (width === 294 ? `62.2vw` : "83vw")};
     padding: 0 5.8vw;
-    border-radius: 3.8vw;
   }
 `

@@ -5,7 +5,7 @@ export const RadioContainer = styled.div<{ width?: number }>`
   align-items: center;
   justify-content: space-between;
 
-  width: ${({ width }) => (width ? `${width}px` : "208px")};
+  width: ${({ width }) => (width ? `${width}px !important` : "208px")};
   height: 48px;
   background: #ffffff;
   border: 1px solid #d8dae0;
