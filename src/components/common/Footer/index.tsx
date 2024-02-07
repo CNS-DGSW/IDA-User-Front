@@ -1,6 +1,6 @@
 import React from "react"
 import * as S from "./style"
-import DGSWLogoSVG from "@/assets/img/Logo/dgswLogo.svg"
+import DGSWLogoSVG from "@/assets/img/Logo/dgswLogo_color.svg"
 import CNSLogoPNG from "@/assets/img/Logo/cnsLogo.png"
 import YoutubeSVG from "@/assets/img/Icon/youtube.svg"
 import InstaSVG from "@/assets/img/Icon/instagram.svg"

@@ -2,11 +2,20 @@ import Input from "@/components/common/Input"
 import { Table } from "@/components/common/table"
 import React from "react"
 import useVolunteer from "../hooks/useVolunteer"
-import { TableCustomInputStyle } from "../style"
+import { TableCustomInputStyle, TableCustomMoblieInputStyle } from "../style"
+import useGetBrWidth from "@/hooks/useGetBrWidth"
+import type { CSSObject } from "styled-components"
 
 const VolunteerTable = () => {
   const { changeGrade1, changeGrade2, changeGrade3, grade1, grade2, grade3 } =
     useVolunteer()
+
+  const { browserWidth } = useGetBrWidth()
+
+  const setStyle = (): CSSObject => {
+    if (browserWidth > 500) return TableCustomInputStyle
+    else return TableCustomMoblieInputStyle
+  }
 
   return (
     <Table customStyle={{ marginBottom: "34px" }}>
@@ -22,7 +31,7 @@ const VolunteerTable = () => {
           <Table.Td width="539">
             <Input
               type="text"
-              customStyle={TableCustomInputStyle}
+              customStyle={setStyle()}
               value={grade1}
               changeEvent={changeGrade1}
             />
@@ -33,7 +42,7 @@ const VolunteerTable = () => {
           <Table.Td width="539">
             <Input
               type="text"
-              customStyle={TableCustomInputStyle}
+              customStyle={setStyle()}
               value={grade2}
               changeEvent={changeGrade2}
             />
@@ -44,7 +53,7 @@ const VolunteerTable = () => {
           <Table.Td width="539">
             <Input
               type="text"
-              customStyle={TableCustomInputStyle}
+              customStyle={setStyle()}
               value={grade3}
               changeEvent={changeGrade3}
             />

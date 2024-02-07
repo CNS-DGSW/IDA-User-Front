@@ -13,7 +13,8 @@ export const useNavBar = () => {
   }, [])
 
   const checkDisabledNavbar = (): boolean => {
-    const disabledPaths = ["/signin", "/signup"]
+    const disabledPaths = [""]
+    // ["/signin", "/signup"]
     const isDisabled = disabledPaths.includes(pathname)
     return isDisabled
   }

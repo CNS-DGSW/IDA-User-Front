@@ -65,9 +65,13 @@ const SignUp = () => {
                 />
               )}
             />
-            <S.SignUpErrorMessageLayout>
-              <ErrorMessage>{errors.email?.message}</ErrorMessage>
-            </S.SignUpErrorMessageLayout>
+            {errors.email ? (
+              <S.SignUpErrorMessageLayout>
+                <ErrorMessage>{errors.email?.message}</ErrorMessage>
+              </S.SignUpErrorMessageLayout>
+            ) : (
+              <S.MarginBtweenInput />
+            )}
           </S.SignUpInputBox>
           <Button type="button" radius={14} size="sm">
             인증
@@ -128,9 +132,13 @@ const SignUp = () => {
                 />
               )}
             />
-            <S.SignUpErrorMessageLayout>
-              <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
-            </S.SignUpErrorMessageLayout>
+            {errors.confirmPassword ? (
+              <S.SignUpErrorMessageLayout>
+                <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
+              </S.SignUpErrorMessageLayout>
+            ) : (
+              <S.MarginBtweenInput />
+            )}
           </S.SignUpInputBox>
         </S.SignUpPasswordBox>
 
@@ -149,12 +157,13 @@ const SignUp = () => {
               }}
             />
             <S.AgreementCheckBoxLabel>전체 약관 동의</S.AgreementCheckBoxLabel>
-            <S.SignUpErrorMessageLayout>
-              <ErrorMessage>
-                {!checkAllChecked() && errors.agreement?.message}
-              </ErrorMessage>
-            </S.SignUpErrorMessageLayout>
           </S.FullAgreement>
+
+          <S.SignUpErrorMessageLayout>
+            <ErrorMessage>
+              {!checkAllChecked() && errors.agreement?.message}
+            </ErrorMessage>
+          </S.SignUpErrorMessageLayout>
 
           <S.AgreementsContainer>
             {agreements.map(({ checked, id }, index) => (
@@ -172,7 +181,7 @@ const SignUp = () => {
         <Button type="submit" size="lg" style={{ width: "390px" }} radius={14}>
           가입하기
         </Button>
-        <Link href="/signin">로그인하기</Link>
+        <S.LoginLink href="/signin">로그인하기</S.LoginLink>
       </S.SignUpLayout>
     </S.SignUpForm>
   )

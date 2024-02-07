@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 
-const useWriteNav = () => {
+const useGetBrWidth = () => {
   const isBrowser = typeof window !== "undefined"
-  const [width, setWidth] = useState<number>(isBrowser ? window.innerWidth : 0)
+  const [browserWidth, setWidth] = useState<number>(
+    isBrowser ? window.innerWidth : 0,
+  )
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth)
@@ -13,14 +15,14 @@ const useWriteNav = () => {
   }, [])
 
   const checkWidth = (isSameIdx: boolean): boolean => {
-    if (width > 500) return true
+    if (browserWidth > 500) return true
     else {
       if (isSameIdx) return true
       return false
     }
   }
 
-  return { width, checkWidth }
+  return { browserWidth, checkWidth }
 }
 
-export default useWriteNav
+export default useGetBrWidth

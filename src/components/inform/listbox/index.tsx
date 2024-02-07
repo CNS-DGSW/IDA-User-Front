@@ -14,7 +14,7 @@ const InformContents = ({
     <Link href={`/inform/${idx}`}>
       <S.MainComponentLayout>
         <S.SubComponentLayout>
-          <S.ContentsRow>
+          <S.ContentsRow isNotAppearInMobile={false}>
             <S.ImportantCheckBox isImportant={important}>
               {important ? "주요공지" : "일반공지"}
             </S.ImportantCheckBox>
@@ -22,7 +22,7 @@ const InformContents = ({
               {title}
             </S.InformContentsTitleParagraph>
           </S.ContentsRow>
-          <S.ContentsRow>
+          <S.ContentsRow isNotAppearInMobile={true}>
             <S.InformContentsDateIconBox>
               <InformDateIcon />
             </S.InformContentsDateIconBox>

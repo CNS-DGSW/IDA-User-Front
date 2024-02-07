@@ -20,6 +20,10 @@ const getSize: Record<SizeType, FlattenSimpleInterpolation> = {
   sm: css`
     width: 78px;
     height: 48px;
+
+    @media screen and (max-width: 500px) {
+      width: 18.3vw;
+    }
   `,
   md: css`
     width: 240px;
@@ -28,6 +32,11 @@ const getSize: Record<SizeType, FlattenSimpleInterpolation> = {
   lg: css`
     width: 288px;
     height: 58px;
+
+    @media screen and (max-width: 500px) {
+      width: 83vw;
+      height: 48px;
+    }
   `,
 }
 
