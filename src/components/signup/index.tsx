@@ -1,4 +1,4 @@
-import useSignup from "@/hooks/Signup/useSignup"
+import useSignup from "@/hooks/signup/useSignup"
 import * as S from "./style"
 import Input from "../common/Input"
 import Button from "../common/Button"
