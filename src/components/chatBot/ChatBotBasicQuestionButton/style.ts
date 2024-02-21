@@ -8,7 +8,7 @@ export const ChatBotBasicQuestionBtnBox = styled.button`
   margin-right: 0.5rem;
   justify-content: center;
   border: none;
-  border-radius: 100px;
+  border-radius: 100rem;
   background-color: #1e2f44;
   color: #f8fafd;
   text-align: center;
@@ -16,6 +16,6 @@ export const ChatBotBasicQuestionBtnBox = styled.button`
   font-size: 0.9rem;
   font-style: normal;
   font-weight: 500;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0rem 0rem 10rem 0rem rgba(0, 0, 0, 0.3);
   cursor: pointer;
 `

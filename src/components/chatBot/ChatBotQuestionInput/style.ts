@@ -18,7 +18,7 @@ export const ChatBotQuestionsInputContainer = styled.div`
 
 export const ChatBotQuestionsInputBox = styled.input`
   flex: 1;
-  height: 2.5rem;
+  height: 100%;
   border-radius: 0.5rem;
   background: #f8fafd;
   outline: none;

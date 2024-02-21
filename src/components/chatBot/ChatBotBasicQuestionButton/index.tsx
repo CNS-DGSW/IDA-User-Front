@@ -7,7 +7,7 @@ const ChatBotBasicQuestionButton: React.FC<
 > = ({ basicQuestion, onClick }) => {
   return (
     <S.ChatBotBasicQuestionBtnBox onClick={onClick}>
-      {basicQuestion.basicQuestionText}
+      {basicQuestion.basicQuestion}
     </S.ChatBotBasicQuestionBtnBox>
   )
 }

@@ -27,9 +27,6 @@ const nextConfig = {
       },
     )
 
-    // 3. 기존의 SVG 룰을 수정하여 exclude 옵션 추가
-    fileLoaderRule.exclude = /\.svg$/i
-
     return config
   },
 }
