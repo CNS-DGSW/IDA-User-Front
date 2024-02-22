@@ -1,27 +1,19 @@
-import React from "react"
-import type { PropsWithChildren, JSXElementConstructor } from "react"
-import Navbar from "../Navbar"
-import Footer from "../Footer"
+import type { PropsWithChildren } from "react"
+import * as S from "./style"
 
-const isHomeComponent = (value: any): value is JSXElementConstructor<any> =>
-  value.name === "Home"
+import Navbar from "../navbar"
+import Footer from "../Footer"
+// TDOO
+// import Footer from "../Footer"
 
 const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
-      <Navbar />
-      {React.Children.map(children, (child, index) => {
-        if (React.isValidElement(child) && isHomeComponent(child.type)) {
-          return <>{child}</>
-        }
-
-        return (
-          <>
-            {child}
-            <Footer />
-          </>
-        )
-      })}
+      <S.UpperFooterBox>
+        <Navbar />
+        <main>{children}</main>
+      </S.UpperFooterBox>
+      <Footer />
     </>
   )
 }
