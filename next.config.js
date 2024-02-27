@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   // reactStrictMode: true,
   swcMinify: true,
@@ -6,9 +5,13 @@ const nextConfig = {
     styledComponents: true,
   },
   webpack(config) {
-    const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg"),
+    // 1. SVG 파일 처리를 위한 룰 찾기
+    const svgRule = config.module.rules.find((rule) =>
+      String(rule.test).includes("svg"),
     )
+
+    // 2. 찾은 룰을 복사하여 새로운 룰을 추가
+    const fileLoaderRule = { ...svgRule }
 
     config.module.rules.push(
       {
@@ -23,8 +26,6 @@ const nextConfig = {
         use: ["@svgr/webpack"],
       },
     )
-
-    fileLoaderRule.exclude = /\.svg$/i
 
     return config
   },

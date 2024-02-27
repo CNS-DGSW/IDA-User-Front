@@ -1,6 +1,6 @@
 import { type FAQListType } from "@/types/FAQ/faq.type"
 
-const dummyFAQdata: FAQListType[] = [
+const FAQListDummyData: FAQListType[] = [
   {
     id: 1,
     question: "기숙사 입소는 필수인가요?",
@@ -55,4 +55,4 @@ const dummyFAQdata: FAQListType[] = [
     answer: "아니요, 이중지원은 불가능합니다.",
   },
 ]
-export default dummyFAQdata
+export default FAQListDummyData
