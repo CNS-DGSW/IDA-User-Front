@@ -2,11 +2,28 @@ import type { SubmitHandler } from "react-hook-form"
 import { Controller, useForm } from "react-hook-form"
 import Input from "../common/Input"
 import * as S from "./style"
-import type { SignInFormData } from "./type"
+import type { SignInFormData, SignInPostData } from "./type"
 import { validation } from "@/constants/validation"
 import ErrorMessage from "../common/ErrorMessage"
 import Link from "next/link"
 import axios from "axios"
+import { useMutation } from "@tanstack/react-query"
+
+const submitSignin = async({email,password}:SignInPostData) => {
+  return await axios
+    .post(`http://52.79.189.147:8080/auth/signIn`, {
+      email,
+      password
+    })
+    /* .then(async (res) => {
+      console.log(res.data.accessToken)
+      // ChangeAccessToken(res.data.accessToken,res.data.expireMillis)
+      alert("로그인 성공")
+    })
+    .catch((err) => {
+      console.error(err)
+    }) */ 
+}
 
 const Signin = () => {
   // const [email,setEmail] = useState("이메일을 입력하세요")
@@ -17,18 +34,18 @@ const Signin = () => {
     formState: { errors },
   } = useForm<SignInFormData>()
 
+  const submitSigninMutation = useMutation({
+    mutationFn: submitSignin,
+    onSuccess(data){
+      localStorage.setItem('accessToken',data.data.accessToken)
+      localStorage.setItem('refreshToken',data.data.refreshToken)
+    }
+  })
+
   const onSubmit: SubmitHandler<SignInFormData> = async (data) => {
-    await axios
-      .post(`http://3.37.167.215:8080/members/login`, data)
-      .then(async (res) => {
-        console.log(res.data.accessToken)
-        // ChangeAccessToken(res.data.accessToken,res.data.expireMillis)
-        alert("로그인 성공")
-      })
-      .catch((err) => {
-        console.error(err)
-      })
-    console.log(data)
+    const {email, password} = data
+    submitSigninMutation.mutate({email,password})
+
   }
 
   return (

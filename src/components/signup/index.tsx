@@ -7,9 +7,17 @@ import type { SubmitHandler } from "react-hook-form"
 import Checkbox from "../common/Checkbox"
 import Link from "next/link"
 import { validation } from "@/constants/validation"
-import type { SignUpFormData } from "./type"
+import type { SignUpFormData, SignUpPostData } from "./type"
 import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
+import axios from "axios"
+import { useMutation } from "@tanstack/react-query"
+
+const submitSignup = async(data:SignUpPostData) => {
+  return await axios
+  .post(`http://52.79.189.147:8080/member/signUp`, data)
+
+}
 
 const SignUp = () => {
   const {
@@ -32,12 +40,17 @@ const SignUp = () => {
     required: "약관을 동의하여 주세요.",
   })
 
-  const onsubmit: SubmitHandler<SignUpFormData> = (data) => {
-    console.log(data)
+  const submitSignupMutation = useMutation({
+    mutationFn: submitSignup
+  })
+
+  const onSubmit: SubmitHandler<SignUpFormData> = async (data) => {
+    const {email, password} = data
+    submitSignupMutation.mutate({email,password})
   }
 
   return (
-    <S.SignUpForm onSubmit={handleSubmit(onsubmit)}>
+    <S.SignUpForm onSubmit={handleSubmit(onSubmit)}>
       <S.SignUpLayout>
         <Link href="/">
           <S.SignUpDGSWLogo />

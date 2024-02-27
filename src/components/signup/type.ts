@@ -4,3 +4,8 @@ export interface SignUpFormData {
   confirmPassword: string
   agreement: boolean
 }
+
+export interface SignUpPostData {
+  email : string,
+  password : string
+}
