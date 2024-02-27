@@ -14,8 +14,8 @@ const FAQItem: React.FC<FAQListType> = ({ id, question, answer }) => {
 
   return (
     <div key={id}>
-      <S.FAQmainContent onClick={() => toggleFAQ(id)}>
-        <S.FAQquestionContent>
+      <S.FAQmainContent>
+        <S.FAQquestionContent onClick={() => toggleFAQ(id)}>
           <S.FAQquestionContentSymbol>Q.</S.FAQquestionContentSymbol>
           <S.FAQquestionContentText>{question}</S.FAQquestionContentText>
           <S.FAQselectImage

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import styled, { keyframes } from "styled-components"
-import ArrowIcon from "../../../../assets/img/icon/arrowIcon.svg"
+
+import ArrowIcon from "../../../../assets/img/Arrow.svg"
 
 export const Chapter1Layout = styled.div`
   width: 100vw;
