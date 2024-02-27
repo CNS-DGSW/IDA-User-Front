@@ -3,7 +3,7 @@ import {
   ACCESS_TOKEN_KEY,
   REQUEST_TOKEN_KEY,
 } from "@/constants/Auth/auth.constant"
-import Token from "../Token/Token"
+import TokenStorage from "../TokenStorage/tokenStorage"
 
 // 사용자 지정 기본 URL을 갖는 Axios 인스턴스
 export const customAxios = axios.create({
@@ -14,6 +14,8 @@ export const customAxios = axios.create({
 export const IDAaxios = axios.create({
   baseURL: process.env.REACT_APP_ROLLING_API_KEY,
   headers: {
-    [REQUEST_TOKEN_KEY]: `Bearer ${Token.getToken(ACCESS_TOKEN_KEY) ?? ""}`,
+    [REQUEST_TOKEN_KEY]: `Bearer ${
+      TokenStorage.getToken(ACCESS_TOKEN_KEY) ?? ""
+    }`,
   },
 })
