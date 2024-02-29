@@ -11,7 +11,7 @@ interface FileUploaderProps {
 const FileUploader = ({ onChange }: FileUploaderProps) => {
   const hiddenFileInput = useRef<HTMLInputElement | null>(null)
 
-  const { browserWidth } = useGetBrWidth()
+  const {browserWidth} = useGetBrWidth()
 
   const handleClick = () => {
     hiddenFileInput.current?.click()
@@ -21,16 +21,7 @@ const FileUploader = ({ onChange }: FileUploaderProps) => {
       <Button
         size="lg"
         radius={browserWidth <= 500 ? 4 : 8}
-        style={
-          browserWidth <= 500
-            ? {
-                width: "191px",
-                height: "46px",
-                fontSize: "3.8vw",
-                fontWeight: "600",
-              }
-            : { fontSize: "0.9vw", fontWeight: "600" }
-        }
+        style={browserWidth <= 500 ? {width: "191px", height: "46px",  fontSize: "3.8vw", fontWeight: "600"} : { fontSize: "0.9vw", fontWeight: "600" }}
         onClick={handleClick}
       >
         사진 선택

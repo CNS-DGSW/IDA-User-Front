@@ -13,7 +13,7 @@ const WriteGuardian = () => {
     string | undefined
   >(undefined)
 
-  const { browserWidth } = useGetBrWidth()
+  const {browserWidth} = useGetBrWidth()
 
   const relationChangeHandler = (e: any) => {
     setRelationChangeValue(e.target.innerText)
@@ -26,65 +26,31 @@ const WriteGuardian = () => {
           <InputWrapper title="성명">
             <Input type="text" width={browserWidth <= 500 ? 239 : 310} />
           </InputWrapper>
-          <InputWrapper
-            title="지원자와의 관계"
-            style={
-              browserWidth <= 500 ? { marginTop: 24, borderRadius: 8 } : {}
-            }
-          >
+          <InputWrapper title="지원자와의 관계" style={browserWidth <= 500 ? {marginTop: 24, borderRadius:8} : {}} >
             <Select
               list={GuardianRelation}
-              style={
-                browserWidth <= 500 ? { width: "15rem" } : { width: "19.3rem" }
-              }
-              // width={310}
+              style={browserWidth <= 500 ? { width : "15rem" } : { width : "19.3rem" }} 
+              // width={310} 
               changeEvent={(e) => relationChangeHandler(e)}
               value={relationChangeValue}
             />
           </InputWrapper>
         </InputWrapper>
-        <InputWrapper
-          style={
-            browserWidth <= 500
-              ? { marginTop: "1.5rem" }
-              : { marginTop: "3.3rem" }
-          }
-        >
+        <InputWrapper style={browserWidth <= 500 ? {marginTop: "1.5rem"} : { marginTop: "3.3rem" }}>
           <InputWrapper title="생년월일" style={{ position: "relative" }}>
-            <Input
-              type="text"
-              disabled
-              style={browserWidth <= 500 ? { width: "15rem" } : undefined}
-            />
+            <Input type="text" disabled style={browserWidth <= 500 ? { width : "15rem" } : undefined}/>
             <S.CalanderImgBox>
               <CustomDatePicker />
             </S.CalanderImgBox>
           </InputWrapper>
-          <InputWrapper
-            title="휴대폰"
-            style={browserWidth <= 500 ? { marginTop: "1.5rem" } : undefined}
-          >
-            <Input type="tel" width={browserWidth <= 500 ? 239 : 310} />
+          <InputWrapper title="휴대폰" style={browserWidth <= 500 ? {marginTop: "1.5rem"} : undefined}>
+            <Input type="tel" width={browserWidth <= 500 ? 239 : 310}/>
           </InputWrapper>
         </InputWrapper>
-        <InputWrapper
-          title="주소"
-          style={
-            browserWidth <= 500
-              ? { marginTop: "1.5rem" }
-              : { marginTop: "3.3rem" }
-          }
-        >
+        <InputWrapper title="주소" style={browserWidth <= 500 ? {marginTop: "1.5rem"} : { marginTop: "3.3rem" }}>
           <Input type="text" width={browserWidth <= 500 ? 239 : 650} />
         </InputWrapper>
-        <InputWrapper
-          title="상세주소"
-          style={
-            browserWidth <= 500
-              ? { marginTop: "1.5rem" }
-              : { marginTop: "3.3rem" }
-          }
-        >
+        <InputWrapper title="상세주소" style={browserWidth <= 500 ? {marginTop: "1.5rem"} : { marginTop: "3.3rem" }}>
           <Input type="text" width={browserWidth <= 500 ? 239 : 650} />
         </InputWrapper>
       </Card>

@@ -20,7 +20,7 @@ export const WriteIdPhotoPreivewBox = styled.div`
   background-color: ${({ theme: { colors } }) => colors.white};
   border: 1px solid ${({ theme: { colors } }) => colors.gray500};
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 500px){
     width: 11.9rem;
     height: 16.3rem;
 
