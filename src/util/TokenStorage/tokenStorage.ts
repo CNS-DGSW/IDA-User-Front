@@ -12,13 +12,16 @@ interface StorageManager {
 
 class TokenStorage implements StorageManager {
   public getToken(key: string): string | null {
-    return localStorage.getItem(key)
+    if (typeof window !== "undefined") {
+      return localStorage.getItem(key)
+    }
+    return null
   }
 
   public setToken(key: string, token: string, expire?: Date): void {
     localStorage.setItem(key, token)
     if (expire) {
-      const expirationTime = new Date(expire).getTime()
+      const expirationTime = expire.getTime()
       const currentTime = new Date().getTime()
 
       if (currentTime >= expirationTime) {
