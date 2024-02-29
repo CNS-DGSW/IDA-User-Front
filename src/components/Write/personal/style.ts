@@ -1,8 +1,7 @@
 import styled from "styled-components"
 
 export const PersonalSection = styled.section`
-
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 500px) {
     /* > article > div > div > div > div > input {
       width: 66.3vw;
     } */
@@ -20,7 +19,6 @@ export const PersonalSection = styled.section`
     /* > article > div > div > div > div > div {
       width: 31.1vw;
     } */
-  
   }
 `
 
@@ -28,7 +26,7 @@ export const CalanderImgBox = styled.div`
   position: absolute;
   right: 18px;
 
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 500px) {
     right: 5%;
   }
 `

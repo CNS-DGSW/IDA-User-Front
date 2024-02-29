@@ -9,7 +9,7 @@ import useGetBrWidth from "@/hooks/useGetBrWidth"
 const WriteIdPhoto = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
-  const {browserWidth} = useGetBrWidth()
+  const { browserWidth } = useGetBrWidth()
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
@@ -22,8 +22,7 @@ const WriteIdPhoto = () => {
   return (
     <Card>
       <S.WriteIdPhotoLayout>
-        <S.WriteIdPhotoPreivewBox
-        >
+        <S.WriteIdPhotoPreivewBox>
           {selectedImage ? (
             <Image
               src={selectedImage}
@@ -37,7 +36,8 @@ const WriteIdPhoto = () => {
         </S.WriteIdPhotoPreivewBox>
         <FileUploader onChange={handleChange} />
         <S.WriteIdPhotoNote>
-          * 2MB 이내의 png, jpg, jpeg, gif<br/> 사진을 등록해 주세요.
+          * 2MB 이내의 png, jpg, jpeg, gif
+          <br /> 사진을 등록해 주세요.
         </S.WriteIdPhotoNote>
       </S.WriteIdPhotoLayout>
     </Card>
