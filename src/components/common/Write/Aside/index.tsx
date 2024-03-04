@@ -3,6 +3,9 @@ import Button from "../../Button"
 import { usePageContext } from "@/components/common/Write/PageProvider"
 import * as S from "./style"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
+import usePersonal from "@/components/Write/personal/usePersonal"
+import useGuardian from "@/components/Write/guardian/useGuardian"
+import useIdPhoto from "@/components/Write/idPhoto/useIdPhoto"
 
 const MobileButtonStyle: CSSProperties = {
   paddingTop: "0.875rem",
@@ -18,11 +21,40 @@ export const Aside = () => {
   const { currentPage, moveNextPage, movePreviousPage } = usePageContext()
   const { browserWidth } = useGetBrWidth()
 
+  const { fixUserInfo } = usePersonal()
+  const { fixParentInfo } = useGuardian()
+  const { setPhoto } = useIdPhoto()
+
+  const checkCurrentPageSave = () => {
+    switch (currentPage) {
+      case 1:
+        fixUserInfo()
+          .then((e) => console.log(e))
+          .catch((e) => console.log(e))
+        break
+      case 2:
+        fixParentInfo()
+          .then((e) => console.log(e))
+          .catch((e) => console.log(e))
+        break
+      case 3:
+        setPhoto()
+        break
+      case 4:
+        break
+      case 5:
+        break
+      case 6:
+        break
+    }
+  }
+
   return (
     <S.AsideBox>
       <Button
         radius={8}
         style={browserWidth <= 500 ? MobileButtonStyle : undefined}
+        clickEvent={checkCurrentPageSave}
       >
         <S.ButtonFontBox>원서 저장</S.ButtonFontBox>
       </Button>
