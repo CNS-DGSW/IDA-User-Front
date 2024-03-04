@@ -4,6 +4,6 @@ export interface SignInFormData {
 }
 
 export interface SignInPostData {
-  email : string,
-  password : string
+  email: string
+  password: string
 }

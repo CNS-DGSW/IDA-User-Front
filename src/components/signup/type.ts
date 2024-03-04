@@ -6,6 +6,6 @@ export interface SignUpFormData {
 }
 
 export interface SignUpPostData {
-  email : string,
-  password : string
+  email: string
+  password: string
 }

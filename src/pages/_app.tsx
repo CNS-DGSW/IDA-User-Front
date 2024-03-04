@@ -5,7 +5,7 @@ import "@dgswcns/design-token"
 import Layout from "@/components/common/layout"
 import GlobalStyle from "@/styles/GlobalStyle"
 import { RecoilRoot } from "recoil"
-import { QueryClient, QueryClientProvider,  } from "@tanstack/react-query"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
 export default function App({ Component, pageProps }: AppProps) {
   const theme = useCNSThemeing("LIGHT")

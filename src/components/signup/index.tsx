@@ -10,13 +10,11 @@ import { validation } from "@/constants/validation"
 import type { SignUpFormData, SignUpPostData } from "./type"
 import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
-import axios from "axios"
 import { useMutation } from "@tanstack/react-query"
+import { customAxios } from "@/util/CustomAxios/customAxios"
 
-const submitSignup = async(data:SignUpPostData) => {
-  return await axios
-  .post(`http://52.79.189.147:8080/member/signUp`, data)
-
+const submitSignup = async (data: SignUpPostData) => {
+  return await customAxios.post(`/member/signUp`, data)
 }
 
 const SignUp = () => {
@@ -41,12 +39,12 @@ const SignUp = () => {
   })
 
   const submitSignupMutation = useMutation({
-    mutationFn: submitSignup
+    mutationFn: submitSignup,
   })
 
   const onSubmit: SubmitHandler<SignUpFormData> = async (data) => {
-    const {email, password} = data
-    submitSignupMutation.mutate({email,password})
+    const { email, password } = data
+    submitSignupMutation.mutate({ email, password })
   }
 
   return (
