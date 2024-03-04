@@ -11,10 +11,10 @@ import type { SignUpFormData, SignUpPostData } from "./type"
 import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
 import { useMutation } from "@tanstack/react-query"
-import { customAxios } from "@/util/CustomAxios/customAxios"
+import { IDAcustomAxios } from "@/util/CustomAxios/customAxios"
 
 const submitSignup = async (data: SignUpPostData) => {
-  return await customAxios.post(`/member/signUp`, data)
+  return await IDAcustomAxios.post(`/member/signUp`, data)
 }
 
 const SignUp = () => {

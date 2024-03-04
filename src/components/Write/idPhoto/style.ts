@@ -6,6 +6,7 @@ export const WriteIdPhotoLayout = styled.div`
   align-items: center;
   gap: 18px;
 `
+
 export const WriteIdPhotoPreivewBox = styled.div`
   width: 288px;
   height: 384px;
@@ -18,6 +19,13 @@ export const WriteIdPhotoPreivewBox = styled.div`
   color: ${({ theme: { colors } }) => colors.gray500};
   background-color: ${({ theme: { colors } }) => colors.white};
   border: 1px solid ${({ theme: { colors } }) => colors.gray500};
+
+  @media screen and (max-width: 500px){
+    width: 11.9rem;
+    height: 16.3rem;
+
+    font-size: 3.8vw;
+  }
 `
 
 export const WriteIdPhotoStyledFileInput = styled.input`
@@ -33,4 +41,11 @@ export const WriteIdPhotoNote = styled.p`
   font-weight: 400;
   width: 270px;
   text-align: center;
+
+  @media screen and (max-width: 500px) {
+    font-size: 3.8vw;
+    font-weight: 600;
+    width: auto;
+    line-height: 1.8rem;
+  }
 `

@@ -6,11 +6,14 @@ import { GuardianRelation } from "@/constants/Write/guardianRelationConstant"
 import CustomDatePicker from "@/components/common/DatePicker"
 import * as S from "./style"
 import { useState } from "react"
+import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 const WriteGuardian = () => {
   const [relationChangeValue, setRelationChangeValue] = useState<
     string | undefined
   >(undefined)
+
+  const {browserWidth} = useGetBrWidth()
 
   const relationChangeHandler = (e: any) => {
     setRelationChangeValue(e.target.innerText)
@@ -21,33 +24,34 @@ const WriteGuardian = () => {
       <Card>
         <InputWrapper>
           <InputWrapper title="성명">
-            <Input type="text" width={310} />
+            <Input type="text" width={browserWidth <= 500 ? 239 : 310} />
           </InputWrapper>
-          <InputWrapper title="지원자와의 관계">
+          <InputWrapper title="지원자와의 관계" style={browserWidth <= 500 ? {marginTop: 24, borderRadius:8} : {}} >
             <Select
               list={GuardianRelation}
-              width={310}
+              style={browserWidth <= 500 ? { width : "15rem" } : { width : "19.3rem" }} 
+              // width={310} 
               changeEvent={(e) => relationChangeHandler(e)}
               value={relationChangeValue}
             />
           </InputWrapper>
         </InputWrapper>
-        <InputWrapper style={{ marginTop: 54 }}>
+        <InputWrapper style={browserWidth <= 500 ? {marginTop: "1.5rem"} : { marginTop: "3.3rem" }}>
           <InputWrapper title="생년월일" style={{ position: "relative" }}>
-            <Input type="text" disabled />
+            <Input type="text" disabled style={browserWidth <= 500 ? { width : "15rem" } : undefined}/>
             <S.CalanderImgBox>
               <CustomDatePicker />
             </S.CalanderImgBox>
           </InputWrapper>
-          <InputWrapper title="휴대폰">
-            <Input type="tel" width={310} />
+          <InputWrapper title="휴대폰" style={browserWidth <= 500 ? {marginTop: "1.5rem"} : undefined}>
+            <Input type="tel" width={browserWidth <= 500 ? 239 : 310}/>
           </InputWrapper>
         </InputWrapper>
-        <InputWrapper title="주소" style={{ marginTop: 54 }}>
-          <Input type="text" width={650} />
+        <InputWrapper title="주소" style={browserWidth <= 500 ? {marginTop: "1.5rem"} : { marginTop: "3.3rem" }}>
+          <Input type="text" width={browserWidth <= 500 ? 239 : 650} />
         </InputWrapper>
-        <InputWrapper title="상세주소" style={{ marginTop: 34 }}>
-          <Input type="text" width={650} />
+        <InputWrapper title="상세주소" style={browserWidth <= 500 ? {marginTop: "1.5rem"} : { marginTop: "3.3rem" }}>
+          <Input type="text" width={browserWidth <= 500 ? 239 : 650} />
         </InputWrapper>
       </Card>
     </section>

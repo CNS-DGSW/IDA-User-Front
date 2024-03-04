@@ -2,6 +2,7 @@ import { useRef } from "react"
 import type { ChangeEventHandler } from "react"
 import * as S from "./style"
 import Button from "../Button"
+import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 interface FileUploaderProps {
   onChange?: ChangeEventHandler<HTMLInputElement>
@@ -10,6 +11,8 @@ interface FileUploaderProps {
 const FileUploader = ({ onChange }: FileUploaderProps) => {
   const hiddenFileInput = useRef<HTMLInputElement | null>(null)
 
+  const {browserWidth} = useGetBrWidth()
+
   const handleClick = () => {
     hiddenFileInput.current?.click()
   }
@@ -17,8 +20,8 @@ const FileUploader = ({ onChange }: FileUploaderProps) => {
     <>
       <Button
         size="lg"
-        radius={8}
-        style={{ fontSize: "18", fontWeight: "600" }}
+        radius={browserWidth <= 500 ? 4 : 8}
+        style={browserWidth <= 500 ? {width: "191px", height: "46px",  fontSize: "3.8vw", fontWeight: "600"} : { fontSize: "0.9vw", fontWeight: "600" }}
         onClick={handleClick}
       >
         사진 선택

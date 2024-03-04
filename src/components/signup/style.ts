@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import dgswLogo from "@/assets/img/Logo/dgswLogo.svg"
+import DGSWblueLogo from "@/assets/Img/logo/dgswBlue.svg"
 import Link from "next/link"
 
 export const SignUpLayout = styled.div`
@@ -15,9 +15,7 @@ export const SignUpLayout = styled.div`
 
   @media screen and (max-width: 500px) {
     margin: calc(11.9vw - 20px) auto 16vw auto;
-
     justify-content: start;
-
     width: 83vw;
     height: auto;
 
@@ -29,8 +27,7 @@ export const SignUpLayout = styled.div`
 `
 
 export const SignUpForm = styled.form`
-  height: calc(100vh - 284px - 60px - 20px);
-
+  height: calc(100vh - 1rem - 3rem - 1rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,7 +37,7 @@ export const SignUpForm = styled.form`
   }
 `
 
-export const SignUpDGSWLogo = styled(dgswLogo)`
+export const SignUpDGSWLogo = styled(DGSWblueLogo)`
   fill: ${({ theme: { colors } }) => colors.blue400};
   width: 213px;
   margin-bottom: 4.1vw;
@@ -159,9 +156,7 @@ export const AgreementsContainer = styled.div`
 
   @media screen and (max-width: 500px) {
     margin-top: 0;
-
     font-size: 3.3vw;
-
     gap: 4vw;
   }
 `
@@ -183,12 +178,10 @@ export const AgreementCheckBoxLabel = styled.label`
 
 export const LoginLink = styled(Link)`
   margin-top: 1.6vw;
-
   color: #424344;
 
   @media screen and (max-width: 500px) {
     margin-top: 7.2vw;
-
     font-size: 3.3vw;
   }
 `

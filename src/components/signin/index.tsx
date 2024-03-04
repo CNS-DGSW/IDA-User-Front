@@ -7,11 +7,11 @@ import { validation } from "@/constants/validation"
 import ErrorMessage from "../common/ErrorMessage"
 import Link from "next/link"
 import { useMutation } from "@tanstack/react-query"
-import { customAxios } from "@/util/CustomAxios/customAxios"
+import { IDAcustomAxios } from "@/util/CustomAxios/customAxios"
 // import tokenStorage from "@/util/TokenStorage/tokenStorage"
 
 const submitSignin = async ({ email, password }: SignInPostData) => {
-  return await customAxios.post(`/auth/signIn`, {
+  return await IDAcustomAxios.post(`/auth/signIn`, {
     email,
     password,
   })
