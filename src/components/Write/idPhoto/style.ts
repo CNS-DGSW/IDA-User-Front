@@ -37,8 +37,9 @@ export const WriteIdPhotoStyledFileInput = styled.input`
 
 export const WriteIdPhotoNote = styled.p`
   color: ${({ theme: { colors } }) => colors.gray500};
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
+  line-height: 1.5rem;
   width: 270px;
   text-align: center;
 
