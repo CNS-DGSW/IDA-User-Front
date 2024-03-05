@@ -1,32 +1,45 @@
 import Card from "@/components/common/Card"
 import * as S from "./style"
 import FileUploader from "@/components/common/FileUploader"
-import { useState } from "react"
+import { useEffect } from "react"
 import type { ChangeEvent } from "react"
 import Image from "next/image"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
+import useIdPhoto from "./useIdPhoto"
 
 const WriteIdPhoto = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
-
-  const {browserWidth} = useGetBrWidth()
+  const {
+    selectedImage,
+    setSelectedImage,
+    previewPhoto,
+    setPreviewPhoto,
+    getUserPhoto,
+  } = useIdPhoto()
+  const { browserWidth } = useGetBrWidth()
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
     if (file) {
-      const imageUrl = URL.createObjectURL(file)
-      setSelectedImage(imageUrl)
+      setSelectedImage(file)
     }
   }
+
+  useEffect(() => {
+    getUserPhoto()
+      .then((e) => {
+        console.log(e.data.filename)
+        setPreviewPhoto(e.data.filename)
+      })
+      .catch((e) => console.log(e))
+  }, [])
 
   return (
     <Card>
       <S.WriteIdPhotoLayout>
-        <S.WriteIdPhotoPreivewBox
-        >
-          {selectedImage ? (
+        <S.WriteIdPhotoPreivewBox>
+          {selectedImage ?? previewPhoto ? (
             <Image
-              src={selectedImage}
+              src={previewPhoto ? previewPhoto : ""}
               width={browserWidth <= 500 ? 191 : 288}
               height={browserWidth <= 500 ? 262 : 384}
               alt="증명사진"
@@ -37,7 +50,8 @@ const WriteIdPhoto = () => {
         </S.WriteIdPhotoPreivewBox>
         <FileUploader onChange={handleChange} />
         <S.WriteIdPhotoNote>
-          * 2MB 이내의 png, jpg, jpeg, gif<br/> 사진을 등록해 주세요.
+          * 2MB 이내의 png, jpg, jpeg, gif
+          <br /> 사진을 등록해 주세요.
         </S.WriteIdPhotoNote>
       </S.WriteIdPhotoLayout>
     </Card>
