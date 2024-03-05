@@ -12,7 +12,7 @@ export const personalInfoAtom = atom<T.PersonalInfo>({
     name: "",
     birth: "",
     phoneNumber: "",
-    gender: "",
+    gender: "MALE",
   },
 })
 
@@ -20,7 +20,7 @@ export const guardianInfo = atom<T.ParentInfo>({
   key: "guardianInfo",
   default: {
     name: "",
-    relation: "",
+    relation: "추가 필요",
     birth: "",
     telephone: "",
     streetAddress: "",
