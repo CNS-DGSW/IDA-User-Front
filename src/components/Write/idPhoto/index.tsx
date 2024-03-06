@@ -27,8 +27,11 @@ const WriteIdPhoto = () => {
   useEffect(() => {
     getUserPhoto()
       .then((e) => {
-        console.log(e.data.filename)
-        setPreviewPhoto(e.data.filename)
+        console.log(e.data)
+        console.log(e)
+
+        setPreviewPhoto(e.data)
+        // setTestImg(e.data)
       })
       .catch((e) => console.log(e))
   }, [])
@@ -54,6 +57,7 @@ const WriteIdPhoto = () => {
           <br /> 사진을 등록해 주세요.
         </S.WriteIdPhotoNote>
       </S.WriteIdPhotoLayout>
+      {/* <button onClick={() => console.log(previewPhoto)}>fdfdf</button> */}
     </Card>
   )
 }
