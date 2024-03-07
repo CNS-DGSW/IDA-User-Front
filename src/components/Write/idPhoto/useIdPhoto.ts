@@ -33,7 +33,6 @@ const useIdPhoto = () => {
     }
   }
 
-  //getUserInfo
   const { isLoading, error, data } = useQuery({
     queryKey: ["photoData"],
     queryFn: async () => {
@@ -51,8 +50,8 @@ const useIdPhoto = () => {
 
   const fixUserPhoto = async (formData: FormData) => {
     try {
-      mutation.mutateAsync(formData)
-    } catch (error) {
+      await mutation.mutateAsync(formData)
+    } catch (error: any) {
       console.log("error!")
       console.log(error)
     }

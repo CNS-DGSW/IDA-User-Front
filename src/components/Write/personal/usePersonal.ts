@@ -2,12 +2,11 @@ import Api from "../API"
 import { useRecoilState } from "recoil"
 import { personalInfoAtom } from "@/atom/apply/applyAtom"
 import { useMutation, useQuery } from "react-query"
-import { PersonalInfo } from "@/atom/apply/types"
+import { type PersonalInfo } from "@/atom/apply/types"
 
 const usePersonal = () => {
   const [userInfo, setUserInfo] = useRecoilState(personalInfoAtom)
 
-  //getUserInfo
   const { isLoading, error, data } = useQuery({
     queryKey: ["personalData"],
     queryFn: async () => {
@@ -25,8 +24,8 @@ const usePersonal = () => {
 
   const fixUserInfo = async () => {
     try {
-      mutation.mutateAsync(userInfo)
-    } catch (error) {
+      await mutation.mutateAsync(userInfo)
+    } catch (error: any) {
       console.log("error!")
       console.log(error)
     }
