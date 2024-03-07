@@ -2,6 +2,8 @@ import Api from "../API"
 import { useRecoilState } from "recoil"
 import { guardianInfo } from "@/atom/apply/applyAtom"
 import { useState, type MouseEvent } from "react"
+import { useMutation, useQuery } from "react-query"
+import { ParentInfo } from "@/atom/apply/types"
 
 const useGuardian = () => {
   const [parentInfo, setParentInfo] = useRecoilState(guardianInfo)
@@ -28,22 +30,39 @@ const useGuardian = () => {
     })
   }
 
-  const getParentInfo = async () => {
-    const response = await Api.get("/applicant/parent")
-    return response
-  }
+  //getParentInfo
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["parentData"],
+    queryFn: async () => {
+      const response = await Api.get("/applicant/parent")
+      return response.data
+    },
+  })
+
+  const mutation = useMutation({
+    mutationFn: async (updateInfo: ParentInfo) => {
+      const response = await Api.put("/applicant/parent", { ...updateInfo })
+      return response.data
+    },
+  })
 
   const fixParentInfo = async () => {
-    const cpInfo = { ...parentInfo }
-    cpInfo.zipCode = Number(cpInfo.zipCode)
-    const response = await Api.put("/applicant/parent", { ...cpInfo })
-    return response
+    try {
+      const cpInfo = { ...parentInfo }
+      cpInfo.zipCode = Number(cpInfo.zipCode)
+      mutation.mutateAsync(cpInfo)
+    } catch (error) {
+      console.log("error!")
+      console.log(error)
+    }
   }
 
   return {
     parentInfo,
     setParentInfo,
-    getParentInfo,
+    isLoading,
+    error,
+    data,
     fixParentInfo,
     relationChangeHandler,
     onCompletePost,

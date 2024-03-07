@@ -2,6 +2,7 @@ import { useRecoilState } from "recoil"
 import Api from "../API"
 import { type ChangeEvent, useEffect, useState } from "react"
 import { idPhotoAtom } from "@/atom/apply/applyAtom"
+import { useMutation, useQuery } from "react-query"
 
 const useIdPhoto = () => {
   const [selectedImage, setSelectedImage] = useRecoilState(idPhotoAtom)
@@ -32,21 +33,38 @@ const useIdPhoto = () => {
     }
   }
 
-  const getUserPhoto = async () => {
-    const response = await Api.get("/applicant/photo")
-    return response
-  }
+  //getUserInfo
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["photoData"],
+    queryFn: async () => {
+      const response = await Api.get("/applicant/photo")
+      return response.data
+    },
+  })
+
+  const mutation = useMutation({
+    mutationFn: async (formData: FormData) => {
+      const response = await Api.put("/applicant/photo", { ...formData })
+      return response.data
+    },
+  })
 
   const fixUserPhoto = async (formData: FormData) => {
-    const response = await Api.put("/applicant/photo", formData)
-    return response
+    try {
+      mutation.mutateAsync(formData)
+    } catch (error) {
+      console.log("error!")
+      console.log(error)
+    }
   }
 
   return {
     selectedImage,
     previewPhoto,
     setPreviewPhoto,
-    getUserPhoto,
+    isLoading,
+    error,
+    data,
     fixUserPhoto,
     setPhoto,
     handleChange,
