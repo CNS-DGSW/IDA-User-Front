@@ -1,37 +1,23 @@
-import React, { useState } from "react"
+import React from "react"
 import * as S from "./style"
-import type { FAQListType } from "@/types/FAQ/faq.type"
-import SelectIcon from "@/assets/Img/Icon/selectIcon.svg"
+import type { FAQListPropsType } from "@/types/FAQ/faq.type"
+import FAQquestionContent from "./faqQuestionContent"
+import FAQanswerContent from "./faqAnswerContent"
 
-const FAQItem: React.FC<FAQListType> = ({ id, question, answer }) => {
-  const [activeImageRotations, setActiveImageRotations] = useState<number[]>([])
-
-  const toggleFAQ = (id: number) => {
-    setActiveImageRotations((prevRotations) =>
-      prevRotations.includes(id) ? [] : [id],
-    )
-  }
-
+const FAQItem: React.FC<FAQListPropsType> = ({
+  id,
+  title,
+  isActive,
+  toggleFAQ,
+}) => {
   return (
-    <div key={id}>
+    <React.Fragment key={id}>
       <S.FAQmainContent onClick={() => toggleFAQ(id)}>
-        <S.FAQquestionContent>
-          <S.FAQquestionContentSymbol>Q.</S.FAQquestionContentSymbol>
-          <S.FAQquestionContentText>{question}</S.FAQquestionContentText>
-          <S.FAQselectImage
-            as={SelectIcon}
-            alt="Image loading error."
-            rotation={activeImageRotations.includes(id)}
-          />
-        </S.FAQquestionContent>
-        {activeImageRotations.includes(id) && (
-          <S.FAQanswerContent>
-            <S.FAQanswerContentSymbol>A.</S.FAQanswerContentSymbol>
-            <S.FAQanswerContentText>{answer}</S.FAQanswerContentText>
-          </S.FAQanswerContent>
-        )}
+        <FAQquestionContent id={id} title={title} isActive={isActive} />
+        <FAQanswerContent id={id} isActive={isActive} />
       </S.FAQmainContent>
-    </div>
+    </React.Fragment>
   )
 }
+
 export default FAQItem

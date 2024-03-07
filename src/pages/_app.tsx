@@ -6,11 +6,21 @@ import { useCNSThemeing } from "@dgswcns/react-theming"
 import "@dgswcns/design-token"
 import Layout from "@/components/common/layout"
 import GlobalStyle from "@/styles/GlobalStyle"
+import { QueryClient, QueryClientProvider } from "react-query"
 import { RecoilRoot } from "recoil"
 
 Modal.setAppElement("#__next")
 
 export default function App({ Component, pageProps }: AppProps) {
+  const queryClient: QueryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        useErrorBoundary: true,
+        notifyOnChangeProps: "tracked",
+      },
+    },
+  })
+
   const theme = useCNSThemeing("LIGHT")
 
   useEffect(() => {
@@ -24,13 +34,15 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <RecoilRoot>
-      <CNSThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </CNSThemeProvider>
-    </RecoilRoot>
+    <QueryClientProvider client={queryClient}>
+      <RecoilRoot>
+        <CNSThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </CNSThemeProvider>
+      </RecoilRoot>
+    </QueryClientProvider>
   )
 }

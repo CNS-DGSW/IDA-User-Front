@@ -7,7 +7,7 @@ import TokenStorage from "../TokenStorage/tokenStorage"
 
 // IDA용 동적 토큰 처리를 위한 Axios 인스턴스
 export const IDAcustomAxios = axios.create({
-  baseURL: process.env.REACT_APP_ROLLING_API_KEY,
+  baseURL: "http://52.79.189.147:8080",
 })
 
 // Interceptor를 사용하여 요청 전에 토큰을 가져와서 설정합니다.

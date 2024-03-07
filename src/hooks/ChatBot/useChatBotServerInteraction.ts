@@ -1,6 +1,6 @@
 // import { useState } from "react"
 
-export const useServerInteraction = () => {
+export const useChatBotServerInteraction = () => {
   // [ Chat GPT openAi 연결 비활성화 -> 나중에 이런 형식으로 자체 생성 AI 서버와 HTTP 통신 예정 ]
   // const chatAi = async (data: string) => {
   //   try {
