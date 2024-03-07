@@ -47,6 +47,8 @@ const useGuardian = () => {
     fixParentInfo,
     relationChangeHandler,
     onCompletePost,
+    modalState,
+    setModalState,
   }
 }
 
