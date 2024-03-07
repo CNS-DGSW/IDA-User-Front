@@ -24,8 +24,6 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [])
 
-export default function App({ Component, pageProps }: AppProps) {
-  const theme = useCNSThemeing("LIGHT")
   const queryClient = new QueryClient()
 
   return (
