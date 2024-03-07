@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil"
 import { guardianInfo } from "@/atom/apply/applyAtom"
 import { useState, type MouseEvent } from "react"
 import { useMutation, useQuery } from "react-query"
-import { ParentInfo } from "@/atom/apply/types"
+import { type ParentInfo } from "@/atom/apply/types"
 
 const useGuardian = () => {
   const [parentInfo, setParentInfo] = useRecoilState(guardianInfo)
@@ -30,7 +30,6 @@ const useGuardian = () => {
     })
   }
 
-  //getParentInfo
   const { isLoading, error, data } = useQuery({
     queryKey: ["parentData"],
     queryFn: async () => {
@@ -50,8 +49,8 @@ const useGuardian = () => {
     try {
       const cpInfo = { ...parentInfo }
       cpInfo.zipCode = Number(cpInfo.zipCode)
-      mutation.mutateAsync(cpInfo)
-    } catch (error) {
+      await mutation.mutateAsync(cpInfo)
+    } catch (error: any) {
       console.log("error!")
       console.log(error)
     }
