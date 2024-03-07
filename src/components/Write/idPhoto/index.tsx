@@ -11,18 +11,19 @@ const WriteIdPhoto = () => {
     selectedImage,
     previewPhoto,
     setPreviewPhoto,
-    getUserPhoto,
+    isLoading,
+    error,
+    data,
     handleChange,
   } = useIdPhoto()
   const { browserWidth } = useGetBrWidth()
 
   useEffect(() => {
-    getUserPhoto()
-      .then((e) => {
-        setPreviewPhoto(e.data)
-      })
-      .catch((e) => console.log(e))
-  }, [])
+    setPreviewPhoto(data)
+  }, [data])
+
+  if (isLoading) return <div>Loading!!</div>
+  if (error) return <div>Error!!</div>
 
   return (
     <Card>

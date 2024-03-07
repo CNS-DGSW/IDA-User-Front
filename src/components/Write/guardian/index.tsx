@@ -15,7 +15,9 @@ const WriteGuardian = () => {
   const {
     parentInfo,
     setParentInfo,
-    getParentInfo,
+    isLoading,
+    error,
+    data,
     relationChangeHandler,
     onCompletePost,
     modalState,
@@ -24,11 +26,12 @@ const WriteGuardian = () => {
 
   const { browserWidth } = useGetBrWidth()
 
+  if (isLoading) return <div>Loading!!</div>
+  if (error) return <div>Error!!</div>
+
   useEffect(() => {
-    getParentInfo()
-      .then((e) => setParentInfo({ ...e.data }))
-      .catch((e) => console.log(e))
-  }, [])
+    setParentInfo({ ...data })
+  }, [data])
 
   return (
     <section>

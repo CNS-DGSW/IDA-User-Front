@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import Card from "@/components/common/Card"
 import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
@@ -11,13 +11,14 @@ import { formatDate } from "@/util/formatDate"
 
 const WritePersonal = () => {
   const { browserWidth } = useGetBrWidth()
-  const { userInfo, setUserInfo, getUserInfo } = usePersonal()
+  const { userInfo, setUserInfo, isLoading, error, data } = usePersonal()
 
   useEffect(() => {
-    getUserInfo()
-      .then((e) => setUserInfo({ ...e.data }))
-      .catch((e) => console.log(e))
-  }, [])
+    setUserInfo({ ...data })
+  }, [data])
+
+  if (isLoading) return <div>Loading!!</div>
+  if (error) return <div>Error!!</div>
 
   return (
     <S.PersonalSection>
