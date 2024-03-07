@@ -73,10 +73,10 @@ const Select = ({
         <ListContainer direction={direction}>
           {list?.map((v) => (
             <ListItem
-              width={width}
+              width={browserWidth <= 500 ? width : undefined}
               key={v}
               onClick={changeEvent}
-              style={{ fontSize: "10px" }}
+              style={{ fontSize: browserWidth <= 500 ? "10px" : "14px" }}
             >
               {v}
             </ListItem>

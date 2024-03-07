@@ -20,7 +20,7 @@ export const WriteIdPhotoPreivewBox = styled.div`
   background-color: ${({ theme: { colors } }) => colors.white};
   border: 1px solid ${({ theme: { colors } }) => colors.gray500};
 
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 500px) {
     width: 11.9rem;
     height: 16.3rem;
 
@@ -37,8 +37,9 @@ export const WriteIdPhotoStyledFileInput = styled.input`
 
 export const WriteIdPhotoNote = styled.p`
   color: ${({ theme: { colors } }) => colors.gray500};
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
+  line-height: 1.5rem;
   width: 270px;
   text-align: center;
 
