@@ -8,6 +8,7 @@ import Layout from "@/components/common/layout"
 import GlobalStyle from "@/styles/GlobalStyle"
 import { QueryClient, QueryClientProvider } from "react-query"
 import { RecoilRoot } from "recoil"
+import { QueryClient, QueryClientProvider } from "react-query"
 
 Modal.setAppElement("#__next")
 
@@ -32,6 +33,8 @@ export default function App({ Component, pageProps }: AppProps) {
       document.body.removeChild(rootModal)
     }
   }, [])
+
+  const queryClient = new QueryClient()
 
   return (
     <QueryClientProvider client={queryClient}>

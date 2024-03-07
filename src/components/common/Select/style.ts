@@ -54,7 +54,6 @@ export const ListItem = styled.li<{ width?: number }>`
   }
 
   font-weight: 500;
-  font-size: 14px;
   line-height: 17px;
 
   color: #8b939c;

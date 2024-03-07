@@ -1,7 +1,5 @@
 import styled from "styled-components"
 
-export const GuardianSection = styled.section``
-
 export const DaumModalWrapper = styled.div`
   position: fixed;
   z-index: 10;
@@ -13,14 +11,4 @@ export const DaumModalWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
-
-export const CalanderImgBox = styled.div`
-  position: absolute;
-  right: 18px;
-
-  @media screen and (max-width: 500px) {
-    right: 5%;
-    top: 58%;
-  }
 `
