@@ -9,7 +9,7 @@ import { useEffect } from "react"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
 import useGuardian from "./useGuardian"
 import { formatDate } from "@/util/formatDate"
-import DaumPostcode from "react-daum-postcode"
+import DaumPostCode from "@/components/common/DaumPostCode/DaumPostCode"
 
 const WriteGuardian = () => {
   const {
@@ -30,20 +30,13 @@ const WriteGuardian = () => {
       .catch((e) => console.log(e))
   }, [])
 
-  const postCodeStyle = {
-    width: "400px",
-  }
-
   return (
     <section>
-      {modalState && (
-        <S.DaumModalWrapper onClick={() => setModalState(false)}>
-          <DaumPostcode
-            style={postCodeStyle}
-            onComplete={onCompletePost}
-          ></DaumPostcode>
-        </S.DaumModalWrapper>
-      )}
+      <DaumPostCode
+        onCompletePost={onCompletePost}
+        modalState={modalState}
+        setModalState={setModalState}
+      />
       <Card>
         <InputWrapper>
           <InputWrapper title="성명">
