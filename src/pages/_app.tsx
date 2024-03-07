@@ -7,6 +7,7 @@ import "@dgswcns/design-token"
 import Layout from "@/components/common/layout"
 import GlobalStyle from "@/styles/GlobalStyle"
 import { RecoilRoot } from "recoil"
+import { QueryClient, QueryClientProvider } from "react-query"
 
 Modal.setAppElement("#__next")
 
@@ -22,15 +23,18 @@ export default function App({ Component, pageProps }: AppProps) {
       document.body.removeChild(rootModal)
     }
   }, [])
+  const queryClient = new QueryClient()
 
   return (
     <RecoilRoot>
-      <CNSThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </CNSThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <CNSThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </CNSThemeProvider>
+      </QueryClientProvider>
     </RecoilRoot>
   )
 }
