@@ -2,7 +2,6 @@ import Card from "@/components/common/Card"
 import * as S from "./style"
 import FileUploader from "@/components/common/FileUploader"
 import { useEffect } from "react"
-import type { ChangeEvent } from "react"
 import Image from "next/image"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
 import useIdPhoto from "./useIdPhoto"
@@ -10,28 +9,17 @@ import useIdPhoto from "./useIdPhoto"
 const WriteIdPhoto = () => {
   const {
     selectedImage,
-    setSelectedImage,
     previewPhoto,
     setPreviewPhoto,
     getUserPhoto,
+    handleChange,
   } = useIdPhoto()
   const { browserWidth } = useGetBrWidth()
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (file) {
-      setSelectedImage(file)
-    }
-  }
 
   useEffect(() => {
     getUserPhoto()
       .then((e) => {
-        console.log(e.data)
-        console.log(e)
-
         setPreviewPhoto(e.data)
-        // setTestImg(e.data)
       })
       .catch((e) => console.log(e))
   }, [])

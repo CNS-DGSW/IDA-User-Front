@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil"
 import Api from "../API"
-import { useEffect, useState } from "react"
+import { type ChangeEvent, useEffect, useState } from "react"
 import { idPhotoAtom } from "@/atom/apply/applyAtom"
 
 const useIdPhoto = () => {
@@ -25,6 +25,13 @@ const useIdPhoto = () => {
     }
   }
 
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      setSelectedImage(file)
+    }
+  }
+
   const getUserPhoto = async () => {
     const response = await Api.get("/applicant/photo")
     return response
@@ -37,12 +44,12 @@ const useIdPhoto = () => {
 
   return {
     selectedImage,
-    setSelectedImage,
     previewPhoto,
     setPreviewPhoto,
     getUserPhoto,
     fixUserPhoto,
     setPhoto,
+    handleChange,
   }
 }
 

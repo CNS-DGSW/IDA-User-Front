@@ -5,23 +5,24 @@ import Select from "@/components/common/Select"
 import { GuardianRelation } from "@/constants/Write/guardianRelationConstant"
 import CustomDatePicker from "@/components/common/DatePicker"
 import * as S from "./style"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
 import useGuardian from "./useGuardian"
 import { formatDate } from "@/util/formatDate"
 import DaumPostcode from "react-daum-postcode"
 
 const WriteGuardian = () => {
-  const [modalState, setModalState] = useState<boolean>(false)
-  const { parentInfo, setParentInfo, getParentInfo } = useGuardian()
+  const {
+    parentInfo,
+    setParentInfo,
+    getParentInfo,
+    relationChangeHandler,
+    onCompletePost,
+    modalState,
+    setModalState,
+  } = useGuardian()
 
   const { browserWidth } = useGetBrWidth()
-
-  const relationChangeHandler = (e: any) => {
-    setParentInfo((prev) => {
-      return { ...prev, relation: e.target.innerText }
-    })
-  }
 
   useEffect(() => {
     getParentInfo()
@@ -33,25 +34,15 @@ const WriteGuardian = () => {
     width: "400px",
   }
 
-  const onCompletePost = (data: any) => {
-    setModalState(false)
-    setParentInfo((prev) => {
-      return { ...prev, streetAddress: data.address }
-    })
-    setParentInfo((prev) => {
-      return { ...prev, zipCode: data.zonecode }
-    })
-  } // onCompletePost 함수
-
   return (
     <section>
       {modalState && (
-        <S.DaumPopUpWrapper onClick={() => setModalState(false)}>
+        <S.DaumModalWrapper onClick={() => setModalState(false)}>
           <DaumPostcode
             style={postCodeStyle}
             onComplete={onCompletePost}
           ></DaumPostcode>
-        </S.DaumPopUpWrapper>
+        </S.DaumModalWrapper>
       )}
       <Card>
         <InputWrapper>

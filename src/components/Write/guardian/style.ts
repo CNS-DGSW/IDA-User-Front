@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const GuardianSection = styled.section``
 
-export const DaumPopUpWrapper = styled.div`
+export const DaumModalWrapper = styled.div`
   position: fixed;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.1);
