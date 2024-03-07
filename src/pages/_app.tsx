@@ -23,6 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
       document.body.removeChild(rootModal)
     }
   }, [])
+
+export default function App({ Component, pageProps }: AppProps) {
+  const theme = useCNSThemeing("LIGHT")
   const queryClient = new QueryClient()
 
   return (
