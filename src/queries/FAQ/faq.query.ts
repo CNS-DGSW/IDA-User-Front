@@ -2,7 +2,7 @@ import { type UseQueryOptions, useQuery } from "react-query"
 import FAQrepositoryImpl from "@/repository/FAQ/faq.repositoryImpl"
 import type { FAQListType } from "@/types/FAQ/faq.type"
 import type { AxiosError } from "axios"
-import type { CommonIdParam } from "@/repository/common.param"
+import type { CommonIdParamType } from "@/types/common.param"
 import { QUERY_KEYS } from "@/queries/queryKey"
 
 export const useGetFAQquestionListQuery = (
@@ -23,7 +23,7 @@ export const useGetFAQquestionListQuery = (
     },
   )
 export const useGetFAQanswerListQuery = (
-  { id }: CommonIdParam,
+  { id }: CommonIdParamType,
   options?: Omit<
     UseQueryOptions<FAQListType, AxiosError, FAQListType, string[]>,
     "queryKey"
