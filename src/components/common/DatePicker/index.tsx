@@ -4,13 +4,18 @@ import * as S from "./style"
 interface CustomDatePickerProps {
   value?: string
   onChange?: (event: any) => void
+  disabled?: boolean
 }
 
-const CustomDatePicker = ({ value, onChange }: CustomDatePickerProps) => {
+const CustomDatePicker = ({
+  value,
+  onChange,
+  disabled,
+}: CustomDatePickerProps) => {
   return (
     <DatePicker
       // onChange={(e) => console.log("dfdf", e)}
-      onChange={onChange}
+      onChange={disabled ? () => {} : onChange}
       value={value}
       render={(value, openCalendar) => {
         return (
