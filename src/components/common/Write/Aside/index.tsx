@@ -3,9 +3,9 @@ import Button from "../../Button"
 import { usePageContext } from "@/components/common/Write/PageProvider"
 import * as S from "./style"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
-import usePersonal from "@/components/Write/personal/usePersonal"
 import useGuardian from "@/components/Write/guardian/useGuardian"
 import useIdPhoto from "@/components/Write/idPhoto/useIdPhoto"
+import usePersonal from "@/hooks/Write/usePersonal"
 
 const MobileButtonStyle: CSSProperties = {
   paddingTop: "0.875rem",
