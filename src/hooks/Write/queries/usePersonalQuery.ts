@@ -13,4 +13,4 @@ export const useGetPersonalInfo = () =>
 export const usePutPersonalInfo = (
   updateInfo: PersonalInfo,
 ): UseMutationResult =>
-  useMutation({ mutationFn: () => putPersonalInfo(updateInfo) })
+  useMutation({ mutationFn: async () => await putPersonalInfo(updateInfo) })

@@ -1,4 +1,4 @@
-import { PersonalInfo } from "@/types/Write/write"
+import { type PersonalInfo } from "@/types/Write/write"
 import { IDAcustomAxios } from "@/util/CustomAxios/customAxios"
 
 export const getPersonalInfo = async () => {
