@@ -1,5 +1,5 @@
 import { atom } from "recoil"
-import type * as T from "./types"
+import type * as T from "@/types/Write/write"
 
 export const pageAtom = atom<number>({
   key: "pageAtom",
