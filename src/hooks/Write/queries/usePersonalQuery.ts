@@ -1,12 +1,6 @@
 import { getPersonalInfo, putPersonalInfo } from "@/apis/personal"
-import { PersonalInfo } from "@/types/Write/write"
-import { AxiosError } from "axios"
-import {
-  UseMutationResult,
-  UseQueryResult,
-  useMutation,
-  useQuery,
-} from "react-query"
+import { type PersonalInfo } from "@/types/Write/write"
+import { type UseMutationResult, useMutation, useQuery } from "react-query"
 
 export const useGetPersonalInfo = () =>
   useQuery("/applicant/info", getPersonalInfo, {
