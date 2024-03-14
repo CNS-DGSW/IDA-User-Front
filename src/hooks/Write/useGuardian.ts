@@ -13,23 +13,16 @@ const useGuardian = () => {
 
   const relationChangeHandler = (e: MouseEvent) => {
     const target = e.target as HTMLLIElement
-    setParentInfo((prev) => {
-      return {
-        ...prev,
-        relation:
-          target.textContent !== null ? target.textContent : "추가 안함",
-      }
-    })
+    setParentInfo((prev) => ({
+      ...prev,
+      relation: target.textContent !== null ? target.textContent : "추가 안함",
+    }))
   }
 
   const onCompletePost = (data: any) => {
     setModalState(false)
-    setParentInfo((prev) => {
-      return { ...prev, streetAddress: data.address }
-    })
-    setParentInfo((prev) => {
-      return { ...prev, zipCode: data.zonecode }
-    })
+    setParentInfo((prev) => ({ ...prev, streetAddress: data.address }))
+    setParentInfo((prev) => ({ ...prev, zipCode: data.zonecode }))
   }
 
   const { isLoading, isError, data } = useGetGuardianInfo()
