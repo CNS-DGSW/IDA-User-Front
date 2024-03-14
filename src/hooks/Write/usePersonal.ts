@@ -13,6 +13,7 @@ const usePersonal = () => {
   const {
     data: putData,
     isLoading: putLoading,
+    isError: putError,
     mutateAsync,
   } = usePutPersonalInfo(userInfo)
 
@@ -33,6 +34,7 @@ const usePersonal = () => {
     data,
     putData,
     putLoading,
+    putError,
     fixUserInfo,
   }
 }
