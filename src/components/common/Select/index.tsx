@@ -22,6 +22,7 @@ export interface SelectProps {
   direction?: boolean
   listFontSize?: string
   moblieIconSize?: string
+  disabled?: boolean
 }
 
 const Select = ({
@@ -34,6 +35,7 @@ const Select = ({
   colors,
   direction = true,
   listFontSize,
+  disabled,
   moblieIconSize,
 }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -48,7 +50,7 @@ const Select = ({
 
   return (
     <SelectContainer
-      onClick={revertIsOpen}
+      onClick={disabled ? () => {} : revertIsOpen}
       ref={selectRef}
       width={width}
       style={style}
