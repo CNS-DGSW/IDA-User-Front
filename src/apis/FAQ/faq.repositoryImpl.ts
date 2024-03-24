@@ -1,7 +1,7 @@
 import { IDAcustomAxios } from "@/util/CustomAxios/customAxios"
 import type { FAQListType } from "@/types/FAQ/faq.type"
 import type { CommonIdParamType } from "../../types/common.param"
-import type { FAQrepositoryType } from "../../types/FAQ/faq.repositoryType"
+import type { FAQrepositoryType } from "../../types/Queries/FAQ/faq.repositoryType"
 
 class FAQrepositoryImpl implements FAQrepositoryType {
   public async getFAQquestionList(): Promise<FAQListType> {
