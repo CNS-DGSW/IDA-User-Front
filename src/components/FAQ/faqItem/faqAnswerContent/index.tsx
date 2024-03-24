@@ -1,10 +1,10 @@
 import React from "react"
 import * as S from "./style"
 import type { FAQanswerPropsType } from "@/types/FAQ/faq.type"
-import { useFAQServerInteraction } from "@/hooks/FAQ/useFAQServerInteraction"
+import { useFAQquery } from "@/hooks/FAQ/useFAQquery"
 
 const FAQanswerContent: React.FC<FAQanswerPropsType> = ({ id, isActive }) => {
-  const { getFAQAnswerListDataById } = useFAQServerInteraction()
+  const { getFAQAnswerListDataById } = useFAQquery()
 
   const { faqAnswerListData, faqAnswerListIsLoading, faqAnswerListIsError } =
     getFAQAnswerListDataById(id)

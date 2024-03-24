@@ -10,8 +10,8 @@ export const useGetFAQquestionListQuery = (
     UseQueryOptions<FAQListType, AxiosError, FAQListType, string>,
     "queryKey"
   >,
-) =>
-  useQuery(
+) => {
+  return useQuery(
     QUERY_KEYS.FAQ.getFAQquestionList,
     FAQrepositoryImpl.getFAQquestionList,
     {
@@ -22,6 +22,8 @@ export const useGetFAQquestionListQuery = (
       refetchOnWindowFocus: false,
     },
   )
+}
+
 export const useGetFAQanswerListQuery = (
   { id }: CommonIdParamType,
   options?: Omit<
@@ -41,4 +43,32 @@ export const useGetFAQanswerListQuery = (
       refetchOnWindowFocus: false,
     },
   )
+}
+
+export const useFAQquery = () => {
+  const {
+    data: faqQuestionListData,
+    isLoading: faqQuestionListIsLoading,
+    isError: faqQuestionListIsError,
+  } = useGetFAQquestionListQuery()
+
+  const getFAQAnswerListDataById = (id: number) => {
+    const {
+      data: faqAnswerListData,
+      isLoading: faqAnswerListIsLoading,
+      isError: faqAnswerListIsError,
+    } = useGetFAQanswerListQuery({ id: id.toString() })
+    return {
+      faqAnswerListData,
+      faqAnswerListIsLoading,
+      faqAnswerListIsError,
+    }
+  }
+
+  return {
+    faqQuestionListData,
+    faqQuestionListIsLoading,
+    faqQuestionListIsError,
+    getFAQAnswerListDataById,
+  }
 }

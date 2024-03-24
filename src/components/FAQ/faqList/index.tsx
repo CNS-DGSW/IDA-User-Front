@@ -2,11 +2,11 @@ import React from "react"
 import * as S from "./style"
 import FAQItem from "../faqItem/index"
 import { useFAQ } from "@/hooks/FAQ/useFAQ"
-import { useFAQServerInteraction } from "@/hooks/FAQ/useFAQServerInteraction"
+import { useFAQquery } from "@/hooks/FAQ/useFAQquery"
 
 const FAQList = () => {
   const { activeIndex, toggleFAQ } = useFAQ()
-  const { faqQuestionListData } = useFAQServerInteraction()
+  const { faqQuestionListData } = useFAQquery()
   return (
     <S.FAQmainContentContainer>
       {Array.isArray(faqQuestionListData) &&
