@@ -1,9 +1,9 @@
 import { type UseQueryOptions, useQuery } from "react-query"
 import FAQrepositoryImpl from "@/apis/FAQ/faq.repositoryImpl"
+import { QUERY_KEYS } from "@/queries/queryKey"
 import type { FAQListType } from "@/types/FAQ/faq.type"
 import type { AxiosError } from "axios"
 import type { CommonIdParamType } from "@/types/common.param"
-import { QUERY_KEYS } from "@/queries/queryKey"
 
 export const useGetFAQquestionListQuery = (
   options?: Omit<
