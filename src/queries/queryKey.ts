@@ -3,4 +3,8 @@ export const QUERY_KEYS = Object.freeze({
     getFAQquestionList: "/question",
     getFAQanswerList: (id: string) => ["/question/id", id],
   },
+  Write: {
+    getPersonalInfo: "/applicant/info",
+    getGuardianInfo: "/applicant/parent",
+  },
 })
