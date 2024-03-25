@@ -9,7 +9,7 @@ const CommonContentStyles = styled.div`
 `
 
 export const FAQmainContentContainer = styled.div`
-  margin: 3rem 0 8% 1%;
+  margin: 3rem 0 6rem 1%;
   width: 100%;
   height: 100%;
   @media screen and (max-width: 500px) {

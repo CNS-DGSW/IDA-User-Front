@@ -1,15 +1,24 @@
 import React from "react"
 import * as S from "./style"
-import type { FAQListType } from "@/types/FAQ/faq.type"
-import FAQListDummyData from "@/constants/FAQ/dummyData/index"
 import FAQItem from "../faqItem/index"
+import { useFAQ } from "@/hooks/FAQ/useFAQ"
+import { useFAQquery } from "@/hooks/FAQ/useFAQquery"
 
 const FAQList = () => {
+  const { activeIndex, toggleFAQ } = useFAQ()
+  const { faqQuestionListData } = useFAQquery()
   return (
     <S.FAQmainContentContainer>
-      {FAQListDummyData.map((FAQ: FAQListType) => (
-        <FAQItem key={FAQ.id} {...FAQ} />
-      ))}
+      {Array.isArray(faqQuestionListData) &&
+        faqQuestionListData.map((faq) => (
+          <FAQItem
+            key={faq.id}
+            id={faq.id}
+            title={faq.title}
+            isActive={activeIndex === faq.id}
+            toggleFAQ={toggleFAQ}
+          />
+        ))}
     </S.FAQmainContentContainer>
   )
 }
