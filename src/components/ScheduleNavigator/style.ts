@@ -10,7 +10,7 @@ export const ScheduleNavigatorLayout = styled.div`
 `
 
 export const ScheduleItemBox = styled.div<{ isSelected?: boolean }>`
-  width: 60px;
+  width: 80px;
   height: 80px;
   align-items: center;
   display: flex;
