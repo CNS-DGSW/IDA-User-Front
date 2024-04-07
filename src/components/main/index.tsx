@@ -11,7 +11,7 @@ const Main = () => {
       <S.MainLayout>
         <Chapter1 />
         <Chapter2 />
-        <Chatbot />
+        {/* <Chatbot /> */}
         <Chapter3 />
         <Footer />
       </S.MainLayout>
