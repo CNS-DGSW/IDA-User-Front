@@ -34,7 +34,10 @@ const ContentsTitleInfo: IContentsTitle[] = [
   },
 ]
 
-const Inform = {
+const Inform: {
+  handlerInfo: IhandlerInfo[]
+  ContentsTitleInfo: IContentsTitle[]
+} = {
   handlerInfo: handlerInfo,
   ContentsTitleInfo: ContentsTitleInfo,
 }
