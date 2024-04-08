@@ -1,4 +1,12 @@
+import { type CSSProperties } from "react"
 import styled from "styled-components"
+
+export const MobileButtonStyle: CSSProperties = {
+  paddingTop: "0.875rem",
+  paddingBottom: "0.875rem",
+  fontSize: "1rem",
+  width: "20rem",
+}
 
 export const AsideBox = styled.aside`
   display: flex;
