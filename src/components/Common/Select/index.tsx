@@ -50,7 +50,7 @@ const Select = ({
 
   return (
     <SelectContainer
-      onClick={disabled ? () => {} : revertIsOpen}
+      onClick={disabled ? undefined : revertIsOpen}
       ref={selectRef}
       width={width}
       style={style}

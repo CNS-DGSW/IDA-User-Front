@@ -15,7 +15,7 @@ const CustomDatePicker = ({
   return (
     <DatePicker
       // onChange={(e) => console.log("dfdf", e)}
-      onChange={disabled ? () => {} : onChange}
+      onChange={disabled ? undefined : onChange}
       value={value}
       render={(value, openCalendar) => {
         return (
