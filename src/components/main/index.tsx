@@ -1,8 +1,9 @@
+import Footer from "../common/Footer"
+import Chapter1 from "./chapter/chapter1/index"
+import Chapter2 from "./chapter/chapter2/index"
+import Chapter3 from "./chapter/chapter3/index"
 import * as S from "./style"
-import Chapter1 from "./chapter/chapter1"
-import Chapter2 from "./chapter/chapter2"
-import Chatbot from "@/components/chatBot"
-import Footer from "@/components/common/Footer/index"
+// import Chatbot from "@/components/ChatBot"
 
 const Main = () => {
   return (
@@ -10,7 +11,8 @@ const Main = () => {
       <S.MainLayout>
         <Chapter1 />
         <Chapter2 />
-        <Chatbot />
+        {/* <Chatbot /> */}
+        <Chapter3 />
         <Footer />
       </S.MainLayout>
     </>

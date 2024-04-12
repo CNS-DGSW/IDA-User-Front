@@ -11,9 +11,16 @@ export const Chapter2Layout = styled.div`
 `
 
 export const ScheduleSection = styled.section`
-  width: 100vw;
+  width: 800px;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+`
+
+export const ScheduleSectionRow = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 `

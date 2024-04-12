@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { formatDateTime } from "@/util/formatDateTime"
 import { useInterval } from "./common/useInterval"
 
-export const useSchedule = ({ name, date, date: { end } }: ScheduleInfo) => {
+export const useSchedule = ({ date, date: { end } }: ScheduleInfo) => {
   const targetDateTime = end.date + "T" + end.time
   const { totalDays, totalTime } = calculateDday(targetDateTime)
 
