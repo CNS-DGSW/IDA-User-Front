@@ -1,4 +1,4 @@
-import useSignup from "@/hooks/signup/useSignup"
+import useSignup from "@/hooks/SignUp/useSignUp"
 import * as S from "./style"
 import Input from "../common/Input"
 import Button from "../common/Button"
@@ -7,17 +7,14 @@ import type { SubmitHandler } from "react-hook-form"
 import Checkbox from "../common/Checkbox"
 import Link from "next/link"
 import { validation } from "@/constants/validation"
-import type { SignUpFormData, SignUpPostData } from "./type"
+import type { SignUpFormData } from "./type"
 import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
-import { useMutation } from "@tanstack/react-query"
-import { IDAcustomAxios } from "@/util/CustomAxios/customAxios"
-
-const submitSignup = async (data: SignUpPostData) => {
-  return await IDAcustomAxios.post(`/member/signUp`, data)
-}
+import { usePostSignInQuery } from "@/hooks/SignIn/useSignInQuery"
 
 const SignUp = () => {
+  const signUpMutation = usePostSignInQuery()
+
   const {
     agreements,
     checkAllChecked,
@@ -38,13 +35,11 @@ const SignUp = () => {
     required: "약관을 동의하여 주세요.",
   })
 
-  const submitSignupMutation = useMutation({
-    mutationFn: submitSignup,
-  })
-
   const onSubmit: SubmitHandler<SignUpFormData> = async (data) => {
-    const { email, password } = data
-    submitSignupMutation.mutate({ email, password })
+    signUpMutation.mutate({ 
+      email : data.email, 
+      password : data.password
+    })
   }
 
   return (
