@@ -17,10 +17,10 @@ const Signin = () => {
     formState: { errors },
   } = useForm<SignInFormData>()
 
-  const onsubmit:SubmitHandler<SignInFormData> = (data) => {
+  const onsubmit: SubmitHandler<SignInFormData> = (data) => {
     signInMutation.mutate({
-      email : data.email,
-      password : data.password
+      email: data.email,
+      password: data.password,
     })
   }
 
