@@ -10,10 +10,10 @@ import { validation } from "@/constants/validation"
 import type { SignUpFormData } from "./type"
 import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
-import { usePostSignInQuery } from "@/hooks/SignIn/useSignInQuery"
+import { usePostSignUpQuery } from "@/hooks/SignUp/useSignUpQuery"
 
 const SignUp = () => {
-  const signUpMutation = usePostSignInQuery()
+  const signUpMutation = usePostSignUpQuery()
 
   const {
     agreements,
@@ -36,9 +36,9 @@ const SignUp = () => {
   })
 
   const onSubmit: SubmitHandler<SignUpFormData> = async (data) => {
-    signUpMutation.mutate({ 
-      email : data.email, 
-      password : data.password
+    signUpMutation.mutate({
+      email: data.email,
+      password: data.password,
     })
   }
 

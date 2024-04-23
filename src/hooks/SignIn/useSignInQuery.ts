@@ -7,9 +7,8 @@ import type { UseMutationOptions } from "react-query"
 export const usePostSignInQuery = () => {
   const router = useRouter()
   return useMutation(
-    async (
-        postSignInPropsData: SignInPropsType,
-    ) => await SignInrepositoryImpl.postSignIn(postSignInPropsData),
+    async (postSignInPropsData: SignInPropsType) =>
+      await SignInrepositoryImpl.postSignIn(postSignInPropsData),
     {
       onSuccess: async (res) => {
         localStorage.setItem("accessToken", res.data.accessToken)

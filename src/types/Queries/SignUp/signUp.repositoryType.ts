@@ -1,5 +1,5 @@
-import type { SignUpPropsType } from "@/types/SignUp/signUp.type";
+import type { SignUpPropsType } from "@/types/SignUp/signUp.type"
 
 export interface SignUprepositoryType {
-    postSignUp: (postPropsData:SignUpPropsType) => void
+  postSignUp: (postPropsData: SignUpPropsType) => void
 }
