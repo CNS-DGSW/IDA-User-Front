@@ -6,10 +6,10 @@ import type { SignInFormData } from "./type"
 import { validation } from "@/constants/validation"
 import ErrorMessage from "../common/ErrorMessage"
 import Link from "next/link"
-import axios from "axios"
+import { usePostSignInQuery } from "@/hooks/SignIn/useSignInQuery"
 
 const Signin = () => {
-  // const [email,setEmail] = useState("이메일을 입력하세요")
+  const signInMutation = usePostSignInQuery()
 
   const {
     control,
@@ -17,22 +17,15 @@ const Signin = () => {
     formState: { errors },
   } = useForm<SignInFormData>()
 
-  const onSubmit: SubmitHandler<SignInFormData> = async (data) => {
-    await axios
-      .post(`http://3.37.167.215:8080/members/login`, data)
-      .then(async (res) => {
-        console.log(res.data.accessToken)
-        // ChangeAccessToken(res.data.accessToken,res.data.expireMillis)
-        alert("로그인 성공")
-      })
-      .catch((err) => {
-        console.error(err)
-      })
-    console.log(data)
+  const onsubmit: SubmitHandler<SignInFormData> = (data) => {
+    signInMutation.mutate({
+      email: data.email,
+      password: data.password,
+    })
   }
 
   return (
-    <S.SigninForm onSubmit={handleSubmit(onSubmit)}>
+    <S.SigninForm onSubmit={handleSubmit(onsubmit)}>
       <S.SigninLayout>
         <Link href="/">
           <S.DGSWLOGO />

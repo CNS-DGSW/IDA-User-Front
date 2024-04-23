@@ -1,4 +1,4 @@
-import useSignup from "@/hooks/signup/useSignup"
+import useSignup from "@/hooks/SignUp/useSignUp"
 import * as S from "./style"
 import Input from "../common/Input"
 import Button from "../common/Button"
@@ -10,8 +10,11 @@ import { validation } from "@/constants/validation"
 import type { SignUpFormData } from "./type"
 import ErrorMessage from "../common/ErrorMessage"
 import { agreementInfo } from "@/constants/agreement"
+import { usePostSignUpQuery } from "@/hooks/SignUp/useSignUpQuery"
 
 const SignUp = () => {
+  const signUpMutation = usePostSignUpQuery()
+
   const {
     agreements,
     checkAllChecked,
@@ -32,12 +35,15 @@ const SignUp = () => {
     required: "약관을 동의하여 주세요.",
   })
 
-  const onsubmit: SubmitHandler<SignUpFormData> = (data) => {
-    console.log(data)
+  const onSubmit: SubmitHandler<SignUpFormData> = async (data) => {
+    signUpMutation.mutate({
+      email: data.email,
+      password: data.password,
+    })
   }
 
   return (
-    <S.SignUpForm onSubmit={handleSubmit(onsubmit)}>
+    <S.SignUpForm onSubmit={handleSubmit(onSubmit)}>
       <S.SignUpLayout>
         <Link href="/">
           <S.SignUpDGSWLogo />
