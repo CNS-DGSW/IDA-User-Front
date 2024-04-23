@@ -1,8 +1,7 @@
 import SignInrepositoryImpl from "@/apis/SignIn/signIn.repositoryImpl"
-import type { SignInPropsType, SignInResType } from "@/types/SignIn/signIn.type"
+import type { SignInPropsType } from "@/types/SignIn/signIn.type"
 import { useRouter } from "next/router"
 import { useMutation } from "react-query"
-import type { UseMutationOptions } from "react-query"
 
 export const usePostSignInQuery = () => {
   const router = useRouter()
