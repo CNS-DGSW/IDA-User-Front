@@ -1,8 +1,8 @@
-import InformPage from "@/components/inform"
+import Inform from "@/components/inform"
 import React from "react"
 
 const inform = () => {
-  return <InformPage />
+  return <Inform />
 }
 
 export default inform
