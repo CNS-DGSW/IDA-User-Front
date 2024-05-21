@@ -1,18 +1,11 @@
-import React, { type CSSProperties } from "react"
+import React from "react"
 import Button from "../../Button"
 import { usePageContext } from "@/components/common/Write/PageProvider"
 import * as S from "./style"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
-import usePersonal from "@/components/Write/personal/usePersonal"
 import useGuardian from "@/components/Write/guardian/useGuardian"
 import useIdPhoto from "@/components/Write/idPhoto/useIdPhoto"
-
-const MobileButtonStyle: CSSProperties = {
-  paddingTop: "0.875rem",
-  paddingBottom: "0.875rem",
-  fontSize: "1rem",
-  width: "20rem",
-}
+import usePersonal from "@/hooks/Write/usePersonal"
 
 /**
  * @todo
@@ -54,7 +47,7 @@ export const Aside = () => {
     <S.AsideBox>
       <Button
         radius={8}
-        style={browserWidth <= 500 ? MobileButtonStyle : undefined}
+        style={browserWidth <= 500 ? S.MobileButtonStyle : undefined}
         clickEvent={checkCurrentPageSave}
       >
         <S.ButtonFontBox>원서 저장</S.ButtonFontBox>
@@ -65,7 +58,7 @@ export const Aside = () => {
         style={
           browserWidth <= 500
             ? {
-                ...MobileButtonStyle,
+                ...S.MobileButtonStyle,
                 backgroundColor: "#F8FAFD",
                 color: "#8B939C",
               }
@@ -81,7 +74,7 @@ export const Aside = () => {
           style={
             browserWidth <= 500
               ? {
-                  ...MobileButtonStyle,
+                  ...S.MobileButtonStyle,
                   backgroundColor: "#F8FAFD",
                   color: "#8B939C",
                 }
@@ -96,7 +89,7 @@ export const Aside = () => {
         radius={8}
         color={currentPage < 7 ? "second" : "third"}
         clickEvent={moveNextPage}
-        style={browserWidth <= 500 ? MobileButtonStyle : undefined}
+        style={browserWidth <= 500 ? S.MobileButtonStyle : undefined}
       >
         <S.ButtonFontBox>
           {currentPage < 7 ? "다음" : "원서 최종 제출"}
@@ -110,7 +103,7 @@ export const Aside = () => {
           style={
             browserWidth <= 500
               ? {
-                  ...MobileButtonStyle,
+                  ...S.MobileButtonStyle,
                   backgroundColor: "#F8FAFD",
                   color: "#8B939C",
                 }
