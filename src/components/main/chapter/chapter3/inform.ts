@@ -38,8 +38,8 @@ const Inform: {
   handlerInfo: IhandlerInfo[]
   ContentsTitleInfo: IContentsTitle[]
 } = {
-  handlerInfo: handlerInfo,
-  ContentsTitleInfo: ContentsTitleInfo,
+  handlerInfo,
+  ContentsTitleInfo,
 }
 
 export default Inform

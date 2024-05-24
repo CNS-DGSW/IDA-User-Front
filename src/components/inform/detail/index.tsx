@@ -8,10 +8,10 @@ import { useInformQuery } from "@/hooks/Inform/useInformQuery"
 
 const InformDetailPage = () => {
   const router = useRouter()
-  const id:string = (router.query.id ?? "").toString()
+  const id: string = (router.query.id ?? "").toString()
 
-  const {getInformById} = useInformQuery()
-  const {informGetData} = getInformById(id)
+  const { getInformById } = useInformQuery()
+  const { informGetData } = getInformById(id)
 
   return (
     <form>
@@ -36,11 +36,14 @@ const InformDetailPage = () => {
                 <InformDateIcon />
               </S.InformDetailDateIconBox>
               <S.InformDetailDateContextParagraph>
-                {informGetData?.createDate.toString().slice(0,10)} {informGetData?.createDate.toString().slice(11,19)}
+                {informGetData?.createDate.toString().slice(0, 10)}{" "}
+                {informGetData?.createDate.toString().slice(11, 19)}
               </S.InformDetailDateContextParagraph>
             </S.InformDetailSubTitleRow>
           </S.InformDetailTitleRow>
-          <S.InformDetailContextParagraph dangerouslySetInnerHTML={{__html:informGetData?.content ?? ""}}/>
+          <S.InformDetailContextParagraph
+            dangerouslySetInnerHTML={{ __html: informGetData?.content ?? "" }}
+          />
 
           {(informGetData?.fileResponse ?? []).length > 0 && (
             <S.AttachedfileLayout>
@@ -54,7 +57,9 @@ const InformDetailPage = () => {
                   >
                     <S.AttachedfileLeftSideBox>
                       <S.FolderIcon />
-                      <S.AttachedfileBoxText>{file.originalName}</S.AttachedfileBoxText>
+                      <S.AttachedfileBoxText>
+                        {file.originalName}
+                      </S.AttachedfileBoxText>
                     </S.AttachedfileLeftSideBox>
                   </S.AttachedfileLink>
                 ))}

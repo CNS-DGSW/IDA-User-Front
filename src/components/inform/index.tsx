@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import * as S from "./style"
 import InformContents from "./listbox"
-import type { IInformContentsProps } from "./type"
 import InformIcon from "@/assets/img/Icon/informIcon.svg"
-import InformData from "./inform.dummy.json"
 import { useInformQuery } from "@/hooks/Inform/useInformQuery"
 
 const Inform = () => {
@@ -13,7 +11,7 @@ const Inform = () => {
   //   setInformData([...dummyData])
   // }, [])
 
-  const {getInformListData} = useInformQuery()
+  const { getInformListData } = useInformQuery()
 
   return (
     <S.MainComponentLayout>

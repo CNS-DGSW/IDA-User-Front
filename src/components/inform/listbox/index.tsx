@@ -22,7 +22,7 @@ const InformContents = (informData: getInformListResType) => {
               <InformDateIcon />
             </S.InformContentsDateIconBox>
             <S.InformContentsDateContextParagraph>
-              {(informData.createDate).toString().slice(0,10)}
+              {informData.createDate.toString().slice(0, 10)}
             </S.InformContentsDateContextParagraph>
           </S.ContentsRow>
         </S.SubComponentLayout>
