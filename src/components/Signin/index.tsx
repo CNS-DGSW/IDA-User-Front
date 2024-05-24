@@ -87,7 +87,7 @@ const Signin = () => {
         )}
         <S.SubmitBtn type="submit">로그인하기</S.SubmitBtn>
         <S.NavigateList>
-          <S.NavigateLink href="/changepassword">비밀번호 찾기</S.NavigateLink>
+          <S.NavigateLink href="/changePassword">비밀번호 찾기</S.NavigateLink>
           <S.NavigateItem>|</S.NavigateItem>
           <S.NavigateLink href="/signup">회원가입</S.NavigateLink>
         </S.NavigateList>

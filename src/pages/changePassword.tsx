@@ -1,7 +1,7 @@
-import Changepassword from "@/components/ChangePassword"
+import ChangePassword from "@/components/ChangePassword"
 
 const changePassword = () => {
-  return <Changepassword />
+  return <ChangePassword />
 }
 
 export default changePassword
