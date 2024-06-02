@@ -27,20 +27,3 @@ export const FAQtitleText = styled.div`
     margin-top: 5rem;
   }
 `
-
-export const NewQuestionButton = styled.button`
-  float: right;
-  padding: 0.8rem 1rem;
-  margin: -2.8rem 20.8% 0 0;
-  color: white;
-  border-radius: 0.5rem;
-  background: #1485ee;
-  border: none;
-  cursor: pointer;
-
-  color: #fff;
-
-  font-family: Pretendard;
-  font-size: 15px;
-  font-weight: 600;
-`

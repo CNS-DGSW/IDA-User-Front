@@ -7,4 +7,8 @@ export const QUERY_KEYS = Object.freeze({
     getInform: "/notice/id",
     getInformList: "/notice",
   },
+  Write: {
+    getPersonalInfo: "/applicant/info",
+    getGuardianInfo: "/applicant/parent",
+  },
 })
