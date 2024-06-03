@@ -6,8 +6,8 @@ import { GuardianRelation } from "@/constants/Write/guardianRelationConstant"
 import CustomDatePicker from "@/components/common/DatePicker"
 import * as S from "./style"
 import { useEffect } from "react"
+import useGuardian from "@/hooks/Write/useGuardian"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
-import useGuardian from "./useGuardian"
 import { formatDate } from "@/util/formatDate"
 import DaumPostCode from "@/components/common/DaumPostCode/DaumPostCode"
 
@@ -16,7 +16,7 @@ const WriteGuardian = () => {
     parentInfo,
     setParentInfo,
     isLoading,
-    error,
+    isError,
     data,
     relationChangeHandler,
     onCompletePost,
@@ -25,9 +25,6 @@ const WriteGuardian = () => {
   } = useGuardian()
 
   const { browserWidth } = useGetBrWidth()
-
-  if (isLoading) return <div>Loading!!</div>
-  if (error) return <div>Error!!</div>
 
   useEffect(() => {
     setParentInfo({ ...data })
@@ -46,6 +43,7 @@ const WriteGuardian = () => {
             <Input
               type="text"
               width={browserWidth <= 500 ? 239 : 310}
+              disabled={isLoading || isError}
               value={parentInfo.name}
               changeEvent={(event) =>
                 setParentInfo((prev) => {
@@ -67,6 +65,7 @@ const WriteGuardian = () => {
               }
               // width={310}
               changeEvent={(e) => relationChangeHandler(e)}
+              disabled={isLoading || isError}
               value={parentInfo.relation}
             />
           </InputWrapper>
@@ -81,6 +80,7 @@ const WriteGuardian = () => {
           <InputWrapper title="생년월일" style={{ position: "relative" }}>
             <Input
               type="text"
+              disabled={isLoading || isError}
               value={parentInfo.birth}
               changeEvent={(event) =>
                 setParentInfo((prev) => {
@@ -92,6 +92,7 @@ const WriteGuardian = () => {
             <S.CalanderImgBox>
               <CustomDatePicker
                 value={parentInfo.birth}
+                disabled={isLoading || isError}
                 onChange={(event) =>
                   setParentInfo((prev) => {
                     return { ...prev, birth: formatDate(event.toDate()) }
@@ -107,6 +108,7 @@ const WriteGuardian = () => {
             <Input
               type="tel"
               width={browserWidth <= 500 ? 239 : 310}
+              disabled={isLoading || isError}
               value={parentInfo.telephone}
               changeEvent={(event) =>
                 setParentInfo((prev) => {
@@ -128,6 +130,7 @@ const WriteGuardian = () => {
             onClick={() => setModalState(true)}
             type="text"
             width={browserWidth <= 500 ? 239 : 650}
+            disabled={isLoading || isError}
             value={parentInfo.streetAddress}
             changeEvent={(event) =>
               setParentInfo((prev) => {
@@ -151,6 +154,7 @@ const WriteGuardian = () => {
           <Input
             type="text"
             width={browserWidth <= 500 ? 239 : 650}
+            disabled={isLoading || isError}
             value={parentInfo.detailAddress}
             changeEvent={(event) =>
               setParentInfo((prev) => {
