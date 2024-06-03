@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import DGSW from "@/assets/DGSWBlue.svg"
+import DGSW from "@/assets/Img/logo/dgswBlue.svg"
 import Link from "next/link"
-import SuccessedEmailAuth from "@/assets/SuccessedEmailAuthIcon.svg"
+import SuccessedEmailAuth from "@/assets/Img/icon/successedEmailAuthIcon.svg"
 
 export const ChangePasswordForm = styled.form``
 
