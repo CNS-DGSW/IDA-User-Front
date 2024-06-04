@@ -1,36 +1,17 @@
-import React, { useState } from "react"
+import React from "react"
 import * as S from "./style"
-import type { IInformContentsProps } from "../type"
 import InformDateIcon from "@/assets/img/Icon/informDateIcon.svg"
 import InformIcon from "@/assets/img/Icon/informIcon.svg"
-import InformData from "../inform.dummy.json"
 import Link from "next/link"
 import { useRouter } from "next/router"
-
-const AttachFileTitleList = [
-  "2024 신입생 원서접수 방법 안내.pdf",
-  "아무튼 이름이 엄청 긴 무언가를 안내하는 첨부파일이라는 것입니다.pdf",
-  "3번 게시글",
-]
+import { useInformQuery } from "@/hooks/Inform/useInformQuery"
 
 const InformDetailPage = () => {
-  // setIsAttachFile 사용하지 않았다고 오류나서 막아두었습니다
-  // const [isAttachFile, setIsAttachFile] = useState<boolean>(true)
-  const isAttachFile = true
-
   const router = useRouter()
-  const [informData] = useState<IInformContentsProps>(
-    InformData.inform[Number(router.query.id)],
-  )
+  const id: string = (router.query.id ?? "").toString()
 
-  if (informData === undefined) {
-    return (
-      <>
-        데이터를 가져오는 중입니다 새로고침 했을 때 데이터 못 가져오는 데 서버
-        연결하고 로직 짜면서 해결하겠습니다
-      </>
-    )
-  }
+  const { getInformById } = useInformQuery()
+  const { informGetData } = getInformById(id)
 
   return (
     <form>
@@ -42,11 +23,11 @@ const InformDetailPage = () => {
           <S.InformDetailTitleRow>
             <S.InformDetailSubTitleRow>
               <S.InformDetailTitleParagraph>
-                {informData?.title}
+                {informGetData?.title}
               </S.InformDetailTitleParagraph>
               <div>
-                <S.ImportantCheckBox isImportant={informData?.important}>
-                  {informData?.important ? "주요공지" : "일반공지"}
+                <S.ImportantCheckBox isImportant={informGetData?.isMajor}>
+                  {informGetData?.isMajor ? "주요공지" : "일반공지"}
                 </S.ImportantCheckBox>
               </div>
             </S.InformDetailSubTitleRow>
@@ -55,25 +36,32 @@ const InformDetailPage = () => {
                 <InformDateIcon />
               </S.InformDetailDateIconBox>
               <S.InformDetailDateContextParagraph>
-                {informData?.date}
+                {informGetData?.createDate.toString().slice(0, 10)}{" "}
+                {informGetData?.createDate.toString().slice(11, 19)}
               </S.InformDetailDateContextParagraph>
             </S.InformDetailSubTitleRow>
           </S.InformDetailTitleRow>
-          <S.InformDetailContextParagraph>
-            {informData?.context}
-          </S.InformDetailContextParagraph>
+          <S.InformDetailContextParagraph
+            dangerouslySetInnerHTML={{ __html: informGetData?.content ?? "" }}
+          />
 
-          {isAttachFile && (
+          {(informGetData?.fileResponse ?? []).length > 0 && (
             <S.AttachedfileLayout>
               <S.AttachedfileBoxWrapper>
                 <S.AttachedfileTitle>첨부 파일</S.AttachedfileTitle>
-                {AttachFileTitleList.map((title, idx) => (
-                  <S.AttachedfileBox key={title}>
+                {informGetData?.fileResponse.map((file) => (
+                  <S.AttachedfileLink
+                    key={file.originalName}
+                    target="_blank"
+                    href={file.filePath}
+                  >
                     <S.AttachedfileLeftSideBox>
                       <S.FolderIcon />
-                      <S.AttachedfileBoxText>{title}</S.AttachedfileBoxText>
+                      <S.AttachedfileBoxText>
+                        {file.originalName}
+                      </S.AttachedfileBoxText>
                     </S.AttachedfileLeftSideBox>
-                  </S.AttachedfileBox>
+                  </S.AttachedfileLink>
                 ))}
               </S.AttachedfileBoxWrapper>
             </S.AttachedfileLayout>

@@ -1,9 +1,11 @@
 import styled from "styled-components"
 import folderIcon from "@/assets/img/Icon/folderIcon.svg"
+import Link from "next/link"
 
 interface IIsImportant {
-  isImportant: boolean
+  isImportant?: boolean
 }
+
 export const MainComponentLayout = styled.div`
   width: 100%;
   min-height: 70vh;
@@ -40,6 +42,7 @@ export const InformDetailTitleParagraph = styled.p`
     font-size: 6.6vw;
   }
 `
+
 export const InformDetailNotificationIconBox = styled.div`
   width: 2.75rem;
   height: 2.75rem;
@@ -199,7 +202,7 @@ export const AttachedfileBoxWrapper = styled.div`
   }
 `
 
-export const AttachedfileBox = styled.div`
+export const AttachedfileLink = styled(Link)`
   padding: 0 0.7vw;
 
   width: 97%;
@@ -216,6 +219,8 @@ export const AttachedfileBox = styled.div`
   font-family: Pretendard;
   font-size: 0.7vw;
   font-weight: 500;
+
+  cursor: pointer;
 
   @media screen and (max-width: 500px) {
     padding: 0 4.1vw;

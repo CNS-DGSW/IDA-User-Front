@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import * as S from "./style"
 import InformContents from "./listbox"
-import type { IInformContentsProps } from "./type"
 import InformIcon from "@/assets/img/Icon/informIcon.svg"
-import InformData from "./inform.dummy.json"
+import { useInformQuery } from "@/hooks/Inform/useInformQuery"
 
-const InformPage = () => {
-  const [informData, setInformData] = useState<IInformContentsProps[]>([])
-  useEffect(() => {
-    const dummyData: IInformContentsProps[] = [...InformData.inform]
-    setInformData([...dummyData])
-  }, [])
+const Inform = () => {
+  // const [informData, setInformData] = useState<IInformContentsProps[]>([])
+  // useEffect(() => {
+  //   const dummyData: IInformContentsProps[] = [...InformData.inform]
+  //   setInformData([...dummyData])
+  // }, [])
+
+  const { getInformListData } = useInformQuery()
+
   return (
     <S.MainComponentLayout>
       <S.InformContentsCol>
@@ -18,14 +20,15 @@ const InformPage = () => {
           <InformIcon />
         </S.InformNotificationIconBox>
         <S.InformTitleParagraph>공지사항</S.InformTitleParagraph>
-        {informData?.map((EachInformData, index) => (
+        {getInformListData?.map((EachInformData) => (
           <InformContents
-            key={index}
+            key={EachInformData.id}
             title={EachInformData.title}
-            date={EachInformData.date}
-            important={EachInformData.important}
-            context={EachInformData.context}
-            idx={EachInformData.idx}
+            createDate={EachInformData.createDate}
+            isMajor={EachInformData.isMajor}
+            content={EachInformData.content}
+            id={EachInformData.id}
+            fileResponse={EachInformData.fileResponse}
           />
         ))}
       </S.InformContentsCol>
@@ -33,4 +36,4 @@ const InformPage = () => {
   )
 }
 
-export default InformPage
+export default Inform

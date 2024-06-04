@@ -4,6 +4,8 @@ export const MainComponentLayout = styled.div`
   width: 100%;
   height: 100%;
 
+  /* min-height: 70vh; */
+
   @media screen and (max-width: 500px) {
     margin-top: 6.9vw;
     padding-bottom: 18.8vw;
