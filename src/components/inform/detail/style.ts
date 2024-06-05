@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import folderIcon from "@/assets/img/Icon/folderIcon.svg"
+import folderIcon from "@/assets/Img/Icon/folderIcon.svg"
 import Link from "next/link"
 
 interface IIsImportant {

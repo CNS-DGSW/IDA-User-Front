@@ -1,6 +1,6 @@
 import React from "react"
 import * as S from "./style"
-import PaperPlaneIcon from "@/assets/Img/icon/paperPlaneIcon.svg"
+import PaperPlaneIcon from "@/assets/Img/Icon/paperPlaneIcon.svg"
 import type { ChatBotQuestionInputPropsType } from "@/types/ChatBot/chatBot.type"
 
 const ChatBotQuestionInput: React.FC<ChatBotQuestionInputPropsType> = ({

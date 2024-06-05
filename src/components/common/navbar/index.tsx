@@ -1,7 +1,7 @@
 import * as S from "./style"
 import NavbarItem from "./navbarItem"
-import DGSWLogo from "@/assets/img/Logo/dgswLogo.svg"
-import NavBarContentsBtn from "@/assets/img/Icon/navBarContentsBtn.svg"
+import DGSWLogo from "@/assets/Img/Logo/dgswLogo.svg"
+import NavBarContentsBtn from "@/assets/Img/Icon/navBarContentsBtn.svg"
 import { useNavBar } from "@/hooks/useNavBar"
 import { useState } from "react"
 

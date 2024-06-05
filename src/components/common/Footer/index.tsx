@@ -1,9 +1,9 @@
 import React from "react"
 import * as S from "./style"
-import DGSWLogoSVG from "@/assets/img/Logo/dgswLogo_color.svg"
-import CNSLogoPNG from "@/assets/img/Logo/cnsLogo.png"
-import YoutubeSVG from "@/assets/img/Icon/youtube.svg"
-import InstaSVG from "@/assets/img/Icon/instagram.svg"
+import DGSWLogoSVG from "@/assets/Img/Logo/dgswLogo_color.svg"
+import CNSLogoPNG from "@/assets//Img/Logo/cnsLogo.png"
+import YoutubeSVG from "@/assets/Img/Icon/youtube.svg"
+import InstaSVG from "@/assets/Img/Icon/instagram.svg"
 
 const Footer = () => {
   return (

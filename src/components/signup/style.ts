@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import DGSWblueLogo from "@/assets/Img/logo/dgswBlue.svg"
+import DGSWblueLogo from "@/assets/Img/Logo/dgswBlue.svg"
 import Link from "next/link"
 
 export const SignUpLayout = styled.div`

@@ -7,7 +7,7 @@ import {
   SelectContainer,
   SelectIconWrap,
 } from "./style"
-// import selectIcon from "../../../assets/img/Icon/selectIcon.svg"
+// import selectIcon from "../../../assets/Img/Icon/selectIcon.svg"
 import { useOutsideClick } from "@/hooks/useOutsideClick"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
 
