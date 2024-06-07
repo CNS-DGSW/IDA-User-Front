@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import * as S from "./style"
-import ExitIcon from "@/assets/img/Icon/ExitModal.svg"
-import ExitIconMoblie from "@/assets/img/Icon/ExitModalMoblie.svg"
+import ExitIcon from "@/assets/Img/Icon/ExitModal.svg"
+import ExitIconMoblie from "@/assets/Img/Icon/ExitModalMoblie.svg"
 import useScSearchModal from "@/hooks/Write/useScSearchModal"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
 

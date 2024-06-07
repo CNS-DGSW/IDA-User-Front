@@ -1,8 +1,8 @@
 import React from "react"
 import * as S from "./style"
-import MessageIcon from "@/assets/img/Icon/Message.svg"
-import HomeIcon from "@/assets/img/Icon/Home.svg"
-import Notification from "@/assets/img/Icon/Group 115.svg"
+import MessageIcon from "@/assets/Img/Icon/Message.svg"
+import HomeIcon from "@/assets/Img/Icon/Home.svg"
+import Notification from "@/assets/Img/Icon/Group 115.svg"
 
 interface HandlerBoxProps {
   backgroundColor: string

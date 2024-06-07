@@ -2,7 +2,7 @@ import React from "react"
 import * as S from "./style"
 import { useChatBot } from "@/hooks/ChatBot/useChatBot"
 import type { ChatBotwelcomeGreetingContentPropsType } from "@/types/ChatBot/chatBot.type"
-import ChatIcon from "@/assets/Img/icon/chatIcon.svg"
+import ChatIcon from "@/assets/Img/Icon/chatIcon.svg"
 
 const ChatBotWelcomeGreetingContent: React.FC<
   ChatBotwelcomeGreetingContentPropsType

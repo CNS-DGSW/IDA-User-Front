@@ -1,10 +1,10 @@
 import Contents from "./contents"
 import * as S from "./style"
 import type { IContents } from "./type"
-import Interview from "@/assets/img/Icon/schedule/Interview.svg"
-import MessageIcon from "@/assets/img/Icon/schedule/MessageIcon.svg"
-import Notification from "@/assets/img/Icon/schedule/Notification.svg"
-import Register from "@/assets/img/Icon/schedule/Register.svg"
+import Interview from "@/assets/Img/Icon/schedule/Interview.svg"
+import MessageIcon from "@/assets/Img/Icon/schedule/MessageIcon.svg"
+import Notification from "@/assets/Img/Icon/schedule/Notification.svg"
+import Register from "@/assets/Img/Icon/schedule/Register.svg"
 
 const ContentsValue: IContents[] = [
   {

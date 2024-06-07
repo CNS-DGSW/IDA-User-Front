@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import CalanderSVG from "@/assets/img/Icon/calander.svg"
+import CalanderSVG from "@/assets/Img/Icon/calander.svg"
 
 export const DatePickerIconBox = styled.div`
   cursor: pointer;

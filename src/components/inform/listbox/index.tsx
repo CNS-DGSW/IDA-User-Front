@@ -1,6 +1,6 @@
 import React from "react"
 import * as S from "./style"
-import InformDateIcon from "@/assets/img/Icon/informDateIcon.svg"
+import InformDateIcon from "@/assets/Img/Icon/informDateIcon.svg"
 import Link from "next/link"
 import type { getInformListResType } from "@/types/Inform/inform.type"
 

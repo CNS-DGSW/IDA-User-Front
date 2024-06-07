@@ -1,7 +1,7 @@
 import React from "react"
 import * as S from "./style"
 import InformContents from "./listbox"
-import InformIcon from "@/assets/img/Icon/informIcon.svg"
+import InformIcon from "@/assets/Img/Icon/informIcon.svg"
 import { useInformQuery } from "@/hooks/Inform/useInformQuery"
 
 const Inform = () => {

@@ -2,7 +2,7 @@ import React from "react"
 import { createPortal } from "react-dom"
 import * as S from "./style"
 import type { ChatBotModalLayoutPropsType } from "@/types/ChatBot/chatBot.type"
-import ExitChatBotModalIcon from "@/assets/Img/icon/exitChatBotModalIcon.svg"
+import ExitChatBotModalIcon from "@/assets/Img/Icon/exitChatBotModalIcon.svg"
 
 const ChatBotModalLayout: React.FC<ChatBotModalLayoutPropsType> = ({
   modalOpened,

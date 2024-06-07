@@ -8,7 +8,7 @@ import LinkSection from "./linkSection"
 import Gragh from "./gragh"
 import Contact from "./contact"
 import MainFileImage from "@/assets/img/mainFileImage.svg"
-import DownloadIcon from "@/assets/img/Icon/downloadIcon.svg"
+import DownloadIcon from "@/assets/Img/Icon/downloadIcon.svg"
 
 const Chapter3 = () => {
   return (
