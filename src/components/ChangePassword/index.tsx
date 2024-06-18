@@ -1,21 +1,19 @@
-// import { useState } from "react"
+import { useState } from "react"
 import { Controller, useForm } from "react-hook-form"
-import type { SubmitHandler } from "react-hook-form"
-import Input from "../common/Input"
+import Input from "../Common/Input"
 import * as S from "./style"
 import type { ChangePasswordFormData } from "./type"
 import { validation } from "@/constants/validation"
-import ErrorMessage from "../common/ErrorMessage"
+import ErrorMessage from "../Common/ErrorMessage"
 import Button from "../common/Button"
+import { useChangePasswordQuery } from "@/hooks/ChangePassword/useChangePasswordQuery"
+import ChangePasswordRepositoryImpl from "@/apis/ChangePassword/ChangePasswordRepositoryImpl"
 
 const ChangePassword = () => {
-  // 'SetIsEmailAuth' is assigned a value but never used  @typescript-eslint/no-unused-vars 에러나서 막아둡니다
-  // const [isEmailAuth, SetIsEmailAuth] = useState(false)
-  const isEmailAuth = false
+  const [isEmailAuth, setIsEmailAuth] = useState(false)
+  const repository = ChangePasswordRepositoryImpl
 
-  // const EmailAuthChange = () => {
-  //   SetIsEmailAuth(!isEmailAuth)
-  // }
+  const { onsubmit, handleEmailAuth } = useChangePasswordQuery()
 
   const {
     control,
@@ -24,12 +22,10 @@ const ChangePassword = () => {
     getValues,
   } = useForm<ChangePasswordFormData>()
 
-  const onsubmit: SubmitHandler<ChangePasswordFormData> = (data) => {
-    console.log(data)
-  }
-
   return (
-    <S.ChangePasswordForm onSubmit={handleSubmit(onsubmit)}>
+    <S.ChangePasswordForm
+      onSubmit={handleSubmit((data) => onsubmit(data, isEmailAuth, repository))}
+    >
       <S.ChangePasswordLayout>
         <S.ContentBox>
           <S.DGSWLOGO />
@@ -49,13 +45,19 @@ const ChangePassword = () => {
                   type="text"
                   placeholder="이메일을 입력하세요"
                   width={294}
-                  // customStyle={{ height: "56px", paddingLeft: "28px" }}
                   isError={!!errors.email}
                   {...field}
                 />
               )}
             />
-            <Button type="button" radius={14} size="sm">
+            <Button
+              type="button"
+              radius={14}
+              size="sm"
+              onClick={() =>
+                handleEmailAuth(getValues, setIsEmailAuth, repository)
+              }
+            >
               인증
             </Button>
           </S.EmailRow>
@@ -89,13 +91,7 @@ const ChangePassword = () => {
                 type="password"
                 placeholder="비밀번호를 입력하세요"
                 width={390}
-                customStyle={
-                  {
-                    // height: "56px",
-                    // "margin-top": "18px",
-                    // paddingLeft: "28px",
-                  }
-                }
+                customStyle={{}}
                 isError={!!errors.password}
                 {...field}
               />
@@ -122,13 +118,7 @@ const ChangePassword = () => {
                 type="password"
                 placeholder="비밀번호를 다시 입력하세요"
                 width={390}
-                customStyle={
-                  {
-                    // height: "56px",
-                    // "margin-top": "18px",
-                    // paddingLeft: "28px",
-                  }
-                }
+                customStyle={{}}
                 isError={!!errors.passwordRepeat}
                 {...field}
               />
