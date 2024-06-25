@@ -4,7 +4,7 @@ import InputWrapper from "@/components/common/InputWrapper"
 import Textarea from "@/components/common/Textarea"
 import useChange from "@/hooks/useChange"
 import React from "react"
-import { Form } from "../type/style"
+import { Form } from "../AdmissionType/style"
 
 const WriteDocument = () => {
   const [coverLetter, changeCoverLetter] = useChange<HTMLTextAreaElement>()

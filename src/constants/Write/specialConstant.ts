@@ -1,4 +1,4 @@
-import type { SpecialTypeUnion } from "@/components/Write/type/type"
+import type { SpecialTypeUnion } from "@/components/Write/AdmissionType/type"
 
 export const SpecialSelectObject: Record<
   Exclude<SpecialTypeUnion, "마이스터인재전형" | "지역우선전형">,
