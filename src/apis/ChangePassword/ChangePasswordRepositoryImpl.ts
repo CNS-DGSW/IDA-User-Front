@@ -1,8 +1,8 @@
 import { IDAcustomAxios } from "@/util/CustomAxios/customAxios"
 
 export interface ChangePasswordRepository {
-  changePassword(email: string, password: string): Promise<void>
-  sendEmailAuth(email: string): Promise<void>
+  changePassword: (email: string, password: string) => Promise<void>
+  sendEmailAuth: (email: string) => Promise<void>
 }
 
 class ChangePasswordRepositoryImpl implements ChangePasswordRepository {
