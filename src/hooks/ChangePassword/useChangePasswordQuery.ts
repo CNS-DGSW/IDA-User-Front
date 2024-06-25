@@ -1,7 +1,7 @@
 // src/api/useChangePasswordQuery.ts
-import { ChangePasswordRepository } from "@/apis/ChangePassword/ChangePasswordRepositoryImpl"
+// import { ChangePasswordRepository } from "@/apis/ChangePassword/ChangePasswordRepositoryImpl"
 import type { ChangePasswordFormData } from "@/components/ChangePassword/type"
-import { UseFormGetValues } from "react-hook-form"
+import { type UseFormGetValues } from "react-hook-form"
 import ChangePasswordRepositoryImpl from "@/apis/ChangePassword/ChangePasswordRepositoryImpl"
 
 export const useChangePasswordQuery = () => {
