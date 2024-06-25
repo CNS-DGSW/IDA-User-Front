@@ -6,7 +6,7 @@ import type { ChangePasswordFormData } from "./type"
 import { validation } from "@/constants/validation"
 import ErrorMessage from "../Common/ErrorMessage"
 import Button from "../common/Button"
-import { useChangePasswordQuery } from "@/hooks/ChangePassword/useChangePasswordQuery"
+import { useChangePasswordQuery } from "@/hooks/ChangePassword/useChangePassword"
 
 const ChangePassword = () => {
   const [isEmailAuth, setIsEmailAuth] = useState(false)
