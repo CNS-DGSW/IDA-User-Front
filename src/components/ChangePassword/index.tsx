@@ -22,7 +22,7 @@ const ChangePassword = () => {
 
   return (
     <S.ChangePasswordForm
-      onSubmit={handleSubmit((data) => onsubmit(data, isEmailAuth))}
+      onSubmit={async () => handleSubmit((data) => onsubmit(data, isEmailAuth))}
     >
       <S.ChangePasswordLayout>
         <S.ContentBox>
@@ -52,7 +52,7 @@ const ChangePassword = () => {
               type="button"
               radius={14}
               size="sm"
-              onClick={() => handleEmailAuth(getValues, setIsEmailAuth)}
+              onClick={async () => handleEmailAuth(getValues, setIsEmailAuth)}
             >
               인증
             </Button>
