@@ -7,11 +7,9 @@ import { validation } from "@/constants/validation"
 import ErrorMessage from "../Common/ErrorMessage"
 import Button from "../common/Button"
 import { useChangePasswordQuery } from "@/hooks/ChangePassword/useChangePasswordQuery"
-import ChangePasswordRepositoryImpl from "@/apis/ChangePassword/ChangePasswordRepositoryImpl"
 
 const ChangePassword = () => {
   const [isEmailAuth, setIsEmailAuth] = useState(false)
-  const repository = ChangePasswordRepositoryImpl
 
   const { onsubmit, handleEmailAuth } = useChangePasswordQuery()
 
@@ -24,7 +22,7 @@ const ChangePassword = () => {
 
   return (
     <S.ChangePasswordForm
-      onSubmit={handleSubmit((data) => onsubmit(data, isEmailAuth, repository))}
+      onSubmit={handleSubmit((data) => onsubmit(data, isEmailAuth))}
     >
       <S.ChangePasswordLayout>
         <S.ContentBox>
@@ -54,9 +52,7 @@ const ChangePassword = () => {
               type="button"
               radius={14}
               size="sm"
-              onClick={() =>
-                handleEmailAuth(getValues, setIsEmailAuth, repository)
-              }
+              onClick={() => handleEmailAuth(getValues, setIsEmailAuth)}
             >
               인증
             </Button>

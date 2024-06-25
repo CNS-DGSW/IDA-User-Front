@@ -2,12 +2,13 @@
 import { ChangePasswordRepository } from "@/apis/ChangePassword/ChangePasswordRepositoryImpl"
 import type { ChangePasswordFormData } from "@/components/ChangePassword/type"
 import { UseFormGetValues } from "react-hook-form"
+import ChangePasswordRepositoryImpl from "@/apis/ChangePassword/ChangePasswordRepositoryImpl"
 
 export const useChangePasswordQuery = () => {
+  const repository = ChangePasswordRepositoryImpl
   const onsubmit = async (
     data: ChangePasswordFormData,
     isEmailAuth: boolean,
-    repository: ChangePasswordRepository,
   ): Promise<void> => {
     if (!isEmailAuth) {
       alert("이메일 인증을 완료해주세요.")
@@ -25,7 +26,6 @@ export const useChangePasswordQuery = () => {
   const handleEmailAuth = async (
     getValues: UseFormGetValues<ChangePasswordFormData>,
     setIsEmailAuth: (value: boolean) => void,
-    repository: ChangePasswordRepository,
   ): Promise<void> => {
     const email = getValues("email")
     if (!email) {
