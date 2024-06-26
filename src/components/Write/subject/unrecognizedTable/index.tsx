@@ -26,46 +26,46 @@ const UnrecognizedTable = () => {
         <Table.Tr>
           <Table.Td>1학년</Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
         </Table.Tr>
         <Table.Tr>
           <Table.Td>2학년</Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
         </Table.Tr>
         <Table.Tr>
           <Table.Td>3학년</Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
           <Table.Td width="135">
-            <Input type="text" customStyle={UnrecognizedTdStyle} />
+            <Input type="number" customStyle={UnrecognizedTdStyle} />
           </Table.Td>
         </Table.Tr>
       </Table.Body>
