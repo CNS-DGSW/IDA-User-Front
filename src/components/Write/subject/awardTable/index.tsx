@@ -1,14 +1,15 @@
-import Checkbox from "@/components/Common/Checkbox";
-import Input from "@/components/Common/Input";
-import { Table } from "@/components/Common/table";
-import React, { useState, ChangeEvent } from "react";
+import Checkbox from "@/components/Common/Checkbox"
+import Input from "@/components/Common/Input"
+import { Table } from "@/components/Common/table"
+import React, { useState } from "react"
+import type { ChangeEvent } from "react"
 
 interface SemesterThProps {
-  text: string;
+  text: string
 }
 
 interface GradeHeaderProps {
-  grade: string;
+  grade: string
 }
 
 const SemesterTh: React.FC<SemesterThProps> = ({ text }) => (
@@ -21,7 +22,7 @@ const SemesterTh: React.FC<SemesterThProps> = ({ text }) => (
   >
     {text}
   </Table.Th>
-);
+)
 
 const GradeHeader: React.FC<GradeHeaderProps> = ({ grade }) => (
   <Table.Th width="118" colspan={2}>
@@ -35,21 +36,23 @@ const GradeHeader: React.FC<GradeHeaderProps> = ({ grade }) => (
       <SemesterTh text="2학기" />
     </Table.Tr>
   </Table.Th>
-);
+)
 
 const AwardTable: React.FC = () => {
-  const [checkedStates, setCheckedStates] = useState<boolean[]>(Array(6).fill(false));
-  const [awardInput, setAwardInput] = useState<string>("");
+  const [checkedStates, setCheckedStates] = useState<boolean[]>(
+    Array(6).fill(false),
+  )
+  const [awardInput, setAwardInput] = useState<string>("")
 
   const handleCheckboxChange = (index: number) => {
-    const updatedStates = [...checkedStates];
-    updatedStates[index] = !updatedStates[index];
-    setCheckedStates(updatedStates);
-  };
+    const updatedStates = [...checkedStates]
+    updatedStates[index] = !updatedStates[index]
+    setCheckedStates(updatedStates)
+  }
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setAwardInput(event.target.value);
-  };
+    setAwardInput(event.target.value)
+  }
 
   return (
     <Table>
@@ -72,18 +75,20 @@ const AwardTable: React.FC = () => {
             color="8B939C"
             style={{ fontSize: "12px", padding: "0 18px" }}
           >
-            최소 한 학기 이상 학생회 임원 ( 전교 학생회장, 전교
-            학생부회장, 학급반장 )
+            최소 한 학기 이상 학생회 임원 ( 전교 학생회장, 전교 학생부회장,
+            학급반장 )
           </Table.Td>
-          {Array(6).fill(null).map((_, index) => (
-            <Table.Td key={index} width="59">
-              <Checkbox
-                checked={checkedStates[index]}
-                onChange={() => handleCheckboxChange(index)}
-                name={`leader-${index}`}
-              />
-            </Table.Td>
-          ))}
+          {Array(6)
+            .fill(null)
+            .map((_, index) => (
+              <Table.Td key={index} width="59">
+                <Checkbox
+                  checked={checkedStates[index]}
+                  onChange={() => handleCheckboxChange(index)}
+                  name={`leader-${index}`}
+                />
+              </Table.Td>
+            ))}
         </Table.Tr>
         <Table.Tr>
           <Table.Td background="F9F9F9">리더쉽</Table.Td>
@@ -105,7 +110,7 @@ const AwardTable: React.FC = () => {
         </Table.Tr>
       </Table.Body>
     </Table>
-  );
-};
+  )
+}
 
-export default AwardTable;
+export default AwardTable
