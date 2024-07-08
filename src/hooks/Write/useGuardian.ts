@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil"
-import { guardianInfo } from "@/atom/apply/applyAtom"
+import { guardianInfo } from "@/atom/Apply/applyAtom"
 import { useState, type MouseEvent } from "react"
 import { type ParentInfo } from "@/types/Write/write"
 import {

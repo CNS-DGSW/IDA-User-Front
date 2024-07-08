@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil"
-import { personalInfoAtom } from "@/atom/apply/applyAtom"
+import { personalInfoAtom } from "@/atom/Apply/applyAtom"
 import {
   useGetPersonalInfo,
   usePutPersonalInfo,
