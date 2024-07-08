@@ -5,7 +5,7 @@ export const getPhoto = async () => {
   return data
 }
 
-export const firPhoto = async (formData: FormData) => {
+export const putPhoto = async (formData: FormData) => {
   const response = await IDAcustomAxios.put("/applicant/photo", { ...formData })
   return response.data
 }
