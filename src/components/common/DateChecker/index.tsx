@@ -1,15 +1,15 @@
 import type { ScheduleInfo } from "@/types/Schedule"
 import * as S from "./style"
 import { useSchedule } from "@/hooks/useSchedule"
-import { useRecoilValue } from "recoil"
 import { currentScheduleState } from "@/atom/scheduleAtom"
+import { useAtomValue } from "jotai"
 
 interface DateCheckerProps {
   schedule: ScheduleInfo
 }
 
 const DateChecker = ({ schedule }: DateCheckerProps) => {
-  const currentScheuldeNavState = useRecoilValue(currentScheduleState)
+  const currentScheuldeNavState = useAtomValue(currentScheduleState)
 
   const { dDays, time, startTimeFormatted, endTimeFormatted } =
     useSchedule(schedule)

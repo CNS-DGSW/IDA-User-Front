@@ -4,14 +4,14 @@ import { isDarkNavbarState } from "@/atom/navBarAtom"
 import DateChecker from "../../../common/DateChecker"
 import ScheduleNavigator from "@/components/ScheduleNavigator"
 import { useEffect } from "react"
-import { useRecoilValue, useSetRecoilState } from "recoil"
 import { currentScheduleState } from "@/atom/scheduleAtom"
 import * as S from "./style"
 import ViewAll from "@/components/common/DateChecker/viewAll"
+import { useAtomValue, useSetAtom } from "jotai"
 
 const Chapter2 = () => {
-  const currentScheuldeNavState = useRecoilValue(currentScheduleState)
-  const setDarkNavbarState = useSetRecoilState(isDarkNavbarState)
+  const currentScheuldeNavState = useAtomValue(currentScheduleState)
+  const setDarkNavbarState = useSetAtom(isDarkNavbarState)
   const onIntersect: IntersectionObserverCallback = ([{ isIntersecting }]) => {
     setDarkNavbarState(!isIntersecting)
   }

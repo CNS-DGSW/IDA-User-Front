@@ -1,12 +1,12 @@
-import { useRecoilState } from "recoil"
 import { personalInfoAtom } from "@/atom/Apply/applyAtom"
 import {
   useGetPersonalInfo,
   usePutPersonalInfo,
 } from "./queries/usePersonalQuery"
+import { useAtom } from "jotai"
 
 const usePersonal = () => {
-  const [userInfo, setUserInfo] = useRecoilState(personalInfoAtom)
+  const [userInfo, setUserInfo] = useAtom(personalInfoAtom)
 
   const { isLoading, isError, data } = useGetPersonalInfo()
 

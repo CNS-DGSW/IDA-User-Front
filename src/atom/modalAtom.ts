@@ -1,6 +1,3 @@
-import { atom } from "recoil"
+import { atom } from "jotai"
 
-export const scSearchModalAtom = atom<boolean>({
-  key: "scSearchModalAtom",
-  default: false,
-})
+export const scSearchModalAtom = atom<boolean>(false)

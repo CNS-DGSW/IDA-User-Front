@@ -1,6 +1,3 @@
-import { atom } from "recoil"
+import { atom } from "jotai"
 
-export const isDarkNavbarState = atom({
-  key: "isDarkNavbarState",
-  default: false,
-})
+export const isDarkNavbarState = atom<boolean>(false)

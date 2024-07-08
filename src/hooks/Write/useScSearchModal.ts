@@ -1,10 +1,10 @@
 import { scSearchModalAtom } from "@/atom/modalAtom"
+import { useSetAtom } from "jotai"
 import { useState } from "react"
-import { useSetRecoilState } from "recoil"
 
 const useScSearchModal = () => {
   const [searchName, setSearchName] = useState<string>("")
-  const setScSearchModal = useSetRecoilState(scSearchModalAtom)
+  const setScSearchModal = useSetAtom(scSearchModalAtom)
 
   const searchModal = () => {
     console.log(searchName)

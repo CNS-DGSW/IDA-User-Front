@@ -7,7 +7,7 @@ import "@dgswcns/design-token"
 import Layout from "@/components/common/layout"
 import GlobalStyle from "@/styles/GlobalStyle"
 import { QueryClient, QueryClientProvider } from "react-query"
-import { RecoilRoot } from "recoil"
+import { Provider } from "jotai"
 
 Modal.setAppElement("#__next")
 
@@ -35,14 +35,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <RecoilRoot>
+      <Provider>
         <CNSThemeProvider theme={theme}>
           <GlobalStyle />
           <Layout>
             <Component {...pageProps} />
           </Layout>
         </CNSThemeProvider>
-      </RecoilRoot>
+      </Provider>
     </QueryClientProvider>
   )
 }

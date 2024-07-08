@@ -3,21 +3,21 @@ import { useKeyFunnel } from "@dgswcns/cns-funnel"
 
 import Card from "@/components/common/Card"
 import Radio from "@/components/common/Radio"
-import Examination from "./examination"
-import GraduateForm from "./graduate"
-import ExpectedForm from "./expect"
+import Examination from "./Examination"
+import GraduateForm from "./Graduate"
+import ExpectedForm from "./Expect"
 import InputWrapper from "@/components/common/InputWrapper"
 import useRadio from "@/hooks/useRadio"
-import SchoolSearchModal from "./schoolSearchModal"
+import SchoolSearchModal from "./SchoolSearchModal"
 import { scSearchModalAtom } from "@/atom/modalAtom"
-import { useRecoilValue } from "recoil"
+import { useAtomValue } from "jotai"
 
 type EduUnion = "졸업예정" | "졸업생" | "고입검정"
 
 const WriteSchool = () => {
   const [eduStatus, changeRadio] = useRadio<EduUnion>()
   const [EduFunnel, EduStep, setEdu] = useKeyFunnel<EduUnion>()
-  const scSearchModal = useRecoilValue(scSearchModalAtom)
+  const scSearchModal = useAtomValue(scSearchModalAtom)
 
   useEffect(() => {
     setEdu(eduStatus)

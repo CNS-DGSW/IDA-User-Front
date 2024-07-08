@@ -1,10 +1,10 @@
 import { type ChangeEvent, useEffect, useState } from "react"
-import { useRecoilState } from "recoil"
+import { useAtom } from "jotai"
 import { idPhotoAtom } from "@/atom/Apply/applyAtom"
 import { useFixPhoto, useGetPhoto } from "./queries/useIdPhotoQuery"
 
 const useIdPhoto = () => {
-  const [selectedImage, setSelectedImage] = useRecoilState(idPhotoAtom)
+  const [selectedImage, setSelectedImage] = useAtom(idPhotoAtom)
   const [previewPhoto, setPreviewPhoto] = useState<string | null>(null)
   useEffect(() => {
     if (selectedImage) setPreviewPhoto(URL.createObjectURL(selectedImage))

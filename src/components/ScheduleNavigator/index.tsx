@@ -1,5 +1,3 @@
-import { useRecoilState } from "recoil"
-
 import * as S from "./style"
 import One from "../../assets/img/scheduleNavigator/1.svg"
 import Two from "../../assets/img/scheduleNavigator/2.svg"
@@ -8,10 +6,10 @@ import Four from "../../assets/img/scheduleNavigator/4.svg"
 import Five from "../../assets/img/scheduleNavigator/5.svg"
 import { currentScheduleState } from "@/atom/scheduleAtom"
 import type { ScheduleTitleKey } from "@/types/Schedule"
+import { useAtom } from "jotai"
 
 const ScheduleNavigator = () => {
-  const [currentSchedule, setCurrentSchedule] =
-    useRecoilState(currentScheduleState)
+  const [currentSchedule, setCurrentSchedule] = useAtom(currentScheduleState)
 
   const ScheduleNavBarList: Array<{
     title: ScheduleTitleKey | "전체 보기"
