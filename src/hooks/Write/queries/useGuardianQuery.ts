@@ -1,4 +1,4 @@
-import { getGuardianInfo, putGuardianInfo } from "@/apis/guardian"
+import { getGuardianInfo, putGuardianInfo } from "@/apis/Write/guardian"
 import { QUERY_KEYS } from "@/queries/queryKey"
 import { type ParentInfo } from "@/types/Write/write"
 import { type UseMutationResult, useMutation, useQuery } from "react-query"

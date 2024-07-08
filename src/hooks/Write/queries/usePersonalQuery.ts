@@ -1,4 +1,4 @@
-import { getPersonalInfo, putPersonalInfo } from "@/apis/personal"
+import { getPersonalInfo, putPersonalInfo } from "@/apis/Write/personal"
 import { QUERY_KEYS } from "@/queries/queryKey"
 import { type PersonalInfo } from "@/types/Write/write"
 import { type UseMutationResult, useMutation, useQuery } from "react-query"
