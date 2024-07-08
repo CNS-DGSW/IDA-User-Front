@@ -3,9 +3,9 @@ import Button from "../../Button"
 import { usePageContext } from "@/components/common/Write/PageProvider"
 import * as S from "./style"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
-import useGuardian from "@/components/Write/guardian/useGuardian"
-import useIdPhoto from "@/components/Write/idPhoto/useIdPhoto"
+import useGuardian from "@/hooks/Write/useGuardian"
 import usePersonal from "@/hooks/Write/usePersonal"
+import useIdPhoto from "@/hooks/Write/useIdPhoto"
 
 /**
  * @todo

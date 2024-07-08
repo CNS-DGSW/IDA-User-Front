@@ -4,28 +4,21 @@ import FileUploader from "@/components/common/FileUploader"
 import { useEffect } from "react"
 import Image from "next/image"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
-// import useIdPhoto from "./useIdPhoto"
+import useIdPhoto from "@/hooks/Write/useIdPhoto"
 
 const WriteIdPhoto = () => {
-  // const {
-  //   selectedImage,
-  //   previewPhoto,
-  //   setPreviewPhoto,
-  //   isLoading,
-  //   error,
-  //   data,
-  //   handleChange,
-  // } = useIdPhoto()
-  // const { browserWidth } = useGetBrWidth()
+  const { selectedImage, previewPhoto, setPreviewPhoto, data, handleChange } =
+    useIdPhoto()
+  const { browserWidth } = useGetBrWidth()
 
-  // useEffect(() => {
-  //   setPreviewPhoto(data)
-  // }, [data])
+  useEffect(() => {
+    setPreviewPhoto(data)
+  }, [data])
 
   return (
     <Card>
       <S.WriteIdPhotoLayout>
-        {/* <S.WriteIdPhotoPreivewBox>
+        <S.WriteIdPhotoPreivewBox>
           {selectedImage ?? previewPhoto ? (
             <Image
               src={previewPhoto ? previewPhoto : ""}
@@ -37,7 +30,7 @@ const WriteIdPhoto = () => {
             "미리보기"
           )}
         </S.WriteIdPhotoPreivewBox>
-        <FileUploader onChange={handleChange} /> */}
+        <FileUploader onChange={handleChange} />
         <S.WriteIdPhotoNote>
           * 2MB 이내의 png, jpg, jpeg, gif
           <br /> 사진을 등록해 주세요.
