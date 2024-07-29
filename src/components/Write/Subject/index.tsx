@@ -1,13 +1,13 @@
 import Card from "@/components/common/Card"
 import { TableContextComponent } from "@/components/common/table"
 import React from "react"
-import AwardTable from "./awardTable"
-import useSubjectTable from "./hooks/useSubjectTable"
+import AwardTable from "./AwardTable"
+import useSubjectTable from "./Hooks/useSubjectTable"
 import { SubjectDescription } from "./style"
-import SubjectTable from "./subjectTable"
-import SynthesisTable from "./synthesisTable"
-import UnrecognizedTable from "./unrecognizedTable"
-import VolunteerTable from "./volunteerTable"
+import SubjectTable from "./SubjectTable"
+import SynthesisTable from "./SynthesisTable"
+import UnrecognizedTable from "./UnrecognizedTable"
+import VolunteerTable from "./VolunteerTable"
 
 const WriteSubject = () => {
   const context = useSubjectTable()

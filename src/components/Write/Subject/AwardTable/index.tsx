@@ -2,7 +2,7 @@ import Checkbox from "@/components/common/Checkbox"
 import Input from "@/components/common/Input"
 import { Table } from "@/components/common/table"
 import React from "react"
-import useAwardTableStyle from "../hooks/useAwardTableStyle"
+import useAwardTableStyle from "../Hooks/useAwardTableStyle"
 
 const AwardTable = () => {
   const {
@@ -174,7 +174,29 @@ const AwardTable = () => {
             color="8B939C"
             style={explaneFontSize()}
           >
-            재학 중 교내 모범상을 수상 ( 모범, 선행, 효행, 공로, 노력 등 )
+            재학 중 교내 모범상을 수상
+            <br />( 모범, 선행, 효행, 공로, 노력 등 )
+          </Table.Td>
+          <Table.Td width="354" colspan={6}>
+            <Input type="text" style={setExampleInput()} />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td background="F9F9F9" width={setTableTitleWidth(24.5)}>
+            소프트웨어
+            <br />
+            활동
+          </Table.Td>
+          <Table.Td
+            width={setExplaneWidth(95)}
+            color="8B939C"
+            style={explaneFontSize()}
+          >
+            교내 직업진로체험 프로그램 참여
+            <br />
+            (졸업 예정자는 2024.09.30.,
+            <br />
+            졸업생은 졸업일 기준)
           </Table.Td>
           <Table.Td width="354" colspan={6}>
             <Input type="text" style={setExampleInput()} />
