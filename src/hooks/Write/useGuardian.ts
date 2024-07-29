@@ -1,5 +1,5 @@
-import { useRecoilState } from "recoil"
-import { guardianInfo } from "@/atom/apply/applyAtom"
+import { useAtom } from "jotai"
+import { guardianInfo } from "@/atom/Apply/applyAtom"
 import { useState, type MouseEvent } from "react"
 import { type ParentInfo } from "@/types/Write/write"
 import {
@@ -8,7 +8,7 @@ import {
 } from "./queries/useGuardianQuery"
 
 const useGuardian = () => {
-  const [parentInfo, setParentInfo] = useRecoilState(guardianInfo)
+  const [parentInfo, setParentInfo] = useAtom(guardianInfo)
   const [modalState, setModalState] = useState<boolean>(false)
 
   const relationChangeHandler = (e: MouseEvent) => {

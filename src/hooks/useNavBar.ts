@@ -1,12 +1,11 @@
 import { usePathname } from "next/navigation"
-import { useRecoilState } from "recoil"
-
 import { isDarkNavbarState } from "@/atom/navBarAtom"
 import { useEffect } from "react"
+import { useAtom } from "jotai"
 
 export const useNavBar = () => {
   const pathname = usePathname()
-  const [isDark, setIsDark] = useRecoilState(isDarkNavbarState)
+  const [isDark, setIsDark] = useAtom(isDarkNavbarState)
 
   useEffect(() => {
     setIsDark(false)

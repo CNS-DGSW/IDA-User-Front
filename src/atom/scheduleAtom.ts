@@ -1,6 +1,3 @@
-import { atom } from "recoil"
+import { atom } from "jotai"
 
-export const currentScheduleState = atom<string>({
-  key: "currentScheduleState",
-  default: "전체 보기",
-})
+export const currentScheduleState = atom<string>("전체 보기")

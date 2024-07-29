@@ -4,26 +4,16 @@ import FileUploader from "@/components/common/FileUploader"
 import { useEffect } from "react"
 import Image from "next/image"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
-import useIdPhoto from "./useIdPhoto"
+import useIdPhoto from "@/hooks/Write/useIdPhoto"
 
 const WriteIdPhoto = () => {
-  const {
-    selectedImage,
-    previewPhoto,
-    setPreviewPhoto,
-    isLoading,
-    error,
-    data,
-    handleChange,
-  } = useIdPhoto()
+  const { selectedImage, previewPhoto, setPreviewPhoto, data, handleChange } =
+    useIdPhoto()
   const { browserWidth } = useGetBrWidth()
 
   useEffect(() => {
     setPreviewPhoto(data)
   }, [data])
-
-  if (isLoading) return <div>Loading!!</div>
-  if (error) return <div>Error!!</div>
 
   return (
     <Card>
