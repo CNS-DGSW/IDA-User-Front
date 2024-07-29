@@ -17,7 +17,7 @@ const SynthesisTable = () => {
       <Table.Body>
         <Table.Tr>
           <Table.Td background="F9F9F9" style={{ fontStyle: "normal" }}>
-            전형구분
+            일반전형
           </Table.Td>
           <Table.Td>0</Table.Td>
           <Table.Td>0</Table.Td>
@@ -27,7 +27,7 @@ const SynthesisTable = () => {
         </Table.Tr>
         <Table.Tr>
           <Table.Td background="F9F9F9" style={{ fontStyle: "normal" }}>
-            전형구분
+            특별전형
           </Table.Td>
           <Table.Td>0</Table.Td>
           <Table.Td>0</Table.Td>

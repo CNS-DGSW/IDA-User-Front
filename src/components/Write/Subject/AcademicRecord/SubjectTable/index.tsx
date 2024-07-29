@@ -5,7 +5,7 @@ import { Table } from "@/components/common/table"
 import { grade, schoolYear, subjectNames } from "@/constants/Write/subject"
 import React, { useState } from "react"
 import { ButtonWrapper, DeleteBtn } from "./style"
-import useSubjectTable from "../hooks/useSubjectTable"
+import useSubjectTable from "../../Hooks/useSubjectTable"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 const SubjectTable = () => {

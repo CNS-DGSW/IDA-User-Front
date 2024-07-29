@@ -2,7 +2,7 @@ import Checkbox from "@/components/common/Checkbox"
 import Input from "@/components/common/Input"
 import { Table } from "@/components/common/table"
 import React from "react"
-import useAwardTableStyle from "../Hooks/useAwardTableStyle"
+import useAwardTableStyle from "../../Hooks/useAwardTableStyle"
 
 const AwardTable = () => {
   const {

@@ -1,8 +1,8 @@
 import Input from "@/components/common/Input"
 import { Table } from "@/components/common/table"
 import React from "react"
-import useVolunteer from "../hooks/useVolunteer"
-import { TableCustomInputStyle, TableCustomMoblieInputStyle } from "../style"
+import useVolunteer from "../../Hooks/useVolunteer"
+import { TableCustomInputStyle, TableCustomMoblieInputStyle } from "../../style"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
 import type { CSSObject } from "styled-components"
 
