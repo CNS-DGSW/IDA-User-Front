@@ -106,4 +106,6 @@ export const AwardMaxPoint = styled.p`
   font-weight: 500;
   margin-top: 1rem;
   color: #8b939c;
+  width: 100%;
+  text-align: right;
 `
