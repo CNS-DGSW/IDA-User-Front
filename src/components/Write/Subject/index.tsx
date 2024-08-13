@@ -9,7 +9,7 @@ import ScoreUpdateButton from "./ScoreUpdateButton"
 const WriteSubject = () => {
   const context = useSubjectTable()
 
-  const isAcademicRecord = false
+  const isAcademicRecord = true
 
   const ReloadAcademicRecord = () => {
     console.log("내신 성적 새로고침")
