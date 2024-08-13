@@ -5,6 +5,7 @@ import useSubjectTable from "./Hooks/useSubjectTable"
 import AcademicRecord from "./AcademicRecord"
 import GEDRecord from "./GEDRecord"
 import ScoreUpdateButton from "./ScoreUpdateButton"
+import { AwardMaxPoint } from "./style"
 
 const WriteSubject = () => {
   const context = useSubjectTable()
@@ -26,6 +27,7 @@ const WriteSubject = () => {
           onClick={isAcademicRecord ? ReloadAcademicRecord : ReloadGEDRecord}
         />
         {isAcademicRecord ? <AcademicRecord /> : <GEDRecord />}
+        <AwardMaxPoint>※ 최대 가산점은 +2점입니다.</AwardMaxPoint>
       </TableContextComponent>
     </Card>
   )

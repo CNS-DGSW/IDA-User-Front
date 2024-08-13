@@ -203,7 +203,6 @@ const AwardTable = () => {
             <Input type="text" style={setExampleInput()} />
           </Table.Td>
         </Table.Tr>
-        <AwardMaxPoint>※ 최대 가산점은 +2점입니다.</AwardMaxPoint>
       </Table.Body>
     </Table>
   )
