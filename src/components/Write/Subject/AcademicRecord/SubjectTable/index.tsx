@@ -59,7 +59,7 @@ const SubjectTable = () => {
                 </Table.Tr>
               </Table.Th>
             ))}
-            <Table.Th width="70">삭제</Table.Th>
+            <Table.Th width="70" />
           </Table.Tr>
         </Table.Header>
         <Table.Body>
