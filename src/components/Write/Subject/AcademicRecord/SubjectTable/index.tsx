@@ -1,24 +1,20 @@
 import Button from "@/components/common/Button"
-import Input from "@/components/common/Input"
 import Select from "@/components/common/Select"
 import { Table } from "@/components/common/table"
 import { grade, schoolYear, subjectNames } from "@/constants/Write/subject"
-import React, { useState } from "react"
-import { ButtonWrapper, DeleteBtn } from "./style"
-import useSubjectTable from "../hooks/useSubjectTable"
+import React from "react"
+import { ButtonWrapper } from "./style"
+import useSubjectTable from "../../Hooks/useSubjectTable"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
 
 const SubjectTable = () => {
-  const [otherSubject, setOtherSubject] = useState<string[]>([])
-  const addOtherSubject = () => setOtherSubject((prev) => [...prev, ""])
+  // const [otherSubject, setOtherSubject] = useState<string[]>([])
+  // const addOtherSubject = () => setOtherSubject((prev) => [...prev, ""])
   const {
     setFreeSemesterStyle,
     setSelectStyle,
-    setNewSubjectBtnStyle,
     setScoreChangeStyle,
     setScoreListStyle,
-    setNewSubject,
-    setNewSubjectInputWrapSize,
   } = useSubjectTable()
   const { browserWidth } = useGetBrWidth()
 
@@ -63,7 +59,7 @@ const SubjectTable = () => {
                 </Table.Tr>
               </Table.Th>
             ))}
-            <Table.Th width="70">삭제</Table.Th>
+            <Table.Th width="70" />
           </Table.Tr>
         </Table.Header>
         <Table.Body>
@@ -83,9 +79,8 @@ const SubjectTable = () => {
                       style={setSelectStyle()}
                       key={idx}
                       direction={
-                        arr.length + otherSubject.length - subjectNameIndex > 2
-                          ? true
-                          : false
+                        // arr.length + otherSubject.length - subjectNameIndex > 2
+                        arr.length + subjectNameIndex > 2 ? true : false
                       }
                     />
                   </Table.Td>
@@ -95,7 +90,7 @@ const SubjectTable = () => {
               </Table.Td>
             </Table.Tr>
           ))}
-          {otherSubject.map((_, index) => (
+          {/* {otherSubject.map((_, index) => (
             <Table.Tr height="60" key={index}>
               <Table.Td width={setNewSubjectInputWrapSize()}>
                 <Input type="text" style={setNewSubject()} />
@@ -120,7 +115,7 @@ const SubjectTable = () => {
                 <DeleteBtn>삭제</DeleteBtn>
               </Table.Td>
             </Table.Tr>
-          ))}
+          ))} */}
         </Table.Body>
       </Table>
       <ButtonWrapper>
@@ -140,13 +135,13 @@ const SubjectTable = () => {
           width={143}
           style={setScoreChangeStyle()}
         />
-        <Button
+        {/* <Button
           radius={8}
           style={setNewSubjectBtnStyle()}
           onClick={addOtherSubject}
         >
           과목추가
-        </Button>
+        </Button> */}
       </ButtonWrapper>
     </>
   )

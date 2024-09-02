@@ -100,3 +100,12 @@ export const SubjectDescription = styled.ul`
     height: 7.5rem;
   }
 `
+
+export const AwardMaxPoint = styled.p`
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  color: #8b939c;
+  width: 100%;
+  text-align: right;
+`

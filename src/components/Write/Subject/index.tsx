@@ -1,39 +1,33 @@
 import Card from "@/components/common/Card"
 import { TableContextComponent } from "@/components/common/table"
 import React from "react"
-import AwardTable from "./awardTable"
-import useSubjectTable from "./hooks/useSubjectTable"
-import { SubjectDescription } from "./style"
-import SubjectTable from "./subjectTable"
-import SynthesisTable from "./synthesisTable"
-import UnrecognizedTable from "./unrecognizedTable"
-import VolunteerTable from "./volunteerTable"
+import useSubjectTable from "./Hooks/useSubjectTable"
+import AcademicRecord from "./AcademicRecord"
+import GEDRecord from "./GEDRecord"
+import ScoreUpdateButton from "./ScoreUpdateButton"
+import { AwardMaxPoint } from "./style"
 
 const WriteSubject = () => {
   const context = useSubjectTable()
 
+  const isAcademicRecord = true
+
+  const ReloadAcademicRecord = () => {
+    console.log("내신 성적 새로고침")
+  }
+
+  const ReloadGEDRecord = () => {
+    console.log("고입검정 성적 새로고침")
+  }
+
   return (
     <Card>
       <TableContextComponent name="subject-table" context={context}>
-        <SynthesisTable />
-        <SubjectDescription>
-          <li>
-            자유학기제 등으로 교과 성적이 없는 학기일 경우, 모집 요강에 의거하여
-            해당학기의 성적을 인정하니, 테이블 상단의 &apos;자유학기제&apos;를
-            꼭 선택해 주세요.
-          </li>
-          <li>
-            체육․예술 교과 등 성적이 3등급 (A(우수), B(보통), C(미흡)) 평가로
-            나오는 교과의 성적도 입력함.
-          </li>
-          <li>
-            과목이 없다면 아래에 있는 과목 추가를 클릭 후 성적을 입력해주세요.
-          </li>
-        </SubjectDescription>
-        <SubjectTable />
-        <UnrecognizedTable />
-        <VolunteerTable />
-        <AwardTable />
+        <ScoreUpdateButton
+          onClick={isAcademicRecord ? ReloadAcademicRecord : ReloadGEDRecord}
+        />
+        {isAcademicRecord ? <AcademicRecord /> : <GEDRecord />}
+        <AwardMaxPoint>※ 최대 가산점은 +2점입니다.</AwardMaxPoint>
       </TableContextComponent>
     </Card>
   )

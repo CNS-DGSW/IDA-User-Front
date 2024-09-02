@@ -1,14 +1,11 @@
-import Checkbox from "@/components/common/Checkbox"
 import Input from "@/components/common/Input"
 import { Table } from "@/components/common/table"
 import React from "react"
-import useAwardTableStyle from "../hooks/useAwardTableStyle"
+import useAwardTableStyle from "../../Hooks/useAwardTableStyle"
 
 const AwardTable = () => {
   const {
     setTableTitleWidth,
-    setTableCheckBoxSize,
-    setTableCheckBoxTableWidth,
     setExplaneWidth,
     explaneFontSize,
     contextFontSize,
@@ -109,72 +106,21 @@ const AwardTable = () => {
       </Table.Header>
       <Table.Body>
         <Table.Tr>
-          <Table.Td background="F9F9F9" width={setTableTitleWidth(50)}>
-            리더쉽
-          </Table.Td>
-          <Table.Td width="186" color="8B939C" style={explaneFontSize()}>
-            최소 한 학기 이상 학생회 임원 ( 전교 학생회장, 전교
-            학생부회장,학급반장 )
-          </Table.Td>
-          <Table.Td width={setTableCheckBoxTableWidth(40)}>
-            <Checkbox
-              checked={false}
-              name="leader"
-              width={setTableCheckBoxSize()}
-              height={setTableCheckBoxSize()}
-            />
-          </Table.Td>
-          <Table.Td width={setTableCheckBoxTableWidth(40)}>
-            <Checkbox
-              checked={false}
-              name="leader"
-              width={setTableCheckBoxSize()}
-              height={setTableCheckBoxSize()}
-            />
-          </Table.Td>
-          <Table.Td width={setTableCheckBoxTableWidth(40)}>
-            <Checkbox
-              checked={false}
-              name="leader"
-              width={setTableCheckBoxSize()}
-              height={setTableCheckBoxSize()}
-            />
-          </Table.Td>
-          <Table.Td width={setTableCheckBoxTableWidth(40)}>
-            <Checkbox
-              checked={false}
-              name="leader"
-              width={setTableCheckBoxSize()}
-              height={setTableCheckBoxSize()}
-            />
-          </Table.Td>
-          <Table.Td width={setTableCheckBoxTableWidth(40)}>
-            <Checkbox
-              checked={false}
-              name="leader"
-              width={setTableCheckBoxSize()}
-              height={setTableCheckBoxSize()}
-            />
-          </Table.Td>
-          <Table.Td width={setTableCheckBoxTableWidth(40)}>
-            <Checkbox
-              checked={false}
-              name="leader"
-              width={setTableCheckBoxSize()}
-              height={setTableCheckBoxSize()}
-            />
-          </Table.Td>
-        </Table.Tr>
-        <Table.Tr>
           <Table.Td background="F9F9F9" width={setTableTitleWidth(24.5)}>
-            모범상
+            소프트웨어
+            <br />
+            활동
           </Table.Td>
           <Table.Td
             width={setExplaneWidth(95)}
             color="8B939C"
             style={explaneFontSize()}
           >
-            재학 중 교내 모범상을 수상 ( 모범, 선행, 효행, 공로, 노력 등 )
+            교내 직업진로체험 프로그램 참여
+            <br />
+            (졸업 예정자는 2024.09.30.,
+            <br />
+            졸업생은 졸업일 기준)
           </Table.Td>
           <Table.Td width="354" colspan={6}>
             <Input type="text" style={setExampleInput()} />
