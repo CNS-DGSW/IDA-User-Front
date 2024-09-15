@@ -4,7 +4,7 @@ import styled from "styled-components"
 import type { CSSObject } from "styled-components"
 
 export const TableStyle = styled.table`
-  border-collapse: collapse;
+  border-collapse: separate;
   font-family: Pretendard;
   font-size: 16px;
   font-style: normal;
