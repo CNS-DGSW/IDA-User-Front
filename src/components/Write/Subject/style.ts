@@ -4,16 +4,14 @@ import styled from "styled-components"
 import type { CSSObject } from "styled-components"
 
 export const TableStyle = styled.table`
-  border-collapse: collapse;
+  border-collapse: separate;
   font-family: Pretendard;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.64px;
-
   border-radius: 8px;
-  overflow: hidden;
 `
 
 export const TableHeaderStyle = styled.thead``
@@ -26,6 +24,7 @@ export const ThStyle = styled.th<ThProps & Omit<SizeImplElement, "height">>`
   color: ${({ color }) => `#${color ?? "000"}`};
   width: ${({ width }) => `${width ?? "108"}px`};
   ${({ notBorder }) => !notBorder && `border: 1px solid #d8dae0`};
+  ${({ radius }) => radius && `border-radius : ${radius}`};
 
   @media screen and (max-width: 500px) {
     font-size: 0.5rem;
@@ -38,6 +37,7 @@ export const TdStyle = styled.td<ThProps & Omit<SizeImplElement, "height">>`
   color: ${({ color }) => `#${color ?? "000"}`};
   width: ${({ width }) => `${width ?? "108"}px`};
   ${({ notBorder }) => !notBorder && `border: 1px solid #d8dae0`};
+  ${({ radius }) => radius && `border-radius : ${radius}`};
   text-align: center;
 
   word-wrap: break-word;

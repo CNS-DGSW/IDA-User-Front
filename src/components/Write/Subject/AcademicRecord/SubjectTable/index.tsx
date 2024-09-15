@@ -6,6 +6,7 @@ import React from "react"
 import { ButtonWrapper } from "./style"
 import useSubjectTable from "../../Hooks/useSubjectTable"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
+import useTableStyle from "../../Hooks/useTableStyle"
 
 const SubjectTable = () => {
   // const [otherSubject, setOtherSubject] = useState<string[]>([])
@@ -18,12 +19,16 @@ const SubjectTable = () => {
   } = useSubjectTable()
   const { browserWidth } = useGetBrWidth()
 
+  const { setTableRadius } = useTableStyle()
+
   return (
     <>
       <Table customStyle={{ marginBottom: "18px" }}>
         <Table.Header>
           <Table.Tr height="162">
-            <Table.Th width="74">과목</Table.Th>
+            <Table.Th width="74" radius={setTableRadius(0, 0)}>
+              과목
+            </Table.Th>
             {schoolYear.map((year) => (
               <Table.Th width="168" notBorder key={year}>
                 <Table.Tr>
@@ -59,13 +64,20 @@ const SubjectTable = () => {
                 </Table.Tr>
               </Table.Th>
             ))}
-            <Table.Th width="70" />
+            <Table.Th width="70" radius={setTableRadius(1, 0)} />
           </Table.Tr>
         </Table.Header>
         <Table.Body>
           {subjectNames.map((subjectName, subjectNameIndex, arr) => (
             <Table.Tr height="60" key={subjectNameIndex}>
-              <Table.Td width="74">{subjectName}</Table.Td>
+              <Table.Td
+                width="74"
+                radius={
+                  subjectNameIndex === 6 ? setTableRadius(0, 1) : undefined
+                }
+              >
+                {subjectName}
+              </Table.Td>
               {Array(6)
                 .fill(0)
                 .map((_, idx) => (
@@ -85,7 +97,12 @@ const SubjectTable = () => {
                     />
                   </Table.Td>
                 ))}
-              <Table.Td width="70">
+              <Table.Td
+                width="70"
+                radius={
+                  subjectNameIndex === 6 ? setTableRadius(1, 1) : undefined
+                }
+              >
                 <div style={{ width: "6px" }}></div>
               </Table.Td>
             </Table.Tr>

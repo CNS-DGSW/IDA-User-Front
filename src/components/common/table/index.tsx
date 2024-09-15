@@ -5,7 +5,7 @@ import {
   TrStyle,
   TableBodyStyle,
   TdStyle,
-} from "@/components/Write/subject/style"
+} from "@/components/Write/Subject/style"
 import type { PropsWithChildren } from "react"
 import React, { createContext } from "react"
 import type { CSSObject } from "styled-components"
@@ -55,6 +55,7 @@ const Th = ({
   rowspan,
   colspan,
   notBorder,
+  radius,
 }: ThProps) => {
   return (
     <ThStyle
@@ -65,6 +66,7 @@ const Th = ({
       rowSpan={rowspan}
       colSpan={colspan}
       notBorder={notBorder}
+      radius={radius}
     >
       {children}
     </ThStyle>
@@ -80,6 +82,7 @@ const Td = ({
   rowspan,
   colspan,
   notBorder,
+  radius,
 }: ThProps) => {
   return (
     <TdStyle
@@ -90,6 +93,7 @@ const Td = ({
       rowSpan={rowspan}
       colSpan={colspan}
       notBorder={notBorder}
+      radius={radius}
     >
       {children}
     </TdStyle>
