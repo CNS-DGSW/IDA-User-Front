@@ -3,6 +3,7 @@ import { Table } from "@/components/common/table"
 import useGetBrWidth from "@/hooks/useGetBrWidth"
 import React from "react"
 import type { CSSObject } from "styled-components"
+import useTableStyle from "../../Hooks/useTableStyle"
 
 const UnrecognizedTdStyle: CSSObject = {
   width: "107px",
@@ -22,6 +23,7 @@ const UnrecognizedTdMoblieStyle: CSSObject = {
 
 const UnrecognizedTable = () => {
   const { browserWidth } = useGetBrWidth()
+  const { setTableRadius } = useTableStyle()
 
   const setStyle = (): CSSObject => {
     if (browserWidth > 500) return UnrecognizedTdStyle
@@ -32,13 +34,18 @@ const UnrecognizedTable = () => {
     <Table customStyle={{ marginBottom: "34px" }}>
       <Table.Header>
         <Table.Tr>
-          <Table.Th width={browserWidth > 500 ? undefined : "70"}>
+          <Table.Th
+            width={browserWidth > 500 ? undefined : "70"}
+            radius={setTableRadius(0, 0)}
+          >
             학년
           </Table.Th>
           <Table.Th width="135">미인정결석</Table.Th>
           <Table.Th width="135">미인정지각</Table.Th>
           <Table.Th width="135">미인정조퇴</Table.Th>
-          <Table.Th width="135">미인정결과</Table.Th>
+          <Table.Th width="135" radius={setTableRadius(1, 0)}>
+            미인정결과
+          </Table.Th>
         </Table.Tr>
       </Table.Header>
       <Table.Body>
@@ -73,7 +80,7 @@ const UnrecognizedTable = () => {
           </Table.Td>
         </Table.Tr>
         <Table.Tr>
-          <Table.Td>3학년</Table.Td>
+          <Table.Td radius={setTableRadius(0, 1)}>3학년</Table.Td>
           <Table.Td width="135">
             <Input type="text" customStyle={setStyle()} />
           </Table.Td>
@@ -83,7 +90,7 @@ const UnrecognizedTable = () => {
           <Table.Td width="135">
             <Input type="text" customStyle={setStyle()} />
           </Table.Td>
-          <Table.Td width="135">
+          <Table.Td width="135" radius={setTableRadius(1, 1)}>
             <Input type="text" customStyle={setStyle()} />
           </Table.Td>
         </Table.Tr>
