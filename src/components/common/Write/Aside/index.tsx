@@ -6,6 +6,7 @@ import useGetBrWidth from "@/hooks/useGetBrWidth"
 import useGuardian from "@/hooks/Write/useGuardian"
 import usePersonal from "@/hooks/Write/usePersonal"
 import useIdPhoto from "@/hooks/Write/useIdPhoto"
+import useType from "@/hooks/Write/useType"
 
 /**
  * @todo
@@ -18,6 +19,7 @@ export const Aside = () => {
   const { fixUserInfo } = usePersonal()
   const { fixParentInfo } = useGuardian()
   const { setPhoto } = useIdPhoto()
+  const { fixTypeInfo } = useType()
 
   const checkCurrentPageSave = () => {
     switch (currentPage) {
@@ -37,6 +39,9 @@ export const Aside = () => {
       case 4:
         break
       case 5:
+        fixTypeInfo()
+          .then((e) => console.log(e))
+          .catch((e) => console.log(e))
         break
       case 6:
         break

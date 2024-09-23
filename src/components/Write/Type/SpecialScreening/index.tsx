@@ -3,20 +3,21 @@ import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
 import Select from "@/components/common/Select"
 import { SpecialSelectObject } from "@/constants/Write/specialConstant"
-import useRadio from "@/hooks/useRadio"
 import * as S from "../style"
-import React, { useEffect, useState } from "react"
+import React from "react"
+import { ApplySubCategory, ApplyType } from "@/types/Write/write"
 import type { SpecialTypeUnion } from "../type"
+import useType from "@/hooks/Write/useType"
 
 type ReadonlyInputUnion = Exclude<
   SpecialTypeUnion,
-  "사회통합전형 (기회균등전형)" | "사회통합전형 (사회다양성 전형)"
+  ApplySubCategory.EQUALS_OPPORTUNITY | ApplySubCategory.SOCIAL_DIVERSITY
 >
 
 const readonlyInputObject: Record<ReadonlyInputUnion, string> = {
-  마이스터인재전형:
+  MEISTER:
     "소프트웨어 분야 마이스터로 성장할 수 있는 잠재력이 있다고 판단되는 학생 중 학교장의 추천을 받은 자",
-  지역우선전형:
+  LOCAL_FIRST:
     "대구광역시 달성군 소재 중학교 졸업예정자, 중학교 졸업자 또는 중학교 졸업자와 동등한 학력 인정자로서 원서 접수일 현재 전 가족이 대구광역시 달성군에 주민등록이 되어있고 실제 거주하는 자",
 }
 // const readonlyInputSizeObject: Record<ReadonlyInputUnion, number> = {
@@ -25,55 +26,92 @@ const readonlyInputObject: Record<ReadonlyInputUnion, string> = {
 // }
 
 const SpecialScreening = () => {
-  const [currentSpecial, changeCurrentSpecial] = useRadio<SpecialTypeUnion>()
-  const [selectValue, setSelectValue] = useState<string>("선택")
-
-  useEffect(() => {
-    if (selectValue !== "선택") {
-      setSelectValue("선택")
-    }
-  }, [currentSpecial])
+  const { userTypeInfo, setUserTypeInfo } = useType()
 
   return (
     <Card>
       <InputWrapper title="특별전형 선택">
         <Radio
           name="kind"
-          value="마이스터인재전형"
+          value={ApplyType.MEISTER}
           width={153}
-          onClick={changeCurrentSpecial}
+          onClick={({ target }) => {
+            setUserTypeInfo((prev) => {
+              return {
+                ...prev,
+                subCategory: null,
+                type: (target as HTMLInputElement).value as ApplyType,
+              }
+            })
+          }}
+          checked={userTypeInfo.type === ApplyType.MEISTER}
         >
           마이스터인재전형
         </Radio>
         <Radio
           name="kind"
-          value="사회통합전형 (기회균등전형)"
+          value={ApplySubCategory.EQUALS_OPPORTUNITY}
           width={153}
-          onClick={changeCurrentSpecial}
+          onClick={({ target }) => {
+            setUserTypeInfo((prev) => {
+              return {
+                ...prev,
+                subCategory: (target as HTMLInputElement)
+                  .value as ApplySubCategory,
+                type: ApplyType.NONE,
+              }
+            })
+          }}
+          checked={
+            userTypeInfo.subCategory === ApplySubCategory.EQUALS_OPPORTUNITY
+          }
         >
           사회통합전형 (기회균등전형)
         </Radio>
         <Radio
           name="kind"
-          value="사회통합전형 (사회다양성 전형)"
+          value={ApplySubCategory.SOCIAL_DIVERSITY}
           width={153}
-          onClick={changeCurrentSpecial}
+          onClick={({ target }) => {
+            setUserTypeInfo((prev) => {
+              return {
+                ...prev,
+                subCategory: (target as HTMLInputElement)
+                  .value as ApplySubCategory,
+                type: ApplyType.NONE,
+              }
+            })
+          }}
+          checked={
+            userTypeInfo.subCategory === ApplySubCategory.SOCIAL_DIVERSITY
+          }
         >
           사회통합전형 (사회다양성 전형)
         </Radio>
         <Radio
           name="kind"
-          value="지역우선전형"
+          value={ApplyType.LOCAL_FIRST}
           width={153}
-          onClick={changeCurrentSpecial}
+          onClick={({ target }) => {
+            setUserTypeInfo((prev) => {
+              return {
+                ...prev,
+                subCategory: null,
+                type: (target as HTMLInputElement).value as ApplyType,
+              }
+            })
+          }}
+          checked={userTypeInfo.type === ApplyType.LOCAL_FIRST}
         >
           지역우선전형
         </Radio>
       </InputWrapper>
-      {currentSpecial &&
-        ["마이스터인재전형", "지역우선전형"].includes(currentSpecial) && (
+      {userTypeInfo.subCategory !== ApplySubCategory.EQUALS_OPPORTUNITY &&
+        userTypeInfo.subCategory !== ApplySubCategory.SOCIAL_DIVERSITY &&
+        (userTypeInfo.type === ApplyType.MEISTER ||
+          userTypeInfo.type === ApplyType.LOCAL_FIRST) && (
           <S.Form>
-            {readonlyInputObject[currentSpecial as ReadonlyInputUnion]}
+            {readonlyInputObject[userTypeInfo.type as ReadonlyInputUnion]}
           </S.Form>
           // <Textarea
           //   height={
@@ -84,29 +122,43 @@ const SpecialScreening = () => {
           //   style={{ marginTop: "34px" }}
           // />
         )}
-      {currentSpecial &&
-        [
-          "사회통합전형 (기회균등전형)",
-          "사회통합전형 (사회다양성 전형)",
-        ].includes(currentSpecial) && (
+      {userTypeInfo.type !== ApplyType.MEISTER &&
+        userTypeInfo.type !== ApplyType.LOCAL_FIRST &&
+        (userTypeInfo.subCategory === ApplySubCategory.EQUALS_OPPORTUNITY ||
+          userTypeInfo.subCategory === ApplySubCategory.SOCIAL_DIVERSITY) && (
           <Select
             changeEvent={(event) => {
-              console.log((event.target as HTMLLIElement).innerText)
-              setSelectValue((event.target as HTMLLIElement).innerText)
-            }}
-            list={
               SpecialSelectObject[
-                currentSpecial as Exclude<SpecialTypeUnion, ReadonlyInputUnion>
-              ]
+                userTypeInfo.subCategory !== null
+                  ? userTypeInfo.subCategory
+                  : ApplySubCategory.EQUALS_OPPORTUNITY
+              ].forEach((val: [ApplyType, string]) => {
+                if ((event.target as HTMLLIElement).innerText === val[1]) {
+                  setUserTypeInfo((prev) => {
+                    return { ...prev, type: val[0] }
+                  })
+                }
+              })
+            }}
+            list={SpecialSelectObject[userTypeInfo.subCategory].map(
+              (val) => val[1],
+            )}
+            value={
+              SpecialSelectObject[
+                userTypeInfo.subCategory !== null
+                  ? userTypeInfo.subCategory
+                  : ApplySubCategory.EQUALS_OPPORTUNITY
+              ].find((val: [ApplyType, string]) => {
+                return userTypeInfo.type === val[0]
+              })?.[1]
             }
-            value={selectValue}
             width={650}
             style={{ marginTop: "34px" }}
           />
         )}
-      <S.FormWrap>
-        {selectValue !== "선택" && <S.Form>dummy</S.Form>}
-      </S.FormWrap>
+      {/* <S.FormWrap>
+        {selectValue !=== "선택" && <S.Form>dummy</S.Form>}
+      </S.FormWrap> */}
     </Card>
   )
 }

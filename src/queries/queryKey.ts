@@ -11,5 +11,6 @@ export const QUERY_KEYS = Object.freeze({
     getPersonalInfo: "/applicant/info",
     getGuardianInfo: "/applicant/parent",
     getPhoto: "/applicant/photo",
+    getType: "/applicant/type",
   },
 })
