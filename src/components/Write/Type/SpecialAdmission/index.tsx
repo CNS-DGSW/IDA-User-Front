@@ -2,17 +2,36 @@ import Card from "@/components/common/Card"
 import InputWrapper from "@/components/common/InputWrapper"
 import Select from "@/components/common/Select"
 import { SpecialAdmissionSelectList } from "@/constants/Write/specialConstant"
-import React from "react"
+import React, { useState } from "react"
 import { Form } from "../style"
+import useType from "@/hooks/Write/useType"
+import { ApplyType } from "@/types/Write/write"
 
 const SpecialAdmission = () => {
+  const { userTypeInfo, setUserTypeInfo, data } = useType()
+
   return (
     <Card>
       <InputWrapper title="특별전형 선택">
         <Select
           width={650}
-          list={SpecialAdmissionSelectList}
-          changeEvent={() => {}}
+          value={
+            SpecialAdmissionSelectList.find((val:[ApplyType,string])=>{
+              return userTypeInfo.type == val[0]
+            })?.[1]
+          }
+          list={SpecialAdmissionSelectList.map((val)=>val[1])}
+          changeEvent={(event) => {
+
+            SpecialAdmissionSelectList.forEach((val)=>{
+              if((event.target as HTMLLIElement).innerText == val[1]){
+                setUserTypeInfo((prev) => {
+                  return { ...prev, type: val[0] }
+                })
+              }
+            })
+
+          }}
         />
       </InputWrapper>
       <div style={{ marginTop: "1rem" }}>

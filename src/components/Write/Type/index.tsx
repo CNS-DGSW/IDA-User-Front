@@ -2,32 +2,42 @@ import Card from "@/components/common/Card"
 import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
 import useRadio from "@/hooks/useRadio"
-import React, { useEffect } from "react"
-import SpecialScreening from "./specialScreening"
-import SpecialAdmission from "./specialAdmission"
-import type { CurrentTypeUnion } from "./type"
+import React, { useEffect, useState } from "react"
+import SpecialScreening from "./SpecialScreening"
+import SpecialAdmission from "./SpecialAdmission"
+// import type { CurrentTypeUnion } from "./type"
 import { useKeyFunnel } from "@dgswcns/cns-funnel"
 import * as S from "./style"
+import useType from "@/hooks/Write/useType"
+import { ApplyMainCategory } from "@/types/Write/write"
 
 const WriteType = () => {
-  const [currentType, changeCurrentType] = useRadio<CurrentTypeUnion>()
-  const [TypeFunnel, TypeStep, setType] = useKeyFunnel<CurrentTypeUnion>()
+  const [currentType, changeCurrentType] = useRadio<ApplyMainCategory>()
+  const [TypeFunnel, TypeStep, setType] = useKeyFunnel<ApplyMainCategory>()
+  const { userTypeInfo, setUserTypeInfo, data } = useType()
 
   useEffect(() => {
     setType(currentType)
+    setUserTypeInfo((prev) => {
+      return { ...prev, category: currentType == undefined ? null : currentType }
+    })
   }, [currentType])
+
+  useEffect(() => {
+    setUserTypeInfo({ ...data })
+  }, [data])
 
   return (
     <section>
       <Card>
         <InputWrapper title="졸업구분">
-          <Radio name="type" value="일반전형" onClick={changeCurrentType}>
+          <Radio name="type" value={ApplyMainCategory.COMMON} onClick={changeCurrentType}>
             일반전형
           </Radio>
-          <Radio name="type" value="특별전형" onClick={changeCurrentType}>
+          <Radio name="type" value={ApplyMainCategory.SPECIAL} onClick={changeCurrentType}>
             특별전형
           </Radio>
-          <Radio name="type" value="특례입학" onClick={changeCurrentType}>
+          <Radio name="type" value={ApplyMainCategory.EXCEPTIONAL} onClick={changeCurrentType}>
             특례입학
           </Radio>
         </InputWrapper>
@@ -46,10 +56,10 @@ const WriteType = () => {
         </TypeFunnel>
       </Card>
       <TypeFunnel>
-        <TypeStep name="특별전형">
+        <TypeStep name="SPECIAL">
           <SpecialScreening />
         </TypeStep>
-        <TypeStep name="특례입학">
+        <TypeStep name="EXCEPTIONAL">
           <SpecialAdmission />
         </TypeStep>
       </TypeFunnel>
