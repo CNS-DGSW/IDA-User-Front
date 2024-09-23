@@ -140,9 +140,9 @@ const SpecialScreening = () => {
                 }
               })
             }}
-            list={SpecialSelectObject[
-              userTypeInfo.subCategory
-            ].map((val) => val[1])}
+            list={SpecialSelectObject[userTypeInfo.subCategory].map(
+              (val) => val[1],
+            )}
             value={
               SpecialSelectObject[
                 userTypeInfo.subCategory !== null
