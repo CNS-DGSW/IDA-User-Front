@@ -26,5 +26,5 @@ export const idPhotoAtom = atom<File | null>(null)
 export const typeAtom = atom<T.TypeInfo>({
   type: ApplyType.NONE,
   category: null,
-  subCategory: null
+  subCategory: null,
 })

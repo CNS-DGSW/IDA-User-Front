@@ -2,13 +2,13 @@ import Card from "@/components/common/Card"
 import InputWrapper from "@/components/common/InputWrapper"
 import Select from "@/components/common/Select"
 import { SpecialAdmissionSelectList } from "@/constants/Write/specialConstant"
-import React, { useState } from "react"
+import React from "react"
 import { Form } from "../style"
 import useType from "@/hooks/Write/useType"
-import { ApplyType } from "@/types/Write/write"
+import type { ApplyType } from "@/types/Write/write"
 
 const SpecialAdmission = () => {
-  const { userTypeInfo, setUserTypeInfo, data } = useType()
+  const { userTypeInfo, setUserTypeInfo } = useType()
 
   return (
     <Card>
@@ -16,21 +16,19 @@ const SpecialAdmission = () => {
         <Select
           width={650}
           value={
-            SpecialAdmissionSelectList.find((val:[ApplyType,string])=>{
-              return userTypeInfo.type == val[0]
+            SpecialAdmissionSelectList.find((val: [ApplyType, string]) => {
+              return userTypeInfo.type === val[0]
             })?.[1]
           }
-          list={SpecialAdmissionSelectList.map((val)=>val[1])}
+          list={SpecialAdmissionSelectList.map((val) => val[1])}
           changeEvent={(event) => {
-
-            SpecialAdmissionSelectList.forEach((val)=>{
-              if((event.target as HTMLLIElement).innerText == val[1]){
+            SpecialAdmissionSelectList.forEach((val) => {
+              if ((event.target as HTMLLIElement).innerText === val[1]) {
                 setUserTypeInfo((prev) => {
                   return { ...prev, type: val[0] }
                 })
               }
             })
-
           }}
         />
       </InputWrapper>

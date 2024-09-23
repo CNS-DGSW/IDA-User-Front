@@ -3,13 +3,11 @@ import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
 import Select from "@/components/common/Select"
 import { SpecialSelectObject } from "@/constants/Write/specialConstant"
-import useRadio from "@/hooks/useRadio"
 import * as S from "../style"
-import React, { MouseEventHandler, useEffect, useState } from "react"
-import { ApplySubCategory, ApplyType, TypeInfo } from "@/types/Write/write"
+import React from "react"
+import { ApplySubCategory, ApplyType } from "@/types/Write/write"
 import type { SpecialTypeUnion } from "../type"
 import useType from "@/hooks/Write/useType"
-import { SetStateAction } from "jotai"
 
 type ReadonlyInputUnion = Exclude<
   SpecialTypeUnion,
@@ -28,7 +26,7 @@ const readonlyInputObject: Record<ReadonlyInputUnion, string> = {
 // }
 
 const SpecialScreening = () => {
-  const { userTypeInfo, setUserTypeInfo, data } = useType()
+  const { userTypeInfo, setUserTypeInfo } = useType()
 
   return (
     <Card>
@@ -37,14 +35,16 @@ const SpecialScreening = () => {
           name="kind"
           value={ApplyType.MEISTER}
           width={153}
-          onClick={
-            ({target}) => {
-              setUserTypeInfo((prev) => {
-                return { ...prev,  subCategory: null, type: (target as HTMLInputElement).value as ApplyType }
-              })
-            }
-          }
-          checked={userTypeInfo.type == ApplyType.MEISTER}
+          onClick={({ target }) => {
+            setUserTypeInfo((prev) => {
+              return {
+                ...prev,
+                subCategory: null,
+                type: (target as HTMLInputElement).value as ApplyType,
+              }
+            })
+          }}
+          checked={userTypeInfo.type === ApplyType.MEISTER}
         >
           마이스터인재전형
         </Radio>
@@ -52,14 +52,19 @@ const SpecialScreening = () => {
           name="kind"
           value={ApplySubCategory.EQUALS_OPPORTUNITY}
           width={153}
-          onClick={
-            ({target}) => {
-              setUserTypeInfo((prev) => {
-                return { ...prev, subCategory: (target as HTMLInputElement).value as ApplySubCategory, type: ApplyType.NONE }
-              })
-            }
+          onClick={({ target }) => {
+            setUserTypeInfo((prev) => {
+              return {
+                ...prev,
+                subCategory: (target as HTMLInputElement)
+                  .value as ApplySubCategory,
+                type: ApplyType.NONE,
+              }
+            })
+          }}
+          checked={
+            userTypeInfo.subCategory === ApplySubCategory.EQUALS_OPPORTUNITY
           }
-          checked={userTypeInfo.subCategory == ApplySubCategory.EQUALS_OPPORTUNITY}
         >
           사회통합전형 (기회균등전형)
         </Radio>
@@ -67,14 +72,19 @@ const SpecialScreening = () => {
           name="kind"
           value={ApplySubCategory.SOCIAL_DIVERSITY}
           width={153}
-          onClick={
-            ({target}) => {
-              setUserTypeInfo((prev) => {
-                return { ...prev, subCategory: (target as HTMLInputElement).value as ApplySubCategory, type: ApplyType.NONE }
-              })
-            }
+          onClick={({ target }) => {
+            setUserTypeInfo((prev) => {
+              return {
+                ...prev,
+                subCategory: (target as HTMLInputElement)
+                  .value as ApplySubCategory,
+                type: ApplyType.NONE,
+              }
+            })
+          }}
+          checked={
+            userTypeInfo.subCategory === ApplySubCategory.SOCIAL_DIVERSITY
           }
-          checked={userTypeInfo.subCategory == ApplySubCategory.SOCIAL_DIVERSITY}
         >
           사회통합전형 (사회다양성 전형)
         </Radio>
@@ -82,21 +92,24 @@ const SpecialScreening = () => {
           name="kind"
           value={ApplyType.LOCAL_FIRST}
           width={153}
-          onClick={
-            ({target}) => {
-              setUserTypeInfo((prev) => {
-                return { ...prev,  subCategory: null, type: (target as HTMLInputElement).value as ApplyType }
-              })
-            }
-          }
-          checked={userTypeInfo.type == ApplyType.LOCAL_FIRST}
+          onClick={({ target }) => {
+            setUserTypeInfo((prev) => {
+              return {
+                ...prev,
+                subCategory: null,
+                type: (target as HTMLInputElement).value as ApplyType,
+              }
+            })
+          }}
+          checked={userTypeInfo.type === ApplyType.LOCAL_FIRST}
         >
           지역우선전형
         </Radio>
       </InputWrapper>
-      {
-        ( (userTypeInfo.subCategory != ApplySubCategory.EQUALS_OPPORTUNITY && userTypeInfo.subCategory != ApplySubCategory.SOCIAL_DIVERSITY) &&
-        (userTypeInfo.type == ApplyType.MEISTER || userTypeInfo.type == ApplyType.LOCAL_FIRST) ) && (
+      {userTypeInfo.subCategory !== ApplySubCategory.EQUALS_OPPORTUNITY &&
+        userTypeInfo.subCategory !== ApplySubCategory.SOCIAL_DIVERSITY &&
+        (userTypeInfo.type === ApplyType.MEISTER ||
+          userTypeInfo.type === ApplyType.LOCAL_FIRST) && (
           <S.Form>
             {readonlyInputObject[userTypeInfo.type as ReadonlyInputUnion]}
           </S.Form>
@@ -108,29 +121,35 @@ const SpecialScreening = () => {
           //   value={readonlyInputObject[currentSpecial as ReadonlyInputUnion]}
           //   style={{ marginTop: "34px" }}
           // />
-        )
-      }
-      {
-          ( (userTypeInfo.type != ApplyType.MEISTER && userTypeInfo.type != ApplyType.LOCAL_FIRST) &&
-          (userTypeInfo.subCategory == ApplySubCategory.EQUALS_OPPORTUNITY || userTypeInfo.subCategory == ApplySubCategory.SOCIAL_DIVERSITY) ) && (
+        )}
+      {userTypeInfo.type !== ApplyType.MEISTER &&
+        userTypeInfo.type !== ApplyType.LOCAL_FIRST &&
+        (userTypeInfo.subCategory === ApplySubCategory.EQUALS_OPPORTUNITY ||
+          userTypeInfo.subCategory === ApplySubCategory.SOCIAL_DIVERSITY) && (
           <Select
             changeEvent={(event) => {
-              SpecialSelectObject[userTypeInfo.subCategory != null ? userTypeInfo.subCategory : ApplySubCategory.EQUALS_OPPORTUNITY ].forEach((val:[ApplyType,string])=>{
-                if((event.target as HTMLLIElement).innerText == val[1]){
+              SpecialSelectObject[
+                userTypeInfo.subCategory !== null
+                  ? userTypeInfo.subCategory
+                  : ApplySubCategory.EQUALS_OPPORTUNITY
+              ].forEach((val: [ApplyType, string]) => {
+                if ((event.target as HTMLLIElement).innerText === val[1]) {
                   setUserTypeInfo((prev) => {
                     return { ...prev, type: val[0] }
                   })
                 }
               })
             }}
-            list={
-              SpecialSelectObject[
-                userTypeInfo.subCategory as Exclude<SpecialTypeUnion, ReadonlyInputUnion>
-              ].map((val)=>val[1])
-            }
+            list={SpecialSelectObject[
+              userTypeInfo.subCategory
+            ].map((val) => val[1])}
             value={
-              SpecialSelectObject[userTypeInfo.subCategory != null ? userTypeInfo.subCategory : ApplySubCategory.EQUALS_OPPORTUNITY ].find((val:[ApplyType,string])=>{
-                return userTypeInfo.type == val[0]
+              SpecialSelectObject[
+                userTypeInfo.subCategory !== null
+                  ? userTypeInfo.subCategory
+                  : ApplySubCategory.EQUALS_OPPORTUNITY
+              ].find((val: [ApplyType, string]) => {
+                return userTypeInfo.type === val[0]
               })?.[1]
             }
             width={650}
@@ -138,7 +157,7 @@ const SpecialScreening = () => {
           />
         )}
       {/* <S.FormWrap>
-        {selectValue !== "선택" && <S.Form>dummy</S.Form>}
+        {selectValue !=== "선택" && <S.Form>dummy</S.Form>}
       </S.FormWrap> */}
     </Card>
   )

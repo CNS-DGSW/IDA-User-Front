@@ -1,4 +1,4 @@
-import { ApplySubCategory, ApplyType } from "@/types/Write/write";
+import type { ApplySubCategory, ApplyType } from "@/types/Write/write"
 
 export type SpecialTypeUnion =
   | ApplyType.MEISTER

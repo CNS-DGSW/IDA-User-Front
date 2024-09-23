@@ -11,7 +11,7 @@ const useType = () => {
     data: putData,
     isLoading: putLoading,
     isError: putError,
-    mutateAsync
+    mutateAsync,
   } = usePutType(userTypeInfo.type)
 
   const fixTypeInfo = async () => {
@@ -32,7 +32,7 @@ const useType = () => {
     putData,
     putLoading,
     putError,
-    fixTypeInfo
+    fixTypeInfo,
   }
 }
 

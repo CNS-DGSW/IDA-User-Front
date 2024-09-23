@@ -2,7 +2,7 @@ import Card from "@/components/common/Card"
 import InputWrapper from "@/components/common/InputWrapper"
 import Radio from "@/components/common/Radio"
 import useRadio from "@/hooks/useRadio"
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import SpecialScreening from "./SpecialScreening"
 import SpecialAdmission from "./SpecialAdmission"
 // import type { CurrentTypeUnion } from "./type"
@@ -14,12 +14,15 @@ import { ApplyMainCategory } from "@/types/Write/write"
 const WriteType = () => {
   const [currentType, changeCurrentType] = useRadio<ApplyMainCategory>()
   const [TypeFunnel, TypeStep, setType] = useKeyFunnel<ApplyMainCategory>()
-  const { userTypeInfo, setUserTypeInfo, data } = useType()
+  const { setUserTypeInfo, data } = useType()
 
   useEffect(() => {
     setType(currentType)
     setUserTypeInfo((prev) => {
-      return { ...prev, category: currentType == undefined ? null : currentType }
+      return {
+        ...prev,
+        category: currentType === undefined ? null : currentType,
+      }
     })
   }, [currentType])
 
@@ -31,13 +34,25 @@ const WriteType = () => {
     <section>
       <Card>
         <InputWrapper title="졸업구분">
-          <Radio name="type" value={ApplyMainCategory.COMMON} onClick={changeCurrentType}>
+          <Radio
+            name="type"
+            value={ApplyMainCategory.COMMON}
+            onClick={changeCurrentType}
+          >
             일반전형
           </Radio>
-          <Radio name="type" value={ApplyMainCategory.SPECIAL} onClick={changeCurrentType}>
+          <Radio
+            name="type"
+            value={ApplyMainCategory.SPECIAL}
+            onClick={changeCurrentType}
+          >
             특별전형
           </Radio>
-          <Radio name="type" value={ApplyMainCategory.EXCEPTIONAL} onClick={changeCurrentType}>
+          <Radio
+            name="type"
+            value={ApplyMainCategory.EXCEPTIONAL}
+            onClick={changeCurrentType}
+          >
             특례입학
           </Radio>
         </InputWrapper>

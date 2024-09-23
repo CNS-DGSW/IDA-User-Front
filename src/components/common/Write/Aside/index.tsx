@@ -40,8 +40,8 @@ export const Aside = () => {
         break
       case 5:
         fixTypeInfo()
-        .then((e) => console.log(e))
-        .catch((e) => console.log(e))
+          .then((e) => console.log(e))
+          .catch((e) => console.log(e))
         break
       case 6:
         break
